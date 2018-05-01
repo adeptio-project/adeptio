@@ -9,6 +9,7 @@ Network stability with masternodes, each is secured with a collateral of 10.000 
 For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit our ANN thread at [BitcoinTalk](https://bitcointalk.com)
 
 # Coin Specs
+
 *Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 *1% dev fee from every block
 *PoW Algorithm: Quark
@@ -28,8 +29,8 @@ Masternodes and stakers will receive split reward allocation when PoS sets in.
 This means the more masternodes are in the system, the more staking gets attractive and vice versa.
 
 <table>
-  <tr><th>Block Height</th><th>Reward Amount</th>
-  <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>  
+<tr><th>Block Height</th><th>Reward Amount</th>
+<tr><td>Block 2 - 86400</td><td>150 ADE</td><tr>
 <tr><td>Block 86401 - 151200</td><td>125 ADE</td></tr> 
 <tr><td>Block 225001 - 302400</td><td>100 ADE</td></tr>  
 <tr><td>Block 302401 - 345600</td><td>75 ADE</td></tr>  
