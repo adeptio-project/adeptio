@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/adeptio_bg.qm</file>
+        <file alias="de">locale/adeptio_de.qm</file>
+        <file alias="en">locale/adeptio_en.qm</file>
+        <file alias="es">locale/adeptio_es.qm</file>
+        <file alias="fi">locale/adeptio_fi.qm</file>
+        <file alias="fr">locale/adeptio_fr.qm</file>
+        <file alias="it">locale/adeptio_it.qm</file>
+        <file alias="ja">locale/adeptio_ja.qm</file>
+        <file alias="pl">locale/adeptio_pl.qm</file>
+        <file alias="pt">locale/adeptio_pt.qm</file>
+        <file alias="ru">locale/adeptio_ru.qm</file>
+        <file alias="sk">locale/adeptio_sk.qm</file>
+        <file alias="sv">locale/adeptio_sv.qm</file>
+        <file alias="vi">locale/adeptio_vi.qm</file>
+        <file alias="zh_CN">locale/adeptio_zh_CN.qm</file>
+        <file alias="zh_TW">locale/adeptio_zh_TW.qm</file>
+    </qresource>
+</RCC>

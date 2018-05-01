@@ -1,0 +1,26 @@
+# /etc/conf.d/adeptiod: config file for /etc/init.d/adeptiod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/adeptio/adeptio.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/adeptiod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/adeptiod.pid"
+
+# Where to write adeptiod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/adeptiod"
+
+# User and group to own adeptiod process
+#BITCOIND_USER="adeptio"
+#BITCOIND_GROUP="adeptio"
+
+# Path to adeptiod executable
+#BITCOIND_BIN="/usr/bin/adeptiod"
+
+# Nice value to run adeptiod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

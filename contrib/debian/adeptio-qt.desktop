@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ADE
+Comment=ADE P2P Cryptocurrency
+Comment[fr]=ADE, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ADE, eşten eşe kriptografik sanal para birimi
+Exec=adeptio-qt %u
+Terminal=false
+Type=Application
+Icon=adeptio128
+MimeType=x-scheme-handler/adeptio;
+Categories=Office;Finance;
