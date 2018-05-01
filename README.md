@@ -10,16 +10,16 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 # Coin Specs
 
-*Premine: (#1 Block) 50,002 for 5 init MasterNodes*
-*1% dev fee from every block
-*PoW Algorithm: Quark
-*PoW Blocks: 2 - 44640
-*PoS Blocks: Starting from 44641 (after ~31 days)
-*Block Time: 60 Seconds
-*PoW Max Coin Output/Supply: 6,696,000 ADE
-*Masternode Requirements: 10,000 ADE
-*Maturity: 10 Confirmations
-*Prefix: ADE adresses start with the capital letter "A"   
+* Premine: (#1 Block) 50,002 for 5 init MasterNodes*
+* 1% dev fee from every block
+* PoW Algorithm: Quark
+* PoW Blocks: 2 - 44640
+* PoS Blocks: Starting from 44641 (after ~31 days)
+* Block Time: 60 Seconds
+* PoW Max Coin Output/Supply: 6,696,000 ADE
+* Masternode Requirements: 10,000 ADE
+* Maturity: 10 Confirmations
+* Prefix: ADE adresses start with the capital letter "A"   
 
 *MasterNodes will be burned after 1 year from init start.
 
