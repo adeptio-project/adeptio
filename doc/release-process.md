@@ -27,7 +27,7 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/adeptio-project/ADE.SIGS.git
     git clone https://github.com/adeptio-project/ADE-DETACHED.SIGS.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/adeptio-project/ADE.git
+    git clone https://github.com/adeptio-project/adeptio.git
 
 ### ADE maintainers/release engineers, suggestion for writing release notes
 

@@ -281,7 +281,7 @@ Clone the git repositories for adeptio and gitian and then checkout the adeptio 
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/adeptio-project/ADE.git
+git clone https://github.com/adeptio-project/adeptio.git
 cd adeptio
 git checkout v${VERSION}
 cd ..
