@@ -1,6 +1,6 @@
 # From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
-Adepti|o is a fair cryptocurrency with a universal 3rd generation that combines the best features of different coins
+Adepti|o is a fair universal 3rd generation cryptocurrency that combines the best features of different coins
 in order to create an excellent new digital payment asset.
 
 Milli-Second-Transactions with HyperSend.
