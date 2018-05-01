@@ -37,7 +37,6 @@ This means the more masternodes are in the system, the more staking gets attract
 <tr><td>Block 345602 - 388800</td><td>50 ADE</td></tr>    
 <tr><td>Block 388801 - 475200</td><td>50 ADE</td></tr>
 <tr><td>Block 475200 - 518400</td><td>50 ADE</td></tr>
-<tr><td>Block 475201 - 518400</td><td>50 ADE</td></tr>
 <tr><td>Block 518401 - 561600</td><td>25 ADE</td></tr>
 <tr><td>Block 561601 - 604800</td><td>10 ADE</td></tr>
 <tr><td>Block 604801 - infinite</td><td>5 ADE</td></tr>
