@@ -1,6 +1,6 @@
 #! /bin/bash
-# Generated automatically by config.status (adeptio) 3.2.0
-# Libtool was configured on host tomand-All-Series:
+# Generated automatically by config.status (adeptio) 1.0.0
+# Libtool was configured on host 663644.s.dedikuoti.lt:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.
@@ -97,7 +97,7 @@ NM="/usr/bin/nm -B"
 LN_S="ln -s"
 
 # What is the maximum length of a command?
-max_cmd_len=1572864
+max_cmd_len=1966080
 
 # Object file suffix (normally "o").
 objext=o

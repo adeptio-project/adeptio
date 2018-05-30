@@ -1277,10 +1277,10 @@ qt/qt_libbitcoinqt_a-clientmodel.o: qt/clientmodel.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h alert.h \
- chainparams.h checkpoints.h clientversion.h masternode-sync.h \
- masternodeman.h base58.h main.h masternode.h timedata.h ui_interface.h \
- /usr/include/boost/signals2/last_value.hpp util.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QDateTime \
+ chainparams.h checkpoints.h qt/clientversion.h config/adeptio-config.h \
+ masternode-sync.h masternodeman.h base58.h main.h masternode.h \
+ timedata.h ui_interface.h /usr/include/boost/signals2/last_value.hpp \
+ util.h /usr/include/x86_64-linux-gnu/qt5/QtCore/QDateTime \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
@@ -4234,7 +4234,9 @@ chainparams.h:
 
 checkpoints.h:
 
-clientversion.h:
+qt/clientversion.h:
+
+config/adeptio-config.h:
 
 masternode-sync.h:
 

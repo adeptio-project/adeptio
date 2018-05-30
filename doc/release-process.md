@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/adeptio-project/ADE/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/ADECRYPTO/ADE/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -24,10 +24,10 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/adeptio-project/ADE.SIGS.git
-    git clone https://github.com/adeptio-project/ADE-DETACHED.SIGS.git
+    git clone https://github.com/ADECRYPTO/ADE.SIGS.git
+    git clone https://github.com/ADECRYPTO/ADE-DETACHED.SIGS.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/adeptio-project/adeptio.git
+    git clone https://github.com/ADECRYPTO/ADE.git
 
 ### ADE maintainers/release engineers, suggestion for writing release notes
 

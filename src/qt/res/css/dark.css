@@ -781,12 +781,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About ADE Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About ADE Contents */
+/* About ALQO Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About ALQO Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About ADE text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About ALQO text */
 margin-right:10px;
 }
 
@@ -1139,7 +1139,7 @@ min-width:410px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/adeptio_logo_horizontal');
+background-image: url(':/images/alqo_logo_horizontal');
 background-repeat:none;
 }
 

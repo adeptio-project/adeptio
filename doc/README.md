@@ -41,7 +41,7 @@ The following are developer notes on how to build ADE on your native platform. T
 
 Development
 ---------------------
-The ADE repo's [root README](https://github.com/adeptio-project/ADE/blob/master/README.md) contains relevant information on the development process and automated testing.
+The ADE repo's [root README](https://github.com/ADECRYPTO/ADE/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

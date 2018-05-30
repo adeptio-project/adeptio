@@ -773,8 +773,8 @@ qt/qt_libbitcoinqt_a-utilitydialog.o: qt/utilitydialog.cpp \
  /usr/include/boost/range/const_iterator.hpp /usr/include/c++/5/stack \
  /usr/include/c++/5/deque /usr/include/c++/5/bits/stl_deque.h \
  /usr/include/c++/5/bits/deque.tcc /usr/include/c++/5/bits/stl_stack.h \
- /usr/include/boost/filesystem/convenience.hpp clientversion.h \
- config/adeptio-config.h init.h util.h compat.h /usr/include/arpa/inet.h \
+ /usr/include/boost/filesystem/convenience.hpp qt/clientversion.h init.h \
+ util.h config/adeptio-config.h compat.h /usr/include/arpa/inet.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
  /usr/include/x86_64-linux-gnu/bits/uio.h \
@@ -2562,13 +2562,13 @@ qt/guiutil.h:
 
 /usr/include/boost/filesystem/convenience.hpp:
 
-clientversion.h:
-
-config/adeptio-config.h:
+qt/clientversion.h:
 
 init.h:
 
 util.h:
+
+config/adeptio-config.h:
 
 compat.h:
 

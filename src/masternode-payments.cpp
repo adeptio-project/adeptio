@@ -301,9 +301,9 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
 
     CAmount blockValue = GetBlockValue(pindexPrev->nHeight +1 );
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight +1, blockValue);
-	CAmount developerfeePayment = blockValue * 0.01;
+	CAmount developerfeePayment = blockValue * 0.005;
 	
-	CBitcoinAddress developerfeeaddress("AQc4rDkeQCf2CWVAqDK8woHEcADseRvwLG");
+	CBitcoinAddress developerfeeaddress("AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu");
     CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
 
     if (hasPayment) {
@@ -554,11 +554,11 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
     }
 
 	
-	CBitcoinAddress developerfeeaddress("AQc4rDkeQCf2CWVAqDK8woHEcADseRvwLG");
+	CBitcoinAddress developerfeeaddress("AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu");
     CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
 	
 	CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count);
-	CAmount requiredDeveloperPayment = nReward * 0.01;
+	CAmount requiredDeveloperPayment = nReward * 0.005;
 	
     //require at least 6 signatures
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments)

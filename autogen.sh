@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-#:: 2018-04-02
-#:: adeptio dev;
-
+#!/bin/sh
 set -e
 srcdir="$(dirname $0)"
 cd "$srcdir"

@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/adeptio-project/ADE.SIGS.git"
+- "url": "https://github.com/ADECRYPTO/ADE.SIGS.git"
   "dir": "signature"
 files:
 - "adeptio-osx-unsigned.tar.gz"

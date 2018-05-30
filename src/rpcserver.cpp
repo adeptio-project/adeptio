@@ -220,10 +220,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop ADE server.");
+            "\nStop Adeptio server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "ADE server stopping";
+    return "Adeptio server stopping";
 }
 
 
@@ -1031,7 +1031,7 @@ std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:55000/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:9078/\n";
 }
 
 const CRPCTable tableRPC;

@@ -281,7 +281,7 @@ Clone the git repositories for adeptio and gitian and then checkout the adeptio 
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/adeptio-project/adeptio.git
+git clone https://github.com/ADECRYPTO/ADE.git
 cd adeptio
 git checkout v${VERSION}
 cd ..
@@ -350,7 +350,7 @@ Output from `gbuild` will look something like
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/adeptio-project/ADE
+    From https://github.com/ADECRYPTO/ADE
     ... (new tags, new branch etc)
     --- Building for precise x86_64 ---
     Stopping target if it is up
@@ -377,7 +377,7 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/adeptio-project/ADE
+URL=https://github.com/ADECRYPTO/ADE
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
 ./bin/gbuild --commit adeptio=${COMMIT} --url adeptio=${URL} ../adeptio/contrib/gitian-descriptors/gitian-linux.yml
 ./bin/gbuild --commit adeptio=${COMMIT} --url adeptio=${URL} ../adeptio/contrib/gitian-descriptors/gitian-win.yml

@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage:http://bit.adeptios/
-Vcs-Git: git://github.com/adeptio-project/ADE
-Vcs-Browser: http://github.com/adeptio-project/ADE
+Vcs-Git: git://github.com/ADECRYPTO/ADE
+Vcs-Browser: http://github.com/ADECRYPTO/ADE
 
 Package: adeptiod
 Architecture: any

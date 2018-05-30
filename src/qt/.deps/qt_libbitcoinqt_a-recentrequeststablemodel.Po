@@ -1308,7 +1308,7 @@ qt/qt_libbitcoinqt_a-recentrequeststablemodel.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h qt/bitcoinunits.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractListModel \
- clientversion.h qt/guiutil.h \
+ qt/clientversion.h qt/guiutil.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHeaderView \
@@ -4424,7 +4424,7 @@ qt/bitcoinunits.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractListModel:
 
-clientversion.h:
+qt/clientversion.h:
 
 qt/guiutil.h:
 

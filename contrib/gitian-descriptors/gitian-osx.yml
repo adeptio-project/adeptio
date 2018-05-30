@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/adeptio-project/adeptio.git"
+- "url": "https://github.com/ADECRYPTO/ADE.git"
   "dir": "adeptio"
 files:
 - "MacOSX10.11.sdk.tar.gz"

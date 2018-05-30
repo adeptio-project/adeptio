@@ -273,8 +273,8 @@ qt/qt_libbitcoinqt_a-splashscreen.o: qt/splashscreen.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h clientversion.h \
- config/adeptio-config.h init.h qt/networkstyle.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+ qt/clientversion.h config/adeptio-config.h init.h qt/networkstyle.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QIcon \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap \
@@ -917,9 +917,9 @@ qt/qt_libbitcoinqt_a-splashscreen.o: qt/splashscreen.cpp \
  /usr/include/boost/preprocessor/control/expr_if.hpp \
  /usr/include/boost/signals2/detail/variadic_slot_invoker.hpp \
  /usr/include/boost/type_traits/function_traits.hpp \
- /usr/include/boost/signals2/detail/signal_template.hpp util.h compat.h \
- /usr/include/arpa/inet.h /usr/include/netinet/in.h \
- /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/boost/signals2/detail/signal_template.hpp util.h \
+ config/adeptio-config.h compat.h /usr/include/arpa/inet.h \
+ /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
  /usr/include/x86_64-linux-gnu/bits/uio.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -1983,7 +1983,7 @@ qt/splashscreen.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h:
 
-clientversion.h:
+qt/clientversion.h:
 
 config/adeptio-config.h:
 
@@ -3392,6 +3392,8 @@ ui_interface.h:
 /usr/include/boost/signals2/detail/signal_template.hpp:
 
 util.h:
+
+config/adeptio-config.h:
 
 compat.h:
 

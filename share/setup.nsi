@@ -5,16 +5,16 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 3.2.0
+!define VERSION 1.0.0
 !define COMPANY "ADE Core project"
 !define URL http://bit.adeptios/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/tomand/Documents/coinclone/Adeptio/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/tomand/Documents/coinclone/Adeptio/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/tmp/adeptio/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/tomand/Documents/coinclone/Adeptio/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "ADE Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\adeptio-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/tomand/Documents/coinclone/Adeptio/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/tomand/Documents/coinclone/Adeptio/adeptio-${VERSION}-win-setup.exe
+OutFile /tmp/adeptio/adeptio-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\ADE
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/tomand/Documents/coinclone/Adeptio/release/adeptio-qt.exe
-    File /oname=COPYING.txt /home/tomand/Documents/coinclone/Adeptio/COPYING
-    File /oname=readme.txt /home/tomand/Documents/coinclone/Adeptio/doc/README_windows.txt
+    File /tmp/adeptio/release/adeptio-qt.exe
+    File /oname=COPYING.txt /tmp/adeptio/COPYING
+    File /oname=readme.txt /tmp/adeptio/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/tomand/Documents/coinclone/Adeptio/release/adeptiod.exe
-    File /home/tomand/Documents/coinclone/Adeptio/release/adeptio-cli.exe
+    File /tmp/adeptio/release/adeptiod.exe
+    File /tmp/adeptio/release/adeptio-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /home/tomand/Documents/coinclone/Adeptio/doc\*.*
+    File /r /tmp/adeptio/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
