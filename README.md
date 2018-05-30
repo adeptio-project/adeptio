@@ -10,27 +10,16 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 # Coin Specs
 • Fair start for everyone
-
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
-
 • 1% dev fee from every block
-
 • PoW Algorithm: Quark
-
 • PoW Blocks: 2 - 345600
-
 • PoS Blocks: Starting from 345601 (after ~240 days)
-
 • Block Time: 60 Seconds
-
 • PoW Ending: ~240 Days
-
 • Masternode Requirements: 10,000 ADE
-
 • Maturity: 10 Confirmations
-
 • Prefix: ADE adresses start with the capital letter "A"
-
 * MasterNodes will be burned after 1 year from init start.
 
 # PoW/POS Reward Distribution
