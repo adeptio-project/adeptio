@@ -51,8 +51,3 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 # Further information
 
 _For more information check out our whitepaper at [adeptio.cc/whitepaper.pdf](https://adeptio.cc/whitepaper.pdf)_
-
-
-Alternatively we have added a non .pdf Version into our Github. You can find it in the ADE Github Wiki.
-
-[https://github.com/adeptio-project/ADE/wiki](https://github.com/adeptio-project/ADE/wiki)
