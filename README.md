@@ -1,9 +1,8 @@
 From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
-Adepti|o is a fair cryptocurrency with a universal 3rd generation that combines the best features of different coins
+Adeptio is a fair cryptocurrency with a universal 3rd generation that combines the best features of different coins
 in order to create an excellent new digital payment asset.
 
-Milli-Second-Transactions with HyperSend.
 Network stability with masternodes, each is secured with a collateral of 10.000 ADE.
 
 For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit our ANN thread at [BitcoinTalk](https://bitcointalk.com)
