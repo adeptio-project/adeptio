@@ -32,11 +32,10 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 *MasterNodes will be burned after 1 year from init start.
 
-
-# PoW/POS Reward Distribution
+# Reward Distribution
 <table>
-  <tr><th>Block Height</th><th>Reward Amount</th>
-  <tr><td>Block 2 - 86400</td><td>150 ADE</td>
+<tr><th>Block Height</th><th>Reward Amount</th>
+<tr><td>Block 2 - 86400</td><td>150 ADE</td>
 <tr><td>Block 86401 - 151200</td><td>125 ADE</td>
 <tr><td>Block 225001 - 302400</td><td>100 ADE</td>
 <tr><td>Block 302401 - 345600</td><td>75 ADE</td><
