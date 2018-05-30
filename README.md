@@ -1,4 +1,4 @@
-From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
+# From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
 Adeptio is a fair cryptocurrency with a universal 3rd generation that combines the best features of different coins
 in order to create an excellent new digital payment asset.
