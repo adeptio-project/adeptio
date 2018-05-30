@@ -5,7 +5,7 @@ in order to create an excellent new digital payment asset.
 
 Network stability with masternodes, each is secured with a collateral of 10.000 ADE.
 
-For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit our ANN thread at [BitcoinTalk](https://bitcointalk.com)
+For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit our ANN thread at [BitcoinTalk](https://bitcointalk.org/index.php?topic=4368475.new)
 
 # Coin Specs
 • Fair start for everyone
