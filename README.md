@@ -12,7 +12,7 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
-• 1% dev fee from every block
+• 0.5% dev fee
 
 • PoW Algorithm: Quark
 
