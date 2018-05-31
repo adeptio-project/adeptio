@@ -26,7 +26,7 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 • Masternode Requirements: 10,000 ADE
 
-• Maturity: 10 Confirmations
+• Maturity: 100 Confirmations
 
 • Prefix: ADE adresses start with the capital letter "A"
 
