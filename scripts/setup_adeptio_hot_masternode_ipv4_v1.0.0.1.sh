@@ -9,7 +9,7 @@ echo "== adeptio v1.0.0.1 =="
 echo
 echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
-echo "This setup can be runned only once"
+echo "This setup can be launched only once"
 echo "Do you agree? y/n"
 read agree
             if [ "$agree" != "y" ]; then
