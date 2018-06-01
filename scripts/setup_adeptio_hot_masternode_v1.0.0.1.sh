@@ -9,10 +9,16 @@ echo "== adeptio v1.0.0.1 =="
 echo
 echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
+echo "This setup can be runned only once"
 echo "Do you agree? y/n"
 read agree
             if [ "$agree" != "y" ]; then
                echo "Sorry, we cannot continue" && exit 1
+            fi
+OS_version=$(cat /etc/lsb-release | grep -c xenial)
+            if [ "$OS_version" -ne "1" ]; then
+                    echo ""
+                    echo "Looks like your OS version is not Ubuntu 16.04 Xenial" && exit 1
             fi
 wanip=$(/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com)
 echo "Your external IP is $wanip y/n?"
