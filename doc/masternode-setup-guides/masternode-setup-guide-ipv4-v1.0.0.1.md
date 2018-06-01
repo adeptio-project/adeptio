@@ -19,7 +19,7 @@ To Build
 ---------------------
 **Warning!** Make sure the links are correct and belongs to Adeptio project. Don't use third-party links in your setup.
 
-Login to your ssh virtual machine, server or computer. You can use regular user with sudo rights (safer) or root.
+Login with ssh to your virtual machine, server or computer. You can use regular user with sudo rights (safer) or root.
 
 Copy this line and run to the terminal:
 
