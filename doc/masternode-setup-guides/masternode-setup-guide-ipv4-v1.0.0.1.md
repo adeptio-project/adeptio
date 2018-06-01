@@ -15,7 +15,7 @@ System Requirements
 * IP: IPv4 external ip only
 * Coins: 10 000 ADE
 
-To Build
+Setup
 ---------------------
 **Warning!** Make sure the links are correct and belongs to Adeptio project. Don't use third-party links in your setup.
 
