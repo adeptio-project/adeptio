@@ -7,13 +7,13 @@ Hot masternode requires 10 000 ADE in your actual masternode wallet. This is les
 
 System Requirements
 ---------------------
-Setup was tested only on Ubuntu 16.04 LTS Server. Other distros not supported with this script
-CPU: 1 fast core
-Memory: 1024MB or higher
-Disk: 20GB or higher
-Network: 100 Mbps or faster
-IP: IPv4 external ip only
-Coins: 10 000 ADE
+* Setup was tested only on Ubuntu 16.04 LTS Server. Other distros not supported with this script
+* CPU: 1 fast core
+* Memory: 1024MB or higher
+* Disk: 20GB or higher
+* Network: 100 Mbps or faster
+* IP: IPv4 external ip only
+* Coins: 10 000 ADE
 
 To Build
 ---------------------
