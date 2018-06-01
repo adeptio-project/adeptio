@@ -136,5 +136,8 @@ while [ -d /proc/$PID ]
 do
   printf "\b${sp:i++%${#sp}:1}"
 done
+/usr/bin/adeptio-cli masternode start
+sleep 5
+echo ""
 echo "Checking masternode status:"
 /usr/bin/adeptio-cli masternode status
