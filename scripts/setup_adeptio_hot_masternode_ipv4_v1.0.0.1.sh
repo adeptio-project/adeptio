@@ -62,6 +62,10 @@ server=1
 listen=1
 daemon=1
 staking=1
+addnode=202.182.106.136
+addnode=23.225.207.13
+addnode=78.61.18.211
+addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
@@ -85,7 +89,7 @@ echo "Waiting for 5 minutes" && sleep 300
 /usr/bin/adeptio-cli stop &&
 echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, adding masternodeprivkey and enabling masternode option"
-echo "Give some time to shutdown wallet..."
+echo "Give some time to shutdown the wallet..."
 echo ""
 sleep 60 &
 PID=$!
@@ -109,6 +113,10 @@ masternode=1
 masternodeaddr=$wanip:9077
 externalip=$wanip
 masternodeprivkey=$masternodeprivkey
+addnode=202.182.106.136
+addnode=23.225.207.13
+addnode=78.61.18.211
+addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
 # Firewall //
