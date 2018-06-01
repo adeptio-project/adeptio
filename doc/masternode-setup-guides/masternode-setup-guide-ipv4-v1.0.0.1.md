@@ -17,9 +17,10 @@ System Requirements
 
 To Build
 ---------------------
-Warning! Make sure the links are correct and belongs to Adeptio project. Don't use third-party links in your setup.
+**Warning!** Make sure the links are correct and belongs to Adeptio project. Don't use third-party links in your setup.
 
 Login to your ssh virtual machine, server or computer. You can use regular user with sudo rights (safer) or root.
-cd ~/ && bash <(curl -s https://raw.githubusercontent.com/adeptio-project/adeptio/master/scripts/setup_adeptio_hot_masternode_ipv4_v1.0.0.1.sh)
+
+```cd ~/ && bash <(curl -s https://raw.githubusercontent.com/adeptio-project/adeptio/master/scripts/setup_adeptio_hot_masternode_ipv4_v1.0.0.1.sh)```
 
 Follow instructions during setup. All installation tooks about ~30 minutes.
