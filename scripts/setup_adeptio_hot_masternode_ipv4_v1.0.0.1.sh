@@ -129,8 +129,9 @@ echo "Setup summary:"
 echo "Masternode Wallet Addr: $masternodeaddr"
 echo "Masternode privkey: $masternodeprivkey"
 echo "Your external IP: $wanip"
-echo "" ; echo "Verifying blocks Please wait..."
-sleep 120 &
+echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it as soon as possible!"
+echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~18 minutes..."
+sleep 1080 &
 PID=$!
 i=1
 sp="/-\|"
