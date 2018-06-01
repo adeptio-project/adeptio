@@ -20,6 +20,7 @@ OS_version=$(cat /etc/lsb-release | grep -c xenial)
                     echo ""
                     echo "Looks like your OS version is not Ubuntu 16.04 Xenial" && exit 1
             fi
+sudo apt-get install dnsutils -y
 wanip=$(/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com)
 echo "Your external IP is $wanip y/n?"
 read wan
