@@ -41,7 +41,7 @@ EOF'
 sudo apt-get update
 sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git software-properties-common unzip libzmq3-dev ufw wget -y
-sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+sudo apt-get install libdb4.8-dev libdb4.8++-dev -y --allow-unauthenticated
 
 # Download adeptio sources //
 cd ~
@@ -123,13 +123,14 @@ crontab -l | { cat; echo "@reboot /usr/bin/adeptio --daemon"; } | crontab -
 echo "Masternode config done, starting daemon again"
 /usr/bin/adeptiod --daemon
 echo ""
-echo "Setup completed. You have to wait 15 confirmations right now"
+echo "Setup almost completed. You have to wait 15 confirmations right now"
 echo ""
 echo "Setup summary:"
 echo "Masternode Wallet Addr: $masternodeaddr"
 echo "Masternode privkey: $masternodeprivkey"
 echo "Your external IP: $wanip"
-echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it as soon as possible!"
+echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it after setup!"
+echo ""
 echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~18 minutes..."
 sleep 1080 &
 PID=$!
