@@ -30,7 +30,7 @@ For further information visit us at [adeptio.cc](https://adeptio.cc/) or visit o
 
 • Prefix: ADE adresses start with the capital letter "A"
 
-*MasterNodes will be burned after 1 year from init start.
+* Premine masterNodes will be burnt after 1 year from init start.
 
 # Reward Distribution
 <table>
