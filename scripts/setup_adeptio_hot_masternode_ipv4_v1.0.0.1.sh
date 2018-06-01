@@ -62,7 +62,7 @@ daemon=1
 staking=1
 EOF
 
-# Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE
+# Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 /usr/bin/adeptiod --daemon &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
@@ -108,12 +108,12 @@ externalip=$wanip
 masternodeprivkey=$masternodeprivkey
 EOF
 
-# Firewall
+# Firewall //
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer'
 sudo /usr/sbin/ufw allow 9077/tcp
 sudo /usr/sbin/ufw --force enable
 
-# Start daemon after reboot
+# Start daemon after reboot //
 crontab -l | { cat; echo "@reboot /usr/bin/adeptio --daemon"; } | crontab -
 
 # Final start
