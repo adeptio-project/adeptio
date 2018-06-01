@@ -21,6 +21,8 @@ To Build
 
 Login to your ssh virtual machine, server or computer. You can use regular user with sudo rights (safer) or root.
 
+Copy this line and run to the terminal:
+
 ```cd ~/ && bash <(curl -s https://raw.githubusercontent.com/adeptio-project/adeptio/master/scripts/setup_adeptio_hot_masternode_ipv4_v1.0.0.1.sh)```
 
 Follow instructions during setup. All installation tooks about ~30 minutes.
