@@ -46,7 +46,7 @@ sudo apt-get install libdb4.8-dev libdb4.8++-dev -y --allow-unauthenticated
 # Download adeptio sources //
 cd ~
 rm -fr adeptio*.zip
-wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.1/adeptiod.zip
+wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.1/adeptiod-v1.0.0.1.zip
 
 # Manage coin daemon and configuration //
 unzip -o adeptio*.zip
