@@ -25,7 +25,7 @@ echo ""
 wanipv6=$(curl -s 6.ipquail.com/ip)
 echo "Your external IPv6 is $wanipv6 y/n?"
 read wan
-            if [ "$wanipv6" != "y" ]; then
+            if [ "$wan" != "y" ]; then
                echo "Sorry, we don't know your external IPv6" && exit 1
             fi
 # Check if bitcoin repo exists //
