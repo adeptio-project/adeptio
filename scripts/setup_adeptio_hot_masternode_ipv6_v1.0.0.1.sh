@@ -94,14 +94,16 @@ req_coins=$(/usr/bin/adeptio-cli getwalletinfo | grep balance | grep -oP '.*?(?=
         fi
         echo ""
         echo "Adeptio balance is not 10 000 coins."
-        echo "Balance: $req_coins"
+	echo ""
         echo "Checking again in 60 seconds..." && sleep 60
 done
 echo ""
-echo "All set. Adeptio balance is 10 000 coins"  
+echo "All set. Adeptio balance is 10 000 coins!"  
+echo ""
 /usr/bin/adeptio-cli stop &&
 echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, adding masternodeprivkey and enabling masternode option"
+echo ""
 echo "Give some time to shutdown the wallet..."
 echo ""
 sleep 60 &
@@ -133,15 +135,21 @@ addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
 # Firewall //
-sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer'
+echo "Update firewall rules"
+sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer' 
 sudo /usr/sbin/ufw allow 9077/tcp
 sudo /usr/sbin/ufw --force enable
+echo ""
 
 # Start daemon after reboot //
+echo "Update crontab"
 crontab -l | { cat; echo "@reboot /usr/bin/adeptio --daemon"; } | crontab -
+echo "Crontab update done"
 
 # Final start
+echo ""
 echo "Masternode config done, starting daemon again"
+echo ""
 /usr/bin/adeptiod --daemon
 echo ""
 echo "Setup almost completed. You have to wait 15 confirmations right now"
@@ -149,7 +157,7 @@ echo ""
 echo "Setup summary:"
 echo "Masternode Wallet Addr: $masternodeaddr"
 echo "Masternode privkey: $masternodeprivkey"
-echo "Your external IP: $wanipv6"
+echo "Your external IPv6: $wanipv6"
 echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it after setup!"
 echo ""
 echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~18 minutes..."
