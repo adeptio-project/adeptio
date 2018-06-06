@@ -160,8 +160,8 @@ echo "Masternode privkey: $masternodeprivkey"
 echo "Your external IPv6: $wanipv6"
 echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it after setup!"
 echo ""
-echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~18 minutes..."
-sleep 1080 &
+echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~22 minutes..."
+sleep 1320 &
 PID=$!
 i=1
 sp="/-\|"
