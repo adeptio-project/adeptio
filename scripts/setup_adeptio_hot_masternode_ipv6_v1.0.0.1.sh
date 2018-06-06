@@ -143,7 +143,7 @@ echo ""
 
 # Start daemon after reboot //
 echo "Update crontab"
-crontab -l | { cat; echo "@reboot /usr/bin/adeptio --daemon"; } | crontab -
+crontab -l | { cat; echo "@reboot /usr/bin/adeptiod --daemon"; } | crontab -
 echo "Crontab update done"
 
 # Final start
