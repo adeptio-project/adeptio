@@ -112,6 +112,14 @@ https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu
 
 There was a fair start for everyone.
 
+No ICO
+
+No Presale
+
+No Airdrops
+
+No Bounties (except for translations)
+
 We don't own the majority of coin supply, because no premine was made.
 
 All dev funds addresses can be found by [public explorer](https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu)
