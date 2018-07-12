@@ -30,7 +30,7 @@ Use the autogen script to prepare the build environment.
 
 **precompiled binaries**
 
-Precompiled binaries are available at GitHub, see [https://github.com/adeptio-project/adeptio/releases](URL)
+Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 
 # Coin Specifications
@@ -102,7 +102,7 @@ No premine was made*. There is only 0.5% dev fee from fixed blocks. You can alwa
 *Five premined masternodes will be burnt after 1 year from init start.*
 
 
-[https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu](URL)
+https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu
 
 # Why should I trust in adeptio-project?
 
