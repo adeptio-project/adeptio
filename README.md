@@ -86,8 +86,7 @@ Precompiled binaries are available at GitHub, see [https://github.com/adeptio-pr
 
 [Adeptio Explorer](https://explorer.adeptio.cc/)
 
-[Adeptio Bitcointalk](https://bitcointalk.org
-/index.php?topic=4368475.0;all)
+[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0;all)
 
 [Adeptio Discord](https://discord.gg/RBXjTBa)
 
