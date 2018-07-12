@@ -82,6 +82,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 <tr><td>Block 604801 - infinite</td><td>5 ADE</td></tr>
 </table>
 
+![Alt text](https://explorer.adeptio.cc/images/adeptio_reward_distri.png)
+
 # Links
 
 [Adeptio Website](https://adeptio.cc/)
