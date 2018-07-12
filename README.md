@@ -122,7 +122,7 @@ You should check our [whitepaper](https://github.com/adeptio-project/adeptio#fur
 
 # Who is adeptio team?
 
-Our core team consist of young members with passion for blockchain technology and fintech revolution. Considering some commitments which still persists we can not reveal our identities.* At least for now.*
+Our core team consist of young members with passion for blockchain technology and fintech revolution. Considering some commitments which still persists we can not reveal our identities.
 
 # Acknowledgements
 
