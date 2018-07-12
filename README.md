@@ -37,6 +37,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
+• Algorithm: Hybrid - PoW/PoS
+
 • PoW Algorithm: Quark
 
 • PoW Blocks: 2 - 345600
