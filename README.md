@@ -110,7 +110,7 @@ There was a fair start for everyone.
 
 We don't own the majority of coin supply, because no premine was made.
 
-All dev funds addresses can be found by [public explorer](https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZ)
+All dev funds addresses can be found by [public explorer](https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu)
 
 No "pump and dump" can be made at least from core team.
 
