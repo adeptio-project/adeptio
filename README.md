@@ -9,14 +9,14 @@ Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywher
 
 For more information see:
 
-[https://adeptio.cc](URL)
+https://adeptio.cc
 
 # Development
 
 The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
 
 In near future continuous integration process can be found at:
-[http://development.adeptio.cc](URL)
+http://development.adeptio.cc
 
 # Building process
 
