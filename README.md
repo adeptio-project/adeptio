@@ -15,7 +15,7 @@ https://adeptio.cc
 
 The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
 
-In near future continuous integration process can be found at:
+Continuous integration process can be found at:
 http://development.adeptio.cc
 
 # Building process
