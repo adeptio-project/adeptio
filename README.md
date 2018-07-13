@@ -148,4 +148,4 @@ Adeptio is released under the terms of the MIT license. See [COPYING](https://ra
 
 # Further information
 
-_For more information check out our whitepaper at [adeptio.cc/whitepaper.pdf](https://adeptio.cc/whitepaper.pdf)_
+_For more information check out our whitepaper at [https://adeptio.cc/whitepaper.pdf](https://adeptio.cc/whitepaper.pdf)_
