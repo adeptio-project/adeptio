@@ -26,6 +26,7 @@ http://development.adeptio.cc
 
 Use the autogen script to prepare the build environment.
 
+    make clean (if necessary)
     ./autogen.sh
     ./configure
     make
