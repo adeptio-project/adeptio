@@ -1,3 +1,0 @@
-libbitcoin_wallet.a filter=lfs diff=lfs merge=lfs -text
-libbitcoin_server.a filter=lfs diff=lfs merge=lfs -text
-libbitcoinqt.a filter=lfs diff=lfs merge=lfs -text
