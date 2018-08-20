@@ -7,7 +7,7 @@
 
 echo "== adeptio v1.0.0.2 =="
 echo
-echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
 echo "This setup can be launched only once"
 echo "Do you agree? y/n"
