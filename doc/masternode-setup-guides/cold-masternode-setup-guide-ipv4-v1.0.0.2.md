@@ -67,7 +67,7 @@ masternodeprivkey={PasteYourMasternodeGenkeyOutputHere}***
 
 13. Open another file in the same 11a or 11b directory. File called: **masternode.conf**
 
-14. We have and example bellow. Please keep in mind that "YourVirtualMachineOrComputerPublicIpAddr" is not your Cold Wallet IP addr, but your Ubuntu Server virtaul machine IP addr. After example we will fill the data:
+14. We have and example bellow. Please keep in mind that "YourVirtualMachineOrComputerPublicIpAddr" is not your Cold Wallet IP addr, but your Ubuntu Server virtual machine IP addr. After example we will fill the data:
 
 
  #Example: mn1 127.0.0.2:9077 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
@@ -87,7 +87,7 @@ masternodeprivkey={PasteYourMasternodeGenkeyOutputHere}***
 
 ![Alt text](https://explorer.adeptio.cc/images/doc/9.png)
 
-18. **Follow instructions during setup.** When the setup will be finished try to start a masternode from Cold Wallet. Command to console: masternode start-alias YourMasterNodeName
+18. **Follow instructions during setup.** When the setup will be finished try to start a masternode from Cold Wallet. Command to console: ***masternode start-alias YourMasterNodeName***
 
 ![Alt text](https://explorer.adeptio.cc/images/doc/10.png)
 
