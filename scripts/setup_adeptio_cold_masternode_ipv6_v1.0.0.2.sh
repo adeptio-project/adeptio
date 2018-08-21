@@ -3,7 +3,7 @@
 #:: Adeptio dev team
 #:: Copyright // 2018-08-20
 #:: Version: v1.0.0.2
-#:: Tested on Ubuntu 16.04 LTS Server Xenial only!
+#:: Tested on Ubuntu 18.04 LTS Server Bionic only!
 
 echo "== adeptio v1.0.0.2 =="
 echo
@@ -18,7 +18,7 @@ read agree
 OS_version=$(cat /etc/lsb-release | grep -c xenial)
             if [ "$OS_version" -ne "1" ]; then
                     echo ""
-                    echo "Looks like your OS version is not Ubuntu 16.04 Xenial" && exit 1
+                    echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
             fi
 sudo apt-get install curl -y
 echo ""
@@ -34,14 +34,11 @@ repo=$(cat /etc/apt/sources.list | grep -c bitcoin)
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
             fi
-sudo bash -c 'cat << EOF >> /etc/apt/sources.list
-deb http://ppa.launchpad.net/bitcoin/bitcoin/ubuntu xenial main
-EOF'
 # Install dep. //
-sudo apt-get update
-sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
+sudo add-apt-repository ppa:bitcoin/bitcoin -y
+sudo apt-get update -y
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git software-properties-common unzip libzmq3-dev ufw wget -y
-sudo apt-get install libdb4.8-dev libdb4.8++-dev -y --allow-unauthenticated
 
 # Download adeptio sources //
 cd ~
