@@ -29,7 +29,7 @@ read wan
                echo "Sorry, we don't know your external IPv6" && exit 1
             fi
 # Check if bitcoin repo exists //
-repo=$(cat /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list | grep -c bitcoin)
+repo=$(grep -r "bitcoin" /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list | grep -c bitcoin)
             if [ "$repo" -ne "2" ]; then
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
