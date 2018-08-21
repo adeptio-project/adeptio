@@ -1972,7 +1972,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>Salientes:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the adeptio RPC console.</source>
         <translation>Bienvenido a la consola RPC de ADE</translation>
     </message>
     <message>
