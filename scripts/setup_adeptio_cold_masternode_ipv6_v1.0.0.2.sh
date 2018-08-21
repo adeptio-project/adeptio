@@ -144,7 +144,7 @@ echo "Masternode config done, starting daemon again"
 echo ""
 /usr/bin/adeptiod --daemon
 echo ""
-echo "Setup almost completed. You have to wait 15 confirmations right now"
+echo "Setup almost completed. You have to wait some time to sync blocks"
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"

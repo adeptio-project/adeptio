@@ -82,7 +82,7 @@ echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet masternodeprivkey (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
 read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
-checkpriv_key=$(echo $masternodeprivkeyi | wc -c)
+checkpriv_key=$(echo $masternodeprivkey | wc -c)
 if [ "$checkpriv_key" -ne "52" ];
 then
 	echo "Looks like your $privkey is not correct, it should cointain 52 symbols, please paste it one more time"
@@ -144,7 +144,7 @@ echo "Masternode config done, starting daemon again"
 echo ""
 /usr/bin/adeptiod --daemon
 echo ""
-echo "Setup almost completed. You have to wait 15 confirmations right now"
+echo "Setup almost completed. You have to wait some time to sync blocks"
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"
