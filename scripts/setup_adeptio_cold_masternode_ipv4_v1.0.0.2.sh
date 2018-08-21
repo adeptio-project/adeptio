@@ -15,7 +15,7 @@ read agree
             if [ "$agree" != "y" ]; then
                echo "Sorry, we cannot continue" && exit 1
             fi
-OS_version=$(cat /etc/lsb-release | grep -c xenial)
+OS_version=$(cat /etc/lsb-release | grep -c bionic)
             if [ "$OS_version" -ne "1" ]; then
                     echo ""
                     echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
@@ -29,8 +29,8 @@ read wan
                echo "Sorry, we don't know your external IP" && exit 1
             fi
 # Check if bitcoin repo exists //
-repo=$(cat /etc/apt/sources.list | grep -c bitcoin)
-            if [ "$repo" -ne "0" ]; then
+repo=$(cat /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list | grep -c bitcoin)
+            if [ "$repo" -ne "2" ]; then
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
             fi
