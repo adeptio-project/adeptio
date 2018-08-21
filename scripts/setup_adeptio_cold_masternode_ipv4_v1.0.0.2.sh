@@ -29,8 +29,8 @@ read wan
                echo "Sorry, we don't know your external IP" && exit 1
             fi
 # Check if bitcoin repo exists //
-repo=$(grep -r "bitcoin" /etc/apt/sources.list.d/* | grep -c bitcoin)
-            if [ "$repo" -ne "2" ]; then
+[ -f /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list ]
+            if [ "$?" -eq "0" ]; then
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
             fi
@@ -65,7 +65,6 @@ addnode=78.61.18.211
 addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
-# Start adeptio daemon, wait for wallet creation and get an addr where to send 10 000 ADE //
 /usr/bin/adeptiod --daemon &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
