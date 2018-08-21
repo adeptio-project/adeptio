@@ -15,7 +15,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.adeptio.ADE-Qt";
+        return @"io.adeptio.Adeptio-Qt";
     } else {
         return [self __bundleIdentifier];
     }
