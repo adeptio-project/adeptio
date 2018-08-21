@@ -29,7 +29,7 @@ read wan
                echo "Sorry, we don't know your external IPv6" && exit 1
             fi
 # Check if bitcoin repo exists //
-repo=$(grep -r "bitcoin" /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list | grep -c bitcoin)
+repo=$(grep -r "bitcoin" /etc/apt/sources.list.d/* | grep -c bitcoin)
             if [ "$repo" -ne "2" ]; then
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
@@ -88,13 +88,13 @@ if [ "$checkpriv_key" -ne "52" ];
 then
 	echo "Looks like your $privkey is not correct, it should cointain 52 symbols, please paste it one more time"
 	read masternodeprivkey
-fi
 privkey=$(echo $masternodeprivkey)
-checkpriv_key=$(echo $masternodeprivkeyi | wc -c)
+checkpriv_key=$(echo $masternodeprivkey | wc -c)
 
 if [ "$checkpriv_key" -ne "52" ];
 then
-	"Something wrong with masternodeprivkey, cannot continue" && exit 1
+        echo "Something wrong with masternodeprivkey, cannot continue" && exit 1
+fi
 fi
 echo ""
 echo "Give some time to shutdown the wallet..."
