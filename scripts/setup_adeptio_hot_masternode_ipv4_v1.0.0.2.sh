@@ -5,6 +5,17 @@
 #:: Version: v1.0.0.2
 #:: Tested on Ubuntu 18.04 LTS Server Bionic only!
 
+cat << "ADE"
+
+           _____  ______        __   ___   ___   ___
+     /\   |  __ \|  ____|      /_ | / _ \ / _ \ |__ \
+    /  \  | |  | | |__    __   _| || | | | | | |   ) |
+   / /\ \ | |  | |  __|   \ \ / / || | | | | | |  / /
+  / ____ \| |__| | |____   \ V /| || |_| | |_| | / /_
+ /_/    \_\_____/|______|   \_/ |_(_)___(_)___(_)____|
+
+ADE
+
 echo "== adeptio v1.0.0.2 =="
 echo
 echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
