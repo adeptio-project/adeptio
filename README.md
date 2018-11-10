@@ -91,6 +91,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Website](https://adeptio.cc/)
 
+[Adeptio Blog](https://blog.adeptio.cc/)
+
 [Adeptio Explorer](https://explorer.adeptio.cc/)
 
 [Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0;all)
