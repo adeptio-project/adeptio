@@ -52,6 +52,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
    
 # Coin Specifications
 
+![Alt text](https://adeptio.cc/icon/adeptio_icon(256).png)
+
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
 • Algorithm: Hybrid - PoW/PoS
