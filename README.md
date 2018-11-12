@@ -109,7 +109,13 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Explorer](https://explorer.adeptio.cc/)
 
-[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0;all)
+[Adeptio Official Public API](https://api.adeptio.cc/)
+
+[Adeptio CI Development](https://development.adeptio.cc/)
+
+[Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
+
+[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
 
 [Adeptio Discord](https://discord.gg/RBXjTBa)
 
