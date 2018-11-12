@@ -25848,8 +25848,8 @@ fi
   esac
 
 
-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build ADE Core GUI" >&5
-$as_echo_n "checking whether to build ADE Core GUI... " >&6; }
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to build Adeptio Core GUI" >&5
+$as_echo_n "checking whether to build Adeptio Core GUI... " >&6; }
   
   if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
     true

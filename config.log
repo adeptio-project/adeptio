@@ -2968,7 +2968,7 @@ configure:25669: result: no
 configure:25636: checking for lupdate
 configure:25654: found /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
 configure:25666: result: /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
-configure:25851: checking whether to build ADE Core GUI
+configure:25851: checking whether to build Adeptio Core GUI
 configure:25881: result: yes (Qt5)
 configure:25904: checking if the trading dialog should be enabled
 configure:25907: result: yes
