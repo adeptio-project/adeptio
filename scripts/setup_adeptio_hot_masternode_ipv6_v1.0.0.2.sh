@@ -159,6 +159,26 @@ masternodeprivkey=$masternodeprivkey
 addnode=202.182.106.136
 addnode=23.225.207.13
 addnode=78.61.18.211
+addnode=89.47.163.190
+addnode=94.244.97.73
+addnode=14.162.125.233
+addnode=18.219.217.30
+addnode=45.77.46.169
+addnode=80.211.17.134
+addnode=142.93.42.61
+addnode=173.82.245.209
+addnode=85.255.9.40
+addnode=90.154.10.51
+addnode=149.28.157.130
+addnode=207.246.91.171
+addnode=31.14.134.194
+addnode=94.177.161.102
+addnode=90.154.10.54
+addnode=103.27.237.206
+addnode=[2001:470:71:e89:20c:29ff:fea6:b8fe]
+addnode=[2001:bc8:3d74:100::11]
+addnode=[2001:bc8:3d74:100::4]
+addnode=[2001:470:71:39:f816:3eff:fe70:77ab]
 addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
