@@ -149,8 +149,14 @@ public:
         vSeeds.push_back(CDNSSeedData("seed3.adeptio.cc", "seed3.adeptio.cc")); 
         vSeeds.push_back(CDNSSeedData("seed4.adeptio.cc", "seed4.adeptio.cc")); 
         vSeeds.push_back(CDNSSeedData("seed5.adeptio.cc", "seed5.adeptio.cc"));
-        vSeeds.push_back(CDNSSeedData("78.58.99.63", "94.244.97.73")); // IP addr;
-	vSeeds.push_back(CDNSSeedData("89.116.151.227", "78.61.18.211"));
+
+        vSeeds.push_back(CDNSSeedData("seed6.adeptio.cc", "seed6.adeptio.cc")); 
+        vSeeds.push_back(CDNSSeedData("seed7.adeptio.cc", "seed7.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed8.adeptio.cc", "seed8.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed9.adeptio.cc", "seed9.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed10.adeptio.cc", "seed10.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed11.adeptio.cc", "seed11.adeptio.cc"));
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 16);
@@ -223,8 +229,12 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 		
-        vSeeds.push_back(CDNSSeedData("seed0.adeptio.cc", "seed1.adeptio.cc")); // Primary DNS Seeder;
-        vSeeds.push_back(CDNSSeedData("78.58.99.63", "94.244.97.73")); // IP addr;
+        vSeeds.push_back(CDNSSeedData("testnet.seed0.adeptio.cc", "testnet.seed0.adeptio.cc")); // Primary DNS Seeder;
+        vSeeds.push_back(CDNSSeedData("testnet.seed1.adeptio.cc", "testnet.seed1.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed2.adeptio.cc", "testnet.seed2.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed3.adeptio.cc", "testnet.seed3.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed4.adeptio.cc", "testnet.seed4.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed5.adeptio.cc", "testnet.seed5.adeptio.cc"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 83);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
