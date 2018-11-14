@@ -16,7 +16,7 @@ ADE
 
 echo "== adeptio v1.0.0.3 =="
 echo
-echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
 echo "This setup can be launched only once"
 echo "Do you agree?"
@@ -95,7 +95,6 @@ addnode=[2001:470:71:39:f816:3eff:fe70:77ab]
 addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
-# Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 /usr/bin/adeptiod --daemon &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
@@ -107,33 +106,25 @@ while [ -d /proc/$PID ]
 do
   printf "\b${sp:i++%${#sp}:1}"
 done
-masternodeaddr=$(/usr/bin/adeptio-cli getnewaddress)
-masternodeprivkey=$(/usr/bin/adeptio-cli masternode genkey)
-echo ""
-echo "Your masternode wallet addr is -: $masternodeaddr :- Send exactly 10 000 ADE to this address"
-masternodeprivkey=$(/usr/bin/adeptio-cli masternode genkey)
-check_latest_block=$(/usr/bin/curl -s https://api.adeptio.cc/api/v1/now?key=block_count | jq -r '.data')
-while :
-do
-req_coins=$(/usr/bin/adeptio-cli getwalletinfo | grep balance | grep -oP '.*?(?=\.)' | awk -F'[^0-9]*' '$0=$2')
-check_our_sync_block=$(/usr/bin/adeptio-cli getinfo | grep blocks | grep -o '[0-9]*')
-        if [ "$req_coins" = "10000" ]
-        then
-                break
-        fi
-        echo ""
-        echo "Adeptio balance is not 10 000 coins."
-	echo ""
-        echo "Our latest block is $check_our_sync_block but network block $check_latest_block Syncing..."	
-	echo ""
-        echo "`date` Checking again in 5 minutes..." && sleep 360
-done
-echo ""
-echo "All set. Adeptio balance is 10 000 coins!"  
 echo ""
 /usr/bin/adeptio-cli stop &&
 echo ""
-echo "Shutting down daemon, reconfiguring adeptio.conf, adding masternodeprivkey and enabling masternode option"
+echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet masternodeprivkey (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
+read masternodeprivkey
+privkey=$(echo $masternodeprivkey)
+checkpriv_key=$(echo $masternodeprivkey | wc -c)
+if [ "$checkpriv_key" -ne "52" ];
+then
+	echo "Looks like your $privkey is not correct, it should cointain 52 symbols, please paste it one more time"
+	read masternodeprivkey
+privkey=$(echo $masternodeprivkey)
+checkpriv_key=$(echo $masternodeprivkey | wc -c)
+
+if [ "$checkpriv_key" -ne "52" ];
+then
+        echo "Something wrong with masternodeprivkey, cannot continue" && exit 1
+fi
+fi
 echo ""
 echo "Give some time to shutdown the wallet..."
 echo ""
@@ -158,7 +149,7 @@ maxconnections=125
 masternode=1
 masternodeaddr=[$wanipv6]:9077
 externalip=[$wanipv6]
-masternodeprivkey=$masternodeprivkey
+masternodeprivkey=$privkey
 addnode=202.182.106.136
 addnode=23.225.207.13
 addnode=78.61.18.211
@@ -203,26 +194,10 @@ echo "Masternode config done, starting daemon again"
 echo ""
 /usr/bin/adeptiod --daemon
 echo ""
-echo "Setup almost completed. You have to wait 15 confirmations right now"
+echo "Setup almost completed. You have to wait some time to sync blocks"
 echo ""
 echo "Setup summary:"
-echo "Masternode Wallet Addr: $masternodeaddr"
-echo "Masternode privkey: $masternodeprivkey"
+echo "Masternode privkey: $privkey"
 echo "Your external IPv6: $wanipv6"
-echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it after setup!"
 echo ""
-echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~22 minutes..."
-sleep 1320 &
-PID=$!
-i=1
-sp="/-\|"
-echo -n ' '
-while [ -d /proc/$PID ]
-do
-  printf "\b${sp:i++%${#sp}:1}"
-done
-/usr/bin/adeptio-cli masternode start
-sleep 5
-echo ""
-echo "Checking masternode status:"
-/usr/bin/adeptio-cli masternode status
+echo "Setup completed. Please start a masternode from Cold Wallet"
