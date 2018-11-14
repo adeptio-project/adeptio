@@ -32,8 +32,8 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
             fi
 sudo apt-get install dnsutils jq curl -y
 echo ""
-wanipv6=$(curl -s 6.ipquail.com/ip)
-echo "Your external IPv6 is $wanipv6 y/n?"
+wanip=$(/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com)
+echo "Your external IP is $wanip y/n?"
 read wan
             if [ "$wan" != "y" ]; then
                echo "Sorry, we don't know your external IP" && exit 1
@@ -156,8 +156,8 @@ daemon=1
 staking=1
 maxconnections=125
 masternode=1
-masternodeaddr=[$wanipv6]:9077
-externalip=[$wanipv6]
+masternodeaddr=$wanip:9077
+externalip=$wanip
 masternodeprivkey=$masternodeprivkey
 addnode=202.182.106.136
 addnode=23.225.207.13
@@ -208,7 +208,7 @@ echo ""
 echo "Setup summary:"
 echo "Masternode Wallet Addr: $masternodeaddr"
 echo "Masternode privkey: $masternodeprivkey"
-echo "Your external IPv6: $wanipv6"
+echo "Your external IP: $wanip"
 echo "Your wallet located in ~$HOME/.adeptio/wallet.dat Please backup it after setup!"
 echo ""
 echo "" ; echo "Verifying blocks, waiting for 15 confirmations. Please wait ~22 minutes..."
