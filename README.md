@@ -1,5 +1,7 @@
 # From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
+![Alt text](https://github.com/adeptio-project/adeptio/blob/master/logo/adeptio_loading.png)
+
 ![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
 
 [![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
