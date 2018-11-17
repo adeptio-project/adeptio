@@ -1968,7 +1968,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>Saída:</translation>
     </message>
     <message>
-        <source>Welcome to the adeptio RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Bem-vindo à consola RPC ADE</translation>
     </message>
     <message>
