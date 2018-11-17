@@ -1944,7 +1944,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>輸出:</translation>
     </message>
     <message>
-        <source>Welcome to the adeptio RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>歡迎使用達世幣 RPC 主控台。</translation>
     </message>
     <message>

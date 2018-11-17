@@ -1507,7 +1507,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>Ut:</translation>
     </message>
     <message>
-        <source>Welcome to the adeptio RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Välkommen till ADEs RPC-konsol.</translation>
     </message>
     <message>

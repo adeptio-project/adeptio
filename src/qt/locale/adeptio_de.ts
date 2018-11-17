@@ -1971,7 +1971,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>ausgehend:</translation>
     </message>
     <message>
-        <source>Welcome to the adeptio RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Willkommen in der ADE RPC-Console.</translation>
     </message>
     <message>
