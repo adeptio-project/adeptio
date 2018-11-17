@@ -370,7 +370,7 @@ void BitcoinGUI::createActions(const NetworkStyle* networkStyle)
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
 
-	connect(unlockWalletAction, SIGNAL(triggered()),this, SLOT(unlockWallet()));
+	connect(unlockWalletAction, SIGNAL(triggered()),this, SLOT(unlockWallet())); // Adeptio Dev. This throws an error for GUI wallet
 	connect(lockWalletAction2, SIGNAL(triggered()),this, SLOT(unlockWallet()));
 	
 #endif // ENABLE_WALLET
