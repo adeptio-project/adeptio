@@ -3202,7 +3202,7 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</source>
     </message>
     <message>
         <location line="-35"/>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the adeptio RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

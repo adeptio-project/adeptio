@@ -277,10 +277,10 @@
 #define PACKAGE_BUGREPORT "http://bit.adeptios"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "ADE Core"
+#define PACKAGE_NAME "Adeptio Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "ADE Core 1.0.0"
+#define PACKAGE_STRING "Adeptio Core 1.0.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "adeptio"

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 ## DO NOT EDIT - This file generated from ./build-aux/ltmain.in
 ##               by inline-source v2014-01-03.01
 

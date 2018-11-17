@@ -16,7 +16,7 @@ BITCOIND_USER=${BITCOIND_USER:-adeptio}
 BITCOIND_GROUP=${BITCOIND_GROUP:-adeptio}
 BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/adeptiod}
 
-name="ADE Core Daemon"
+name="Adeptio Core Daemon"
 description="ADE crypto-currency p2p network daemon"
 
 command="/usr/bin/adeptiod"

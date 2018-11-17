@@ -1965,7 +1965,7 @@ https://www.transifex.com/adeptio-crypto/adeptio-wallet-translations/</translati
         <translation>输出：</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the adeptio RPC console.</source>
         <translation>欢迎来到达世币RPC控制台。</translation>
     </message>
     <message>

@@ -57,11 +57,16 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"));
+	(0, uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"))
+	(1000, uint256("0x0000000000011a4f199d639afd11bf0ab20750737f2b3bfe695b63cfa69dcb6b"))
+        (10000, uint256("0x0000000000084511d9aafddf73098f56e0cd1043984671aa909a1a12716113df"))
+        (100000, uint256("0x000000000018c06c5e0776f504503331c635cf3843f41355ea486ac5bc879c51"))
+        (200000, uint256("0x0000000000012840e2d1e2d058971ed6a87434e6b776defee35808b6f94aaa3e"));
+
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1527677777, // * UNIX timestamp of last checkpoint block
-    0,    // * total number of transactions between genesis and last checkpoint
+    1540349334, // * UNIX timestamp of last checkpoint block
+    216357,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -141,8 +146,14 @@ public:
         vSeeds.push_back(CDNSSeedData("seed3.adeptio.cc", "seed3.adeptio.cc")); 
         vSeeds.push_back(CDNSSeedData("seed4.adeptio.cc", "seed4.adeptio.cc")); 
         vSeeds.push_back(CDNSSeedData("seed5.adeptio.cc", "seed5.adeptio.cc"));
-        vSeeds.push_back(CDNSSeedData("78.58.99.63", "94.244.97.73")); // IP addr;
-	vSeeds.push_back(CDNSSeedData("89.116.151.227", "78.61.18.211"));
+
+        vSeeds.push_back(CDNSSeedData("seed6.adeptio.cc", "seed6.adeptio.cc")); 
+        vSeeds.push_back(CDNSSeedData("seed7.adeptio.cc", "seed7.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed8.adeptio.cc", "seed8.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed9.adeptio.cc", "seed9.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed10.adeptio.cc", "seed10.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed11.adeptio.cc", "seed11.adeptio.cc"));
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 16);
@@ -215,8 +226,12 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 		
-        vSeeds.push_back(CDNSSeedData("seed0.adeptio.cc", "seed1.adeptio.cc")); // Primary DNS Seeder;
-        vSeeds.push_back(CDNSSeedData("78.58.99.63", "94.244.97.73")); // IP addr;
+        vSeeds.push_back(CDNSSeedData("testnet.seed0.adeptio.cc", "testnet.seed0.adeptio.cc")); // Primary DNS Seeder;
+        vSeeds.push_back(CDNSSeedData("testnet.seed1.adeptio.cc", "testnet.seed1.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed2.adeptio.cc", "testnet.seed2.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed3.adeptio.cc", "testnet.seed3.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed4.adeptio.cc", "testnet.seed4.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("testnet.seed5.adeptio.cc", "testnet.seed5.adeptio.cc"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 83);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);

@@ -1,13 +1,13 @@
-ADE Core
+Adeptio Coin Core
 =====================
 
 Setup
 ---------------------
-[ADE Core]http://bit.adeptios/ is the original ADE client and it builds the backbone of the network. However, it downloads and stores the entire history of ADE transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Adeptio Core]http://bit.adeptios/ is the original Adeptio client and it builds the backbone of the network. However, it downloads and stores the entire history of ADE transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run ADE on your native platform.
+The following are some helpful notes on how to run Adeptio on your native platform.
 
 ### Unix
 
@@ -22,18 +22,11 @@ Unpack the files into a directory, and then run adeptio-qt.exe.
 
 ### OSX
 
-Drag ADE-Qt to your applications folder, and then run ADE-Qt.
-
-### Need Help?
-
-* See the documentation at the [ADE Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
-for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1604893.0) or on the [ADE Forum](https://google.forum.com/).
-* Join one of our Slack groups [ADE Slack Groups](https://google.slack.com/).
+Drag Adeptio-Qt to your applications folder, and then run Adeptio-Qt.
 
 Building
 ---------------------
-The following are developer notes on how to build ADE on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Adeptio on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +34,7 @@ The following are developer notes on how to build ADE on your native platform. T
 
 Development
 ---------------------
-The ADE repo's [root README](https://github.com/ADECRYPTO/ADE/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Adeptio repo's [root README](https://github.com/ADECRYPTO/ADE/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -55,8 +48,8 @@ The ADE repo's [root README](https://github.com/ADECRYPTO/ADE/blob/master/README
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1604893.0) or the [ADE](https://google.forum.com/) forum.
-* Join the [ADE-Dev](https://google.slack.com/) 
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=4368475) or the [ADE](https://adeptio.cc) forum.
+* Join the [ADE-Dev](https://discord.gg/RBXjTBa) 
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

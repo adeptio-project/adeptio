@@ -2,6 +2,8 @@
 
 ![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
 
+[![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
+
 # What is Adeptio?
 
 Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset.
@@ -15,7 +17,7 @@ https://adeptio.cc
 
 The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
 
-In near future continuous integration process can be found at:
+Continuous integration process can be found at:
 http://development.adeptio.cc
 
 # Building process
@@ -24,7 +26,8 @@ http://development.adeptio.cc
 
 Use the autogen script to prepare the build environment.
 
-    ./autogen
+    make clean (if necessary)
+    ./autogen.sh
     ./configure
     make
 
@@ -32,8 +35,24 @@ Use the autogen script to prepare the build environment.
 
 Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
+**Dependencies for Ubuntu 16.04 LTS or equivalent**
 
+    sudo add-apt-repository ppa:bitcoin/bitcoin
+    sudo apt-get update
+    sudo apt-get install libboost-system1.58-dev libboost-system1.58.0
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev software-properties-common unzip libzmq3-dev
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
+
+**Dependencies for Ubuntu 18.04 LTS or equivalent**
+
+    sudo add-apt-repository ppa:bitcoin/bitcoin
+    sudo apt-get update
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev software-properties-common unzip libzmq3-dev
+   
 # Coin Specifications
+
+![Alt text](https://adeptio.cc/icon/adeptio_icon(256).png)
 
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
@@ -88,11 +107,23 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Website](https://adeptio.cc/)
 
+[Adeptio Blog](https://blog.adeptio.cc/)
+
 [Adeptio Explorer](https://explorer.adeptio.cc/)
 
-[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0;all)
+[Adeptio Stats](https://stats.adeptio.cc/)
+
+[Adeptio Official Public API](https://api.adeptio.cc/)
+
+[Adeptio CI Development](https://development.adeptio.cc/)
+
+[Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
+
+[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
 
 [Adeptio Discord](https://discord.gg/RBXjTBa)
+
+[Adeptio FaceBook](https://www.facebook.com/AdeptioProject-1637877816511858)
 
 [Adeptio Twitter](https://twitter.com/adeptioproject)
 
@@ -148,4 +179,4 @@ Adeptio is released under the terms of the MIT license. See [COPYING](https://ra
 
 # Further information
 
-_For more information check out our whitepaper at [https://adeptio.cc/whitepaper.pdf](https://adeptio.cc/whitepaper.pdf)_
+_For more information check out our whitepaper at [https://adeptio.cc/whitepaper.pdf](https://dev.adeptio.cc/adeptio_whitepaper_v1.0.0.1.pdf)_
