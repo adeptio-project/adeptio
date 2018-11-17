@@ -127,6 +127,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Twitter](https://twitter.com/adeptioproject)
 
+[Adeptio Gitter](https://gitter.im/adeptiocoin/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+
 
 # Developers Funds
 
