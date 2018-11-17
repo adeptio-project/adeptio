@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers 
-// Copyright (c) 2015-2017 The Adeptio developers
+// Copyright (c) 2018-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,7 +31,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// ADEMiner
+// AdeptioMiner
 //
 
 //
@@ -422,7 +422,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("ADEMiner : generated block is stale");
+            return error("AdeptioMiner : generated block is stale");
     }
 
     // Remove key from key pool
@@ -437,7 +437,7 @@ bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, NULL, pblock))
-        return error("ADEMiner : ProcessNewBlock, block not accepted");
+        return error("AdeptioMiner : ProcessNewBlock, block not accepted");
 
     return true;
 }
@@ -448,7 +448,7 @@ bool fGenerateBitcoins = false;
 
 void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
-    LogPrintf("ADEMiner started\n");
+    LogPrintf("AdeptioMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("adeptio-miner");
 
@@ -520,7 +520,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             LogPrintf("CPUMiner : proof-of-stake block found %s \n", pblock->GetHash().ToString().c_str());
 
             if (!pblock->SignBlock(*pwallet)) {
-                LogPrintf("ADEMiner(): Signing new block failed \n");
+                LogPrintf("AdeptioMiner(): Signing new block failed \n");
                 continue;
             }
 
@@ -532,7 +532,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
             continue;
         }
 
-        LogPrintf("Running ADEMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+        LogPrintf("Running AdeptioMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
             ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -549,7 +549,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 if (hash <= hashTarget) {
                     // Found a solution
                     SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                    LogPrintf("ADEMiner:\n");
+                    LogPrintf("AdeptioMiner:\n");
                     LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                     ProcessBlockFound(pblock, *pwallet, reservekey);
                     SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -621,12 +621,12 @@ void static ThreadBitcoinMiner(void* parg)
         BitcoinMiner(pwallet, false);
         boost::this_thread::interruption_point();
     } catch (std::exception& e) {
-        LogPrintf("ThreadADEMiner() exception");
+        LogPrintf("ThreadAdeptioMiner() exception");
     } catch (...) {
-        LogPrintf("ThreadADEMiner() exception");
+        LogPrintf("ThreadAdeptioMiner() exception");
     }
 
-    LogPrintf("ThreadADEMiner exiting\n");
+    LogPrintf("ThreadAdeptioMiner exiting\n");
 }
 
 void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)
