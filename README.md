@@ -133,6 +133,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Telegram](https://t.me/adeptiocoin)
 
+[Adeptio Reddit](https://www.reddit.com/r/Adeptio/)
+
 # Developers Funds
 
 No premine was made*. There is only 0.5% dev fee from fixed blocks. You can always track dev payments at public explorer:
