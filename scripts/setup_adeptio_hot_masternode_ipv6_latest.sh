@@ -53,7 +53,7 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config l
 # Download adeptio sources //
 cd ~
 rm -fr adeptio*.zip
-wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.2/adeptiod-v1.0.0.2.zip
+wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
 
 # Manage coin daemon and configuration //
 unzip -o adeptio*.zip
