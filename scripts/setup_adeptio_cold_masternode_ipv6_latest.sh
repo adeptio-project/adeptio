@@ -49,7 +49,7 @@ read wan
 sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update -y
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git software-properties-common unzip libzmq3-dev ufw wget -y
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libdb++-dev libssl-dev ufw git software-properties-common unzip libzmq3-dev ufw wget git -y
 
 # Download adeptio sources //
 cd ~
@@ -96,7 +96,30 @@ addnode=[2001:470:71:39:f816:3eff:fe70:77ab]
 addnode=[2001:470:71:35f:f816:3eff:fec9:3a7]
 EOF
 
-/usr/bin/adeptiod --daemon &&
+#Create adeptiocore.service
+echo "Create adeptiocore.service for systemd"
+sudo echo \
+"[Unit]
+Description=Adeptio Core Wallet daemon & service
+After=network.target
+
+[Service]
+User=$(echo $USER)
+Type=forking
+ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
+PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
+ExecStop=/usr/bin/adeptio-cli stop
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
+
+sudo chmod 664 /etc/systemd/system/adeptiocore.service
+
+systemctl enable adeptiocore
+
+ &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
 PID=$!
@@ -108,7 +131,7 @@ do
   printf "\b${sp:i++%${#sp}:1}"
 done
 echo ""
-/usr/bin/adeptio-cli stop &&
+sudo systemctl stop adeptiocore &&
 echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet masternodeprivkey (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
 read masternodeprivkey
@@ -180,20 +203,55 @@ EOF
 # Firewall //
 echo "Update firewall rules"
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer' 
-sudo /usr/sbin/ufw allow 9077/tcp
+sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
+sudo /usr/sbin/ufw allow 9079/tcp comment 'Adeptio storADEserver protocol TCP'
+sudo /usr/sbin/ufw allow 9079/udp comment 'Adeptio storADEserver protocol UDP'
 sudo /usr/sbin/ufw --force enable
 echo ""
 
-# Start daemon after reboot //
+#Create storADEserver service for systemd
+echo "Create storADEserver service for systemd"
+sudo echo \
+"[Unit]
+Description=Adeptio storADEserver daemon for encrypted file storage
+After=network.target
+
+[Service]
+User=$USER
+Type=simple
+WorkingDirectory=$HOME/adeptioStorade
+ExecStart=$(which python) $HOME/adeptioStorade/storADEserver.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target" | sudo tee /etc/systemd/system/storADEserver.service
+
+sudo chmod 664 /etc/systemd/system/storADEserver.service
+
+# Download storADEserver files from Github;
+echo "Download storADEserver files from Github;"
+cd ~/
+git clone https://github.com/adeptio-project/adeptioStorade.git
+
+sudo systemctl enable storADEserver.service
+sudo systemctl start storADEserver.service
+
+# Create storADEserver auto-updater
+echo "Create storADEserver auto-updater"
+cd ~/adeptioStorade && sudo cp -fr storADEserver-updater.sh /usr/local/bin/
+sudo chmod +x /usr/local/bin/storADEserver-updater.sh
+
+# Start daemon after reboot // Systemd take care of this;
 echo "Update crontab"
-crontab -l | { cat; echo "@reboot /usr/bin/adeptiod --daemon"; } | crontab -
+crontab -l | { cat; echo "*/1440 * * * * /usr/local/bin/storADEserver-updater.sh"; } | crontab -
 echo "Crontab update done"
 
 # Final start
 echo ""
 echo "Masternode config done, starting daemon again"
 echo ""
-/usr/bin/adeptiod --daemon
+sudo systemctl start adeptiocore
 echo ""
 echo "Setup almost completed. You have to wait some time to sync blocks"
 echo ""

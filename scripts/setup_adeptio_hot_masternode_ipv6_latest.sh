@@ -260,7 +260,7 @@ echo "Crontab update done"
 echo ""
 echo "Masternode config done, starting daemon again"
 echo ""
-systemctl start adeptiocore
+sudo systemctl start adeptiocore
 echo ""
 echo "Setup almost completed. You have to wait 15 confirmations right now"
 echo ""
