@@ -136,11 +136,11 @@ masternodeprivkey=$(/usr/bin/adeptio-cli masternode genkey)
 echo ""
 echo "Your masternode wallet addr is -: $masternodeaddr :- Send exactly 10 000 ADE to this address"
 masternodeprivkey=$(/usr/bin/adeptio-cli masternode genkey)
-check_latest_block=$(/usr/bin/curl -s https://api.adeptio.cc/api/v1/now?key=block_count | jq -r '.data')
 while :
 do
 req_coins=$(/usr/bin/adeptio-cli getwalletinfo | grep balance | grep -oP '.*?(?=\.)' | awk -F'[^0-9]*' '$0=$2')
 check_our_sync_block=$(/usr/bin/adeptio-cli getinfo | grep blocks | grep -o '[0-9]*')
+check_latest_block=$(/usr/bin/curl -s https://api.adeptio.cc/api/v1/now?key=block_count | jq -r '.data')
         if [ "$req_coins" = "10000" ]
         then
                 break
