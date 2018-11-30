@@ -255,7 +255,7 @@ sudo chmod +x /usr/local/bin/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Update crontab"
-crontab -l | { cat; echo "*/1440 * * * * /usr/local/bin/storADEserver-updater.sh"; } | crontab -
+crontab -l | { cat; echo "0 0 * * * /usr/local/bin/storADEserver-updater.sh"; } | crontab -
 echo "Crontab update done"
 
 # Final start
