@@ -104,7 +104,7 @@ Description=Adeptio Core Wallet daemon & service
 After=network.target
 
 [Service]
-User=$(echo $USER)
+User=$(echo $(who am i | awk '{print $1}'))
 Type=forking
 ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
@@ -118,6 +118,10 @@ WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
 sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
+
+real_user=$(echo $*(who am i | awk '{print $1}'))
+
+sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
 
  &&
 echo "" ; echo "Please wait for few minutes..."
