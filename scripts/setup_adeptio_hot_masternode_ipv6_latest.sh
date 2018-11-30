@@ -98,7 +98,7 @@ EOF
 
 #Create adeptiocore.service
 echo "Create adeptiocore.service for systemd"
-echo \
+sudo echo \
 "[Unit]
 Description=Adeptio Core Wallet daemon & service
 After=network.target
@@ -115,12 +115,12 @@ RestartSec=10
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
 
-chmod 664 /etc/systemd/system/adeptiocore.service
+sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 systemctl enable adeptiocore
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
-systemctl start adeptiocore &&
+sudo systemctl start adeptiocore &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
 PID=$!
@@ -220,7 +220,7 @@ echo ""
 
 #Create storADEserver service for systemd
 echo "Create storADEserver service for systemd"
-echo \
+sudo echo \
 "[Unit]
 Description=Adeptio storADEserver daemon for encrypted file storage
 After=network.target
@@ -236,15 +236,15 @@ RestartSec=10
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/storADEserver.service
 
-chmod 664 /etc/systemd/system/storADEserver.service
+sudo chmod 664 /etc/systemd/system/storADEserver.service
 
 # Download storADEserver files from Github;
 echo "Download storADEserver files from Github;"
 cd ~/
 git clone https://github.com/adeptio-project/adeptioStorade.git
 
-systemctl enable storADEserver.service
-systemctl start storADEserver.service
+sudo systemctl enable storADEserver.service
+sudo systemctl start storADEserver.service
 
 # Create storADEserver auto-updater
 echo "Create storADEserver auto-updater"
