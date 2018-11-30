@@ -117,7 +117,7 @@ WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
 
 sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
-systemctl enable adeptiocore
+sudo systemctl enable adeptiocore
 
  &&
 echo "" ; echo "Please wait for few minutes..."
@@ -222,6 +222,7 @@ Type=simple
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$(which python) $HOME/adeptioStorade/storADEserver.py
 Restart=always
+Restart=on-failure
 RestartSec=10
 
 [Install]
@@ -236,6 +237,7 @@ git clone https://github.com/adeptio-project/adeptioStorade.git
 
 sudo systemctl enable storADEserver.service
 sudo systemctl start storADEserver.service
+sudo systemctl daemon-reload
 
 # Create storADEserver auto-updater
 echo "Create storADEserver auto-updater"

@@ -117,7 +117,7 @@ WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
 
 sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
-systemctl enable adeptiocore
+sudo systemctl enable adeptiocore
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 sudo systemctl start adeptiocore &&
@@ -155,7 +155,7 @@ done
 echo ""
 echo "All set. Adeptio balance is 10 000 coins!"  
 echo ""
-systemctl stop adeptiocore &&
+sudo systemctl stop adeptiocore &&
 echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, adding masternodeprivkey and enabling masternode option"
 echo ""
@@ -231,6 +231,7 @@ Type=simple
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$(which python) $HOME/adeptioStorade/storADEserver.py
 Restart=always
+Restart=on-failure
 RestartSec=10
 
 [Install]
@@ -245,6 +246,7 @@ git clone https://github.com/adeptio-project/adeptioStorade.git
 
 sudo systemctl enable storADEserver.service
 sudo systemctl start storADEserver.service
+sudo systemctl daemon-reload
 
 # Create storADEserver auto-updater
 echo "Create storADEserver auto-updater"
