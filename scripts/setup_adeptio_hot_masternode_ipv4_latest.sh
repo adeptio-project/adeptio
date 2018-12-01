@@ -123,19 +123,19 @@ real_user=$(echo $(who am i | awk '{print $1}'))
 
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
 
+#Investigate
 # Check if user is root?
-echo ""
-echo "Check if user is root"
-if [ "$EUID" -ne 0 ]; then
-sudo bash -c "cat << EOF > /etc/sudoers.d/$real_user
-%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
-%$real_user ALL= NOPASSWD: /bin/systemctl stop adeptiocore
-%$real_user ALL= NOPASSWD: /bin/systemctl restart adeptiocore
-%$real_user ALL= NOPASSWD: /bin/systemctl start storADEserver
-%$real_user ALL= NOPASSWD: /bin/systemctl stop storADEserver
-%$real_user ALL= NOPASSWD: /bin/systemctl restart storADEserver
-EOF"
-fi
+#echo "Check if user is root"
+#if [ "$EUID" -ne 0 ]; then
+#sudo bash -c "cat << EOF > /etc/sudoers.d/$real_user
+#%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
+#%$real_user ALL= NOPASSWD: /bin/systemctl stop adeptiocore
+#%$real_user ALL= NOPASSWD: /bin/systemctl restart adeptiocore
+#%$real_user ALL= NOPASSWD: /bin/systemctl start storADEserver
+#%$real_user ALL= NOPASSWD: /bin/systemctl stop storADEserver
+#%$real_user ALL= NOPASSWD: /bin/systemctl restart storADEserver
+#EOF"
+#fi
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 sudo systemctl start adeptiocore &&
