@@ -104,7 +104,7 @@ Description=Adeptio Core Wallet daemon & service
 After=network.target
 
 [Service]
-User=$(echo $(who am i | awk '{print $1}'))
+User=$(echo $(who | awk '{print $1}'))
 Type=forking
 ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
@@ -119,23 +119,23 @@ sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
 
-real_user=$(echo $(who am i | awk '{print $1}'))
-
+real_user=$(echo $(who | awk '{print $1}'))
+ 
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
-
-#Investigate
+ 
 # Check if user is root?
-#echo "Check if user is root"
-#if [ "$EUID" -ne 0 ]; then
-#sudo bash -c "cat << EOF > /etc/sudoers.d/$real_user
-#%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
-#%$real_user ALL= NOPASSWD: /bin/systemctl stop adeptiocore
-#%$real_user ALL= NOPASSWD: /bin/systemctl restart adeptiocore
-#%$real_user ALL= NOPASSWD: /bin/systemctl start storADEserver
-#%$real_user ALL= NOPASSWD: /bin/systemctl stop storADEserver
-#%$real_user ALL= NOPASSWD: /bin/systemctl restart storADEserver
-#EOF"
-#fi
+echo ""
+echo "Check if user is root"
+if [ "$EUID" -ne 0 ]; then
+sudo echo \
+"%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl stop adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl restart adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl start storADEserver
+%$real_user ALL= NOPASSWD: /bin/systemctl stop storADEserver
+%$real_user ALL= NOPASSWD: /bin/systemctl restart storADEserver" | sudo tee /tmp/$real_user
+sudo mv /tmp/$(echo $real_user) /etc/sudoers.d/
+fi
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 sudo systemctl start adeptiocore &&
