@@ -98,7 +98,7 @@ EOF
 
 #Create adeptiocore.service
 echo "Create adeptiocore.service for systemd"
-sudo echo \
+echo \
 "[Unit]
 Description=Adeptio Core Wallet daemon & service
 After=network.target
@@ -122,6 +122,19 @@ sudo systemctl enable adeptiocore
 real_user=$(echo $*(who am i | awk '{print $1}'))
 
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
+
+# Check if user is root?
+echo ""
+echo "Check if user is root"
+if [ "$EUID" -ne 0 ]; then
+echo \
+"%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl stop adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl restart adeptiocore
+%$real_user ALL= NOPASSWD: /bin/systemctl start storADEserver
+%$real_user ALL= NOPASSWD: /bin/systemctl stop storADEserver
+%$real_user ALL= NOPASSWD: /bin/systemctl restart storADEserver" | sudo tee /etc/sudoers.d/$real_user
+fi
 
 # Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
 sudo systemctl start adeptiocore &&
@@ -254,12 +267,13 @@ sudo systemctl daemon-reload
 
 # Create storADEserver auto-updater
 echo "Create storADEserver auto-updater"
-cd ~/adeptioStorade && sudo cp -fr storADEserver-updater.sh /usr/local/bin/
-sudo chmod +x /usr/local/bin/storADEserver-updater.sh
+cd ~/adeptioStorade
+sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
+sudo chown $real_user:$realuser ~/adeptioStorade/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Update crontab"
-crontab -l | { cat; echo "0 0 * * * /usr/local/bin/storADEserver-updater.sh"; } | crontab -
+crontab -l | { cat; echo "0 0 * * * $HOME/adeptioStorade/storADEserver-updater.sh"; } | crontab -
 echo "Crontab update done"
 
 # Final start
