@@ -119,7 +119,7 @@ sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
 
-real_user=$(echo $*(who am i | awk '{print $1}'))
+real_user=$(echo $(who am i | awk '{print $1}'))
 
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
 
