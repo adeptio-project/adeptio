@@ -115,6 +115,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Explorer 2](https://blocks.adeptio.cc/)
 
+[Adeptio Exchange](https://crex24.com/exchange/ADE-BTC)
+
 [Adeptio Stats](https://stats.adeptio.cc/)
 
 [Adeptio Official Public API](https://api.adeptio.cc/)
