@@ -113,6 +113,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Explorer](https://explorer.adeptio.cc/)
 
+[Adeptio Explorer 2](https://blocks.adeptio.cc/)
+
 [Adeptio Stats](https://stats.adeptio.cc/)
 
 [Adeptio Official Public API](https://api.adeptio.cc/)
