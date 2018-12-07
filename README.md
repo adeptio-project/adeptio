@@ -72,6 +72,10 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 • Max. Coin supply: infinite
 
+• Network Port: 9077
+
+• RPC Port: 9078
+
 • Tor network: capable
 
 • IPv6 network: capable
