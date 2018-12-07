@@ -95,18 +95,19 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 *Premine masternodes will be burnt after 1 year from init start.*
 
 # Reward Distribution
+# Reward Distribution
 <table>
-<tr><th>Block Height</th><th>Reward Amount</th>
-<tr><td>Block 2 - 86400</td><td>150 ADE</td>
-<tr><td>Block 86401 - 151200</td><td>125 ADE</td>
-<tr><td>Block 151201 - 302400</td><td>100 ADE</td>
-<tr><td>Block 302401 - 345600</td><td>75 ADE</td>
-<tr><td>Block 345601 - 388800</td><td>50 ADE</td>
-<tr><td>Block 388801 - 475200</td><td>50 ADE</td>
-<tr><td>Block 475201 - 518400</td><td>50 ADE</td></tr>
-<tr><td>Block 518401 - 561600</td><td>25 ADE</td></tr>
-<tr><td>Block 561601 - 604800</td><td>10 ADE</td></tr>
-<tr><td>Block 604801 - infinite</td><td>5 ADE</td></tr>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th>
+<tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td>
+<tr><td>Block 86401 - 151200</td><td>125 ADE</td><td>~21 059875 ADE</td>
+<tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td>
+<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>POW ends</td>
+<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td><td>POS starts</td>
+<tr><td>Block 388801 - 475200</td><td>50 ADE</td><td>~45 899 600 ADE</td>
+<tr><td>Block 475201 - 518400</td><td>50 ADE</td><td>~48 059 550 ADE</td>
+<tr><td>Block 518401 - 561600</td><td>25 ADE</td><td>~49 139 525 ADE</td>
+<tr><td>Block 561601 - 604800</td><td>10 ADE</td><td>~49 571 515 ADE</td>
+<tr><td>Block 604801 - infinite</td><td>5 ADE</td><td>+ ~2.628M per year </td>
 </table>
 
 ![Alt text](https://explorer.adeptio.cc/images/adeptio_reward_distri.png)
