@@ -76,6 +76,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 • RPC Port: 9078
 
+• "storADE" Port: 9079
+
 • Tor network: capable
 
 • IPv6 network: capable
