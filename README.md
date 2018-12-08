@@ -189,6 +189,9 @@ Our core team consist of young members with passion for blockchain technology an
 
 Credit goes to Bitcoin Core, Dash and Pivx for providing a basic platform for Adeptio to enhance and develop, in concert with a shared desire to support the adoption of a decentralised digital currency future for the masses.
 
+# Code issues
+Since we are a 100% open-source project we strongly prefer if you create a pull-request on Github in the proper repository with the necessary fix. Alternatively, If you would like to make a suggestion regarding a potential fix please send an email to root{at}adeptio.cc
+
 # License
 
 Adeptio is released under the terms of the MIT license. See [COPYING](https://raw.githubusercontent.com/adeptio-project/adeptio/master/COPYING) or for more information:
