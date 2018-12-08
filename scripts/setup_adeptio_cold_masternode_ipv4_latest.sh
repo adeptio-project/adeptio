@@ -30,7 +30,7 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
                     echo ""
                     echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
             fi
-sudo add-apt-repository universe
+sudo add-apt-repository universe -y
 sudo apt-get install dnsutils jq curl -y
 echo ""
 wanip=$(/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com)
