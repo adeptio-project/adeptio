@@ -112,7 +112,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 ![Alt text](https://explorer.adeptio.cc/images/adeptio_reward_distri.png)
 
-# Links
+# Resources
 
 [Adeptio Website](https://adeptio.cc/)
 
@@ -132,6 +132,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 [Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
 
+# Community
+
 [Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
 
 [Adeptio Discord](https://discord.gg/RBXjTBa)
@@ -148,14 +150,11 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 # Developers Funds
 
-No premine was made*. There is only 0.5% dev fee from fixed blocks. You can always track dev payments at public explorer:
+No premine was made*. There is only 0.5% dev fee from fixed blocks.
 
 *Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
 
 *Five premined masternodes will be burnt after 1 year from init start.*
-
-
-https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu
 
 # Why should I trust in adeptio-project?
 
@@ -171,11 +170,11 @@ No Bounties (except for translations)
 
 We don't own the majority of coin supply, because no premine was made.
 
-All dev funds addresses can be found by [public explorer](https://explorer.adeptio.cc/address/AP4FBQdztKJJQMQYmvz5U9KGgf128BfwZu)
-
 No "pump and dump" can be made at least from core team.
 
 Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes.
+
+Long term support (probably no coin swap ever).
 
 # What's the difference between adeptio and other cryptocurrencies?
 
