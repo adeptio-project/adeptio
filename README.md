@@ -95,7 +95,6 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 *Premine masternodes will be burnt after 1 year from init start.*
 
 # Reward Distribution
-# Reward Distribution
 <table>
 <tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th>
 <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td>
