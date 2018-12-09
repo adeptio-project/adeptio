@@ -33,7 +33,7 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
 sudo add-apt-repository universe -y
 sudo apt-get install dnsutils jq curl -y
 echo ""
-wanip=$(/usr/bin/dig +short myip.opendns.com @resolver1.opendns.com)
+wanip=$(curl -s 4.ipquail.com/ip)
 echo "Your external IP is $wanip y/n?"
 read wan
             if [ "$wan" != "y" ]; then
