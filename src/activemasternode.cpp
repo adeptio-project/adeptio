@@ -64,10 +64,18 @@ void CActiveMasternode::ManageStatus()
             service = CService(strMasterNodeAddr);
         }
 
-        // The service needs the correct default port to work properly
-        if(!CMasternodeBroadcast::CheckDefaultPort(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
+        if (Params().NetworkID() == CBaseChainParams::MAIN) {
+            if (service.GetPort() != 9077) {
+                notCapableReason = strprintf("Invalid port: %u - only 9077 is supported on mainnet.", service.GetPort());
+                LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
+                return;
+            }
+        } else if (service.GetPort() == 9077) {
+            notCapableReason = strprintf("Invalid port: %u - 9077 is only supported on mainnet.", service.GetPort());
+            LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
-
+        }
+// ## Investigate // adeptio dev;
         LogPrintf("CActiveMasternode::ManageStatus() - Checking inbound connection to '%s'\n", service.ToString());
 
         CNode* pnode = ConnectNode((CAddress)service, NULL, false);
@@ -75,6 +83,7 @@ void CActiveMasternode::ManageStatus()
             notCapableReason = "Could not connect to " + service.ToString();
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
+
         }
         pnode->Release();
 
