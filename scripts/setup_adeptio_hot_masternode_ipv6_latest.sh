@@ -60,6 +60,7 @@ wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adept
 unzip -o adeptio*.zip
 echo ""
 sudo cp -fr adeptio-cli adeptiod /usr/bin/
+rm -fr adeptio-cli adeptiod adeptio-tx
 mkdir -p ~/.adeptio/
 touch ~/.adeptio/adeptio.conf
 cat << EOF > ~/.adeptio/adeptio.conf
