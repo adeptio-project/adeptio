@@ -30,10 +30,14 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
                     echo ""
                     echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
             fi
-sudo add-apt-repository universe -y
-sudo apt-get install dnsutils jq curl -y
+sudo add-apt-repository universe -y 1> /dev/null
+sudo apt-get install dnsutils jq curl -y 1> /dev/null
 echo ""
 wanip=$(curl -s 4.ipquail.com/ip)
+if [ -z "${wanip}" ]; then
+    echo "Sorry, we don't know your external IPv4 addr" && echo ""
+    echo "Input your IPv4 addr manually:" && read wanip
+fi
 echo "Your external IP is $wanip y/n?"
 read wan
             if [ "$wan" != "y" ]; then
@@ -124,9 +128,9 @@ real_user=$(echo $(who | awk '{print $1}'))
  
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
  
-# Check if user is root?
+# Check if user is root? If not create sudoers files to manage systemd services
 echo ""
-echo "Check if user is root"
+echo "Check if user is root? If not create sudoers files to manage systemd services"
 if [ "$EUID" -ne 0 ]; then
 sudo echo \
 "%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore

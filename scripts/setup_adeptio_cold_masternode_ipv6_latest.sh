@@ -30,10 +30,14 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
                     echo ""
                     echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
             fi
-sudo add-apt-repository universe -y
-sudo apt-get install dnsutils jq curl -y
+sudo add-apt-repository universe -y 1> /dev/null
+sudo apt-get install dnsutils jq curl -y 1> /dev/null
 echo ""
 wanipv6=$(curl -s 6.ipquail.com/ip)
+if [ -z "${wanipv6}" ]; then
+    echo "Sorry, we don't know your external IPv6 addr" && echo ""
+    echo "Input your IPv6 addr manually:" && read wanipv6
+fi
 echo "Your external IPv6 is $wanipv6 y/n?"
 read wan
             if [ "$wan" != "y" ]; then
@@ -123,10 +127,10 @@ sudo systemctl enable adeptiocore
 real_user=$(echo $(who | awk '{print $1}'))
  
 sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
- 
-# Check if user is root?
+
+# Check if user is root? If not create sudoers files to manage systemd services
 echo ""
-echo "Check if user is root"
+echo "Check if user is root? If not create sudoers files to manage systemd services"
 if [ "$EUID" -ne 0 ]; then
 sudo echo \
 "%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
