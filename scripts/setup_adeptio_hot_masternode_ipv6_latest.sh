@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-11-14
+#:: Copyright // 2018-12-13
 #:: Version: v1.0.0.3
-#:: Tested on Ubuntu 18.04 LTS Server Bionic only!
+#:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
 cat << "ADE"
     ___    ____  ______        ___ ____   ____   _____
@@ -26,9 +26,15 @@ read agree
                echo "Sorry, we cannot continue" && exit 1
             fi
 OS_version=$(cat /etc/lsb-release | grep -c bionic)
+OS_version2=$(cat /etc/lsb-release | grep -c xenial)
             if [ "$OS_version" -ne "1" ]; then
                     echo ""
-                    echo "Looks like your OS version is not Ubuntu 18.04 Bionic" && exit 1
+                    echo "Looks like your OS version is not Ubuntu 18.04 Bionic // Maybe Ubuntu 16.04 Xenial? - Checking..."
+                        if [ "$OS_version2" -eq "1" ]; then
+                                echo ""
+                        else
+                                echo "Looks like your OS version is not Ubuntu 16.04 Xenial or Ubuntu 18.04 Bionic" && exit 1
+                        fi
             fi
 sudo add-apt-repository universe -y 1> /dev/null
 sudo apt-get install dnsutils jq curl -y 1> /dev/null
@@ -43,23 +49,39 @@ read wan
             if [ "$wan" != "y" ]; then
                echo "Sorry, we don't know your external IPv6 addr" && exit 1
             fi
-# Check if bitcoin repo exists //
+# Check if bitcoin repo exists for Bionic //
 [ -f /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list ]
             if [ "$?" -eq "0" ]; then
                     echo ""
                     echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
             fi
-# Install dep. //
-sudo add-apt-repository ppa:bitcoin/bitcoin -y
-sudo apt-get update -y
-sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
-
+# Check if bitcoin repo exists for Xenial //
+[ -f /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-xenial.list ]
+            if [ "$?" -eq "0" ]; then
+                    echo ""
+                    echo "Looks like you are trying to setup second time? You need a fresh installation!" && exit 1
+            fi
+if [ "$OS_version" -eq "1" ]; then
+# Install dep. for Bionic //
+        sudo add-apt-repository ppa:bitcoin/bitcoin -y
+        sudo apt-get update -y
+        sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        else
+        sudo add-apt-repository ppa:bitcoin/bitcoin -y
+        sudo apt-get update -y
+        sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+        sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        fi
 # Download adeptio sources //
 cd ~
 rm -fr adeptio*.zip
-wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
-
+            if [ "$OS_version" -eq "1" ]; then
+                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
+            elif [ "$OS_version2" -eq "1" ]; then
+                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3-legacy.zip
+            fi
 # Manage coin daemon and configuration //
 unzip -o adeptio*.zip
 echo ""
