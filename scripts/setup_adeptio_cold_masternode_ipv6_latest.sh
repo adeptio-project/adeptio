@@ -125,7 +125,7 @@ Description=Adeptio Core Wallet daemon & service
 After=network.target
 
 [Service]
-User=$(echo $(who | awk '{print $1}'))
+User=$(echo $USER)
 Type=forking
 ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
