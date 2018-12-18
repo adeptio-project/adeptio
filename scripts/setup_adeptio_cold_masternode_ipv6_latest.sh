@@ -250,7 +250,6 @@ Type=simple
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$(which python) $HOME/adeptioStorade/storADEserver.py
 Restart=always
-Restart=on-failure
 RestartSec=60
 
 [Install]
