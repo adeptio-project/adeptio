@@ -148,7 +148,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 
 # Developers Funds
 
-No premine was made*. There is only 0.5% dev fee from fixed blocks.
+~~No premine was made*. There is only 0.5% dev fee from fixed blocks.~~
 
 *Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
 
@@ -156,27 +156,19 @@ No premine was made*. There is only 0.5% dev fee from fixed blocks.
 
 # Why should I trust in adeptio-project?
 
-There was a fair start for everyone.
-
-No ICO
-
-No Presale
-
-No Airdrops
-
+Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes
+We don't own the majority of coin supply, because no premine was made
+StorADE system functionality makes adeptio unique project
+Long term support (probably no coin swap ever)
 No Bounties (except for translations)
-
-We don't own the majority of coin supply, because no premine was made.
-
-No "pump and dump" can be made at least from core team.
-
-Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes.
-
-Long term support (probably no coin swap ever).
+There was a fair start for everyone.
+No Airdrops
+No Presale
+No ICO
 
 # What's the difference between adeptio and other cryptocurrencies?
 
-You should check our [whitepaper](https://github.com/adeptio-project/adeptio#further-information). Our long term goal is to use adeptio as a main base for other great projects which will be announced later on.
+You should check our [whitepaper](https://github.com/adeptio-project/adeptio#further-information). Our long term goal is to use adeptio as a base core blockchain.
 
 # Who is adeptio team?
 
