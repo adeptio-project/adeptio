@@ -157,13 +157,21 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 # Why should I trust in adeptio-project?
 
 Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes
+
 We don't own the majority of coin supply, because no premine was made
+
 StorADE system functionality makes adeptio unique project
+
 Long term support (probably no coin swap ever)
+
 No Bounties (except for translations)
+
 There was a fair start for everyone.
+
 No Airdrops
+
 No Presale
+
 No ICO
 
 # What's the difference between adeptio and other cryptocurrencies?
