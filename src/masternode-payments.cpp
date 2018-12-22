@@ -558,7 +558,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
     CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
 	
 	CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count);
-	CAmount requiredDeveloperPayment = nReward * 0.07;
+	CAmount requiredDeveloperPayment = nReward * 0.10;
 	
     //require at least 6 signatures
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments)
