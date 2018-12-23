@@ -131,7 +131,7 @@ ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
 ExecStop=/usr/bin/adeptio-cli stop
 Restart=always
-RestartSec=60
+RestartSec=3600
 
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
@@ -258,7 +258,7 @@ Type=simple
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$(which python) $HOME/adeptioStorade/storADEserver.py
 Restart=always
-RestartSec=60
+RestartSec=3600
 
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/storADEserver.service
