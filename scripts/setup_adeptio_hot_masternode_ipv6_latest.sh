@@ -20,6 +20,7 @@ cat << "ADE"
                                                       
 ADE
 
+echo $(date)
 echo "== adeptio v1.0.0.3 =="
 echo
 echo "Good day. This is automated hot masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
