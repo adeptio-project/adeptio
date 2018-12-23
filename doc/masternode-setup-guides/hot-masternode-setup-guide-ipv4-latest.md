@@ -23,6 +23,6 @@ Login with ssh to your virtual machine, server or computer. You can use regular 
 
 Copy this line and paste it to the terminal:
 
-```cd ~/ && sudo apt-get install curl -y && bash <(curl -s https://raw.githubusercontent.com/adeptio-project/adeptio/master/scripts/setup_adeptio_hot_masternode_ipv4_latest.sh)```
+```cd ~/ && sudo apt-get install curl -y && bash <(curl -s https://raw.githubusercontent.com/adeptio-project/adeptio/master/scripts/setup_adeptio_hot_masternode_ipv4_latest.sh) | tee ~/adeptio_masternode_installation.log```
 
 Follow instructions during setup. Installation can take up to ~30 minutes.
