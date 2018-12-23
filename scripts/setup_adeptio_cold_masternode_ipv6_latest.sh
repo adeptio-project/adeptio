@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-12-13
+#:: Copyright // 2018-12-23
 #:: Version: v1.0.0.3
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
@@ -42,8 +42,12 @@ OS_version2=$(cat /etc/lsb-release | grep -c xenial)
                                 echo "Looks like your OS version is not Ubuntu 16.04 Xenial or Ubuntu 18.04 Bionic" && exit 1
                         fi
             fi
+sudo apt-get update -y
+if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
 sudo add-apt-repository universe -y 1> /dev/null
+if [ $? -ne "0" ]; then echo "Unable to add repository universe" && exit 1; fi
 sudo apt-get install dnsutils jq curl -y 1> /dev/null
+if [ $? -ne "0" ]; then echo "Unable to install dnsutils jq curl" && exit 1; fi
 echo ""
 wanipv6=$(curl -s 6.ipquail.com/ip)
 if [ -z "${wanipv6}" ]; then
@@ -70,23 +74,34 @@ read wan
 if [ "$OS_version" -eq "1" ]; then
 # Install dep. for Bionic //
         sudo add-apt-repository ppa:bitcoin/bitcoin -y
+	if [ $? -ne "0" ]; then echo "Unable to add bitcoin dependencies" && exit 1; fi
         sudo apt-get update -y
+	if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
         sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
+	if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
         sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+	if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         else
         sudo add-apt-repository ppa:bitcoin/bitcoin -y
+        if [ $? -ne "0" ]; then echo "Unable to add bitcoin dependencies" && exit 1; fi
         sudo apt-get update -y
+        if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
         sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+        if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
         sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
+        if [ $? -ne "0" ]; then echo "Unable to install libboost dependencies" && exit 1; fi
         sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
                 wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
+		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
                 wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3-legacy.zip
+		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
 unzip -o adeptio*.zip
@@ -158,7 +173,7 @@ sudo echo \
 sudo mv /tmp/$(echo $real_user) /etc/sudoers.d/
 fi
 
-# Start adeptio daemon, wait for wallet creation and get the masterprivkey and addr where to send 10 000 ADE //
+# Start adeptio daemon, wait for wallet creation //
 sudo systemctl start adeptiocore &&
 echo "" ; echo "Please wait for few minutes..."
 sleep 120 &
