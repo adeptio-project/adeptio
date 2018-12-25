@@ -203,9 +203,7 @@ check_latest_block=$(/usr/bin/curl -s https://api.adeptio.cc/api/v1/now?key=bloc
         echo ""
         echo "Adeptio balance is not 10 000 coins."
 	echo ""
-        echo "Our latest block is $check_our_sync_block but network block $check_latest_block Syncing..."	
-	echo ""
-        echo "`date` Checking again in 5 minutes..." && sleep 360
+        echo "`date` Our latest block is $check_our_sync_block / $check_latest_block still syncing. Checking again in 5 minutes..." && sleep 360"	
 done
 echo ""
 echo "All set. Adeptio balance is 10 000 coins!"  
