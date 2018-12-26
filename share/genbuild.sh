@@ -1,5 +1,4 @@
-#!/usr/bin/env sh
-#: Adeptio dev team 2018
+#!/bin/sh
 if [ $# -gt 1 ]; then
     cd "$2"
 fi

@@ -1,6 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers 
-// Copyright (c) 2015-2017 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -73,7 +72,7 @@ public:
     // Keep track of all pings I've seen
     map<uint256, CMasternodePing> mapSeenMasternodePing;
 
-    // keep track of dsq count to prevent masternodes from gaming Darksend queue
+    // keep track of dsq count to prevent masternodes from gaming obfuscation queue
     int64_t nDsqCount;
 
     ADD_SERIALIZE_METHODS;
@@ -112,6 +111,8 @@ public:
 
     int CountEnabled(int protocolVersion = -1);
 
+    void CountNetworks(int protocolVersion, int& ipv4, int& ipv6, int& onion);
+
     void DsegUpdate(CNode* pnode);
 
     /// Find an entry
@@ -144,12 +145,15 @@ public:
 
     /// Return the number of (unique) Masternodes
     int size() { return vMasternodes.size(); }
-	/// Return the number of Masternodes older than (default) 8000 seconds
+
+    /// Return the number of Masternodes older than (default) 8000 seconds
     int stable_size ();
 
     std::string ToString() const;
 
     void Remove(CTxIn vin);
+
+    int GetEstimatedMasternodes(int nBlock);
 
     /// Update masternode list and maps using provided CMasternodeBroadcast
     void UpdateMasternodeList(CMasternodeBroadcast mnb);

@@ -1,7 +1,6 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers 
-// Copyright (c) 2015-2017 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +29,8 @@
 
 #include "init.h"
 #include "main.h"
-#include "rpcserver.h"
+#include "rpc/server.h"
+#include "scheduler.h"
 #include "ui_interface.h"
 #include "util.h"
 
@@ -187,6 +187,7 @@ signals:
 
 private:
     boost::thread_group threadGroup;
+    CScheduler scheduler;
 
     /// Flag indicating a restart
     bool execute_restart;
@@ -271,13 +272,7 @@ void BitcoinCore::initialize()
 
     try {
         qDebug() << __func__ << ": Running AppInit2 in thread";
-        int rv = AppInit2(threadGroup);
-        if (rv) {
-            /* Start a dummy RPC thread if no RPC thread is active yet
-             * to handle timeouts.
-             */
-            StartDummyRPCThread();
-        }
+        int rv = AppInit2(threadGroup, scheduler);
         emit initializeResult(rv);
     } catch (std::exception& e) {
         handleRunawayException(&e);
@@ -292,7 +287,7 @@ void BitcoinCore::restart(QStringList args)
         execute_restart = false;
         try {
             qDebug() << __func__ << ": Running Restart in thread";
-            threadGroup.interrupt_all();
+            Interrupt(threadGroup);
             threadGroup.join_all();
             PrepareShutdown();
             qDebug() << __func__ << ": Shutdown finished";
@@ -313,7 +308,7 @@ void BitcoinCore::shutdown()
 {
     try {
         qDebug() << __func__ << ": Running Shutdown in thread";
-        threadGroup.interrupt_all();
+        Interrupt(threadGroup);
         threadGroup.join_all();
         Shutdown();
         qDebug() << __func__ << ": Shutdown finished";
@@ -357,7 +352,7 @@ BitcoinApplication::~BitcoinApplication()
 #endif
     // Delete Qt-settings if user clicked on "Reset Options"
     QSettings settings;
-    if (optionsModel->resetSettings) {
+    if (optionsModel && optionsModel->resetSettings) {
         settings.clear();
         settings.sync();
     }
@@ -544,6 +539,9 @@ int main(int argc, char* argv[])
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
+#if QT_VERSION >= 0x050600
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
 #ifdef Q_OS_MAC
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
@@ -578,7 +576,8 @@ int main(int argc, char* argv[])
 
     /// 5. Now that settings and translations are available, ask user for data directory
     // User language is set up: pick a data directory
-    Intro::pickDataDirectory();
+    if (!Intro::pickDataDirectory())
+        return 0;
 
     /// 6. Determine availability of data directory and parse adeptio.conf
     /// - Do not call GetDataDir(true) before this step finishes
@@ -592,7 +591,7 @@ int main(int argc, char* argv[])
     } catch (std::exception& e) {
         QMessageBox::critical(0, QObject::tr("Adeptio Core"),
             QObject::tr("Error: Cannot parse configuration file: %1. Only use key=value syntax.").arg(e.what()));
-        return false;
+        return 0;
     }
 
     /// 7. Determine network (and switch to network specific options)
@@ -624,7 +623,7 @@ int main(int argc, char* argv[])
     if (!masternodeConfig.read(strErr)) {
         QMessageBox::critical(0, QObject::tr("Adeptio Core"),
             QObject::tr("Error reading masternode configuration file: %1").arg(strErr.c_str()));
-        return false;
+        return 0;
     }
 
     /// 8. URI IPC sending

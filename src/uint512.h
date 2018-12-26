@@ -1,4 +1,10 @@
-#pragma once
+// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef ADE_UINT512_H
+#define ADE_UINT512_H
+
 #include "arith_uint256.h"
 #include "uint256.h"
 
@@ -35,3 +41,5 @@ inline uint512 uint512S(const char* str)
     rv.SetHex(str);
     return rv;
 }
+
+#endif // ADE_UINT512_H

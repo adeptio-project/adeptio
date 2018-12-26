@@ -1,200 +1,60 @@
-# From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
-![Alt text](https://github.com/adeptio-project/adeptio/blob/master/logo/adeptio_loading.png)
+ADE (XLQ) an open source cryptocurrency and globally accessible payment network, with a highly-scalable, hyper-fast, low-fee transaction profile. The ADE network features a low-barrier, fully democratized governance mechanism, user-friendly cross-platform clients for universal adoption and a large-scale masternode network supporting a diverse set of services available to network participants. To secure its network, ADE utilizes a Quark-based Proof of Work consensus algorithm, to be later switched over to an environmentally-friendly Proof of Stake. Masternode operators are compensated for the services they provide, as are miners and stakers for cryptographically validating transaction on the network.
 
-![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
+For more information please visit us at: [adeptio.org](https://adeptio.org/) or visit our ANN thread at: [BitcoinTalk](https://bitcointalk.org/index.php?topic=2343884.0)
 
-[![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
+# Coin Specs
 
-# What is Adeptio?
-
-Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset. [storADE](https://github.com/adeptio-project/adeptioStorade) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
-
-For more information see:
-
-https://adeptio.cc
-
-# Development
-
-The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
-
-Continuous integration process can be found at:
-http://development.adeptio.cc
-
-# Building process
-
-**compiling adeptio from git**
-
-Use the autogen script to prepare the build environment.
-
-    make clean (if necessary)
-    ./autogen.sh
-    ./configure
-    make
-
-**precompiled binaries**
-
-Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
-
-**Dependencies for Ubuntu 16.04 LTS or equivalent**
-
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install libboost-system1.58-dev libboost-system1.58.0
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev
-
-**Dependencies for Ubuntu 18.04 LTS or equivalent**
-
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev
-   
-# Coin Specifications
-
-![Alt text](https://adeptio.cc/icon/adeptio_icon(256).png)
-
-• Premine: (#1 Block) 50,002 for 5 init MasterNodes*
-
-• Algorithm: Hybrid - PoW/PoS
-
-• PoW Algorithm: Quark
-
-• PoW Blocks: 2 - 345600
-
-• PoS Blocks: Starting from 345601 (after ~240 days)
-
+• Coin Name: ADE  
+• Ticker: XLQ  
+• PoW Algorithm: Quark  
+• Premine: (#1 Block) 100,001 ADE (0,17% of PoW)*  
+• PoW Blocks: 2 - 409000  
+• PoS Blocks: Starting from 409001  
 • Block Time: 60 Seconds
+• PoW Max Coin Output/Supply: 57,879,300  
+• PoW Ending: ~ ca. 330 Days (Estimated: October 2018)  
+• Masternode Requirements: 10,000 XLQ  
+• Maturity: 30 Confirmations  
+• Prefix: ADE adresses start with the capital letter "A"   
 
-• Block Size: 1MB
+*the premine is going to be burned on the 1st November 2018
 
-• Max. Coin supply: infinite
+# PoW Reward Distribution
 
-• Network Port: 9077
-
-• RPC Port: 9078
-
-• "storADE" Port: 9079
-
-• Tor network: capable
-
-• IPv6 network: capable
-
-• PoW Ending: ~240 Days
-
-• Masternodes: activated
-
-• Masternode Requirements: 10 000 ADE
-
-• Maturity: 100 Confirmations
-
-• Prefix: ADE adresses start with the capital letter "A"
-
-*Premine masternodes will be burnt after 1 year from init start.*
-
-# Reward Distribution
 <table>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th>
-<tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td>
-<tr><td>Block 86401 - 151200</td><td>125 ADE</td><td>~21 059875 ADE</td>
-<tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td><td>POW ends</td>
-<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>POS starts</td>
-<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td>
-<tr><td>Block 388801 - 475200</td><td>50 ADE</td><td>~45 899 600 ADE</td>
-<tr><td>Block 475201 - 518400</td><td>50 ADE</td><td>~48 059 550 ADE</td>
-<tr><td>Block 518401 - 561600</td><td>25 ADE</td><td>~49 139 525 ADE</td>
-<tr><td>Block 561601 - 604800</td><td>10 ADE</td><td>~49 571 515 ADE</td>
-<tr><td>Block 604801 - infinite</td><td>5 ADE</td><td>+ ~2.628M per year </td>
+  <tr><th>Block Height</th><th>Reward Amount</th><th>Masternodes</th><th>Miners</th><th>Dev fee</th></tr>
+  <tr><td>Block 2 - 86400</td><td>200 XLQ</td><td>   Masternodes 40 XLQ</td><td>Miners 160 XLQ</td><td>0 XLQ</td></tr>
+<tr><td>Block 86401 - 151200</td><td>150 XLQ</td><td>  Masternodes 37,5 XLQ</td><td>Miners 112,5 XLQ</td><td>0 XLQ</td></tr>
+<tr><td>Block 151201 - 225000</td><td>125 XLQ</td><td>  Masternodes 37,5 XLQ</td><td>Miners 87,5 XLQ</td><td>0 XLQ</td></tr>
+<tr><td>Block 225001 - 302400</td><td>125 XLQ</td><td>  Masternodes 75 XLQ</td><td>Miners 43,75 XLQ</td><td>6,25 XLQ</td></tr>
+<tr><td>Block 302401 - 345600</td><td>100 XLQ</td><td>   Masternodes 60 XLQ</td><td>Miners 35 XLQ</td><td>5 XLQ</td></tr>
+<tr><td>Block 345601 - 388800</td><td>75 XLQ</td><td>      Masternodes 45 XLQ</td><td>Miners 26,25 XLQ</td><td>3,75 XLQ</td></tr>
+<tr><td>Block 388801 - 408960</td><td>50 XLQ</td><td>      Masternodes 30 XLQ</td><td>Miners 17,5 XLQ</td><td>2,5 XLQ</td></tr>
+<tr><td>Block 408961 - 409000</td><td>1 XLQ</td><td>      Masternodes 0.6 XLQ</td><td>Miners 0.35 XLQ</td><td>0.5 XLQ</td></tr>
 </table>
 
-![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
+Masternode and staking rewards with PoS:
+During the PoS phase, rewards will be distributed among masternode operators, stakers and the dev fund based on a distribution ratio of 60%/30%/10% respectively.
 
-# Resources
+# PoS Reward Distribution
 
-[Adeptio Website](https://adeptio.cc/)
+_Proof of Stake will automatically be enabled at block height 409001._
+<table>
+<tr><th>Block Height</th><th>Reward Amount</th>
+<tr><td>Block 409001 - 410400</td><td>1 XLQ</td></tr>
+<tr><td>Block 411841 - 538560</td><td>60 XLQ</td></tr>
+<tr><td>Block 538561 - 581760</td><td>25 XLQ</td></tr>
+<tr><td>Block 581761 - 624960</td><td>10 XLQ</td></tr>
+<tr><td>Block 624961 - infinite</td><td>5 XLQ</td></tr>
+</table>
 
-[Adeptio Blog](https://blog.adeptio.cc/)
-
-[Adeptio Explorer](https://explorer.adeptio.cc/)
-
-[Adeptio Explorer 2](https://blocks.adeptio.cc/)
-
-[Adeptio Exchange](https://crex24.com/exchange/ADE-BTC)
-
-[Adeptio Stats](https://stats.adeptio.cc/)
-
-[Adeptio Official Public API](https://api.adeptio.cc/)
-
-[Adeptio CI Development](https://development.adeptio.cc/)
-
-[Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
-
-# Community
-
-[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
-
-[Adeptio Discord](https://discord.gg/RBXjTBa)
-
-[Adeptio FaceBook](https://www.facebook.com/AdeptioProject-1637877816511858)
-
-[Adeptio Twitter](https://twitter.com/adeptioproject)
-
-[Adeptio Gitter](https://gitter.im/adeptiocoin/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-
-[Adeptio Telegram](https://t.me/adeptiocoin)
-
-[Adeptio Reddit](https://www.reddit.com/r/Adeptio/)
-
-# Developers Funds
-
-~~No premine was made*. There is only 0.5% dev fee from fixed blocks.~~
-
-*Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
-
-*Five premined masternodes will be burnt after 1 year from init start.*
-
-# Why should I trust in adeptio-project?
-
-Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes
-
-We don't own the majority of coin supply, because no premine was made
-
-StorADE system functionality makes adeptio unique project
-
-Long term support (probably no coin swap ever)
-
-No Bounties (except for translations)
-
-There was a fair start for everyone.
-
-No Airdrops
-
-No Presale
-
-No ICO
-
-# What's the difference between adeptio and other cryptocurrencies?
-
-You should check our [whitepaper](https://github.com/adeptio-project/adeptio#further-information). Our long term goal is to use adeptio as a base core blockchain.
-
-# Who is adeptio team?
-
-Our core team consist of young members with passion for blockchain technology and fintech revolution.
-
-# Acknowledgements
-
-Credit goes to Bitcoin Core, Dash and Pivx for providing a basic platform for Adeptio to enhance and develop, in concert with a shared desire to support the adoption of a decentralised digital currency future for the masses.
-
-# Code issues
-Since we are a 100% open-source project we strongly prefer if you create a pull-request on Github in the proper repository with the necessary fix. Alternatively, If you would like to make a suggestion regarding a potential fix please send an email to development@adeptio.cc
-
-# License
-
-Adeptio is released under the terms of the MIT license. See [COPYING](https://raw.githubusercontent.com/adeptio-project/adeptio/master/COPYING) or for more information:
-
-[https://opensource.org/licenses/MIT](URL)
 
 # Further information
 
-_For more information check out our whitepaper at [https://adeptio.cc/whitepaper.pdf](https://dev.adeptio.cc/adeptio_whitepaper_v1.0.0.1.pdf)_
+_For more information check out our whitepaper at: [adeptio.org/whitepaper.pdf](https://adeptio.org/whitepaper.pdf)_
+
+
+Alternatively, we have added a non .pdf version in our Github repository. You can find it in the ADE Github Wiki.
+
+[https://github.com/ADECRYPTO/ADE/wiki](https://github.com/ADECRYPTO/ADE/wiki)

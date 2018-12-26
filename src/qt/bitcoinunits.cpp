@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers 
-// Copyright (c) 2015-2017 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,8 +19,8 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(ADE);
-    unitlist.append(mADE);
+    unitlist.append(XLQ);
+    unitlist.append(mXLQ);
     unitlist.append(uADE);
     return unitlist;
 }
@@ -29,8 +28,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case ADE:
-    case mADE:
+    case XLQ:
+    case mXLQ:
     case uADE:
         return true;
     default:
@@ -41,9 +40,9 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case ADE:
+    case XLQ:
         return QString("adeptio");
-    case mADE:
+    case mXLQ:
         return QString("madeptio");
     case uADE:
         return QString::fromUtf8("uadeptio");
@@ -56,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case ADE:
-            return QString("ADE");
-        case mADE:
-            return QString("mADE");
+        case XLQ:
+            return QString("XLQ");
+        case mXLQ:
+            return QString("mXLQ");
         case uADE:
-            return QString::fromUtf8("μADE");
+            return QString::fromUtf8("μXLQ");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case ADE:
-            return QString("tADE");
-        case mADE:
-            return QString("mtADE");
+        case XLQ:
+            return QString("tXLQ");
+        case mXLQ:
+            return QString("mtXLQ");
         case uADE:
-            return QString::fromUtf8("μtADE");
+            return QString::fromUtf8("μtXLQ");
         default:
             return QString("???");
         }
@@ -83,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case ADE:
-            return QString("ADE");
-        case mADE:
-            return QString("Milli-ADE (1 / 1" THIN_SP_UTF8 "000)");
+        case XLQ:
+            return QString("XLQ");
+        case mXLQ:
+            return QString("Milli-XLQ (1 / 1" THIN_SP_UTF8 "000)");
         case uADE:
-            return QString("Micro-ADE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-XLQ (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case ADE:
-            return QString("TestADEs");
-        case mADE:
-            return QString("Milli-TestADE (1 / 1" THIN_SP_UTF8 "000)");
+        case XLQ:
+            return QString("TestXLQs");
+        case mXLQ:
+            return QString("Milli-TestXLQ (1 / 1" THIN_SP_UTF8 "000)");
         case uADE:
-            return QString("Micro-TestADE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-TestXLQ (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,9 +108,9 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case ADE:
+    case XLQ:
         return 100000000;
-    case mADE:
+    case mXLQ:
         return 100000;
     case uADE:
         return 100;
@@ -123,9 +122,9 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case ADE:
+    case XLQ:
         return 8;
-    case mADE:
+    case mXLQ:
         return 5;
     case uADE:
         return 2;
