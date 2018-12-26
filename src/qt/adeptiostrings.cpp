@@ -61,7 +61,7 @@ QT_TRANSLATE_NOOP("adeptio-core", ""
 "Enable automatic wallet backups triggered after each zADE minting (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
-"Enable or disable staking functionality for XLQ inputs (0-1, default: %u)"),
+"Enable or disable staking functionality for ADE inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Enable or disable staking functionality for zADE inputs (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
@@ -100,10 +100,10 @@ QT_TRANSLATE_NOOP("adeptio-core", ""
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Failed to find coin set amongst held coins with less than maxNumber of Spends"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
-"Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in ADE/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
-"Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in ADE/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
@@ -197,10 +197,10 @@ QT_TRANSLATE_NOOP("adeptio-core", ""
 "Unable to locate enough Obfuscation denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Unable to locate enough Obfuscation non-denominated funds for this "
-"transaction that are not equal 10000 XLQ."),
+"transaction that are not equal 10000 ADE."),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Unable to locate enough funds for this transaction that are not equal 10000 "
-"XLQ."),
+"ADE."),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
@@ -321,7 +321,7 @@ QT_TRANSLATE_NOOP("adeptio-core", "Failed to read block"),
 QT_TRANSLATE_NOOP("adeptio-core", "Failed to select a zerocoin"),
 QT_TRANSLATE_NOOP("adeptio-core", "Failed to wipe zerocoinDB"),
 QT_TRANSLATE_NOOP("adeptio-core", "Failed to write coin serial number into wallet"),
-QT_TRANSLATE_NOOP("adeptio-core", "Fee (in XLQ/kB) to add to transactions you send (default: %s)"),
+QT_TRANSLATE_NOOP("adeptio-core", "Fee (in ADE/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("adeptio-core", "Finalizing transaction."),
 QT_TRANSLATE_NOOP("adeptio-core", "Force safe mode (default: %u)"),
 QT_TRANSLATE_NOOP("adeptio-core", "Found enough users, signing ( waiting %s )"),
@@ -410,7 +410,7 @@ QT_TRANSLATE_NOOP("adeptio-core", "Randomly drop 1 of every <n> network messages
 QT_TRANSLATE_NOOP("adeptio-core", "Randomly fuzz 1 of every <n> network messages"),
 QT_TRANSLATE_NOOP("adeptio-core", "Rebuild block chain index from current blk000??.dat files"),
 QT_TRANSLATE_NOOP("adeptio-core", "Receive and display P2P network alerts (default: %u)"),
-QT_TRANSLATE_NOOP("adeptio-core", "Reindex the XLQ and zADE money supply statistics"),
+QT_TRANSLATE_NOOP("adeptio-core", "Reindex the ADE and zADE money supply statistics"),
 QT_TRANSLATE_NOOP("adeptio-core", "Reindex the accumulator database"),
 QT_TRANSLATE_NOOP("adeptio-core", "Reindexing zerocoin database..."),
 QT_TRANSLATE_NOOP("adeptio-core", "Reindexing zerocoin failed"),

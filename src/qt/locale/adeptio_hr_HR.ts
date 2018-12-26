@@ -176,16 +176,16 @@
         <translation>Potvrdi šifriranje novčanika</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše XLQ od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE se sada zatvara kako bi dovršio proces šifriranja. Ne zaboravite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše ADE od krađe zlonamjernog softvera koji zarazi vaše računalo.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Jeste li sigurni da želite šifrirati svoj novčanik?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše XLQove 1 !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Upozorenje: Ako šifrirate svoj novčanik i izgubite zaporku, 1 izgubit ćete sve Vaše ADEove 1 !</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -734,7 +734,7 @@
     </message>
     <message>
         <source>Adeptio Core client</source>
-        <translation>XLQIX Core Klijent</translation>
+        <translation>ADEIX Core Klijent</translation>
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to ADE network</source>
@@ -1679,8 +1679,8 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Adresa / iznos:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>Dodajte odredišta za slanje XLQ
+        <source>Add destinations to send ADE to</source>
+        <translation>Dodajte odredišta za slanje ADE
 </translation>
     </message>
     <message>
@@ -1779,32 +1779,32 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Odaberi razinu privatnosti.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Koristite 2 odvojene masternode za miješanje sredstava do 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Koristite 2 odvojene masternode za miješanje sredstava do 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Koristite 8 zasebnih masternoda za miješanje sredstava do 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Koristite 8 zasebnih masternoda za miješanje sredstava do 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Koristite 16 zasebnih masternodova</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Ova je opcija najbrža i košta oko 0,025 XLQ da anonimizira 10000 XLQ</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Ova je opcija najbrža i košta oko 0,025 ADE da anonimizira 10000 ADE</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Ova je opcija umjereno brza i košta oko 0,05 XLQ da anonimizira 10000 XLQ</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Ova je opcija umjereno brza i košta oko 0,05 ADE da anonimizira 10000 ADE</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Ovo je najsporiji i najsigurniji izbor. Korištenje maksimalne anonimnosti košta</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0,1 XLQ po 10000 XLQ za anonimizaciju.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0,1 ADE po 10000 ADE za anonimizaciju.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1948,24 +1948,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
 </translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Omogućite automint XLQ jedinica na zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Omogućite automint ADE jedinica na zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Omogući zADE Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Postotak dolaznih XLQ koji se automatski pretvara u zADE putem protokola Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Postotak dolaznih ADE koji se automatski pretvara u zADE putem protokola Zerocoin (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
         <translation>Postotak automatiziranog zADE</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XLQ for this denomination is available</source>
-        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno XLQ za apoen</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough ADE for this denomination is available</source>
+        <translation>Pričekajte s automatskom pretvorbom u Zerocoin dok ne bude dostupno dovoljno ADE za apoen</translation>
     </message>
     <message>
         <source>Preferred Automint zADE Denomination</source>
@@ -2131,8 +2131,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Ukupni saldo, uključujući sve nedostupne kovanice.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>XLQ Saldo</translation>
+        <source>ADE Balance</source>
+        <translation>ADE Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2219,8 +2219,8 @@ Nezreli: potvrđeno, ali manje od 1 minta iste denominacije nakon mintanja</tran
         <translation>Po potrošiti:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>Zaključani XLQ ili Masternode kolateral. Oni su isključeni iz zADE kovanja.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>Zaključani ADE ili Masternode kolateral. Oni su isključeni iz zADE kovanja.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2402,8 +2402,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>Dostupno za Minting:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2442,8 +2442,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Unesite iznos XLQ za pretvorbu u zADE</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Unesite iznos ADE za pretvorbu u zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2984,7 +2984,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XLQ to convert to zADE</comment>
+        <comment>Enter an amount of ADE to convert to zADE</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3747,8 +3747,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Veličina UTXO:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3861,8 +3861,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dodaj primatelja</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>Anonimiziran XLQ</translation>
+        <source>Anonymized ADE</source>
+        <translation>Anonimiziran ADE</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4526,8 +4526,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Zaprimljeno preko Zametanja</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ Stake</translation>
+        <source>ADE Stake</source>
+        <translation>ADE Stake</translation>
     </message>
     <message>
         <source>zADE Stake</source>
@@ -4550,24 +4550,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Prikrivanje Stvara Denominacije</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>Pretvoreni XLQ u zADE</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>Pretvoreni ADE u zADE</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>Utrošeni zADE</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Primljeni XLQ od zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Primljeni ADE od zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>Mintana razlika zADE od zADE Utroška</translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>Pretvoreni zADE u XLQ</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>Pretvoreni zADE u ADE</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4785,8 +4785,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvoz uspješan</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Primljeni XLQ od zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Primljeni ADE od zADE</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4826,8 +4826,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Salji novac</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 XLQ.</source>
-        <translation>HyperSend ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 XLQ.</translation>
+        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>HyperSend ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4943,8 +4943,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Omogući automatsko sigurnosno kopiranje novčanika nakon svakog zADE mintanja (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Omogući ili onemogući staking funkcionalnosti za XLQ unose (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Omogući ili onemogući staking funkcionalnosti za ADE unose (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>
@@ -4983,12 +4983,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Izvrši naredbu kada se promijeni najbolji blok (%s u cmd zamjenjuje se blokovskim raspršivanjem)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Naknade (u XLQ / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Naknade (u ADE / Kb) manje od toga smatraju se nulom naknadom za prosljeđivanje (zadano: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Naknade (u XLQ / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Naknade (u ADE / Kb) manje od toga smatraju se nulom naknadom za izradu transakcija (zadano: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5095,12 +5095,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Nije moguće locirati dovoljno sredstava s domenom Prikrivanja za tu transakciju.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 XLQ.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Nije moguće pronaći dovoljno prikrivenih sredstava koja nisu denominirana za ovu transakciju koja nisu jednaka 10000 ADE.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 XLQ.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Nije moguće pronaći dovoljno sredstava za ovu transakciju koja nije jednaka 10000 ADE.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5412,8 +5412,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Greška čitanja bloka</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>Naknada (u XLQ / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>Naknada (u ADE / kB) za dodavanje transakcija koje šaljete (zadano: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5544,8 +5544,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Postotak automatskog kovanog Zerocoina (1-100, zadano: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XLQ and zADE money supply statistics</source>
-        <translation>Ponovno indeksirati statistiku XLQ i zADE ponude novca</translation>
+        <source>Reindex the ADE and zADE money supply statistics</source>
+        <translation>Ponovno indeksirati statistiku ADE i zADE ponude novca</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

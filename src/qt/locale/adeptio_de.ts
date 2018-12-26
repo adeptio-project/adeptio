@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Wählen Sie die Adresse aus, an die Sie XLQ überweisen möchten</translation>
+        <translation>Wählen Sie die Adresse aus, an die Sie ADE überweisen möchten</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Wählen Sie die Adresse aus, über die Sie XLQ empfangen wollen</translation>
+        <translation>Wählen Sie die Adresse aus, über die Sie ADE empfangen wollen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>These are your ADE addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dies sind ihre ADE-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie XLQ überweisen.</translation>
+        <translation>Dies sind ihre ADE-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Empfangsadresse, bevor Sie ADE überweisen.</translation>
     </message>
     <message>
         <source>These are your ADE addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
@@ -176,16 +176,16 @@
         <translation>Verschlüsselung der Wallet bestätigen</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>Die Anwendung wird nun geschlossen um die Verschlüsselung abzuschließen. Bitte bedenken Sie, dass auch die Verschlüsselung nicht sicher vor Diebstahl ihrer XLQs durch Schadsoftware schützt, die ihren Computer befällt.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>Die Anwendung wird nun geschlossen um die Verschlüsselung abzuschließen. Bitte bedenken Sie, dass auch die Verschlüsselung nicht sicher vor Diebstahl ihrer ADEs durch Schadsoftware schützt, die ihren Computer befällt.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Sind Sie sich sicher, dass Sie Ihre Wallet verschlüsseln möchten?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, &lt;b&gt;verlieren Sie alle ihre XLQs&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, &lt;b&gt;verlieren Sie alle ihre ADEs&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1672,8 +1672,8 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
         <translation>Adresse / Menge:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>Füge Transaktionsziele für XLQ-Überweisung hinzu</translation>
+        <source>Add destinations to send ADE to</source>
+        <translation>Füge Transaktionsziele für ADE-Überweisung hinzu</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1771,32 +1771,32 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
         <translation>Bitte den gewünschten Privatsphäre Level auswählen.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>2 separate Masternodes verwenden um bis zu 10000 XLQ zu mixen</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>2 separate Masternodes verwenden um bis zu 10000 ADE zu mixen</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>8 separate Masternodes verwenden um bis zu 10000 XLQ zu mixen</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>8 separate Masternodes verwenden um bis zu 10000 ADE zu mixen</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>16 separate Masternodes verwenden</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Diese Option ist die schnellst und kostet ungefähr ~0.025 XLQ um 10000 XLQ zu anonymisieren </translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Diese Option ist die schnellst und kostet ungefähr ~0.025 ADE um 10000 ADE zu anonymisieren </translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Diese Option ist angemessen schnell und kostet ungefähr  0.05 XLQ um 10000 XLQ zu anonymisieren</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Diese Option ist angemessen schnell und kostet ungefähr  0.05 ADE um 10000 ADE zu anonymisieren</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Diese Option ist die langsamste und sicherste Option. Die Verwendung maximaler Anonymisierung kostet</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0.1 XLQ per 10000 XLQ die anonymisiert werden.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0.1 ADE per 10000 ADE die anonymisiert werden.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1939,24 +1939,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Port mit &amp;UPnP mappen</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Aktivieren Sie die automatische Prägung von XLQ-Einheiten zu zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Aktivieren Sie die automatische Prägung von ADE-Einheiten zu zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Aktivieren Sie zADE Automint</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Anteil des eingehenden XLQ, welcher automatisch zu zADE via Zerocoin Protokoll konvertiert wird (min: 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Anteil des eingehenden ADE, welcher automatisch zu zADE via Zerocoin Protokoll konvertiert wird (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
         <translation>Prozentsatz der automatisierten zADE</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XLQ for this denomination is available</source>
-        <translation>Warte mit automatischer Konvertierung zu Zerocoin, bis genügend XLQ für diese Stückelung verfügbar ist</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough ADE for this denomination is available</source>
+        <translation>Warte mit automatischer Konvertierung zu Zerocoin, bis genügend ADE für diese Stückelung verfügbar ist</translation>
     </message>
     <message>
         <source>Preferred Automint zADE Denomination</source>
@@ -2122,8 +2122,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Gesamtsaldo, einschließlich aller nicht verfügbaren Münzen.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>XLQ Bilanzen</translation>
+        <source>ADE Balance</source>
+        <translation>ADE Bilanzen</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2210,8 +2210,8 @@ Unreif: Bestätigt, aber keine Prägung in der selben Stückelung seit erfolgter
         <translation>Verfügbar:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>Gesperrte XLQ oder Masternode Pfand. Diese sind vom zADE Prägen ausgeschlossen.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>Gesperrte ADE oder Masternode Pfand. Diese sind vom zADE Prägen ausgeschlossen.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2393,8 +2393,8 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
         <translation>Verfügbar für Prägung:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2433,8 +2433,8 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
         <translation>PRIVATSPHÄRE</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Geben Sie den Betrag ein, den sie von XLQ in zADE umwandeln möchten</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Geben Sie den Betrag ein, den sie von ADE in zADE umwandeln möchten</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2979,7 +2979,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XLQ to convert to zADE</comment>
+        <comment>Enter an amount of ADE to convert to zADE</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3665,7 +3665,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>XLQs überweisen</translation>
+        <translation>ADEs überweisen</translation>
     </message>
     <message>
         <source>SEND</source>
@@ -3740,8 +3740,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>UTXO Größe:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3852,8 +3852,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Empfänge&amp;r hinzufügen</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>Anonymisierte XLQ</translation>
+        <source>Anonymized ADE</source>
+        <translation>Anonymisierte ADE</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4411,7 +4411,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Erzeugte XLQs müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine XLQs gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
+        <translation>Erzeugte ADEs müssen %1 Blöcke lang reifen, bevor sie ausgegeben werden können. Als Sie diesen Block erzeugten, wurde er an das Netzwerk übertragen, um ihn der Blockkette hinzuzufügen. Falls dies fehlschlägt wird der Status in "nicht angenommen" geändert und Sie werden keine ADEs gutgeschrieben bekommen. Das kann gelegentlich passieren, wenn ein anderer Knoten einen Block fast zeitgleich erzeugt.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -4516,8 +4516,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>über/durch Verschleierung empfangen</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ Stake</translation>
+        <source>ADE Stake</source>
+        <translation>ADE Stake</translation>
     </message>
     <message>
         <source>zADE Stake</source>
@@ -4540,24 +4540,24 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Verschleierung Erzeugung der Stückelung</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>Umgewandeltes XLQ zu zADE</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>Umgewandeltes ADE zu zADE</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>Ausgegebene zADE</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Empfangene XLQ von zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Empfangene ADE von zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>Geprägtes zADE Wechselgeld aus zADE Überweisung</translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>Umgewandeltes zADE zu XLQ</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>Umgewandeltes zADE zu ADE</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4775,8 +4775,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Exportieren erfolgreich</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Empfangene XLQ von zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Empfangene ADE von zADE</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4813,11 +4813,11 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>XLQs überweisen</translation>
+        <translation>ADEs überweisen</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 XLQ.</source>
-        <translation>Swift Transaktionen unterstützen das senden solch hoher Beträge noch nicht. Transaktionen sind momentan auf %1 XLQ begrenzt.</translation>
+        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>Swift Transaktionen unterstützen das senden solch hoher Beträge noch nicht. Transaktionen sind momentan auf %1 ADE begrenzt.</translation>
     </message>
 </context>
 <context>
@@ -4933,8 +4933,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Aktiviere nach jeder zADE-Prägung ausgelöste automatische Wallet-Backups (0-1, Standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Aktiviere oder deaktiviere Staking-Funktionalität für XLQ Eingänge (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Aktiviere oder deaktiviere Staking-Funktionalität für ADE Eingänge (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>
@@ -4973,12 +4973,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Befehl ausführen, wenn sich der beste Block ändert (%s in cmd wird durch Blockhash ersetzt)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Gebühren (in XLQ/kB) kleiner als diese gelten für die Weiterleitung als Null-Gebühr  (default: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Gebühren (in ADE/kB) kleiner als diese gelten für die Weiterleitung als Null-Gebühr  (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Gebühren (in XLQ/kB) kleiner als diese werden als Null-Gebühr für die Transaktionserstellung betrachtet (default: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Gebühren (in ADE/kB) kleiner als diese werden als Null-Gebühr für die Transaktionserstellung betrachtet (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5085,12 +5085,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Nicht genügend gestückeltes, verschleiertes Guthaben für diese Transaktion gefunden.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Nicht genügend verschleiertes, nicht gestückeltes Guthaben für diese Transaktion gefunden, die nicht gleich 10000 XLQ entsprechen.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Nicht genügend verschleiertes, nicht gestückeltes Guthaben für diese Transaktion gefunden, die nicht gleich 10000 ADE entsprechen.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Nicht genügend Guthaben für diese Transaktion gefunden, die nicht gleich 10000 XLQ entsprechen.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Nicht genügend Guthaben für diese Transaktion gefunden, die nicht gleich 10000 ADE entsprechen.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5401,8 +5401,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Block konnte nicht gelesen werden</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>Gebühr (in XLQ/kB) die den Transaktionen, die Sie überweisen, hinzugefügt wird (Standard: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>Gebühr (in ADE/kB) die den Transaktionen, die Sie überweisen, hinzugefügt wird (Standard: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5533,8 +5533,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Prozent automatisch geprägter Zerocoins (1-100, Standard: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XLQ and zADE money supply statistics</source>
-        <translation>Die Geldmengenstatistik XLQ und zADE neu indizieren</translation>
+        <source>Reindex the ADE and zADE money supply statistics</source>
+        <translation>Die Geldmengenstatistik ADE und zADE neu indizieren</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

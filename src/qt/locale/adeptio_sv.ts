@@ -176,16 +176,16 @@
         <translation>Bekräfta plånboks krypering</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina XLQs från att bli stulna av skadeprogram som infekterat din dator.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE kommer att stängas ner nu för att färdigställa kryperingsprocessen. Kom ihåg att kryptering av din plånbok inte kan säkerställa dina ADEs från att bli stulna av skadeprogram som infekterat din dator.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Är du säker på att du vill kryptera din plånbok?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA XLQ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Varning: om du krypterar din plånbok och tappar bort din lösenfras kommer du &lt;b&gt; FÖRLORA ALLA DINA ADE&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1680,8 +1680,8 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Adress / Mängd:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>Lägg till destination att skicka XLQ till</translation>
+        <source>Add destinations to send ADE to</source>
+        <translation>Lägg till destination att skicka ADE till</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1779,32 +1779,32 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Var vänlig och välj en sekretess nivå.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Använd 2 separata huvudnoder för att blanda tillgångar upp till 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Använd 2 separata huvudnoder för att blanda tillgångar upp till 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Använd 8 separata huvudnoderför att blanda tillgångar upp till 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Använd 8 separata huvudnoderför att blanda tillgångar upp till 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Använd 16 separata huvudnoder</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Det här alternativet är det snabbaste och kommer kostar ungefär ~0.025 XLQ för att anonymisera 10000 XLQ</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Det här alternativet är det snabbaste och kommer kostar ungefär ~0.025 ADE för att anonymisera 10000 ADE</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Det här alternativet är måttligt snabb och kommer kostar ungefär 0.05 XLQ för att anonymisera 10000 XLQ</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Det här alternativet är måttligt snabb och kommer kostar ungefär 0.05 ADE för att anonymisera 10000 ADE</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Det här är det långsammaste och säkraste alternativet. Använda maximal anonymitet kommer kosta</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0.1 XLQ per 10000 XLQ du anonymiserar.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0.1 ADE per 10000 ADE du anonymiserar.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1935,24 +1935,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Kartlägg port med &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Tillåt automatisk prägling med XLQ enheter till zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Tillåt automatisk prägling med ADE enheter till zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Tillåt zADE Autoprägling</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Procent av inkommande XLQ som automatiskt konverteras till zADE via Zerocoin Protokollet (min: 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Procent av inkommande ADE som automatiskt konverteras till zADE via Zerocoin Protokollet (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
         <translation>Procent av autopräglade zADE</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XLQ for this denomination is available</source>
-        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många XLQ för denna valör är tillgängliga</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough ADE for this denomination is available</source>
+        <translation>Vänta med automatisk omvandling till Zerocoin tills tillräckligt många ADE för denna valör är tillgängliga</translation>
     </message>
     <message>
         <source>Preferred Automint zADE Denomination</source>
@@ -2106,8 +2106,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Totalt saldo, inkluderar alla otillgängliga mynt.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>XLQ Saldo</translation>
+        <source>ADE Balance</source>
+        <translation>ADE Saldo</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2194,8 +2194,8 @@ Omogna: bekräftade men under 1 myntning av samma valör efter den blev präglad
         <translation>Spenderbar:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>Låsta XLQ eller masternode som säkerhet. Dessa är uteslutna från zADE minting.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>Låsta ADE eller masternode som säkerhet. Dessa är uteslutna från zADE minting.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2377,8 +2377,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i a
         <translation>Tillgängligt att prägla:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2417,8 +2417,8 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i a
         <translation>SEKRETESS</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Mata in en mängd XLQ att konvertera till zADE</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Mata in en mängd ADE att konvertera till zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2964,7 +2964,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XLQ to convert to zADE</comment>
+        <comment>Enter an amount of ADE to convert to zADE</comment>
         <translation><numerusform>SekretessRuta</numerusform><numerusform>SekretessDialog</numerusform></translation>
     </message>
     <message>
@@ -3677,8 +3677,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>UTXO Storlek:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3777,8 +3777,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skicka till flera mottagare på en gång</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>Anonymiserade XLQ</translation>
+        <source>Anonymized ADE</source>
+        <translation>Anonymiserade ADE</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4441,8 +4441,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mottaget via Fördunkling</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ staking</translation>
+        <source>ADE Stake</source>
+        <translation>ADE staking</translation>
     </message>
     <message>
         <source>zADE Stake</source>
@@ -4465,24 +4465,24 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Obfuscation Skapa tecken</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>Konvertera XLQ till zADE</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>Konvertera ADE till zADE</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>Spendera zADE</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Mottog XLQ från zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Mottog ADE från zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>Myntad Växel som zADE från zADE Spendering</translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>Konverterad zADE till XLQ</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>Konverterad zADE till ADE</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4700,8 +4700,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exportering Lyckat</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Mottog XLQ från zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Mottog ADE från zADE</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4741,8 +4741,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Skicka Mynt</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 XLQ.</source>
-        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 XLQ.</translation>
+        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>wiftX stödjer inte att skicka så höga värden än. Transaktioner är för nuvarande begränsade till %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4858,8 +4858,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Aktivera automatisk plånboksbackup efter varje zADE minting (0-1, standard: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Aktivera eller avaktivera staking funktionalitet för XLQ inmatningar (0-1, standard: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Aktivera eller avaktivera staking funktionalitet för ADE inmatningar (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>
@@ -4898,12 +4898,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Exekvera kommando när den bästa block ändras (%s i cmd är utbytt mot block hash)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Avgifter (i XLQ/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Avgifter (i ADE/Kb) mindre än detta anses vara noll avgift i vidarebefodring (standard: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Avgifter (i XLQ/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Avgifter (i ADE/Kb) mindre än detta anses vara noll avgift i transaktionsskapelse (standard: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5010,12 +5010,12 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Kan ej lokalisera tillräckligt Fördunklingsdenominationerade pengar för denna transaktion.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 XLQ.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Kan ej lokalisera tillräckligt Fördunkling icke-denominationerade pengar för denna transaktion som inte är 10000 ADE.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 XLQ.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Kan inte hitta tillräckligt med pengar för denna transaktion som inte är 10000 ADE.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5326,8 +5326,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Misslyckades läsa block</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>Avgift (i XLQ/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>Avgift (i ADE/kB) för att lägga till transaktioner you skicka (standard: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5458,8 +5458,8 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Procent automatiskt mintad Zerocoin (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XLQ and zADE money supply statistics</source>
-        <translation>Indexera XLQ och zADE pengarna tillgång statistik på nytt</translation>
+        <source>Reindex the ADE and zADE money supply statistics</source>
+        <translation>Indexera ADE och zADE pengarna tillgång statistik på nytt</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

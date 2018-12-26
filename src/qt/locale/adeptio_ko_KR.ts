@@ -176,16 +176,16 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 XLQs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE는 이제 암호화 프로세스를 마치기 위해 닫힐것입니다. 지갑을 암호화하더라도 맬웨어로 인한 ADEs 의 도난당하는 것을 완벽하게 보호 할 수는 없습니다.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>지갑을 암호화 하시겠습니까?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 XLQ를 잃게 됩니다&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>경고: 지갑 암호화 후 암호를 분실하게 되면 &lt;b&gt;모든 ADE를 잃게 됩니다&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1681,8 +1681,8 @@ Please be patient after clicking import.</source>
         <translation>주소 / 금액:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>XLQ를 보낼 목적지 추가</translation>
+        <source>Add destinations to send ADE to</source>
+        <translation>ADE를 보낼 목적지 추가</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1780,32 +1780,32 @@ Please be patient after clicking import.</source>
         <translation>익명화 레벨을 선택해주세요.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>2개의 개별 마스터노드를 이용하여 최대 10000 XLQ 를 섞을 수 있습니다.</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>2개의 개별 마스터노드를 이용하여 최대 10000 ADE 를 섞을 수 있습니다.</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>8개의 개별 마스터노드를 이용하여 최대 10000 XLQ 를 섞을 수 있습니다.</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>8개의 개별 마스터노드를 이용하여 최대 10000 ADE 를 섞을 수 있습니다.</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>16개의 개별 마스터노드를 사용</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>이 옵션은 가장 빠르게 전송되며 10000 XLQ 익명화에 약 ~0.025 XLQ의 비용이 들어갑니다.</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>이 옵션은 가장 빠르게 전송되며 10000 ADE 익명화에 약 ~0.025 ADE의 비용이 들어갑니다.</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>이 옵션은 중간 정도의 속도로 전송되며 10000 XLQ 익명화에 약 0.05 XLQ의 비용이 들어갑니다.</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>이 옵션은 중간 정도의 속도로 전송되며 10000 ADE 익명화에 약 0.05 ADE의 비용이 들어갑니다.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>이것은 가장 느리고 안전한 옵션입니다. 최고 익명성을 사용하면 비용이 발생합니다.</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>10000 XLQ 익명화에 0.1 XLQ 가 듭니다.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>10000 ADE 익명화에 0.1 ADE 가 듭니다.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1948,24 +1948,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>&amp;UPnp를 사용하여 포트 매핑</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>보상받은 XLQ를 zADE로 자동변환 활성화</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>보상받은 ADE를 zADE로 자동변환 활성화</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>zADE 자동생성 활성화</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>XLQ수신시 자동변환 zADE 비율 (최소값:10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>ADE수신시 자동변환 zADE 비율 (최소값:10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
         <translation>자동 변환되는 zADE 비율</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XLQ for this denomination is available</source>
-        <translation>이 디노미네이션의 XLQ가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough ADE for this denomination is available</source>
+        <translation>이 디노미네이션의 ADE가 충분해질 때까지 Zerocoin으로 자동전환은 보류됩니다.</translation>
     </message>
     <message>
         <source>Preferred Automint zADE Denomination</source>
@@ -2131,8 +2131,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>전체 잔액, (현재 전송이 불가능한 코인 포함)</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>XLQ 잔액</translation>
+        <source>ADE Balance</source>
+        <translation>ADE 잔액</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2219,8 +2219,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>출금 가능 액수:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>잠금 XLQ 또는 Masternode collaterals. 이들은 zADE minting에서 제외됩니다.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>잠금 ADE 또는 Masternode collaterals. 이들은 zADE minting에서 제외됩니다.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2261,7 +2261,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <source>AutoMint is currently disabled.
 To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.conf</source>
         <translation>자동 저장 기능이 현재 사용 중지되었습니다 .
-자동 변환을 사용하려면 XLQotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
+자동 변환을 사용하려면 ADEotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2401,8 +2401,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>생성 가능한 수량:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2441,8 +2441,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>zADE로 변환할 XLQ 수량을 입력하세요.</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>zADE로 변환할 ADE 수량을 입력하세요.</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2502,7 +2502,7 @@ zADE는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
     </message>
     <message>
         <source>The ADE address to send the payment to. Creates local payment to yourself when empty.</source>
-        <translation>XLQ를 전송할 ADE 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
+        <translation>ADE를 전송할 ADE 주소입니다. 비어있을 때 자신에게 지불할 주소를 생성합니다.</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2987,7 +2987,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XLQ to convert to zADE</comment>
+        <comment>Enter an amount of ADE to convert to zADE</comment>
         <translation><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3749,8 +3749,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>UTXO 크기:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3861,8 +3861,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>&amp;받는 사람 추가</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>익명화된 XLQ</translation>
+        <source>Anonymized ADE</source>
+        <translation>익명화된 ADE</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4526,8 +4526,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>난독화를 통해 수신 됨</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ stake</translation>
+        <source>ADE Stake</source>
+        <translation>ADE stake</translation>
     </message>
     <message>
         <source>zADE Stake</source>
@@ -4550,24 +4550,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>난독화 표시 만들기</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>XLQ를 zADE로 변환</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>ADE를 zADE로 변환</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>zADE 사용</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>zADE를 XLQ로 받음</translation>
+        <source>Received ADE from zADE</source>
+        <translation>zADE를 ADE로 받음</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>zADE 전송후 남은 zADE로 잔돈 생성</translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>zADE를 XLQ로 변환</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>zADE를 ADE로 변환</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4785,8 +4785,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>내보내기 성공</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>zADE를 XLQ로 받음</translation>
+        <source>Received ADE from zADE</source>
+        <translation>zADE를 ADE로 받음</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4826,8 +4826,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>코인 전송 </translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 XLQ.</source>
-        <translation>HyperSend는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 XLQ로 제한됩니다.</translation>
+        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>HyperSend는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 ADE로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4943,8 +4943,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Enable automatic wallet backups triggered after each zADE minting (0-1, default: %u)</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>
@@ -4983,12 +4983,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>최고 블록이 변경될 경우 명령을 실행하십시오 (명령 내 %s 는 블록 해시로 대체 되었습니다)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>이것보다 작은 수수료 (XLQ/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>이것보다 작은 수수료 (ADE/Kb)는 중계 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>이것보다 작은 수수료 (XLQ/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>이것보다 작은 수수료 (ADE/Kb)는 트랜잭션 생성 수수료가 없는 것으로 간주됩니다 (기본값: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5095,12 +5095,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>이 트랜잭션를 위해 난독화 표기된 충분한 금액을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 XLQ과 일치하지 않음.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>이 트랜잭션를 위해 난독화 표기가 안된 충분한 금액을 찾을 수 없습니다. 10000 ADE과 일치하지 않음.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 XLQ와 같지 않음</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>트랜잭션에 대한 충분한 금액을 찾을 수 없습니다. 10000 ADE와 같지 않음</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5411,8 +5411,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>블록을 받아오는데 실패했습니다.</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (XLQ/kB) (기본값: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>당신이 보내는 트랜잭션에 추가 할 수수료 (ADE/kB) (기본값: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5543,8 +5543,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>자동생성 zADE 비율  (1-100, default: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XLQ and zADE money supply statistics</source>
-        <translation>XLQ 및 zADE 공급량 다시 색인</translation>
+        <source>Reindex the ADE and zADE money supply statistics</source>
+        <translation>ADE 및 zADE 공급량 다시 색인</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

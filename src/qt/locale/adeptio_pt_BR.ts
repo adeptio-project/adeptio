@@ -176,16 +176,16 @@
         <translation>Confirmar criptografia de carteira</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas XLQs de serem roubadas por malwares infectando seu computador.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE vai fechar agora para finalizar o processo de criptografia. Lembre-se que encriptar sua carteira não pode proteger totalmente suas ADEs de serem roubadas por malwares infectando seu computador.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Você tem certeza que deseja criptografar sua carteira?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Aviso: se você criptografar sua carteira e perder sua senha você &lt;b&gt;PERDERÁ TODAS AS SUAS XLQ&lt;b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Aviso: se você criptografar sua carteira e perder sua senha você &lt;b&gt;PERDERÁ TODAS AS SUAS ADE&lt;b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1574,32 +1574,32 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Favor selecionar o nível de privacidade.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Use 2 masternodes separados para embaralhar fundos até 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Use 2 masternodes separados para embaralhar fundos até 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Use 8 masternodes separados para embaralhar fundos até 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Use 8 masternodes separados para embaralhar fundos até 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Use 16 masternodes separados</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Está opção é a mais rápida e vai custar em torno de ~0.025 XLQ para anonimizar 10000 XLQ</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Está opção é a mais rápida e vai custar em torno de ~0.025 ADE para anonimizar 10000 ADE</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Está opção moderamente rápida e vai custar em torno de ~0.05 XLQ para anonimizar 10000 XLQ</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Está opção moderamente rápida e vai custar em torno de ~0.05 ADE para anonimizar 10000 ADE</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Esta é a opção mais lenta e mais segura. Usando a anonimização máxima vai custar</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0.1 XLQ por 10000 XLQ que deixar anônima.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0.1 ADE por 10000 ADE que deixar anônima.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1962,8 +1962,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>zADE</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -2687,8 +2687,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Tamanho UTXO:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2783,8 +2783,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Adicionar &amp;Recipiente</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>XLQ anonimizadas</translation>
+        <source>Anonymized ADE</source>
+        <translation>ADE anonimizadas</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3672,12 +3672,12 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Executar o comando quando uma transação da carteira mudar (%s no cmd será substituído pela TxID)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Taxas (em XLQ/Kb) menores que isso serão consideradas taxa zero para propagação (padrão: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Taxas (em ADE/Kb) menores que isso serão consideradas taxa zero para propagação (padrão: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Taxas (em XLQ/Kb) menores que isso serão consideradas taxa zero para a criação da transação (padrão: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Taxas (em ADE/Kb) menores que isso serão consideradas taxa zero para a criação da transação (padrão: %s)</translation>
     </message>
     <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
@@ -3696,8 +3696,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Define o tamanho máximo de transações de alta prioridade/taxa baixa em bytes (padrão: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Incapaz de localizar fundos para esta transação que não são iguais a 10000 XLQ.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Incapaz de localizar fundos para esta transação que não são iguais a 10000 ADE.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -3896,8 +3896,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Falhou em ler o bloco</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>Taxa (em XLQ/kB) a adicionar em transações que você enviar (padrão: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>Taxa (em ADE/kB) a adicionar em transações que você enviar (padrão: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>

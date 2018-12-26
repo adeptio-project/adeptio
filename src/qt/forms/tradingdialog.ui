@@ -181,7 +181,7 @@
       <string>Asks</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XLQSupply">
+    <widget class="QLabel" name="ADESupply">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -197,7 +197,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="XLQDemand">
+    <widget class="QLabel" name="ADEDemand">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -432,7 +432,7 @@
     <attribute name="title">
      <string>Buy</string>
     </attribute>
-    <widget class="QPushButton" name="BuyXLQ">
+    <widget class="QPushButton" name="BuyADE">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -442,7 +442,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Buy XLQ</string>
+      <string>Buy ADE</string>
      </property>
      <property name="icon">
       <iconset resource="../adeptio.qrc">
@@ -512,7 +512,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>XLQ</string>
+      <string>ADE</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -1704,10 +1704,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>XLQ</string>
+      <string>ADE</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="UnitsInputXLQ">
+    <widget class="QLineEdit" name="UnitsInputADE">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -1741,7 +1741,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="SellXLQBTN">
+    <widget class="QPushButton" name="SellADEBTN">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -1751,7 +1751,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Sell XLQ</string>
+      <string>Sell ADE</string>
      </property>
      <property name="icon">
       <iconset resource="../adeptio">
@@ -1777,12 +1777,12 @@
          </font>
         </property>
         <property name="text">
-         <string>XLQ Available:</string>
+         <string>ADE Available:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="XLQAvailableLabel">
+       <widget class="QLabel" name="ADEAvailableLabel">
         <property name="palette">
          <palette>
           <active>
@@ -2213,7 +2213,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="labelXLQ">
+       <widget class="QLabel" name="labelADE">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -2221,7 +2221,7 @@
          </font>
         </property>
         <property name="text">
-         <string>XLQ</string>
+         <string>ADE</string>
         </property>
        </widget>
       </item>
@@ -2733,7 +2733,7 @@
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XLQBalanceLabel">
+    <widget class="QLabel" name="ADEBalanceLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2762,7 +2762,7 @@
       </font>
      </property>
      <property name="text">
-      <string>XLQ Balance:</string>
+      <string>ADE Balance:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
@@ -2784,7 +2784,7 @@
       <string>BTC Balance:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XLQAvailableLabel_2">
+    <widget class="QLabel" name="ADEAvailableLabel_2">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2813,7 +2813,7 @@
       </font>
      </property>
      <property name="text">
-      <string>XLQ Available:</string>
+      <string>ADE Available:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_14">
@@ -2832,10 +2832,10 @@
       </font>
      </property>
      <property name="text">
-      <string>XLQ Pending:</string>
+      <string>ADE Pending:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="XLQPendingLabel">
+    <widget class="QLabel" name="ADEPendingLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -2928,7 +2928,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Bittrex XLQ Deposit Address:</string>
+      <string>Bittrex ADE Deposit Address:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="GenDepositBTN">

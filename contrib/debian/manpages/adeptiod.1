@@ -1,4 +1,4 @@
-.TH XLQD "1" "February 2017" "adeptiod 2.1.4.1"
+.TH ADED "1" "February 2017" "adeptiod 2.1.4.1"
 .SH NAME
 ADE \- peer-to-peer network based digital currency
 .SH SYNOPSIS
@@ -98,7 +98,7 @@ Returns the number of connections to other nodes.
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 .TP
 \fBgetgenerate\fR
-Returns boolean true if server is trying to generate XLQ, false otherwise.
+Returns boolean true if server is trying to generate ADE, false otherwise.
 .TP
 \fBsetgenerate 'generate' ['genproclimit']\fR
 Generation is limited to ['genproclimit'] processors, \-1 is unlimited.
@@ -169,7 +169,7 @@ Returns a list of the last ['count'] transactions for 'account' \- for all accou
 Moves funds between accounts.
 .TP
 \fBsendfrom* <'account'> <'adeptioaddress'> <'amount'> ['minconf=1'] ['comment'] ['comment-to']\fR
-Sends amount from account's balance to 'adeptioaddress'. This method will fail if there is less than amount XLQ with ['minconf'] confirmations in the account's balance (unless account is the empty-string-named default account; it behaves like the *sendtoaddress* method). Returns transaction ID on success.
+Sends amount from account's balance to 'adeptioaddress'. This method will fail if there is less than amount ADE with ['minconf'] confirmations in the account's balance (unless account is the empty-string-named default account; it behaves like the *sendtoaddress* method). Returns transaction ID on success.
 .TP
 \fBsendtoaddress 'adeptioaddress' 'amount' ['comment'] ['comment-to']\fR
 Sends amount from the server's available balance to 'adeptioaddress'. amount is a real and is rounded to the nearest 0.01. Returns transaction id on success.

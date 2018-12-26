@@ -133,7 +133,7 @@ CAmount CzADETracker::GetBalance(bool fConfirmedOnly, bool fUnconfirmedOnly) con
     }
 
     {
-        //LOCK(cs_XLQtracker);
+        //LOCK(cs_ADEtracker);
         // Get Unused coins
         for (auto& it : mapSerialHashes) {
             CMintMeta meta = it.second;

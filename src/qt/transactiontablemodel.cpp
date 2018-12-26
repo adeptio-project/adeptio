@@ -344,7 +344,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
     case TransactionRecord::StakeMint:
-        return tr("XLQ Stake");
+        return tr("ADE Stake");
     case TransactionRecord::StakeZADE:
         return tr("zADE Stake");
     case TransactionRecord::Generated:
@@ -360,15 +360,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord* wtx) const
     case TransactionRecord::Obfuscated:
         return tr("Obfuscated");
     case TransactionRecord::ZerocoinMint:
-        return tr("Converted XLQ to zADE");
+        return tr("Converted ADE to zADE");
     case TransactionRecord::ZerocoinSpend:
         return tr("Spent zADE");
     case TransactionRecord::RecvFromZerocoinSpend:
-        return tr("Received XLQ from zADE");
+        return tr("Received ADE from zADE");
     case TransactionRecord::ZerocoinSpend_Change_zXlq:
         return tr("Minted Change as zADE from zADE Spend");
     case TransactionRecord::ZerocoinSpend_FromMe:
-        return tr("Converted zADE to XLQ");
+        return tr("Converted zADE to ADE");
 
     default:
         return QString();

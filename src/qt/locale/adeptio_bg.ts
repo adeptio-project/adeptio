@@ -176,7 +176,7 @@
         <translation>Потвърдете шифрирането на портфейла</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
         <translation>ADE сега ще се затвори, за да довърши процеса по шифриране. Запомнете, че шифрирането на вашия портфейл не може напълно да защити вашия ADE от това, да бъде откраднат чрез злонамерен софутуер, инфектирал вашия компютър.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@
         <translation>Сигурни ли сте, че искате да шифрирате вашия портфейл?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ XLQ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>&lt;b&gt;Внимание: Ако шифрирате вашия портфейл и загубите вашата парола, вие ще ЗАГУБИТЕ ВСИЧКИТЕ ВИ ADE&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1677,8 +1677,8 @@ Please be patient after clicking import.</source>
         <translation>Адрес / Сума:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>Добави получател на XLQ</translation>
+        <source>Add destinations to send ADE to</source>
+        <translation>Добави получател на ADE</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1776,32 +1776,32 @@ Please be patient after clicking import.</source>
         <translation>Изберете ниво на поверителност.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Използвай 2 различни мастърноуда за смесване на средства над 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Използвай 8 различни мастърноуда за да смесите средства до 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Използвай 16 различни мастърноуда</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Това е най-бързия метод и ще струва около 0.025 XLQ за да скриете 10000 XLQ</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Това е най-бързия метод и ще струва около 0.025 ADE за да скриете 10000 ADE</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Тази опция е сравнително бърза и ще струва около 0.05 XLQ за да скриете 10000 XLQ</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Тази опция е сравнително бърза и ще струва около 0.05 ADE за да скриете 10000 ADE</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
-        <translation>Това е най-бавния и най-сигурен вариант за скриване на XLQ. Използването й ще струва</translation>
+        <translation>Това е най-бавния и най-сигурен вариант за скриване на ADE. Използването й ще струва</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0.1 XLQ за 10000 скрити XLQ</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0.1 ADE за 10000 скрити ADE</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1944,24 +1944,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Картографирай портовете използвайки &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Включи автоматичното емитиране на XLQ единици в zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Включи автоматичното емитиране на ADE единици в zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Включи Автоматично емитиране на zADE</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Процент от входящите XLQ, който автоматично да се конвертира в zADE посредтвом Zerocoin Протокола (мин: 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Процент от входящите ADE, който автоматично да се конвертира в zADE посредтвом Zerocoin Протокола (мин: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
         <translation>Процент автоматично сечени zADE</translation>
     </message>
     <message>
-        <source>Wait with automatic conversion to Zerocoin until enough XLQ for this denomination is available</source>
-        <translation>Не бързай с автоматичното конвертиране в zADE докато не се съберат достатъчно XLQ за тази деноминация</translation>
+        <source>Wait with automatic conversion to Zerocoin until enough ADE for this denomination is available</source>
+        <translation>Не бързай с автоматичното конвертиране в zADE докато не се съберат достатъчно ADE за тази деноминация</translation>
     </message>
     <message>
         <source>Preferred Automint zADE Denomination</source>
@@ -2127,8 +2127,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Обща Наличност, включително и неналичните монети.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>XLQ Наличности</translation>
+        <source>ADE Balance</source>
+        <translation>ADE Наличности</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2215,8 +2215,8 @@ Immature: confirmed, but less than 1 mint of the same denomination after it was 
         <translation>Налични за харчене:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>Заключен XLQ или допълнителни гаранции в Главни Възли. Тези не са включени в zADE емитирането.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>Заключен ADE или допълнителни гаранции в Главни Възли. Тези не са включени в zADE емитирането.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2390,8 +2390,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>Налични за сечене:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2430,8 +2430,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Въведете колко XLQ  да се конвертират в zADE</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Въведете колко ADE  да се конвертират в zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2976,7 +2976,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message numerus="yes">
         <source>PrivacyDialog</source>
-        <comment>Enter an amount of XLQ to convert to zADE</comment>
+        <comment>Enter an amount of ADE to convert to zADE</comment>
         <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
@@ -3737,8 +3737,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Размер на UTXO:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3849,8 +3849,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Добави Получател</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>Анонимизиран XLQ</translation>
+        <source>Anonymized ADE</source>
+        <translation>Анонимизиран ADE</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -3898,7 +3898,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Warning: Invalid ADE address</source>
-        <translation>Предупреждение: Невалиден XLQ адрес</translation>
+        <translation>Предупреждение: Невалиден ADE адрес</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -4513,8 +4513,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Получен посредством обфускация</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ Stake</translation>
+        <source>ADE Stake</source>
+        <translation>ADE Stake</translation>
     </message>
     <message>
         <source>zADE Stake</source>
@@ -4537,24 +4537,24 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Обфускация и направа на Деноминации</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>Конвертиран XLQ във zADE</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>Конвертиран ADE във zADE</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>Похарчени zADE</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Получен XLQ от zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Получен ADE от zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>Исечено ресто като zADE от похарчените zADE</translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>Конвертиран zADE във XLQ</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>Конвертиран zADE във ADE</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4772,8 +4772,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Експортирането Успешно</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>Получен XLQ от zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>Получен ADE от zADE</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4813,8 +4813,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Изпрати Монети</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 XLQ.</source>
-        <translation>HyperSend не подържа изпращането на толкова големи суми. Превода е ограничен до %1 XLQ.</translation>
+        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>HyperSend не подържа изпращането на толкова големи суми. Превода е ограничен до %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4926,8 +4926,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Разпространява се пот MIT софтуерен лиценз, виж съпровождащия файл от &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
     </message>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Активиране или деактивиране на функцията за зареждане за XLQ входове (0-1, по подразбиране: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Активиране или деактивиране на функцията за зареждане за ADE входове (0-1, по подразбиране: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>
@@ -4966,12 +4966,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Командата влиза в сила, когато най-добрия блок се промени (%s в cmd се замества от хаш на блока)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation>Такси (в XLQ/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
+        <translation>Такси (в ADE/Кб) по-малки от това се считат за нулеви при препращане (default: %s)</translation>
     </message>
     <message>
-        <source>Fees (in XLQ/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation>Такси (в XLQ/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
+        <source>Fees (in ADE/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Такси (в ADE/Кб) по-малки от това се считат за нулеви при създаване на предовда (default: %s)</translation>
     </message>
     <message>
         <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
@@ -5078,12 +5078,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Не намираме достатъчно Обфускационно деноминирани средства за този превод.</translation>
     </message>
     <message>
-        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 XLQ.</translation>
+        <source>Unable to locate enough Obfuscation non-denominated funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Не можем да намерим достатъчно Обфускационно не-деноминирани средства за този превод, които да не са равни на 10000 ADE.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 10000 XLQ.</source>
-        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 XLQ.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 10000 ADE.</source>
+        <translation>Не намираме достатъчно средства за този превод, които да не са равни на 10000 ADE.</translation>
     </message>
     <message>
         <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
@@ -5394,8 +5394,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Неуспешно четене на блок</translation>
     </message>
     <message>
-        <source>Fee (in XLQ/kB) to add to transactions you send (default: %s)</source>
-        <translation>Такса (в XLQ/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
+        <source>Fee (in ADE/kB) to add to transactions you send (default: %s)</source>
+        <translation>Такса (в ADE/kB), която да се добави към изходящи преводи (по подразбиране: %s)</translation>
     </message>
     <message>
         <source>Finalizing transaction.</source>
@@ -5526,8 +5526,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Процент автоматично емитирани Zerocoin (1-100, по подразбиране: %u)</translation>
     </message>
     <message>
-        <source>Reindex the XLQ and zADE money supply statistics</source>
-        <translation>Индексирай наново XLQ и zADE данните по наличности</translation>
+        <source>Reindex the ADE and zADE money supply statistics</source>
+        <translation>Индексирай наново ADE и zADE данните по наличности</translation>
     </message>
     <message>
         <source>Reindexing zerocoin database...</source>

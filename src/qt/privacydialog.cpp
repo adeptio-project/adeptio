@@ -367,7 +367,7 @@ void PrivacyDialog::sendzADE()
 
     if(!fWholeNumber && fMintChange){
         QString strFeeWarning = "You've entered an amount with fractional digits and want the change to be converted to Zerocoin.<br /><br /><b>";
-        strFeeWarning += QString::number(dzFee, 'f', 8) + " XLQ </b>will be added to the standard transaction fees!<br />";
+        strFeeWarning += QString::number(dzFee, 'f', 8) + " ADE </b>will be added to the standard transaction fees!<br />";
         QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm additional Fees"),
             strFeeWarning,
             QMessageBox::Yes | QMessageBox::Cancel,
@@ -515,7 +515,7 @@ void PrivacyDialog::sendzADE()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " XLQ, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " ADE, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -840,7 +840,7 @@ void PrivacyDialog::updateSPORK16Status()
     } else if (!fMaintenanceMode && !fButtonsEnabled) {
         // Mint zADE
         ui->pushButtonMintzADE->setEnabled(true);
-        ui->pushButtonMintzADE->setToolTip(tr("PrivacyDialog", "Enter an amount of XLQ to convert to zADE", 0));
+        ui->pushButtonMintzADE->setToolTip(tr("PrivacyDialog", "Enter an amount of ADE to convert to zADE", 0));
 
         // Spend zADE
         ui->pushButtonSpendzADE->setEnabled(true);

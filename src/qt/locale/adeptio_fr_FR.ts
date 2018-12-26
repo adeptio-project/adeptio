@@ -176,16 +176,16 @@
         <translation>Confirmer le cryptage du portefeuille</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE va maintenant se fermer pour finir le processus de cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos XLQs d'un vol par un malware ayant infecté votre ordinateur. </translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE va maintenant se fermer pour finir le processus de cryptage. Notez que le cryptage de votre portefeuille ne peut pas complètement protéger vos ADEs d'un vol par un malware ayant infecté votre ordinateur. </translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Êtes-vous sûr de vouloir crypter votre portefeuille?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Attention : si vous cryptez votre portefeuille et perdez votre phrase secrète, vous &lt;b&gt;PERDREZ TOUS VOS XLQ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Attention : si vous cryptez votre portefeuille et perdez votre phrase secrète, vous &lt;b&gt;PERDREZ TOUS VOS ADE&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -1640,8 +1640,8 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>Adresse / Montant:</translation>
     </message>
     <message>
-        <source>Add destinations to send XLQ to</source>
-        <translation>Ajouter des destinations pour envoyer XLQ</translation>
+        <source>Add destinations to send ADE to</source>
+        <translation>Ajouter des destinations pour envoyer ADE</translation>
     </message>
     <message>
         <source>Add &amp;Destination</source>
@@ -1727,32 +1727,32 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>Veuillez sélectionner un niveau de confidentialité.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Utiliser 2 masternodes différentes pour mélanger les fonds jusqu'a 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Utiliser 2 masternodes différentes pour mélanger les fonds jusqu'a 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Utiliser 8 masternodes différentes pour mélanger les fonds jusqu'a 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Utiliser 8 masternodes différentes pour mélanger les fonds jusqu'a 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
         <translation>Utiliser 16 masternodes différents</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 XLQ to anonymize 10000 XLQ</source>
-        <translation>Cette option est la plus rapide, et coutera ~0.025 XLQ pour anonymiser 10000 XLQ</translation>
+        <source>This option is the quickest and will cost about ~0.025 ADE to anonymize 10000 ADE</source>
+        <translation>Cette option est la plus rapide, et coutera ~0.025 ADE pour anonymiser 10000 ADE</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 XLQ to anonymize 10000 XLQ</source>
-        <translation>Cette option est moyennement rapide, et coutera 0.05 XLQ pour anonymiser 10000 XLQ</translation>
+        <source>This option is moderately fast and will cost about 0.05 ADE to anonymize 10000 ADE</source>
+        <translation>Cette option est moyennement rapide, et coutera 0.05 ADE pour anonymiser 10000 ADE</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
         <translation>Il s'agit de l'option la plus lente est la plus sécurisé. Utiliser l'anonymat maximum coutera</translation>
     </message>
     <message>
-        <source>0.1 XLQ per 10000 XLQ you anonymize.</source>
-        <translation>0.1 XLQ par 10000 XLQ vous anonymisez.</translation>
+        <source>0.1 ADE per 10000 ADE you anonymize.</source>
+        <translation>0.1 ADE par 10000 ADE vous anonymisez.</translation>
     </message>
     <message>
         <source>Obfuscation Configuration</source>
@@ -1887,16 +1887,16 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Répertorier les port utilisant UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Activé l'auto-monnayage de XLQ unités en zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Activé l'auto-monnayage de ADE unités en zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Activé ZADE Auto-monnayage</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Pourcentage des XLQ entrants qui seront automatiquement convertis en zADE via le protocole Zerocoin (min. 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Pourcentage des ADE entrants qui seront automatiquement convertis en zADE via le protocole Zerocoin (min. 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
@@ -2066,8 +2066,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Solde total, incluant les pièces indisponibles.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>Solde de XLQ</translation>
+        <source>ADE Balance</source>
+        <translation>Solde de ADE</translation>
     </message>
     <message>
         <source>Pending:</source>
@@ -2154,8 +2154,8 @@ Immature: confirmé, mais moins de 1 monnayer de la même dénomination après s
         <translation>Dépensable:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>XLQ Verrouillé ou Masternode collatéraux. Ceux-ci sont exclus de la monnayage zADE.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>ADE Verrouillé ou Masternode collatéraux. Ceux-ci sont exclus de la monnayage zADE.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -2336,8 +2336,8 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>Disponible pour Monnayage:</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</source>
@@ -2376,8 +2376,8 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>CONFIDENTIALITÉ</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Entrez un montant de XLQ à convertir en zADE</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Entrez un montant de ADE à convertir en zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -3676,8 +3676,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Taille UTXO:</translation>
     </message>
     <message>
-        <source>0 XLQ</source>
-        <translation>0 XLQ</translation>
+        <source>0 ADE</source>
+        <translation>0 ADE</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -3776,8 +3776,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Ajouter un destinataire</translation>
     </message>
     <message>
-        <source>Anonymized XLQ</source>
-        <translation>XLQ anonymisé</translation>
+        <source>Anonymized ADE</source>
+        <translation>ADE anonymisé</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -4152,32 +4152,32 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Reçu via Obfuscation</translation>
     </message>
     <message>
-        <source>XLQ Stake</source>
-        <translation>XLQ Stake</translation>
+        <source>ADE Stake</source>
+        <translation>ADE Stake</translation>
     </message>
     <message>
         <source>zADE Stake</source>
         <translation>zADE Stake</translation>
     </message>
     <message>
-        <source>Converted XLQ to zADE</source>
-        <translation>XLQ converti en zADE</translation>
+        <source>Converted ADE to zADE</source>
+        <translation>ADE converti en zADE</translation>
     </message>
     <message>
         <source>Spent zADE</source>
         <translation>zADE dépensés</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>XLQ reçu depuis zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>ADE reçu depuis zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
         <translation>Monnaie rendue à partir d'une dépense zADE frappée comme zADE </translation>
     </message>
     <message>
-        <source>Converted zADE to XLQ</source>
-        <translation>zADE converti en XLQ</translation>
+        <source>Converted zADE to ADE</source>
+        <translation>zADE converti en ADE</translation>
     </message>
     <message>
         <source>Anonymous (zADE Transaction)</source>
@@ -4343,8 +4343,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Une erreur est survenue lors de la tentative de sauvegarde de l'historique de transaction vers %1.</translation>
     </message>
     <message>
-        <source>Received XLQ from zADE</source>
-        <translation>XLQ reçu depuis zADE</translation>
+        <source>Received ADE from zADE</source>
+        <translation>ADE reçu depuis zADE</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zADE</source>
@@ -4405,8 +4405,8 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
 <context>
     <name>adeptio-core</name>
     <message>
-        <source>Enable or disable staking functionality for XLQ inputs (0-1, default: %u)</source>
-        <translation>Active ou désactive la fonctionnalité de staking pour les entrées XLQ (0-1, par défaut: %u)</translation>
+        <source>Enable or disable staking functionality for ADE inputs (0-1, default: %u)</source>
+        <translation>Active ou désactive la fonctionnalité de staking pour les entrées ADE (0-1, par défaut: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for zADE inputs (0-1, default: %u)</source>

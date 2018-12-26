@@ -2386,7 +2386,7 @@ void ThreadScriptCheck()
     scriptcheckqueue.Thread();
 }
 
-void RecalculateZXLQMinted()
+void RecalculateZADEMinted()
 {
     CBlockIndex *pindex = chainActive[Params().Zerocoin_StartHeight()];
     int nHeightEnd = chainActive.Height();
@@ -2413,7 +2413,7 @@ void RecalculateZXLQMinted()
     }
 }
 
-void RecalculateZXLQSpent()
+void RecalculateZADESpent()
 {
     CBlockIndex* pindex = chainActive[Params().Zerocoin_StartHeight()];
     while (true) {
@@ -2449,7 +2449,7 @@ void RecalculateZXLQSpent()
     }
 }
 
-bool RecalculateXLQSupply(int nHeightStart)
+bool RecalculateADESupply(int nHeightStart)
 {
     if (nHeightStart > chainActive.Height())
         return false;
@@ -2569,7 +2569,7 @@ bool ReindexAccumulators(list<uint256>& listMissingCheckpoints, string& strError
     return true;
 }
 
-bool UpdateZXLQSupply(const CBlock& block, CBlockIndex* pindex)
+bool UpdateZADESupply(const CBlock& block, CBlockIndex* pindex)
 {
     std::list<CZerocoinMint> listMints;
     bool fFilterInvalid = pindex->nHeight >= Params().Zerocoin_Block_RecalculateAccumulators();
@@ -2825,13 +2825,13 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
 
     //A one-time event where money supply counts were off and recalculated on a certain block.
     if (pindex->nHeight == Params().Zerocoin_Block_RecalculateAccumulators() + 1) {
-        RecalculateZXLQMinted();
-        RecalculateZXLQSpent();
-        RecalculateXLQSupply(Params().Zerocoin_StartHeight());
+        RecalculateZADEMinted();
+        RecalculateZADESpent();
+        RecalculateADESupply(Params().Zerocoin_StartHeight());
     }
 
     //Track zADE money supply in the block index
-    if (!UpdateZXLQSupply(block, pindex))
+    if (!UpdateZADESupply(block, pindex))
         return state.DoS(100, error("%s: Failed to calculate new zADE supply for block=%s height=%d", __func__,
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID);
 
@@ -3035,7 +3035,7 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
-    // If turned on AutoZeromint will automatically convert XLQ to zADE
+    // If turned on AutoZeromint will automatically convert ADE to zADE
     if (pwalletMain->isZeromintEnabled ())
         pwalletMain->AutoZeromint ();
 
@@ -4178,7 +4178,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         if (!stake)
             return error("%s: null stake ptr", __func__);
 
-        if (stake->IsZXLQ() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
+        if (stake->IsZADE() && !ContextualCheckZerocoinStake(pindexPrev->nHeight, stake.get()))
             return state.DoS(100, error("%s: staked zADE fails context checks", __func__));
 
         uint256 hash = block.GetHash();

@@ -19,8 +19,8 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(XLQ);
-    unitlist.append(mXLQ);
+    unitlist.append(ADE);
+    unitlist.append(mADE);
     unitlist.append(uADE);
     return unitlist;
 }
@@ -28,8 +28,8 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case XLQ:
-    case mXLQ:
+    case ADE:
+    case mADE:
     case uADE:
         return true;
     default:
@@ -40,9 +40,9 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case XLQ:
+    case ADE:
         return QString("adeptio");
-    case mXLQ:
+    case mADE:
         return QString("madeptio");
     case uADE:
         return QString::fromUtf8("uadeptio");
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case XLQ:
-            return QString("XLQ");
-        case mXLQ:
-            return QString("mXLQ");
+        case ADE:
+            return QString("ADE");
+        case mADE:
+            return QString("mADE");
         case uADE:
-            return QString::fromUtf8("μXLQ");
+            return QString::fromUtf8("μADE");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case XLQ:
-            return QString("tXLQ");
-        case mXLQ:
-            return QString("mtXLQ");
+        case ADE:
+            return QString("tADE");
+        case mADE:
+            return QString("mtADE");
         case uADE:
-            return QString::fromUtf8("μtXLQ");
+            return QString::fromUtf8("μtADE");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case XLQ:
-            return QString("XLQ");
-        case mXLQ:
-            return QString("Milli-XLQ (1 / 1" THIN_SP_UTF8 "000)");
+        case ADE:
+            return QString("ADE");
+        case mADE:
+            return QString("Milli-ADE (1 / 1" THIN_SP_UTF8 "000)");
         case uADE:
-            return QString("Micro-XLQ (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-ADE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case XLQ:
-            return QString("TestXLQs");
-        case mXLQ:
-            return QString("Milli-TestXLQ (1 / 1" THIN_SP_UTF8 "000)");
+        case ADE:
+            return QString("TestADEs");
+        case mADE:
+            return QString("Milli-TestADE (1 / 1" THIN_SP_UTF8 "000)");
         case uADE:
-            return QString("Micro-TestXLQ (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-TestADE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,9 +108,9 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case XLQ:
+    case ADE:
         return 100000000;
-    case mXLQ:
+    case mADE:
         return 100000;
     case uADE:
         return 100;
@@ -122,9 +122,9 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case XLQ:
+    case ADE:
         return 8;
-    case mXLQ:
+    case mADE:
         return 5;
     case uADE:
         return 2;

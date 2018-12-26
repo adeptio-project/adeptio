@@ -176,16 +176,16 @@
         <translation>Conferma cifratura portafoglio</translation>
     </message>
     <message>
-        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your XLQs from being stolen by malware infecting your computer.</source>
-        <translation>ADE verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi XLQ dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
+        <source>ADE will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ADEs from being stolen by malware infecting your computer.</source>
+        <translation>ADE verrà ora chiuso per completare il processo di cifratura. Ricorda che crittografare il tuo portafoglio non protegge completamente i tuoi ADE dal furto da parte di software malevoli che potrebbero infettare il tuo computer.</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Confermi di voler crittografare il portafoglio?</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR XLQ&lt;/b&gt;!</source>
-        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI XLQ&lt;7b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR ADE&lt;/b&gt;!</source>
+        <translation>Attenzione: Se crittografi il portafoglio e poi perdi la parola d'ordine, &lt;b&gt;PERDERAI TUTTI I TUOI ADE&lt;7b&gt;!</translation>
     </message>
     <message>
         <source>Wallet encrypted</source>
@@ -738,7 +738,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n connessione attiva alla rete XLQIX</numerusform><numerusform>%n connessioni attive alla rete XLQIX</numerusform></translation>
+        <translation><numerusform>%n connessione attiva alla rete ADEIX</numerusform><numerusform>%n connessioni attive alla rete ADEIX</numerusform></translation>
     </message>
     <message>
         <source>Synchronizing with network...</source>
@@ -1275,7 +1275,7 @@ MultiSend: %1</translation>
     </message>
     <message>
         <source>Welcome to Adeptio Core.</source>
-        <translation>Benvenuto in XLQIX Core.</translation>
+        <translation>Benvenuto in ADEIX Core.</translation>
     </message>
     <message>
         <source>As this is the first time the program is launched, you can choose where Adeptio Core will store its data.</source>
@@ -1671,12 +1671,12 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Configura Offuscamento</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 XLQ</translation>
+        <source>Use 2 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Usa 2 masternodi diversi per mescolare fino a 10000 ADE</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 10000 XLQ</source>
-        <translation>Usa 8 masternodi diversi per mixare fino a 10000 XLQ</translation>
+        <source>Use 8 separate masternodes to mix funds up to 10000 ADE</source>
+        <translation>Usa 8 masternodi diversi per mixare fino a 10000 ADE</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
@@ -1713,16 +1713,16 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Mappa la porta utilizzando &amp;UPnP</translation>
     </message>
     <message>
-        <source>Enable automatic minting of XLQ units to zADE</source>
-        <translation>Attiva il conio automatico di unità XLQ in zADE</translation>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>Attiva il conio automatico di unità ADE in zADE</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
         <translation>Attiva Conio automatico zADE</translation>
     </message>
     <message>
-        <source>Percentage of incoming XLQ which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
-        <translation>Percentuale di XLQ in entrata che viene automaticamente convertita in zADE attraverso il protocollo Zerocoin (min: 10%)</translation>
+        <source>Percentage of incoming ADE which get automatically converted to zADE via Zerocoin Protocol (min: 10%)</source>
+        <translation>Percentuale di ADE in entrata che viene automaticamente convertita in zADE attraverso il protocollo Zerocoin (min: 10%)</translation>
     </message>
     <message>
         <source>Percentage of autominted zADE</source>
@@ -1792,8 +1792,8 @@ Per favore controlla l'indirizzo e riprova nuovamente.</translation>
         <translation>Saldo totale, inclusi tutte le monete non disponibili.</translation>
     </message>
     <message>
-        <source>XLQ Balance</source>
-        <translation>Bilancio XLQ</translation>
+        <source>ADE Balance</source>
+        <translation>Bilancio ADE</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -1846,8 +1846,8 @@ Questi zADE sono spendibili.</translation>
         <translation>Spendibili:</translation>
     </message>
     <message>
-        <source>Locked XLQ or Masternode collaterals. These are excluded from zADE minting.</source>
-        <translation>XLQ bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zADE.</translation>
+        <source>Locked ADE or Masternode collaterals. These are excluded from zADE minting.</source>
+        <translation>ADE bloccati o collaterali Masternodo. Questi sono esclusi dal conio di zADE.</translation>
     </message>
     <message>
         <source>Locked:</source>
@@ -1937,8 +1937,8 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>zADE</translation>
     </message>
     <message>
-        <source>0.000 000 00 XLQ</source>
-        <translation>0.000 000 00 XLQ</translation>
+        <source>0.000 000 00 ADE</source>
+        <translation>0.000 000 00 ADE</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -1961,8 +1961,8 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of XLQ to convert to zADE</source>
-        <translation>Immetti un importo di XLQ da convertire in zADE</translation>
+        <source>Enter an amount of ADE to convert to zADE</source>
+        <translation>Immetti un importo di ADE da convertire in zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>

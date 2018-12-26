@@ -416,7 +416,7 @@ bool MultisigDialog::createMultisigTransaction(vector<CTxIn> vUserIn, vector<CTx
         }
 
         if(totalIn < totalOut){
-            throw runtime_error("Not enough XLQ provided as input to complete transaction (including fee).");
+            throw runtime_error("Not enough ADE provided as input to complete transaction (including fee).");
         }
 
         //calculate change amount
@@ -481,7 +481,7 @@ bool MultisigDialog::createMultisigTransaction(vector<CTxIn> vUserIn, vector<CTx
             tx.vout.at(changeIndex).nValue -= fee;
             feeStringRet = strprintf("%d",((double)fee)/COIN).c_str();
         }else{
-            throw runtime_error("Not enough XLQ provided to cover fee");
+            throw runtime_error("Not enough ADE provided to cover fee");
         }
 
         //clear junk from script sigs

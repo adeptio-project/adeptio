@@ -38,7 +38,7 @@ public:
         Encrypt,        /** Encrypt unencrypted wallet */
         ToggleLock,     /** Toggle wallet lock state */
         ChangePass,     /** Change passphrase */
-        Send_XLQ,       /** Send XLQ */
+        Send_ADE,       /** Send ADE */
         Send_zADE,      /** Send zADE */
         Mint_zADE,      /** Mint zADE */
         BIP_38,         /** BIP38 menu */

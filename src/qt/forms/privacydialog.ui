@@ -378,7 +378,7 @@
                            </size>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of XLQ to convert to zADE</string>
+                           <string>Enter an amount of ADE to convert to zADE</string>
                           </property>
                           <property name="text">
                            <string>Mint Zerocoin</string>
@@ -430,10 +430,10 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of XLQ to convert to zADE</string>
+                           <string>Enter an amount of ADE to convert to zADE</string>
                           </property>
                           <property name="text">
-                           <string>0.000 000 00 XLQ</string>
+                           <string>0.000 000 00 ADE</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -609,7 +609,7 @@
                              <enum>Qt::ActionsContextMenu</enum>
                             </property>
                             <property name="text">
-                             <string notr="true">0.00 XLQ</string>
+                             <string notr="true">0.00 ADE</string>
                             </property>
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2219,7 +2219,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 XLQ</string>
+         <string notr="true">0.000 000 00 ADE</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2301,7 +2301,7 @@ To change the percentage (no restart required):
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 XLQ</string>
+           <string notr="true">0.00 ADE</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2523,7 +2523,7 @@ To change the percentage (no restart required):
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 XLQ</string>
+         <string notr="true">0.000 000 00 ADE</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

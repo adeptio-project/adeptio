@@ -746,7 +746,7 @@ color:#ffffff;
 background-color:#ff6d15;
 }
 
-QWidget#PrivacyDialog QLabel#oXLQLabel {
+QWidget#PrivacyDialog QLabel#oADELabel {
 font-size:14px;
 color:#ffffff;
 background-color:#ff6d15;
@@ -965,7 +965,7 @@ font-weight:normal;
 /* min-height:30px; */
 }
 
-QWidget .QFrame#frame_Balances .QLabel#label_5 { /* XLQ Balances Label */
+QWidget .QFrame#frame_Balances .QLabel#label_5 { /* ADE Balances Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
 background-color:transparent;
@@ -1209,7 +1209,7 @@ margin-right:5px;
 padding-right:5px;
 }
 
-QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz { /* Available XLQ Label */
+QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalanceTextz { /* Available ADE Label */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 min-width:160px;
 color:#d57727;
@@ -1219,7 +1219,7 @@ font-weight:bold;
 font-size:12px;
 }
 
-QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available XLQ Balance */
+QWidget .QFrame#frame_CombinedBalances .QLabel#labelBalancez { /* Available ADE Balance */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:26px;
 font-weight:normal;

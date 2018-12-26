@@ -164,32 +164,32 @@ bool CZXlqStake::MarkSpent(CWallet *pwallet, const uint256& txid)
     return true;
 }
 
-//!XLQ Stake
-bool CXLQStake::SetInput(CTransaction txPrev, unsigned int n)
+//!ADE Stake
+bool CADEStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;
     return true;
 }
 
-bool CXLQStake::GetTxFrom(CTransaction& tx)
+bool CADEStake::GetTxFrom(CTransaction& tx)
 {
     tx = txFrom;
     return true;
 }
 
-bool CXLQStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CADEStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
 }
 
-CAmount CXLQStake::GetValue()
+CAmount CADEStake::GetValue()
 {
     return txFrom.vout[nPosition].nValue;
 }
 
-bool CXLQStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CADEStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     vector<valtype> vSolutions;
     txnouttype whichType;
@@ -224,7 +224,7 @@ bool CXLQStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTo
     return true;
 }
 
-bool CXLQStake::GetModifier(uint64_t& nStakeModifier)
+bool CADEStake::GetModifier(uint64_t& nStakeModifier)
 {
     int nStakeModifierHeight = 0;
     int64_t nStakeModifierTime = 0;
@@ -238,16 +238,16 @@ bool CXLQStake::GetModifier(uint64_t& nStakeModifier)
     return true;
 }
 
-CDataStream CXLQStake::GetUniqueness()
+CDataStream CADEStake::GetUniqueness()
 {
-    //The unique identifier for a XLQ stake is the outpoint
+    //The unique identifier for a ADE stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
     ss << nPosition << txFrom.GetHash();
     return ss;
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* CXLQStake::GetIndexFrom()
+CBlockIndex* CADEStake::GetIndexFrom()
 {
     uint256 hashBlock = 0;
     CTransaction tx;

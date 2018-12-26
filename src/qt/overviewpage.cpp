@@ -35,7 +35,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::XLQ)
+    TxViewDelegate() : QAbstractItemDelegate(), unit(BitcoinUnits::ADE)
     {
     }
 
@@ -164,7 +164,7 @@ OverviewPage::~OverviewPage()
     delete ui;
 }
 
-void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sXLQPercentage, QString& szADEPercentage)
+void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBalance, QString& sADEPercentage, QString& szADEPercentage)
 {
     int nPrecision = 2;
     double dzPercentage = 0.0;
@@ -184,7 +184,7 @@ void OverviewPage::getPercentage(CAmount nUnlockedBalance, CAmount nZerocoinBala
     double dPercentage = 100.0 - dzPercentage;
 
     szADEPercentage = "(" + QLocale(QLocale::system()).toString(dzPercentage, 'f', nPrecision) + " %)";
-    sXLQPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
+    sADEPercentage = "(" + QLocale(QLocale::system()).toString(dPercentage, 'f', nPrecision) + " %)";
 
 }
 
@@ -209,12 +209,12 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         nWatchOnlyLockedBalance = pwalletMain->GetLockedWatchOnlyBalance();
     }
 
-    // XLQ Balance
+    // ADE Balance
     CAmount nTotalBalance = balance + unconfirmedBalance;
-    CAmount XLQAvailableBalance = balance - immatureBalance - nLockedBalance;
+    CAmount ADEAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance;
 
-    // XLQ Watch-Only Balance
+    // ADE Watch-Only Balance
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance;
     CAmount nAvailableWatchBalance = watchOnlyBalance - watchImmatureBalance - nWatchOnlyLockedBalance;
 
@@ -226,11 +226,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     QString sPercentage = "";
     getPercentage(nUnlockedBalance, zerocoinBalance, sPercentage, szPercentage);
     // Combined balances
-    CAmount availableTotalBalance = XLQAvailableBalance + matureZerocoinBalance;
+    CAmount availableTotalBalance = ADEAvailableBalance + matureZerocoinBalance;
     CAmount sumTotalBalance = nTotalBalance + zerocoinBalance;
 
-    // XLQ labels
-    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, XLQAvailableBalance, false, BitcoinUnits::separatorAlways));
+    // ADE labels
+    ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, ADEAvailableBalance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelLockedBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, nLockedBalance, false, BitcoinUnits::separatorAlways));
@@ -254,7 +254,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelTotalz->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, sumTotalBalance, false, BitcoinUnits::separatorAlways));
 
     // Percentage labels
-    ui->labelXLQPercent->setText(sPercentage);
+    ui->labelADEPercent->setText(sPercentage);
     ui->labelzADEPercent->setText(szPercentage);
 
     // Adjust bubble-help according to AutoMint settings
@@ -279,33 +279,33 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     bool showWatchOnly = nTotalWatchBalance != 0;
 
-    // XLQ Available
-    bool showXLQAvailable = settingShowAllBalances || XLQAvailableBalance != nTotalBalance;
-    bool showWatchOnlyXLQAvailable = showXLQAvailable || nAvailableWatchBalance != nTotalWatchBalance;
-    ui->labelBalanceText->setVisible(showXLQAvailable || showWatchOnlyXLQAvailable);
-    ui->labelBalance->setVisible(showXLQAvailable || showWatchOnlyXLQAvailable);
-    ui->labelWatchAvailable->setVisible(showWatchOnlyXLQAvailable && showWatchOnly);
+    // ADE Available
+    bool showADEAvailable = settingShowAllBalances || ADEAvailableBalance != nTotalBalance;
+    bool showWatchOnlyADEAvailable = showADEAvailable || nAvailableWatchBalance != nTotalWatchBalance;
+    ui->labelBalanceText->setVisible(showADEAvailable || showWatchOnlyADEAvailable);
+    ui->labelBalance->setVisible(showADEAvailable || showWatchOnlyADEAvailable);
+    ui->labelWatchAvailable->setVisible(showWatchOnlyADEAvailable && showWatchOnly);
 
-    // XLQ Pending
-    bool showXLQPending = settingShowAllBalances || unconfirmedBalance != 0;
-    bool showWatchOnlyXLQPending = showXLQPending || watchUnconfBalance != 0;
-    ui->labelPendingText->setVisible(showXLQPending || showWatchOnlyXLQPending);
-    ui->labelUnconfirmed->setVisible(showXLQPending || showWatchOnlyXLQPending);
-    ui->labelWatchPending->setVisible(showWatchOnlyXLQPending && showWatchOnly);
+    // ADE Pending
+    bool showADEPending = settingShowAllBalances || unconfirmedBalance != 0;
+    bool showWatchOnlyADEPending = showADEPending || watchUnconfBalance != 0;
+    ui->labelPendingText->setVisible(showADEPending || showWatchOnlyADEPending);
+    ui->labelUnconfirmed->setVisible(showADEPending || showWatchOnlyADEPending);
+    ui->labelWatchPending->setVisible(showWatchOnlyADEPending && showWatchOnly);
 
-    // XLQ Immature
-    bool showXLQImmature = settingShowAllBalances || immatureBalance != 0;
-    bool showWatchOnlyImmature = showXLQImmature || watchImmatureBalance != 0;
-    ui->labelImmatureText->setVisible(showXLQImmature || showWatchOnlyImmature);
-    ui->labelImmature->setVisible(showXLQImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
+    // ADE Immature
+    bool showADEImmature = settingShowAllBalances || immatureBalance != 0;
+    bool showWatchOnlyImmature = showADEImmature || watchImmatureBalance != 0;
+    ui->labelImmatureText->setVisible(showADEImmature || showWatchOnlyImmature);
+    ui->labelImmature->setVisible(showADEImmature || showWatchOnlyImmature); // for symmetry reasons also show immature label when the watch-only one is shown
     ui->labelWatchImmature->setVisible(showWatchOnlyImmature && showWatchOnly); // show watch-only immature balance
 
-    // XLQ Locked
-    bool showXLQLocked = settingShowAllBalances || nLockedBalance != 0;
-    bool showWatchOnlyXLQLocked = showXLQLocked || nWatchOnlyLockedBalance != 0;
-    ui->labelLockedBalanceText->setVisible(showXLQLocked || showWatchOnlyXLQLocked);
-    ui->labelLockedBalance->setVisible(showXLQLocked || showWatchOnlyXLQLocked);
-    ui->labelWatchLocked->setVisible(showWatchOnlyXLQLocked && showWatchOnly);
+    // ADE Locked
+    bool showADELocked = settingShowAllBalances || nLockedBalance != 0;
+    bool showWatchOnlyADELocked = showADELocked || nWatchOnlyLockedBalance != 0;
+    ui->labelLockedBalanceText->setVisible(showADELocked || showWatchOnlyADELocked);
+    ui->labelLockedBalance->setVisible(showADELocked || showWatchOnlyADELocked);
+    ui->labelWatchLocked->setVisible(showWatchOnlyADELocked && showWatchOnly);
 
     // zADE
     bool showzADEAvailable = settingShowAllBalances || zerocoinBalance != matureZerocoinBalance;
@@ -320,7 +320,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
 
     // Percent split
     bool showPercentages = ! (zerocoinBalance == 0 && nTotalBalance == 0);
-    ui->labelXLQPercent->setVisible(showPercentages);
+    ui->labelADEPercent->setVisible(showPercentages);
     ui->labelzADEPercent->setVisible(showPercentages);
 
     static int cachedTxLocks = 0;
@@ -392,7 +392,7 @@ void OverviewPage::setWalletModel(WalletModel* model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("XLQ")
+    // update the display unit, to not use the default ("ADE")
     updateDisplayUnit();
 }
 
