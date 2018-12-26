@@ -314,7 +314,7 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         }
     }
 
-	double devfeePercent = pindexPrev->nHeight + 1 >= DEV_FEE_BLOCK_ACTIVATION ? 0.05 : 0.00;
+	double devfeePercent = pindexPrev->nHeight + 1 >= DEV_FEE_BLOCK_ACTIVATION ? 0.075 : 0.00;
 	
     CAmount blockValue = GetBlockValue(pindexPrev->nHeight);
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight, blockValue, 0, fZADEStake);
@@ -574,7 +574,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
 	CBitcoinAddress developerfeeaddress("ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf");
     CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
-	double devfeePercent = nBlockHeight >= DEV_FEE_BLOCK_ACTIVATION ? 0.05 : 0.00;
+	double devfeePercent = nBlockHeight >= DEV_FEE_BLOCK_ACTIVATION ? 0.075 : 0.00;
 	
     CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count, txNew.IsZerocoinSpend());
 	CAmount requiredDeveloperPayment = nReward * devfeePercent;
