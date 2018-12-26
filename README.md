@@ -108,7 +108,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 <tr><td>Block 604801 - infinite</td><td>5 ADE</td><td>+ ~2.628M per year </td>
 </table>
 
-![Alt text](https://explorer.adeptio.cc/images/adeptio_reward_distri.png)
+![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
 
 # Resources
 
