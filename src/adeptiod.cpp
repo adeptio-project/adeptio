@@ -126,7 +126,7 @@ bool AppInit(int argc, char* argv[])
 #ifndef WIN32
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon) {
-            fprintf(stdout, "ADE server starting\n");
+            fprintf(stdout, "Adeptio server starting\n");
 
             // Daemonize
             pid_t pid = fork();
