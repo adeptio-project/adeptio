@@ -45,7 +45,9 @@ OS_version2=$(cat /etc/lsb-release | grep -c xenial)
             fi
 sudo apt-get update -y
 if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
-sudo add-apt-repository universe software-properties-common -y 1> /dev/null
+sudo apt-get install software-properties-common -y 1> /dev/null
+if [ $? -ne "0" ]; then echo "Unable to install software-properties-common" && exit 1; fi
+sudo add-apt-repository universe -y 1> /dev/null
 if [ $? -ne "0" ]; then echo "Unable to add repository universe" && exit 1; fi
 sudo apt-get install dnsutils jq curl -y 1> /dev/null
 if [ $? -ne "0" ]; then echo "Unable to install dnsutils jq curl" && exit 1; fi
