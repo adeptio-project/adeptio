@@ -158,7 +158,7 @@ sudo systemctl enable adeptiocore
 
 real_user=$(echo $(who | awk '{print $1}'))
  
-sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
+sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
 
 # Check if user is root? If not create sudoers files to manage systemd services
 echo ""
