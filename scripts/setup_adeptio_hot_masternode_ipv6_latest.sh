@@ -156,7 +156,7 @@ sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
 
-real_user=$(echo $(who | awk '{print $1}'))
+real_user=$(who | awk '{print $1}' | head -1)
  
 sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
  
@@ -292,7 +292,7 @@ sudo systemctl daemon-reload
 echo "Create storADEserver auto-updater"
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
-sudo chown $real_user:$realuser ~/adeptioStorade/storADEserver-updater.sh
+sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Update crontab"
