@@ -156,6 +156,10 @@ PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
 ExecStop=/usr/bin/adeptio-cli stop
 Restart=always
 RestartSec=3600
+TimeoutStopSec=60s
+TimeoutStartSec=10s
+StartLimitInterval=120s
+StartLimitBurst=5
 
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
