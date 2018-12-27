@@ -477,21 +477,6 @@ bool CMasternodeBroadcast::CheckDefaultPort(std::string strService, std::string&
     return true;
 }
 
-bool CstorADEserverBroadcast::CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext)
-{
-    CService service = CService(strService);
-    int storADEport = Params().GetDefaultPort();
-
-    if (service.GetPort() != storADEport) {
-        strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
-                                        service.GetPort(), strService, storADEport, Params().NetworkIDString());
-        LogPrint("masternode", "%s - %s\n", strContext, strErrorRet);
-        return false;
-    }
-
-    return true;
-}
-
 bool CMasternodeBroadcast::CheckAndUpdate(int& nDos)
 {
     // make sure signature isn't in the future (past is OK)

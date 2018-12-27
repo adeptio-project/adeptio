@@ -68,19 +68,6 @@ void CActiveMasternode::ManageStatus()
             service = CService(strMasterNodeAddr);
         }
 
-        // The "storADEserver" service needs the correct default port to work properly
-        if(!CstorADEserverBroadcast::CheckDefaultPort(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
-            return;
-
-        LogPrintf("CActiveMasternode::ManageStatus() - Checking inbound connection to '%s'\n", service.ToString());
-
-        CNode* pnode = ConnectNode((CAddress)service, NULL, false);
-        if (!pnode) {
-            notCapableReason = "Could not connect to " + service.ToString();
-            LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
-            return;
-        }
-
         // The service needs the correct default port to work properly
         if(!CMasternodeBroadcast::CheckDefaultPort(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
             return;
