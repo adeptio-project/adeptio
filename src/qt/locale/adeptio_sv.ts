@@ -1897,7 +1897,7 @@ Var god vänta efter att du trycker på importera.</translation>
         <translation>Starta ADE automatiskt efter inloggning på systemet.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Starta ADE vid systeminloggning</translation>
     </message>
     <message>

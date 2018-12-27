@@ -1692,7 +1692,7 @@ Favor verificar o endereço e tente novamente.</translation>
         <translation>Iniciar automaticamente ADE depois de logar no sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Iniciar ADE ao logar no sistema</translation>
     </message>
     <message>

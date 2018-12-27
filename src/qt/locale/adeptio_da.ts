@@ -1906,7 +1906,7 @@ Vær tålmodig efter at du har klikket på import.</translation>
         <translation>Start ADE automatisk, når der logges på systemet</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;start ADE når der logges på systemet</translation>
     </message>
     <message>

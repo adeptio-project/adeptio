@@ -1848,7 +1848,7 @@ Patikrinkite adresą ir bandykite dar kartą.</translation>
         <translation>Automatiškai paleisti ADE prisijungus prie sistemos.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Paleisti ADE sistemai įsijungiant</translation>
     </message>
     <message>

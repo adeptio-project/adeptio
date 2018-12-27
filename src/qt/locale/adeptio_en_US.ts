@@ -1670,8 +1670,8 @@ Please check the address and try again.</translation>
         <translation>Automatically start ADE after logging in to the system.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
-        <translation>&amp;Start ADE on system login</translation>
+        <source>&amp;Start Adeptio on system login</source>
+        <translation>&amp;Start Adeptio on system login</translation>
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>

@@ -1694,7 +1694,7 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
         <translation>Sperta</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Komencu ADE en sistem-ensaluto</translation>
     </message>
     <message>

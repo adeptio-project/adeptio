@@ -1906,7 +1906,7 @@ Waas alsjeblieft geduldig nadat u op importeren hebt geklikt.</translation>
         <translation>ADE automatisch opstarten na inloggen op het systeem.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;ADE starten bij systeemlogin</translation>
     </message>
     <message>

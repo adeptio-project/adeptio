@@ -1194,7 +1194,7 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
         <translation>Automatycznie uruchom ADE po zalogowaniu do systemu</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Uruchom ADE podczas logowania do systemu</translation>
     </message>
     <message>

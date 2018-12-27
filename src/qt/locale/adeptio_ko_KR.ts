@@ -1906,7 +1906,7 @@ Please be patient after clicking import.</source>
         <translation>시스템 로그인 후 ADE을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;시스템 로그인시 ADE 시작</translation>
     </message>
     <message>

@@ -1902,7 +1902,7 @@ Please be patient after clicking import.</source>
         <translation>Стартирай ADE автоматично след влизане в системата.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Стартирай ADE заедно с операционната система</translation>
     </message>
     <message>

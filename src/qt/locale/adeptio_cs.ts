@@ -1554,7 +1554,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
         <translation>Automaticky spustit ADE po přihlášení do systému</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Spusti ADE při přihlášení do systému</translation>
     </message>
     <message>

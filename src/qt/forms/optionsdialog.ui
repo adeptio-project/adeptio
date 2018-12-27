@@ -33,7 +33,7 @@
           <string>Automatically start ADE after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start ADE on system login</string>
+          <string>&amp;Start Adeptio on system login</string>
          </property>
         </widget>
        </item>

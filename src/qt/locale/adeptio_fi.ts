@@ -1206,7 +1206,7 @@ Please check the address and try again.</source>
         <translation>Automaattisesti käynnistä ADE kun kirjaudut sisään.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Aloita ADE järjestelmän kirjautumisessa</translation>
     </message>
     <message>

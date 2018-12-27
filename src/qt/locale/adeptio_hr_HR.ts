@@ -1905,7 +1905,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Automatski pokrenite ADE nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>Pokrenite ADE na prijavi u sustav</translation>
     </message>
     <message>

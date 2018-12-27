@@ -1897,7 +1897,7 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
         <translation>ADE automatisch nach dem Login starten.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>ADE automatisch beim System Login &amp;starten.</translation>
     </message>
     <message>

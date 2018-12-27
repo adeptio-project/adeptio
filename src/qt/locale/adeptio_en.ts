@@ -2406,7 +2406,7 @@ Please be patient after clicking import.</source>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

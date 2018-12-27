@@ -1869,7 +1869,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Sisteme giriş yaptıktan sonra otomatik olarak ADE'i başlatın.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp; Sistem oturum açma işleminde ADE'i başlat</translation>
     </message>
     <message>

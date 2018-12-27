@@ -1906,7 +1906,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Arrancar ADE automáticamente después de identificarse en el sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>&amp;Arrancar ADE al inicio del sistema</translation>
     </message>
     <message>

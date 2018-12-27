@@ -1845,7 +1845,7 @@ S'il vous plaît soyez patient après avoir cliqué sur l'importation.</translat
         <translation>Démarrez ADE automatiquement après vous être connecté au système.</translation>
     </message>
     <message>
-        <source>&amp;Start ADE on system login</source>
+        <source>&amp;Start Adeptio on system login</source>
         <translation>Démarrer ADE au démarrage système</translation>
     </message>
     <message>
