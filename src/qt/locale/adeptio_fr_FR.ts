@@ -3312,7 +3312,7 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Sortie:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Bienvenue sur la console ADE RPC.</translation>
     </message>
     <message>

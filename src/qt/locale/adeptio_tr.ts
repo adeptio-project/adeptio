@@ -3112,7 +3112,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Dışa:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>ADE RPC konsola hoşgeldiniz</translation>
     </message>
     <message>

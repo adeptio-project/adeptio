@@ -3384,7 +3384,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Вывод:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Добро пожаловать в окружение ADE RPC.</translation>
     </message>
     <message>

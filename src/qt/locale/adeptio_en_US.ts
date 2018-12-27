@@ -2484,8 +2484,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Out:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
-        <translation>Welcome to the ADE RPC console.</translation>
+        <source>Welcome to the Adeptio RPC console.</source>
+        <translation>Welcome to the Adeptio RPC console.</translation>
     </message>
     <message>
         <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>

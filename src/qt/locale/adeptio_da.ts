@@ -3384,7 +3384,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Ud:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Velkommen til ADE RPC konsollet</translation>
     </message>
     <message>

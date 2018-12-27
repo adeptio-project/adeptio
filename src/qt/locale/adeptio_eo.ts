@@ -2101,7 +2101,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Rekonstrui indekson</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Bonvenon al la ADE RPC konzolo.</translation>
     </message>
     <message>

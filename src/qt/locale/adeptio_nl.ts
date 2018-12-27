@@ -3385,8 +3385,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Uit:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
-        <translation>Welkom bij de ADE RPC console.</translation>
+        <source>Welcome to the Adeptio RPC console.</source>
+        <translation>Welkom bij de Adeptio RPC console.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>

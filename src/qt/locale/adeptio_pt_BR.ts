@@ -2431,7 +2431,7 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>saída:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Bem-vindo ao console da ADE RPC</translation>
     </message>
     <message>

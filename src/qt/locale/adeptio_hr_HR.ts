@@ -3382,7 +3382,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iz:</translation>
     </message>
     <message>
-        <source>Welcome to the ADE RPC console.</source>
+        <source>Welcome to the Adeptio RPC console.</source>
         <translation>Dobrodošli na ADE RPC konzolu.</translation>
     </message>
     <message>
