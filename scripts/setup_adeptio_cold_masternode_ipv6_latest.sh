@@ -88,7 +88,7 @@ if [ "$OS_version" -eq "1" ]; then
 	if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
         sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 	if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
 	if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         else
         sudo add-apt-repository ppa:bitcoin/bitcoin -y
@@ -99,7 +99,7 @@ if [ "$OS_version" -eq "1" ]; then
         if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
         sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
         if [ $? -ne "0" ]; then echo "Unable to install libboost dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
         if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
