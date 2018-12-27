@@ -3027,7 +3027,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Unesite ADE adresu (npr., %1)</translation>
     </message>
     <message>

@@ -3019,7 +3019,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Сума</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Задайте ADE адрес (например %1)</translation>
     </message>
     <message>

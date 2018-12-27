@@ -1463,7 +1463,7 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations </transla
         <translation>Liczba</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Wprowadź adres ADE (np. %1)</translation>
     </message>
     <message>

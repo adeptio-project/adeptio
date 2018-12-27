@@ -3031,7 +3031,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Hoeveelheid</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Voer een ADE adres in (b.v. %1)</translation>
     </message>
     <message>

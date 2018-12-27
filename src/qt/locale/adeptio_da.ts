@@ -3030,7 +3030,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>Beløb</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Indtast en ADE adresse (F.eks. %1)</translation>
     </message>
     <message>

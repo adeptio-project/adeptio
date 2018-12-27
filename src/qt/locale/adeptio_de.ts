@@ -3022,7 +3022,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Betrag</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>ADE-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>

@@ -2958,7 +2958,7 @@ Soit monnayer des dénominations plus élevées (moins d'intrants sont nécessai
         <translation>Montant</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Entrez uen adresse ADE (par ex. %1)</translation>
     </message>
     <message>

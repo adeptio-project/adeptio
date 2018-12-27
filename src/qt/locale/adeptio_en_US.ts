@@ -2182,8 +2182,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Amount</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
-        <translation>Enter a ADE address (e.g. %1)</translation>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <translation>Enter a Adeptio (ADE) address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>

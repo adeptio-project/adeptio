@@ -3007,7 +3007,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Mata in en ADE adress (e.g. %1)</translation>
     </message>
     <message>

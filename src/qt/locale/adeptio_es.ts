@@ -3031,7 +3031,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Introduzca una dirección ADE (p.e. %1)</translation>
     </message>
     <message>

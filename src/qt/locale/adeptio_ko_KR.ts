@@ -3030,7 +3030,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>ADE 주소를 입력하세요 (예 %1)</translation>
     </message>
     <message>

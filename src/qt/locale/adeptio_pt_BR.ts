@@ -2173,7 +2173,7 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Quantidade</translation>
     </message>
     <message>
-        <source>Enter a ADE address (e.g. %1)</source>
+        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
         <translation>Insira um endereço ADE (e.g. %1)</translation>
     </message>
     <message>
