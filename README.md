@@ -1,7 +1,5 @@
 # From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
-![Alt text](https://github.com/adeptio-project/adeptio/blob/master/logo/adeptio_loading.png)
-
 ![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
 
 [![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
@@ -92,6 +90,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 • Prefix: ADE adresses start with the capital letter "A"
 
 *Premine masternodes will be burnt after 1 year from init start.*
+https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 # Reward Distribution
 <table>
@@ -108,7 +107,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 <tr><td>Block 604801 - infinite</td><td>5 ADE</td><td>+ ~2.628M per year </td>
 </table>
 
-![Alt text](https://explorer.adeptio.cc/images/adeptio_reward_distri.png)
+![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
 
 # Resources
 

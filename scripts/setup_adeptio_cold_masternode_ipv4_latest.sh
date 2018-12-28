@@ -20,14 +20,18 @@ cat << "ADE"
                                                       
 ADE
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 echo $(date)
-echo "== adeptio v1.0.0.3 =="
+echo -e "${GREEN}== adeptio v1.0.0.3 ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
 echo "This setup can be launched only once"
 echo "Do you agree?"
-echo "y/n"?
+echo -e "${GREEN}y${NC}/${RED}n"${NC}?
 read agree
             if [ "$agree" != "y" ]; then
                echo "Sorry, we cannot continue" && exit 1
@@ -36,29 +40,33 @@ OS_version=$(cat /etc/lsb-release | grep -c bionic)
 OS_version2=$(cat /etc/lsb-release | grep -c xenial)
             if [ "$OS_version" -ne "1" ]; then
                     echo ""
-                    echo "Looks like your OS version is not Ubuntu 18.04 Bionic // Maybe Ubuntu 16.04 Xenial? - Checking..."
+			echo -e "${RED}Looks like your OS version is not Ubuntu 18.04 Bionic //${GREEN} Maybe Ubuntu 16.04 Xenial? - Checking...${NC}"
+
                         if [ "$OS_version2" -eq "1" ]; then
                                 echo ""
                         else
-                                echo "Looks like your OS version is not Ubuntu 16.04 Xenial or Ubuntu 18.04 Bionic" && exit 1
+                                echo ""
+                                echo -e "${RED}Looks like your OS version is not Ubuntu 16.04 Xenial or Ubuntu 18.04 Bionic${NC}" && exit 1
                         fi
             fi
 sudo apt-get update -y
-if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
+if [ $? -ne "0" ]; then echo -e "${RED}Cannot update ubuntu repos${NC}" && exit 1; fi
+sudo apt-get install software-properties-common -y 1> /dev/null
+if [ $? -ne "0" ]; then echo -e "${RED}Unable to install software-properties-common${NC}" && exit 1; fi
 sudo add-apt-repository universe -y 1> /dev/null
-if [ $? -ne "0" ]; then echo "Unable to add repository universe" && exit 1; fi
+if [ $? -ne "0" ]; then echo -e "${RED}Unable to add repository universe${NC}" && exit 1; fi
 sudo apt-get install dnsutils jq curl -y 1> /dev/null
-if [ $? -ne "0" ]; then echo "Unable to install dnsutils jq curl" && exit 1; fi
+if [ $? -ne "0" ]; then echo -e "${RED}Unable to install dnsutils jq curl${NC}" && exit 1; fi
 echo ""
 wanip=$(curl -s 4.ipquail.com/ip)
 if [ -z "${wanip}" ]; then
-    echo "Sorry, we don't know your external IPv4 addr" && echo ""
-    echo "Input your IPv4 addr manually:" && read wanip
+    echo -e "${RED}Sorry, we don't know your external IPv4 addr${NC}" && echo ""
+    echo -e "${GREEN}Input your IPv4 addr manually:${NC}" && read wanip
 fi
 echo "Your external IP is $wanip y/n?"
 read wan
             if [ "$wan" != "y" ]; then
-               echo "Sorry, we don't know your external IP" && exit 1
+               echo -e "${RED}Sorry, we don't know your external IPv4 addr${NC}" && exit 1
             fi
 # Check if bitcoin repo exists for Bionic //
 [ -f /etc/apt/sources.list.d/bitcoin-ubuntu-bitcoin-bionic.list ]
@@ -148,6 +156,10 @@ PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
 ExecStop=/usr/bin/adeptio-cli stop
 Restart=always
 RestartSec=3600
+TimeoutStopSec=60s
+TimeoutStartSec=10s
+StartLimitInterval=120s
+StartLimitBurst=5
 
 [Install]
 WantedBy=default.target" | sudo tee /etc/systemd/system/adeptiocore.service
@@ -156,9 +168,9 @@ sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
 
-real_user=$(echo $(who | awk '{print $1}'))
+real_user=$(who | awk '{print $1}' | head -1)
  
-sudo chown -R $real_user:$realuser $(echo $HOME)/.adeptio/
+sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
  
 # Check if user is root? If not create sudoers files to manage systemd services
 echo ""
@@ -286,7 +298,7 @@ sudo systemctl daemon-reload
 echo "Create storADEserver auto-updater"
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
-sudo chown $real_user:$realuser ~/adeptioStorade/storADEserver-updater.sh
+sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Update crontab"

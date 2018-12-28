@@ -2,10 +2,11 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2015-2017 The Adeptio developers
+// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "libzerocoin/Params.h"
 #include "chainparams.h"
 
 #include "random.h"
@@ -87,6 +88,24 @@ static const Checkpoints::CCheckpointData dataRegtest = {
     0,
     100};
 
+libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) const
+{
+    assert(this);
+    static CBigNum bnHexModulus = 0;
+    if (!bnHexModulus)
+        bnHexModulus.SetHex(zerocoinModulus);
+    static libzerocoin::ZerocoinParams ZCParamsHex = libzerocoin::ZerocoinParams(bnHexModulus);
+    static CBigNum bnDecModulus = 0;
+    if (!bnDecModulus)
+        bnDecModulus.SetDec(zerocoinModulus);
+    static libzerocoin::ZerocoinParams ZCParamsDec = libzerocoin::ZerocoinParams(bnDecModulus);
+
+    if (useModulusV1)
+        return &ZCParamsHex;
+
+    return &ZCParamsDec;
+}
+
 class CMainParams : public CChainParams
 {
 public:
@@ -105,6 +124,7 @@ public:
         pchMessageStart[3] = 0x14;
         vAlertPubKey = ParseHex("0440c946f36751aa0229d5e7f04c3032392e41c794db4b7eb76e0ee132f2b88d872bc9aa142db38fdee812cda69e282d3c537e5a19fcb5f6c6a7fc2192b88ca137");
         nDefaultPort = 9077;
+        storADEport = 9079;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Adeptio starting difficulty is 1 / 2^12  //20
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
@@ -117,9 +137,24 @@ public:
         nLastPOWBlock = 345600; // ~240 Days
         nMaturity = 100;
         nMasternodeCountDrift = 20;
-	nMasternodeColleteralLimxDev = 10000; //Params().MasternodeColleteralLimxDev()
-        nModifierUpdateBlock = 1; // we use the version 2 for dmd
         nMaxMoneyOut = 100000000 * COIN;
+	strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
+		
+        /** Height or Time Based Activations **/
+        nLastPOWBlock = 345600;
+        nModifierUpdateBlock = 615800;
+        nZerocoinStartHeight = 1000000;
+        nZerocoinStartTime = 1577836800;
+        nBlockEnforceSerialRange = 1000000; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 1000000; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 1000000; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 1000000; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 1000000; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
+        nBlockZerocoinV2 = 1000000; //!> The block that zerocoin v2 becomes active
+		
+        nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): must use the new spork key
+        nRejectOldSporkKey = 1548979200; //!> Fully reject old spork key after (GMT): 02/01/2019 @ 12:00am (UTC)
 
         const char* pszTimestamp = "30 May 2018 // With great power comes great responsibility. Adeptio tech.";
         CMutableTransaction txNew;
@@ -153,6 +188,7 @@ public:
         vSeeds.push_back(CDNSSeedData("seed9.adeptio.cc", "seed9.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("seed10.adeptio.cc", "seed10.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("seed11.adeptio.cc", "seed11.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed12.adeptio.cc", "seed12.adeptio.cc"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
@@ -165,7 +201,6 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
@@ -178,8 +213,25 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500";
-        strDarksendPoolDummyAddress = "ATRg2hVWT2QT1dxndpPTSM2kvXs8LERWHu";
+        strSporkKeyOld = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500";
+        strObfuscationPoolDummyAddress = "ATRg2hVWT2QT1dxndpPTSM2kvXs8LERWHu";
         nStartMasternodePayments = 1527764160; // After 1 day from init start 
+        /** Zerocoin */
+        zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
+            "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
+            "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
+            "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
+            "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
+            "31438167899885040445364023527381951378636564391212010397122822120720357";
+        nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
+        nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
+        nMintRequiredConfirmations = 100; //the maximum amount of confirmations until accumulated in 19
+        nRequiredAccumulation = 1;
+        nDefaultSecurityLevel = 100; //full security level for accumulators
+        nZerocoinHeaderVersion = 6; //Block headers must be this version once zerocoin is active
+        nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zADE to be stakable
+
+        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -213,8 +265,20 @@ public:
         nTargetSpacing = 1 * 60;  // Adeptio: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 10;
-        nModifierUpdateBlock = 51197; 
+        nMasternodeCountDrift = 4;
+        nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017
         nMaxMoneyOut = 100000000 * COIN;
+        nZerocoinStartHeight = 1000000;
+        nZerocoinStartTime = 1501776000;
+        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
+        nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
+        nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
+        nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1548979200; //!> Reject old spork key after 02/01/2019 @ 12:00am (UTC)
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527677778;
@@ -236,17 +300,16 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 83);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
-        // Testnet alqo BIP32 pubkeys start with 'DRKV'
+        // Testnet adeptio BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet alqo BIP32 prvkeys start with 'DRKP'
+        // Testnet adeptio BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet alqo BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet adeptio BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
 
 
-        fRequireRPCPassword = true;
         fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
@@ -257,9 +320,11 @@ public:
 
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "04bbba1f836f32de0c31049a96f6838b46d9119554752eaba90ef7df5370f6a54d9fbc1aa7250cf356f149be2e396b983e9d56a288ceafa1093744b3a4b72c4125";
-        strDarksendPoolDummyAddress = "";
+        strSporkKey = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500";
+        strSporkKeyOld = "04bbba1f836f32de0c31049a96f6838b46d9119554752eaba90ef7df5370f6a54d9fbc1aa7250cf356f149be2e396b983e9d56a288ceafa1093744b3a4b72c4125";
+        strObfuscationPoolDummyAddress = "";
         nStartMasternodePayments = 1525177401;
+        nBudget_Fee_Confirmations = 3;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
@@ -297,12 +362,12 @@ public:
         nDefaultPort = 19077;
 
 	hashGenesisBlock = genesis.GetHash();
+        nDefaultPort = 19077;
         assert(hashGenesisBlock == uint256("0x05ec3f4d9992323d64f4cba4f6ac0079b69277cfc0834a0d6d959fe9ff86b89c"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
 
-        fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = true;
@@ -331,7 +396,6 @@ public:
         vFixedSeeds.clear(); //! Unit test mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
 
-        fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
         fAllowMinDifficultyBlocks = false;

@@ -33,7 +33,6 @@ build-aux/compile
 build-aux/test-driver
 config.log
 config.status
-configure
 confdefs.h
 conftest.cpp
 conftest.err
@@ -74,7 +73,6 @@ src/qt/test/moc*.cpp
 *.trs
 *.dmg
 
-*.json.h
 *.raw.h
 
 #libtool object files
