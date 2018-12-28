@@ -27,6 +27,7 @@ using namespace std;
 
 class CMasternode;
 class CMasternodeBroadcast;
+class storADEserver;
 class CMasternodePing;
 extern map<int64_t, uint256> mapCacheBlockHashes;
 
