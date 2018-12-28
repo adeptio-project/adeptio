@@ -70,8 +70,8 @@ void CActiveMasternode::ManageStatus()
 
    /*     // The "StorADE" service needs the correct default port to work properly
         if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
-            return; */
-        
+            return; 
+   */     
         // The service needs the correct default port to work properly
         if(!CMasternodeBroadcast::CheckDefaultPort(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
             return;

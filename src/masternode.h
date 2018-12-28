@@ -337,10 +337,12 @@ public:
     static bool CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext);
 };
 
-/*class storADEserver : public CMasternode
+/*
+class storADEserver : public CMasternode
 {
 public:
     static bool CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext);
 };
-/*
+*/
+
 #endif
