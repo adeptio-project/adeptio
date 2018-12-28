@@ -331,6 +331,26 @@ bool CMasternode::IsValidNetAddr()
            (IsReachable(addr) && addr.IsRoutable());
 }
 
+storADEserver::storADEserver()
+{
+    vin = CTxIn();
+    addr = CService();
+    pubKeyCollateralAddress = CPubKey();
+    pubKeyMasternode1 = CPubKey();
+    sig = std::vector<unsigned char>();
+    activeState = MASTERNODE_ENABLED;
+    sigTime = GetAdjustedTime();
+    lastPing = CMasternodePing();
+    cacheInputAge = 0;
+    cacheInputAgeBlock = 0;
+    unitTest = false;
+    allowFreeTx = true;
+    protocolVersion = PROTOCOL_VERSION;
+    nLastDsq = 0;
+    nScanningErrorCount = 0;
+    nLastScanningErrorBlockHeight = 0;
+}
+
 CMasternodeBroadcast::CMasternodeBroadcast()
 {
     vin = CTxIn();
