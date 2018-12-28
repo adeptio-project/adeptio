@@ -49,6 +49,7 @@ public:
     const uint256& HashGenesisBlock() const { return hashGenesisBlock; }
     const MessageStartChars& MessageStart() const { return pchMessageStart; }
     const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
+    int GetStorADEdefaultPort() const { return storADEport; }
     int GetDefaultPort() const { return nDefaultPort; }
     const uint256& ProofOfWorkLimit() const { return bnProofOfWorkLimit; }
     int SubsidyHalvingInterval() const { return nSubsidyHalvingInterval; }
