@@ -1,0 +1,149 @@
+src/libsecp256k1_la-secp256k1.lo: src/secp256k1.c \
+ /usr/include/stdc-predef.h include/secp256k1.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h src/util.h \
+ src/libsecp256k1-config.h /usr/include/stdlib.h /usr/include/features.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/stdlib-float.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/stdio.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h src/num_impl.h src/num.h src/field_impl.h \
+ src/field_5x52_impl.h src/field.h src/field_5x52.h \
+ src/field_5x52_asm_impl.h src/scalar_impl.h src/group.h src/scalar.h \
+ src/scalar_4x64.h src/scalar_4x64_impl.h src/group_impl.h \
+ src/ecmult_impl.h /usr/include/string.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/include/endian.h \
+ /usr/include/bits/endian.h src/ecmult.h src/scratch.h \
+ src/ecmult_const_impl.h src/ecmult_const.h src/ecmult_gen_impl.h \
+ src/ecmult_gen.h src/hash_impl.h src/hash.h src/ecmult_static_context.h \
+ src/group.h src/ecdsa_impl.h src/ecdsa.h src/eckey_impl.h src/eckey.h \
+ src/scratch_impl.h src/modules/recovery/main_impl.h \
+ include/secp256k1_recovery.h include/secp256k1.h
+
+/usr/include/stdc-predef.h:
+
+include/secp256k1.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stddef.h:
+
+src/util.h:
+
+src/libsecp256k1-config.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+src/num_impl.h:
+
+src/num.h:
+
+src/field_impl.h:
+
+src/field_5x52_impl.h:
+
+src/field.h:
+
+src/field_5x52.h:
+
+src/field_5x52_asm_impl.h:
+
+src/scalar_impl.h:
+
+src/group.h:
+
+src/scalar.h:
+
+src/scalar_4x64.h:
+
+src/scalar_4x64_impl.h:
+
+src/group_impl.h:
+
+src/ecmult_impl.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+src/ecmult.h:
+
+src/scratch.h:
+
+src/ecmult_const_impl.h:
+
+src/ecmult_const.h:
+
+src/ecmult_gen_impl.h:
+
+src/ecmult_gen.h:
+
+src/hash_impl.h:
+
+src/hash.h:
+
+src/ecmult_static_context.h:
+
+src/group.h:
+
+src/ecdsa_impl.h:
+
+src/ecdsa.h:
+
+src/eckey_impl.h:
+
+src/eckey.h:
+
+src/scratch_impl.h:
+
+src/modules/recovery/main_impl.h:
+
+include/secp256k1_recovery.h:
+
+include/secp256k1.h:
