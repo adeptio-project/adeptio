@@ -340,6 +340,7 @@ public:
 class storADEserver : public CMasternode
 {
 public:
+    static bool CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext);
 };
 
 #endif

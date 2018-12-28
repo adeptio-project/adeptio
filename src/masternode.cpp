@@ -331,67 +331,6 @@ bool CMasternode::IsValidNetAddr()
            (IsReachable(addr) && addr.IsRoutable());
 }
 
-storADEserver::storADEserver()
-{
-    vin = CTxIn();
-    addr = CService();
-    pubKeyCollateralAddress = CPubKey();
-    pubKeyMasternode1 = CPubKey();
-    sig = std::vector<unsigned char>();
-    activeState = MASTERNODE_ENABLED;
-    sigTime = GetAdjustedTime();
-    lastPing = CMasternodePing();
-    cacheInputAge = 0;
-    cacheInputAgeBlock = 0;
-    unitTest = false;
-    allowFreeTx = true;
-    protocolVersion = PROTOCOL_VERSION;
-    nLastDsq = 0;
-    nScanningErrorCount = 0;
-    nLastScanningErrorBlockHeight = 0;
-}
-
-storADEserver::storADEserver(CService newAddr, CTxIn newVin, CPubKey pubKeyCollateralAddressNew, CPubKey pubKeyMasternodeNew, int protocolVersionIn)
-{
-    vin = newVin;
-    addr = newAddr;
-    pubKeyCollateralAddress = pubKeyCollateralAddressNew;
-    pubKeyMasternode = pubKeyMasternodeNew;
-    sig = std::vector<unsigned char>();
-    activeState = MASTERNODE_ENABLED;
-    sigTime = GetAdjustedTime();
-    lastPing = CMasternodePing();
-    cacheInputAge = 0;
-    cacheInputAgeBlock = 0;
-    unitTest = false;
-    allowFreeTx = true;
-    protocolVersion = protocolVersionIn;
-    nLastDsq = 0;
-    nScanningErrorCount = 0;
-    nLastScanningErrorBlockHeight = 0;
-}
-
-storADEserver::storADEserver(const CMasternode& mn)
-{
-    vin = mn.vin;
-    addr = mn.addr;
-    pubKeyCollateralAddress = mn.pubKeyCollateralAddress;
-    pubKeyMasternode = mn.pubKeyMasternode;
-    sig = mn.sig;
-    activeState = mn.activeState;
-    sigTime = mn.sigTime;
-    lastPing = mn.lastPing;
-    cacheInputAge = mn.cacheInputAge;
-    cacheInputAgeBlock = mn.cacheInputAgeBlock;
-    unitTest = mn.unitTest;
-    allowFreeTx = mn.allowFreeTx;
-    protocolVersion = mn.protocolVersion;
-    nLastDsq = mn.nLastDsq;
-    nScanningErrorCount = mn.nScanningErrorCount;
-    nLastScanningErrorBlockHeight = mn.nLastScanningErrorBlockHeight;
-}
-
-
 CMasternodeBroadcast::CMasternodeBroadcast()
 {
     vin = CTxIn();
