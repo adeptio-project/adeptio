@@ -464,6 +464,7 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
 
 bool storADEserver::CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext)
 {
+    /*
     CService service = CService(strService);
     int storADEport = Params().GetStorADEdefaultPort();
 
@@ -474,7 +475,8 @@ bool storADEserver::CheckStorADEport(std::string strService, std::string& strErr
         return false;
     }
 
-    return true;
+    return true;*/
+    return false;
 }
 
 bool CMasternodeBroadcast::CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext)
