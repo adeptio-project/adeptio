@@ -27,7 +27,7 @@ using namespace std;
 
 class CMasternode;
 class CMasternodeBroadcast;
-/*class storADEserver;*/
+class storADEserver;
 class CMasternodePing;
 extern map<int64_t, uint256> mapCacheBlockHashes;
 
@@ -337,12 +337,12 @@ public:
     static bool CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext);
 };
 
-/*
+
 class storADEserver : public CMasternode
 {
 public:
     static bool CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext);
 };
-*/
+
 
 #endif
