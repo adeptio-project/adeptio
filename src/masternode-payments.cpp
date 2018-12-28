@@ -18,7 +18,7 @@
 #include <boost/lexical_cast.hpp>
 
 
-#define DEV_FEE_BLOCK_ACTIVATION 305401
+#define DEV_FEE_BLOCK_ACTIVATION 345601
 
 /** Object for who's going to get paid on which blocks */
 CMasternodePayments masternodePayments;
