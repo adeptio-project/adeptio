@@ -337,4 +337,9 @@ public:
     static bool CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext);
 };
 
+class storADEserver : public CMasternode
+{
+public:
+};
+
 #endif
