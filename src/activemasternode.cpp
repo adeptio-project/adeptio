@@ -44,8 +44,8 @@ void CActiveMasternode::ManageStatus()
     // The "StorADE" service needs the correct default port to work properly
     if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()")) {
         status = ACTIVE_MASTERNODE_NOT_CAPABLE;
-        notCapableReason = "Hot storADEserver, waiting for remote activation.";
-        LogPrintf("CActiveMasternode::ManageStatus() - not storADEserver: %s\n", notCapableReason);
+        notCapableReason = "storADEserver, waiting for activity check";
+        LogPrintf("CActiveMasternode::ManageStatus() - storADEserver is not running: %s\n", notCapableReason);
         return; 
     }
 
