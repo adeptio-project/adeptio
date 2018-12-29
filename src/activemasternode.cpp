@@ -41,6 +41,14 @@ void CActiveMasternode::ManageStatus()
         }
     }
 
+    // The "StorADE" service needs the correct default port to work properly
+    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()")) {
+        status = ACTIVE_MASTERNODE_NOT_CAPABLE;
+        notCapableReason = "Hot storADEserver, waiting for remote activation.";
+        LogPrintf("CActiveMasternode::ManageStatus() - not storADEserver: %s\n", notCapableReason);
+        return; 
+    }
+
     if (status != ACTIVE_MASTERNODE_STARTED) {
         // Set defaults
         status = ACTIVE_MASTERNODE_NOT_CAPABLE;
@@ -50,13 +58,6 @@ void CActiveMasternode::ManageStatus()
             notCapableReason = "Wallet is locked.";
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
-        }
-
-        // The "StorADE" service needs the correct default port to work properly
-        if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()")) {
-            notCapableReason = "Hot storADEserver, waiting for remote activation.";
-            LogPrintf("CActiveMasternode::ManageStatus() - not storADEserver: %s\n", notCapableReason);
-            return; 
         }
 
         if (pwalletMain->GetBalance() == 0) {
