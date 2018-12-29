@@ -474,8 +474,8 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
         return false;
     }
 
-    return true;
     return false;
+    return true;
 }
 
 
