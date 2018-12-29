@@ -111,6 +111,8 @@ https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 </table>
 
+~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.
+
 ![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
 
 # Resources
