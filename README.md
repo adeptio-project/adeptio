@@ -154,6 +154,8 @@ https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 ~~No premine was made*. There is only 0.5% dev fee from fixed blocks.~~
 
+*Development Fee address: https://explorer.adeptio.cc/address/ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf*
+
 *Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
 
 *Five premined masternodes will be burnt after 1 year from init start.*
