@@ -97,14 +97,18 @@ https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 <tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th>
 <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td>
 <tr><td>Block 86401 - 151200</td><td>125 ADE</td><td>~21 059875 ADE</td>
-<tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td><td>POW ends</td>
-<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>POS starts</td>
-<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td>
+<tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td>
+<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>POW ends</td>
+<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td><td>POS starts</td>
 <tr><td>Block 388801 - 475200</td><td>50 ADE</td><td>~45 899 600 ADE</td>
 <tr><td>Block 475201 - 518400</td><td>50 ADE</td><td>~48 059 550 ADE</td>
 <tr><td>Block 518401 - 561600</td><td>25 ADE</td><td>~49 139 525 ADE</td>
 <tr><td>Block 561601 - 604800</td><td>10 ADE</td><td>~49 571 515 ADE</td>
-<tr><td>Block 604801 - infinite</td><td>5 ADE</td><td>+ ~2.628M per year </td>
+<tr><td>Block 604801 - 1209600</td><td>5 ADE</td><td>~52 595 510 ADE </td>
+<tr><td>Block 1209601 - 2419200</td><td>3 ADE</td><td>~56 224 307 ADE </td>
+<tr><td>Block 2419201 - 4838400</td><td>2 ADE</td><td>~61 062 705 ADE </td>
+<tr><td>Block 4838401 - infinite</td><td>1 ADE</td><td>+ ~0.518M per year </td>
+
 </table>
 
 ![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
