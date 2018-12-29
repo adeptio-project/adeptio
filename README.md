@@ -94,12 +94,12 @@ https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 # Reward Distribution
 <table>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th><th>Development fees</th>
 <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td></td><td>DevFee 0.5%</td>
 <tr><td>Block 86401 - 151200</td><td>125 ADE</td><td>~21 059875 ADE</td></td><td>DevFee 0%</td>
 <tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td></td><td>DevFee 0%</td>
-<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>POW ends</td><td>DevFee 0%</td>
-<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td><td>POS starts</td><td>DevFee 7.5%</td>
+<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>DevFee 0%</td><td>POW ends</td>
+<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td><td>DevFee 7.5%</td><td>POS starts</td>
 <tr><td>Block 388801 - 475200</td><td>50 ADE</td><td>~45 899 600 ADE</td><td>DevFee 7.5%</td>
 <tr><td>Block 475201 - 518400</td><td>50 ADE</td><td>~48 059 550 ADE</td><td>DevFee 7.5%</td>
 <tr><td>Block 518401 - 561600</td><td>25 ADE</td><td>~49 139 525 ADE</td><td>DevFee 7.5%</td>
