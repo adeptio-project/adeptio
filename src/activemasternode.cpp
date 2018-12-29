@@ -52,6 +52,10 @@ void CActiveMasternode::ManageStatus()
             return;
         }
 
+        // The "StorADE" service needs the correct default port to work properly
+        if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
+            return; 
+
         if (pwalletMain->GetBalance() == 0) {
             notCapableReason = "Hot node, waiting for remote activation.";
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
@@ -68,10 +72,6 @@ void CActiveMasternode::ManageStatus()
             service = CService(strMasterNodeAddr);
         }
 
-        // The "StorADE" service needs the correct default port to work properly
-        if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
-            return; 
-        
         // The service needs the correct default port to work properly
         if(!CMasternodeBroadcast::CheckDefaultPort(strMasterNodeAddr, errorMessage, "CActiveMasternode::ManageStatus()"))
             return;
