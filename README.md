@@ -93,6 +93,7 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 # Reward Distribution
+Distribution ratio of 60%/30%/10% respectively. Masternode/Stakers/DevFund
 <table>
 <tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th><th>Development fees</th>
 <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td></td><td>DevFee 0.5%</td>
