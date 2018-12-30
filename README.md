@@ -129,6 +129,8 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 [Adeptio Stats](https://stats.adeptio.cc/)
 
+[Adeptio Wiki](https://wiki.adeptio.cc/)
+
 [Adeptio Official Public API](https://api.adeptio.cc/)
 
 [Adeptio CI Development](https://development.adeptio.cc/)
