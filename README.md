@@ -29,9 +29,9 @@ Use the autogen script to prepare the build environment.
 
 More information how to build on specific distribution see at: https://wiki.adeptio.cc/books/building-the-wallet
 
-**precompiled binaries**
+**Precompiled binaries**
 
-Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
+Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 # Coin Specifications
 
@@ -74,7 +74,8 @@ Precompiled binaries are available at GitHub, see https://github.com/adeptio-pro
 • Prefix: ADE adresses start with the capital letter "A"
 
 *Premine masternodes will be burnt after 1 year from init start.*
-https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
+
+Burn addr: https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 # Reward Distribution
 Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respectively.
