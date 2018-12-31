@@ -38,26 +38,31 @@ Instructions: Homebrew
 
 #### Install dependencies using Homebrew
 
-        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5
+        brew install autoconf automake berkeley-db4 libtool boost miniupnpc openssl pkg-config protobuf qt5 zmq libevent
 
 ### Building `adeptiod`
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/ADECRYPTO/ADE
+        git clone https://github.com/ADE-Project/ADE.git
         cd ADE
 
-2.  Build adeptiod:
+2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).
+
+        export LDFLAGS+=-L/usr/local/opt/openssl/lib
+        export CPPFLAGS+=-I/usr/local/opt/openssl/include
+
+3.  Build adeptiod:
 
         ./autogen.sh
         ./configure --with-gui=qt5
         make
 
-3.  It is also a good idea to build and run the unit tests:
+4.  It is also a good idea to build and run the unit tests:
 
         make check
 
-4.  (Optional) You can also install adeptiod to your path:
+5.  (Optional) You can also install adeptiod to your path:
 
         make install
 
@@ -92,7 +97,7 @@ All dependencies should be compiled with these flags:
  -arch x86_64
  -isysroot $(xcode-select --print-path)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk
 
-Once dependencies are compiled, see release-process.md for how the Adeptio-Qt.app
+Once dependencies are compiled, see release-process.md for how the ADE-Qt.app
 bundle is packaged and signed to create the .dmg disk image that is distributed.
 
 Running
