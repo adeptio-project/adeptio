@@ -301,9 +301,37 @@ sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
 sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
-echo "Update crontab"
-crontab -l | { cat; echo "0 0 * * * $HOME/adeptioStorade/storADEserver-updater.sh"; } | crontab -
-echo "Crontab update done"
+echo "Create auto updater for storADEserver"
+echo \
+"[Unit]
+Description=storADEupdater.service
+ 
+[Service]
+Type=oneshot
+WorkingDirectory=$HOME/adeptioStorade
+ExecStart=$HOME/adeptioStorade/storADEserver-updater.sh
+PrivateTmp=true" | sudo tee /etc/systemd/system/storADEupdater.service
+
+echo "Create timer for storADEupdater service"
+echo \
+"[Unit]
+Description=Run storADEupdater unit daily @ 00:00:00 (UTC)
+ 
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Unit=storADEupdater.service
+Persistent=true
+ 
+[Install]
+WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.timer
+
+sudo chmod 664 /etc/systemd/system/storADEupdater.service
+sudo chmod 664 /etc/systemd/system/storADEupdater.timer
+
+sudo systemctl start storADEupdater.service
+sudo systemctl start storADEupdater.timer
+sudo systemctl enable storADEupdater.service
+sudo systemctl enable storADEupdater.timer
 
 # Final start
 echo ""
