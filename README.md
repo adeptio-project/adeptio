@@ -21,15 +21,13 @@ https://development.adeptio.cc
 
 # Building process
 
-**compiling adeptio from git**
-
 Use the autogen script to prepare the build environment.
 
     ./autogen.sh
     ./configure
     make
 
-More information how to build on specific distribution see at: https://wiki.adeptio.cc
+More information how to build on specific distribution see at: https://wiki.adeptio.cc/books/building-the-wallet
 
 **precompiled binaries**
 
