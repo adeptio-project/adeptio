@@ -17,7 +17,7 @@ https://adeptio.cc
 The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
 
 Continuous integration process can be found at:
-http://development.adeptio.cc
+https://development.adeptio.cc
 
 # Building process
 
@@ -25,30 +25,16 @@ http://development.adeptio.cc
 
 Use the autogen script to prepare the build environment.
 
-    make clean (if necessary)
     ./autogen.sh
     ./configure
     make
+
+More information how to build on specific distribution see at: https://wiki.adeptio.cc
 
 **precompiled binaries**
 
 Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
-**Dependencies for Ubuntu 16.04 LTS or equivalent**
-
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install libboost-system1.58-dev libboost-system1.58.0
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev libevent-dev
-
-**Dependencies for Ubuntu 18.04 LTS or equivalent**
-
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev libevent-dev
-   
 # Coin Specifications
 
 ![Alt text](https://adeptio.cc/icon/adeptio_icon(256).png)
