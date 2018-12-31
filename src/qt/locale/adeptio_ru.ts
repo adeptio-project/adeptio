@@ -5265,8 +5265,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Copyright (C) 2014-%i Разработчики Dash Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2015-%i Разработчики Adeptio Core</translation>
+        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2018-%i Разработчики Adeptio Core</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

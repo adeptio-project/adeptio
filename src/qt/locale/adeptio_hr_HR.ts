@@ -5267,7 +5267,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Autorska prava (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Adeptio Core Developers</source>
+        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
         <translation>Autorska prava (C) 2015-%i The Adeptio Core Developers</translation>
     </message>
     <message>

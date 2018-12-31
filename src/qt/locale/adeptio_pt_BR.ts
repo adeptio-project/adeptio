@@ -3792,7 +3792,7 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Todos os direitos reservados (C) 2014-%i aos Desenvolvedores do Dash Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2015-%i The Adeptio Core Developers</source>
+        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
         <translation>Todos os direitos reservados (C) 2015-%i aos Desenvolvedores do Adeptio Core</translation>
     </message>
     <message>
