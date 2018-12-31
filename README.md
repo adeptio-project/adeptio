@@ -1,209 +1,92 @@
-# From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
+### Usage
 
-![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
+To build dependencies for the current arch+OS:
 
-[![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
-
-# What is Adeptio?
-
-Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset. [storADE](https://github.com/adeptio-project/adeptioStorade) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
-
-For more information see:
-
-https://adeptio.cc
-
-# Development
-
-The master branch is regularly built and tested. Other branches used for upcoming release or test. Although master is not guaranteed to be completely stable.
-
-Continuous integration process can be found at:
-http://development.adeptio.cc
-
-# Building process
-
-**compiling adeptio from git**
-
-Use the autogen script to prepare the build environment.
-
-    make clean (if necessary)
-    ./autogen.sh
-    ./configure
     make
 
-**precompiled binaries**
+To build for another arch/OS:
 
-Precompiled binaries are available at GitHub, see https://github.com/adeptio-project/adeptio/releases
+    make HOST=host-platform-triplet
 
-**Dependencies for Ubuntu 16.04 LTS or equivalent**
+For example:
 
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install libboost-system1.58-dev libboost-system1.58.0
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev libevent-dev
+    make HOST=x86_64-w64-mingw32 -j4
 
-**Dependencies for Ubuntu 18.04 LTS or equivalent**
+A prefix will be generated that's suitable for plugging into Bitcoin's
+configure. In the above example, a dir named x86_64-w64-mingw32 will be
+created. To use it for Bitcoin:
 
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev libevent-dev
-   
-# Coin Specifications
+    ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32
 
-![Alt text](https://adeptio.cc/icon/adeptio_icon(256).png)
+Common `host-platform-triplets` for cross compilation are:
 
-• Premine: (#1 Block) 50,002 for 5 init MasterNodes*
+- `i686-w64-mingw32` for Win32
+- `x86_64-w64-mingw32` for Win64
+- `x86_64-apple-darwin14` for macOS
+- `arm-linux-gnueabihf` for Linux ARM 32 bit
+- `aarch64-linux-gnu` for Linux ARM 64 bit
+- `riscv32-linux-gnu` for Linux RISC-V 32 bit
+- `riscv64-linux-gnu` for Linux RISC-V 64 bit
 
-• Algorithm: Hybrid - PoW/PoS
+No other options are needed, the paths are automatically configured.
 
-• PoW Algorithm: Quark
+### Install the required dependencies: Ubuntu & Debian
 
-• PoW Blocks: 2 - 345600
+#### For macOS cross compilation
 
-• PoS Blocks: Starting from 345601 (after ~240 days)
+    sudo apt-get install curl librsvg2-bin libtiff-tools bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python-setuptools
 
-• Block Time: 60 Seconds
+#### For Win32/Win64 cross compilation
 
-• Block Size: 1MB
+- see [build-windows.md](../doc/build-windows.md#cross-compilation-for-ubuntu-and-windows-subsystem-for-linux)
 
-• Max. Coin supply: infinite
+#### For linux (including i386, ARM) cross compilation
 
-• Network Port: 9077
+Common linux dependencies:
 
-• RPC Port: 9078
+    sudo apt-get install make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3
 
-• "storADE" Port: 9079
+For linux ARM cross compilation:
 
-• Tor network: capable
+    sudo apt-get install g++-arm-linux-gnueabihf binutils-arm-linux-gnueabihf
 
-• IPv6 network: capable
+For linux AARCH64 cross compilation:
 
-• PoW Ending: ~240 Days
+    sudo apt-get install g++-aarch64-linux-gnu binutils-aarch64-linux-gnu
 
-• Masternodes: activated
+For linux RISC-V 64-bit cross compilation (there are no packages for 32-bit):
 
-• Masternode Requirements: 10 000 ADE
+    sudo apt-get install g++-riscv64-linux-gnu binutils-riscv64-linux-gnu
 
-• Maturity: 100 Confirmations
+RISC-V known issue: gcc-7.3.0 and gcc-7.3.1 result in a broken `test_pivx` executable (see https://github.com/bitcoin/bitcoin/pull/13543),
+this is apparently fixed in gcc-8.1.0.
 
-• Prefix: ADE adresses start with the capital letter "A"
+### Dependency Options
+The following can be set when running make: make FOO=bar
 
-*Premine masternodes will be burnt after 1 year from init start.*
-https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
+    SOURCES_PATH: downloaded sources will be placed here
+    BASE_CACHE: built packages will be placed here
+    SDK_PATH: Path where sdk's can be found (used by macOS)
+    FALLBACK_DOWNLOAD_PATH: If a source file can't be fetched, try here before giving up
+    NO_QT: Don't download/build/cache qt and its dependencies
+    NO_WALLET: Don't download/build/cache libs needed to enable the wallet
+    NO_UPNP: Don't download/build/cache packages needed for enabling upnp
+    DEBUG: disable some optimizations and enable more runtime checking
+    HOST_ID_SALT: Optional salt to use when generating host package ids
+    BUILD_ID_SALT: Optional salt to use when generating build package ids
 
-# Reward Distribution
-Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respectively.
-<table>
-<tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th><th>Development fees</th>
-<tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td></td><td>DevFee 0.5%</td>
-<tr><td>Block 86401 - 151200</td><td>125 ADE</td><td>~21 059875 ADE</td></td><td>DevFee 0%</td>
-<tr><td>Block 151201 - 302400</td><td>100 ADE</td><td>~36 179775 ADE</td></td><td>DevFee 0%</td>
-<tr><td>Block 302401 - 345600</td><td>75 ADE</td><td>~39 419 700 ADE</td><td>DevFee 0%</td><td>POW ends</td>
-<tr><td>Block 345601 - 388800</td><td>50 ADE</td><td>~41 579 650 ADE</td><td>DevFee 7.5%</td><td>POS starts</td>
-<tr><td>Block 388801 - 475200</td><td>50 ADE</td><td>~45 899 600 ADE</td><td>DevFee 7.5%</td>
-<tr><td>Block 475201 - 518400</td><td>50 ADE</td><td>~48 059 550 ADE</td><td>DevFee 7.5%</td>
-<tr><td>Block 518401 - 561600</td><td>25 ADE</td><td>~49 139 525 ADE</td><td>DevFee 7.5%</td>
-<tr><td>Block 561601 - 604800</td><td>10 ADE</td><td>~49 571 515 ADE</td><td>DevFee 7.5%</td>
-<tr><td>Block 604801 - 1209600</td><td>5 ADE</td><td>~52 595 510 ADE </td><td>DevFee 7.5%</td>
-<tr><td>Block 1209601 - 2419200</td><td>3 ADE</td><td>~56 224 307 ADE </td><td>DevFee 7.5%</td>
-<tr><td>Block 2419201 - 4838400</td><td>2 ADE</td><td>~61 062 705 ADE </td><td>DevFee 7.5%</td>
-<tr><td>Block 4838401 - infinite</td><td>1 ADE</td><td>+ ~0.518M per year </td><td>DevFee 7.5%</td>
-</table>
+If some packages are not built, for example `make NO_WALLET=1`, the appropriate
+options will be passed to bitcoin's configure. In this case, `--disable-wallet`.
 
-~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.
+### Additional targets
 
-![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
+    download: run 'make download' to fetch all sources without building them
+    download-osx: run 'make download-osx' to fetch all sources needed for macOS builds
+    download-win: run 'make download-win' to fetch all sources needed for win builds
+    download-linux: run 'make download-linux' to fetch all sources needed for linux builds
 
-# Resources
+### Other documentation
 
-[Adeptio Website](https://adeptio.cc/)
+- [description.md](description.md): General description of the depends system
+- [packages.md](packages.md): Steps for adding packages
 
-[Adeptio Blog](https://blog.adeptio.cc/)
-
-[Adeptio Explorer](https://explorer.adeptio.cc/)
-
-[Adeptio Explorer 2](https://blocks.adeptio.cc/)
-
-[Adeptio Exchange](https://crex24.com/exchange/ADE-BTC)
-
-[Adeptio Stats](https://stats.adeptio.cc/)
-
-[Adeptio Wiki](https://wiki.adeptio.cc/)
-
-[Adeptio Official Public API](https://api.adeptio.cc/)
-
-[Adeptio CI Development](https://development.adeptio.cc/)
-
-[Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
-
-# Community
-
-[Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
-
-[Adeptio Discord](https://discord.gg/RBXjTBa)
-
-[Adeptio FaceBook](https://www.facebook.com/AdeptioProject-1637877816511858)
-
-[Adeptio Twitter](https://twitter.com/adeptioproject)
-
-[Adeptio Gitter](https://gitter.im/adeptiocoin/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-
-[Adeptio Telegram](https://t.me/adeptiocoin)
-
-[Adeptio Reddit](https://www.reddit.com/r/Adeptio/)
-
-# Developers Funds
-
-~~No premine was made*. There is only 0.5% dev fee from fixed blocks.~~
-
-*Development Fee address: https://explorer.adeptio.cc/address/ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf*
-
-*Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
-
-*Five premined masternodes will be burnt after 1 year from init start.*
-
-# Why should I trust in adeptio-project?
-
-Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes
-
-We don't own the majority of coin supply, because no premine was made
-
-StorADE system functionality makes adeptio unique project
-
-Long term support (probably no coin swap ever)
-
-No Bounties (except for translations)
-
-There was a fair start for everyone.
-
-No Airdrops
-
-No Presale
-
-No ICO
-
-# What's the difference between adeptio and other cryptocurrencies?
-
-You should check our [whitepaper](https://github.com/adeptio-project/adeptio#further-information). Our long term goal is to use adeptio as a base core blockchain.
-
-# Who is adeptio team?
-
-Our core team consist of young members with passion for blockchain technology and fintech revolution.
-
-# Acknowledgements
-
-Credit goes to Bitcoin Core, Dash and Pivx for providing a basic platform for Adeptio to enhance and develop, in concert with a shared desire to support the adoption of a decentralised digital currency future for the masses.
-
-# Code issues
-Since we are a 100% open-source project we strongly prefer if you create a pull-request on Github in the proper repository with the necessary fix. Alternatively, If you would like to make a suggestion regarding a potential fix please send an email to development@adeptio.cc
-
-# License
-
-Adeptio is released under the terms of the MIT license. See [COPYING](https://raw.githubusercontent.com/adeptio-project/adeptio/master/COPYING) or for more information:
-
-[https://opensource.org/licenses/MIT](URL)
-
-# Further information
-
-_For more information check out our whitepaper at [https://adeptio.cc/whitepaper.pdf](https://dev.adeptio.cc/adeptio_whitepaper_v1.0.0.1.pdf)_
