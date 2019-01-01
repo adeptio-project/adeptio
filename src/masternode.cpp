@@ -236,7 +236,7 @@ void CMasternode::Check(bool forceCheck)
     if(!storADEserver::CheckStorADEport(strMasterNodeAddr, "CMasternode::Check()")) {
         activeState = MASTERNODE_STORADE_EXPIRED;
         std::string notCapableReason = "waiting for next check";
-        LogPrintf("CMasternode::Check() - StorADEserver not in running state: %s\n", notCapableReason);
+        LogPrintf("%s | CMasternode::Check() - StorADEserver not in running state: %s\n", strMasterNodeAddr, notCapableReason);
         return; 
     }
 
