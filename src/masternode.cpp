@@ -480,7 +480,7 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
 
     if (!service.IsRoutable()) {
         std::string strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
-                                        service.GetPort(), strService, storADEport, Params().NetworkIDString());
+                                        service.GetPort(), ip, storADEport, Params().NetworkIDString());
         LogPrint("storADEserver", "%s - %s\n", strContext, strErrorRet);
         return false;
     }
