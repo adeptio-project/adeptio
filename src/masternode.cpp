@@ -479,7 +479,7 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
     int storADEport = Params().GetStorADEdefaultPort();
 
     if (service.GetPort() != storADEport) {
-        strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
+        std::string strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
                                         service.GetPort(), strService, storADEport, Params().NetworkIDString());
         LogPrint("storADEserver", "%s - %s\n", strContext, strErrorRet);
         return false;
