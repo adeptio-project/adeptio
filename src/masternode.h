@@ -123,6 +123,7 @@ public:
         MASTERNODE_WATCHDOG_EXPIRED,
         MASTERNODE_POSE_BAN,
         MASTERNODE_VIN_SPENT,
+        MASTERNODE_STORADE_EXPIRED,
         MASTERNODE_POS_ERROR
     };
 
@@ -277,6 +278,7 @@ public:
         if (activeState == CMasternode::MASTERNODE_ENABLED) strStatus = "ENABLED";
         if (activeState == CMasternode::MASTERNODE_EXPIRED) strStatus = "EXPIRED";
         if (activeState == CMasternode::MASTERNODE_VIN_SPENT) strStatus = "VIN_SPENT";
+        if (activeState == CMasternode::MASTERNODE_STORADE_EXPIRED) strStatus = "STORADE_EXPIRED";
         if (activeState == CMasternode::MASTERNODE_REMOVE) strStatus = "REMOVE";
         if (activeState == CMasternode::MASTERNODE_POS_ERROR) strStatus = "POS_ERROR";
 

@@ -232,6 +232,14 @@ void CMasternode::Check(bool forceCheck)
         }
     }
 
+    // The "StorADE" service needs the correct default port to work properly
+    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CMasternode::Check()")) {
+        activeState = MASTERNODE_STORADE_EXPIRED;
+        notCapableReason = "waiting for next check";
+        LogPrintf("CMasternode::Check() - StorADEserver not in running state: %s\n", notCapableReason);
+        return; 
+    }
+
     activeState = MASTERNODE_ENABLED; // OK
 }
 
@@ -312,6 +320,8 @@ std::string CMasternode::GetStatus()
         return "EXPIRED";
     case CMasternode::MASTERNODE_OUTPOINT_SPENT:
         return "OUTPOINT_SPENT";
+    case CMasternode::MASTERNODE_STORADE_EXPIRED:
+        return "STORADE_EXPIRED";
     case CMasternode::MASTERNODE_REMOVE:
         return "REMOVE";
     case CMasternode::MASTERNODE_WATCHDOG_EXPIRED:
