@@ -233,7 +233,7 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, std::string errorMessage, "CMasternode::Check()")) {
+    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, "CMasternode::Check()")) {
         activeState = MASTERNODE_STORADE_EXPIRED;
         std::string notCapableReason = "waiting for next check";
         LogPrintf("CMasternode::Check() - StorADEserver not in running state: %s\n", notCapableReason);
@@ -472,7 +472,7 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
     return true;
 }
 
-     bool storADEserver::CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext)
+     bool storADEserver::CheckStorADEport(std::string strService, std::string strContext)
 {
     return false;
     CService service = CService(strService);
