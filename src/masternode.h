@@ -276,6 +276,7 @@ public:
         std::string strStatus = "ACTIVE";
 
         if (activeState == CMasternode::MASTERNODE_ENABLED) strStatus = "ENABLED";
+        if (activeState == CMasternode::MASTERNODE_PRE_ENABLED) strStatus = "PRE_ENABLED";
         if (activeState == CMasternode::MASTERNODE_EXPIRED) strStatus = "EXPIRED";
         if (activeState == CMasternode::MASTERNODE_VIN_SPENT) strStatus = "VIN_SPENT";
         if (activeState == CMasternode::MASTERNODE_STORADE_EXPIRED) strStatus = "STORADE_EXPIRED";
