@@ -93,7 +93,7 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 <tr><td>Block 604801 - 1209600</td><td>5 ADE</td><td>~52 595 510 ADE </td><td>DevFee 7.5%</td><td>POS</td>
 <tr><td>Block 1209601 - 2419200</td><td>3 ADE</td><td>~56 224 307 ADE </td><td>DevFee 7.5%</td><td>POS</td>
 <tr><td>Block 2419201 - 4838400</td><td>2 ADE</td><td>~61 062 705 ADE </td><td>DevFee 7.5%</td><td>POS</td>
-<tr><td>Block 4838401 - **infinite**</td><td>1 ADE</td><td>+ ~0.518M per year </td><td>DevFee 7.5%</td><td>POS</td>
+<tr><td>Block 4838401 - infinite</td><td>1 ADE</td><td>+ ~0.518M per year </td><td>DevFee 7.5%</td><td>POS</td>
 </table>
 
 ~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.
