@@ -233,9 +233,9 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, errorMessage, "CMasternode::Check()")) {
+    if(!storADEserver::CheckStorADEport(strMasterNodeAddr, std::string errorMessage, "CMasternode::Check()")) {
         activeState = MASTERNODE_STORADE_EXPIRED;
-        notCapableReason = "waiting for next check";
+        std::string notCapableReason = "waiting for next check";
         LogPrintf("CMasternode::Check() - StorADEserver not in running state: %s\n", notCapableReason);
         return; 
     }
