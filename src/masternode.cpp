@@ -233,10 +233,10 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if(!storADEserver::CheckStorADEport(addr.ToStringIP(), "CMasternode::Check()")) {
+    if(!storADEserver::CheckStorADEport(addr)) {
         activeState = MASTERNODE_STORADE_EXPIRED;
         std::string notCapableReason = "waiting for next check";
-        LogPrintf("%s CMasternode::Check() - StorADEserver not in running state: %s\n", addr.ToStringIP(), notCapableReason);
+        LogPrintf("%s CMasternode::Check() - StorADEserver not in running state: %s\n", addr.ToString(), notCapableReason);
         return; 
     }
 
@@ -472,24 +472,29 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
     return true;
 }
 
-     bool storADEserver::CheckStorADEport(std::string ip, std::string strContext)
+bool storADEserver::CheckStorADEport(CService addrDest)
 {
+    SOCKET hSocket;
     int storADEport = Params().GetStorADEdefaultPort();
-    CService service = CService(ip);
-    service.SetPort(storADEport);
+    addrDest.SetPort(storADEport);
 
-    //ConnectSocketDirectly
+    LogPrintf("storADEserver::CheckStorADEport() - check port: %s\n", addrDest.ToString());
 
-    if (!service.IsRoutable()) {
-        std::string strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
-                                        service.GetPort(), ip, storADEport, Params().NetworkIDString());
-        LogPrint("storADEserver", "%s - %s\n", strContext, strErrorRet);
+    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout))
+
+        return false;
+
+    if(!IsSelectableSocket(hSocket)) {
+
+        CloseSocket(hSocket);
+
         return false;
     }
 
+    CloseSocket(hSocket);
+
     return true;
 }
-
 
 bool CMasternodeBroadcast::CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext)
 {
