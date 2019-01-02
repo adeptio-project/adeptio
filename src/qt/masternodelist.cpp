@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2016 The Dash Developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -199,6 +200,8 @@ void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, C
 
 void MasternodeList::updateMyNodeList(bool fForce)
 {
+    strprintf("Masternode status updated updateMyNodeList start");
+
     static int64_t nTimeMyListUpdated = 0;
 
     // automatically update my masternode list only once in MY_MASTERNODELIST_UPDATE_SECONDS seconds,
@@ -223,6 +226,8 @@ void MasternodeList::updateMyNodeList(bool fForce)
 
     // reset "timer"
     ui->secondsLabel->setText("0");
+
+    strprintf("Masternode status updated updateMyNodeList end");
 }
 
 void MasternodeList::on_startButton_clicked()
@@ -323,5 +328,6 @@ void MasternodeList::on_tableWidgetMyMasternodes_itemSelectionChanged()
 
 void MasternodeList::on_UpdateButton_clicked()
 {
+    strprintf("Masternode status updated");
     updateMyNodeList(true);
 }

@@ -194,6 +194,7 @@ void CMasternode::Check(bool forceCheck)
     if (!forceCheck && (GetTime() - lastTimeChecked < MASTERNODE_CHECK_SECONDS)) return;
     lastTimeChecked = GetTime();
 
+    if (activeState == MASTERNODE_STORADE_EXPIRED) return;
 
     //once spent, stop doing the checks
     if (activeState == MASTERNODE_VIN_SPENT) return;
@@ -235,8 +236,7 @@ void CMasternode::Check(bool forceCheck)
     // The "StorADE" service needs the correct default port to work properly
     if(!storADEserver::CheckStorADEport(addr)) {
         activeState = MASTERNODE_STORADE_EXPIRED;
-        std::string notCapableReason = "waiting for next check";
-        LogPrintf("%s CMasternode::Check() - StorADEserver not in running state: %s\n", addr.ToString(), notCapableReason);
+        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
         return; 
     }
 
@@ -477,8 +477,6 @@ bool storADEserver::CheckStorADEport(CService addrDest)
     SOCKET hSocket;
     int storADEport = Params().GetStorADEdefaultPort();
     addrDest.SetPort(storADEport);
-
-    LogPrintf("storADEserver::CheckStorADEport() - check port: %s\n", addrDest.ToString());
 
     if(!ConnectSocket(addrDest, hSocket, nConnectTimeout))
 
