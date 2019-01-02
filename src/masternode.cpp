@@ -478,6 +478,8 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
     CService service = CService(ip);
     service.SetPort(storADEport);
 
+    //ConnectSocketDirectly
+
     if (!service.IsRoutable()) {
         std::string strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
                                         service.GetPort(), ip, storADEport, Params().NetworkIDString());
