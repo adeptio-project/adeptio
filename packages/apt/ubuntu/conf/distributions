@@ -1,6 +1,6 @@
 Origin: Adeptio-Project
 Label: adeptiocore
-Codename: xenial
+Codename: xenial bionic
 Architectures: amd64
 Components: main
 Description: Apt repository for adeptio-project
