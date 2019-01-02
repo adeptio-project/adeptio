@@ -200,8 +200,6 @@ void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, C
 
 void MasternodeList::updateMyNodeList(bool fForce)
 {
-    strprintf("Masternode status updated updateMyNodeList start %s", "");
-
     static int64_t nTimeMyListUpdated = 0;
 
     // automatically update my masternode list only once in MY_MASTERNODELIST_UPDATE_SECONDS seconds,
@@ -226,8 +224,6 @@ void MasternodeList::updateMyNodeList(bool fForce)
 
     // reset "timer"
     ui->secondsLabel->setText("0");
-
-    strprintf("Masternode status updated updateMyNodeList end %s", "");
 }
 
 void MasternodeList::on_startButton_clicked()
@@ -328,6 +324,5 @@ void MasternodeList::on_tableWidgetMyMasternodes_itemSelectionChanged()
 
 void MasternodeList::on_UpdateButton_clicked()
 {
-    strprintf("Masternode status updated %s", "");
     updateMyNodeList(true);
 }
