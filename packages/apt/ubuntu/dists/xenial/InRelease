@@ -4,36 +4,36 @@ Hash: SHA256
 Origin: Adeptio-Project
 Label: adeptiocore
 Codename: xenial
-Date: Wed, 02 Jan 2019 15:21:35 UTC
+Date: Wed, 02 Jan 2019 15:53:53 UTC
 Architectures: amd64
 Components: main
 Description: Apt repository for adeptio-project
 MD5Sum:
- 7e24530c222f4cf8c077737647b597b7 941 main/binary-amd64/Packages
- 76775db43571d45751ae81405d537099 577 main/binary-amd64/Packages.gz
- 608e7924a71d07308070d956ca4ac087 127 main/binary-amd64/Release
+ ca6d02313897578e184e14f346ef3a9d 939 main/binary-amd64/Packages
+ edfdb695be5abdef90401dae1dc0e343 576 main/binary-amd64/Packages.gz
+ 359f12df3b4c10d43f36afc4c1e51cbd 127 main/binary-amd64/Release
 SHA1:
- 97ed6d9b032431af6d590cf3e8e0bcfed1470528 941 main/binary-amd64/Packages
- 19a9be695cdf41fb0db8496e3794d285a1256cfe 577 main/binary-amd64/Packages.gz
- 3ba285de09fc51deb1fe7bb2efb997c190d90959 127 main/binary-amd64/Release
+ c9c2a6e37f8d69ac67860d108fed61031d91fbf2 939 main/binary-amd64/Packages
+ 90528c4125064123bc4187d254e97b6f46f15514 576 main/binary-amd64/Packages.gz
+ 48e65906e63780dc9d6abffde5fd24b23d046d0e 127 main/binary-amd64/Release
 SHA256:
- 9d0ed09cd223e4367cfed46c20c4ccf7cce353bfa25669c181cde27fe3bdd53d 941 main/binary-amd64/Packages
- 6f77dfa3cc197609cc295d8c322c41985ba730f064fa55d48decd685c10243b1 577 main/binary-amd64/Packages.gz
- 9df7af6cb2a07a325abe229d4a67f916540f5875883edb66b122d1a3bbc40a14 127 main/binary-amd64/Release
+ 4e7ca6eca3e65a48400860b9b9fa39d5ce1fd1eef0c850a7ae7ecd80b01a5e64 939 main/binary-amd64/Packages
+ f8bb3a92e9ec2223330a37800248fe4e66d159f82e84812a37e69dd297b4aa2b 576 main/binary-amd64/Packages.gz
+ 02b64c775341e70d322166450f76b1b4af5730df3670cdb911bedf5639980aea 127 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQIcBAEBCAAGBQJcLNcJAAoJENUVbewffzA0nysQALN6kh6b5tWlAlMH01NEeiX0
-EeFnKmvWMBXiyLRg7rDi6IcFdhvnn7YhNClwHgetindoAW1JjqLrRxifdxBwy3WD
-9pD/jOMPANRzwaO91GJISpTbsygOvSCWOIKBz0xmCJA295IuAL1blOmpb0QsdLn4
-VFU+uU0iFRWw80La33xOR7yJ55rK9aQVwQBOWS4J7ocr3sg19EpgmkQ3rGgNTn8v
-nzKtbtsoD7qwOJe2UXzKZwlVKWUezXVuFDRMHIzAj8vnzoSNXUHiwV1u0QxD2dCv
-8nrUBfqxxBRvGjkw824KhUdtMBuXEOqwDZeQnj2xu/lcTIYOowpUCGeOnRHhyj7l
-xiqxFituSdZUOPyiyJSDjEHegcu3dbD824N+VtTgP4VDMflZtq86+7Kgp72gjTc+
-FGZqQNUPmlPrCJgUdnoqK5iTHo/4Amc4+mEo4pqxYX0KYa5U7L8x9yQ+Pu5U6dSr
-eyDYgmeqj4+pXW3m1aAwjcA+STTHnmwLboxk4iL7mTeCZEI90hUEFi2aEq8t2zbe
-jTbphBTKN8yzQ2NuNk4/BDy4YcaDAchKIe8mGeddyUzI81P32g3xGRWLNJvpZGD8
-uQ3FrilNKSN5a6lOUf1UmwPblrcnfQW+4bbOSnaV88AoSn7XNjy3U6P1tenM502M
-RCniz11orPUhvwKhU01f
-=EdcK
+iQIcBAEBCAAGBQJcLN6XAAoJENUVbewffzA0P90QAJ6lWXH728ML768bG02hazyz
+rJJb9Y8F9PK9DxCMWF2kGYL3W0KMN67nik9C26cmWFmsagqiqs6rIl7LR6LNMsli
+XAyi7PI9UyvFZt1/AIGMCeVzsGmzKIadoXEkTSqlXTgpR4mF2yS5T7KRAkvqt9gD
+ctv4xoc6sEf5sH9/SinpJKok4y8flRu+jPDvRUuZHxyDpByaHjvwv9fMx3m8m86M
+db5E9eB+k6KY1jjnt0y/B8hcLNfO6RzDnVu069fwAVkOjJa4hdiikj/SPahPbitT
+TAprHl+hz/VNaZjxxTu6CQOZZy0AhuDDaBJdBbCyUCviNJl54NFkJKw2LDud2eOI
+p0q+a6IUOMTUAMct3ohKaqAgZS/3nyrlAmMhZJpFl2sDRznTj6Ct9j3Gk/EQlcUF
+IU9jpWrKy8sZY4o/XIEVNO8n0KNGzuvT7P+wrOrZJ9RcpVNB8Y5hrmbY4ramaSLY
+rBDO2BL0ZpT2WBfcD3W0rmK88w33rObH75vp6ssWouFG7aVZGGwcylAbL2ZE4Fid
+lYnCWZsbphHOyopTFdz+dtB1LTZYUP2Xq/nKefAdNusg9XDqba2PKTx9UKBEQ7Q5
+tVH9g2+YeOJt9l8dWVTTIMIEOkDx9dcwvJx+RgeLGynmHQtUBuU6wDQRxxaaxQw4
+AF15VPKnBwyAz+5jJGRB
+=ycgX
 -----END PGP SIGNATURE-----

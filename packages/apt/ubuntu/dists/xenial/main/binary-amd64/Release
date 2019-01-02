@@ -1,5 +1,5 @@
 Component: main
 Origin: Adeptio-Project
-Label: AdeptioCore
+Label: adeptiocore
 Architecture: amd64
 Description: Apt repository for adeptio-project
