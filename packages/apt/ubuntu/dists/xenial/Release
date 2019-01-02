@@ -1,0 +1,19 @@
+Origin: Adeptio-Project
+Label: adeptiocore
+Codename: xenial
+Date: Wed, 02 Jan 2019 15:21:35 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for adeptio-project
+MD5Sum:
+ 7e24530c222f4cf8c077737647b597b7 941 main/binary-amd64/Packages
+ 76775db43571d45751ae81405d537099 577 main/binary-amd64/Packages.gz
+ 608e7924a71d07308070d956ca4ac087 127 main/binary-amd64/Release
+SHA1:
+ 97ed6d9b032431af6d590cf3e8e0bcfed1470528 941 main/binary-amd64/Packages
+ 19a9be695cdf41fb0db8496e3794d285a1256cfe 577 main/binary-amd64/Packages.gz
+ 3ba285de09fc51deb1fe7bb2efb997c190d90959 127 main/binary-amd64/Release
+SHA256:
+ 9d0ed09cd223e4367cfed46c20c4ccf7cce353bfa25669c181cde27fe3bdd53d 941 main/binary-amd64/Packages
+ 6f77dfa3cc197609cc295d8c322c41985ba730f064fa55d48decd685c10243b1 577 main/binary-amd64/Packages.gz
+ 9df7af6cb2a07a325abe229d4a67f916540f5875883edb66b122d1a3bbc40a14 127 main/binary-amd64/Release

@@ -1,0 +1,16 @@
+Package: adeptiocore
+Version: 2.0.0.0
+Architecture: amd64
+Maintainer: Adeptio development team <development@adeptio.cc>
+Installed-Size: 7375
+Depends: bash, libboost-filesystem-dev (>=1.58.0), libboost-program-options-dev (>=1.58.0), libboost-thread-dev (>=1.58.0), libboost-system-dev (>=1.58.0), libevent-dev (>= 2.0.21), openssl (>= 1.0.2g)
+Homepage: https://adeptio.cc
+Priority: optional
+Section: devel
+Filename: pool/main/a/adeptiocore/adeptiocore_2.0.0.0_amd64.deb
+Size: 2169220
+SHA256: 62835964597036c3560229df12c84c7c55a17833b3e70b9039a8b42e5236e2f0
+SHA1: b1438ecaeb2c168375af3b13611e263276129dce
+MD5sum: 2ca4e2883724df96fc3d2a215928f18b
+Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset.
+
