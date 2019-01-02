@@ -1,7 +1,0 @@
-Origin: Adeptio-Project
-Label: AdeptioCore
-Codename: xenial
-Architectures: amd64
-Components: main
-Description: Apt repository for adeptio-project
-SignWith: 95CFE08F
