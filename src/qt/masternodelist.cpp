@@ -200,7 +200,7 @@ void MasternodeList::updateMyMasternodeInfo(QString strAlias, QString strAddr, C
 
 void MasternodeList::updateMyNodeList(bool fForce)
 {
-    print("Masternode status updated updateMyNodeList start");
+    strprintf("Masternode status updated updateMyNodeList start %s", "");
 
     static int64_t nTimeMyListUpdated = 0;
 
@@ -227,7 +227,7 @@ void MasternodeList::updateMyNodeList(bool fForce)
     // reset "timer"
     ui->secondsLabel->setText("0");
 
-    print("Masternode status updated updateMyNodeList end");
+    strprintf("Masternode status updated updateMyNodeList end %s", "");
 }
 
 void MasternodeList::on_startButton_clicked()
@@ -328,6 +328,6 @@ void MasternodeList::on_tableWidgetMyMasternodes_itemSelectionChanged()
 
 void MasternodeList::on_UpdateButton_clicked()
 {
-    print("Masternode status updated");
+    strprintf("Masternode status updated %s", "");
     updateMyNodeList(true);
 }
