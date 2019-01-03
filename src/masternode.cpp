@@ -187,7 +187,7 @@ uint256 CMasternode::CalculateScore(int mod, int64_t nBlockHeight)
     return r;
 }
 
-void (bool forceCheck)
+void Masternode::Check(bool forceCheck)
 {
     if (ShutdownRequested()) return;
 
