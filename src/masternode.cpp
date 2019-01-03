@@ -187,7 +187,7 @@ uint256 CMasternode::CalculateScore(int mod, int64_t nBlockHeight)
     return r;
 }
 
-void Masternode::Check(bool forceCheck)
+void CMasternode::Check(bool forceCheck)
 {
     if (ShutdownRequested()) return;
 
@@ -235,7 +235,7 @@ void Masternode::Check(bool forceCheck)
 
     // The "StorADE" service needs the correct default port to work properly
     if(!storADEserver::CheckStorADEport(addr)) {
-        //activeState = MASTERNODE_STORADE_EXPIRED; // Postpone to v2.1.0.0
+        activeState = MASTERNODE_STORADE_EXPIRED;
         LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
         return; 
     }
