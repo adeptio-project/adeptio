@@ -104,10 +104,10 @@ if [ "$OS_version" -eq "1" ]; then
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3-legacy.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64-legacy.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
@@ -236,7 +236,7 @@ server=1
 listen=1
 daemon=1
 staking=1
-maxconnections=125
+maxconnections=256
 masternode=1
 bind=[$wanipv6]
 masternodeaddr=[$wanipv6]:9077
