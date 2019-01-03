@@ -7,7 +7,7 @@ Depends: bash, libboost-filesystem-dev (>=1.58.0), libboost-program-options-dev 
 Homepage: https://adeptio.cc
 Priority: optional
 Section: devel
-Filename: pool/main/a/adeptiocore/adeptiocore_2.0.0.0_amd64.deb
+Filename: pool/main/a/adeptiocore/adeptiocore-xenial_2.0.0.0_amd64.deb
 Size: 2172052
 SHA256: e2d60da6f8142509e2cbb7af851cd598d69aa844eddbc42a6df16a9f761e7c28
 SHA1: 16d35d569070ceab459bf59ec4a133bc12d4620c
