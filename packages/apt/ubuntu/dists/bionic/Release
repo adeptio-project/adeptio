@@ -1,19 +1,19 @@
 Origin: Adeptio-Project
 Label: adeptiocore
 Codename: bionic
-Date: Thu, 03 Jan 2019 16:12:44 UTC
+Date: Thu, 03 Jan 2019 17:08:27 UTC
 Architectures: amd64
 Components: main
 Description: Apt repository for adeptio-project
 MD5Sum:
- 904a8e681d304ebf033284cd3088d617 941 main/binary-amd64/Packages
- 5a59f87e2dd85150639fbcac66a6ac91 580 main/binary-amd64/Packages.gz
+ 4b9aecce5811c57e3d6fbbc866375050 962 main/binary-amd64/Packages
+ 782b8009591bba2a1cd094b8e7291df2 583 main/binary-amd64/Packages.gz
  359f12df3b4c10d43f36afc4c1e51cbd 127 main/binary-amd64/Release
 SHA1:
- 0793e0ba7b6122192fdfc877a5557850355288ec 941 main/binary-amd64/Packages
- 9c241b1d63e7bdd76bd34997de80b223701bc744 580 main/binary-amd64/Packages.gz
+ 0a84e8b1b8e3e7b4bb89261371ede0071a371253 962 main/binary-amd64/Packages
+ 64c282ae96cfa694149070a46da0de82d993513c 583 main/binary-amd64/Packages.gz
  48e65906e63780dc9d6abffde5fd24b23d046d0e 127 main/binary-amd64/Release
 SHA256:
- 3402c32847a8ad1d1558c697e5e80c310fc733cbc23dfac265d26dfc1502a206 941 main/binary-amd64/Packages
- 0ff90c5de633f54e2e17f6832222dd65bac4f8e533e333d6b1a8913bdc47630d 580 main/binary-amd64/Packages.gz
+ 405520f410dc8af69cad1d78a62d3af7c453867487358291822986f46ac3ed4b 962 main/binary-amd64/Packages
+ 446000d94ec3d9ebf0b14ee32c188651ab03c9e0559c467e875025156ecbb08a 583 main/binary-amd64/Packages.gz
  02b64c775341e70d322166450f76b1b4af5730df3670cdb911bedf5639980aea 127 main/binary-amd64/Release
