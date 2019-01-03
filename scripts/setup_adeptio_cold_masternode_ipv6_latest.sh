@@ -1,23 +1,21 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-12-23
-#:: Version: v1.0.0.3
+#:: Copyright // 2018-01-02
+#:: Version: v2.0.0.0 xerus
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
 cat << "ADE"
 
 
-
-           _____  ______        __   ___   ___   ____                _                    _____  ______ 
-     /\   |  __ \|  ____|      /_ | / _ \ / _ \ |___ \     _        | |             /\   |  __ \|  ____|
-    /  \  | |  | | |__    __   _| || | | | | | |  __) |  _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
-   / /\ \ | |  | |  __|   \ \ / / || | | | | | | |__ <  |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
-  / ____ \| |__| | |____   \ V /| || |_| | |_| | ___) |   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
- /_/    \_\_____/|______|   \_/ |_(_)___(_)___(_)____/          |___/\__\___/|_|/_/    \_\_____/|______|
-                                                                                                        
-                                                                                                        
-                                                      
+           _____  ______        ___    ___    __   __                                 _                    _____  ______ 
+     /\   |  __ \|  ____|      |__ \  / _ \   \ \ / /                       _        | |             /\   |  __ \|  ____|
+    /  \  | |  | | |__    __   __ ) || | | |   \ V / ___ _ __ _   _ ___   _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
+   / /\ \ | |  | |  __|   \ \ / // / | | | |    > < / _ \ '__| | | / __| |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
+  / ____ \| |__| | |____   \ V // /_ | |_| |   / . \  __/ |  | |_| \__ \   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
+ /_/    \_\_____/|______|   \_/|____(_)___/   /_/ \_\___|_|   \__,_|___/         |___/\__\___/|_|/_/    \_\_____/|______|
+                                                                                                                         
+                                                                                                                         
 ADE
 
 RED='\033[0;31m'
@@ -25,7 +23,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $(date)
-echo -e "${GREEN}== adeptio v1.0.0.3 ==${NC}"
+echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo
@@ -88,7 +86,7 @@ if [ "$OS_version" -eq "1" ]; then
 	if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
         sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 	if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
 	if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         else
         sudo add-apt-repository ppa:bitcoin/bitcoin -y
@@ -99,7 +97,7 @@ if [ "$OS_version" -eq "1" ]; then
         if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
         sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
         if [ $? -ne "0" ]; then echo "Unable to install libboost dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
         if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
@@ -127,6 +125,7 @@ server=1
 listen=1
 daemon=1
 staking=1
+bind=[$wanipv6]
 addnode=seed0.adeptio.cc
 addnode=seed1.adeptio.cc
 addnode=seed2.adeptio.cc
@@ -151,7 +150,7 @@ After=network.target
 [Service]
 User=$(echo $USER)
 Type=forking
-ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
+ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid --datadir=$(echo $HOME)/.adeptio/
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
 ExecStop=/usr/bin/adeptio-cli stop
 Restart=always
@@ -239,6 +238,7 @@ daemon=1
 staking=1
 maxconnections=125
 masternode=1
+bind=[$wanipv6]
 masternodeaddr=[$wanipv6]:9077
 externalip=[$wanipv6]
 masternodeprivkey=$privkey
@@ -301,9 +301,37 @@ sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
 sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
 
 # Start daemon after reboot // Systemd take care of this;
-echo "Update crontab"
-crontab -l | { cat; echo "0 0 * * * $HOME/adeptioStorade/storADEserver-updater.sh"; } | crontab -
-echo "Crontab update done"
+echo "Create auto updater for storADEserver"
+echo \
+"[Unit]
+Description=storADEupdater.service
+ 
+[Service]
+Type=oneshot
+WorkingDirectory=$HOME/adeptioStorade
+ExecStart=$HOME/adeptioStorade/storADEserver-updater.sh
+PrivateTmp=true" | sudo tee /etc/systemd/system/storADEupdater.service
+
+echo "Create timer for storADEupdater service"
+echo \
+"[Unit]
+Description=Run storADEupdater unit daily @ 00:00:00 (UTC)
+ 
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Unit=storADEupdater.service
+Persistent=true
+ 
+[Install]
+WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.timer
+
+sudo chmod 664 /etc/systemd/system/storADEupdater.service
+sudo chmod 664 /etc/systemd/system/storADEupdater.timer
+
+sudo systemctl start storADEupdater.service
+sudo systemctl start storADEupdater.timer
+sudo systemctl enable storADEupdater.service
+sudo systemctl enable storADEupdater.timer
 
 # Final start
 echo ""
