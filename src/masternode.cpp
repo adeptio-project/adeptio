@@ -235,7 +235,7 @@ void CMasternode::Check(bool forceCheck)
 
     // The "StorADE" service needs the correct default port to work properly
     if(!storADEserver::CheckStorADEport(addr)) {
-        activeState = MASTERNODE_STORADE_EXPIRED;
+        //activeState = MASTERNODE_STORADE_EXPIRED; // Postpone to v2.1.0.0
         LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
         return; 
     }
