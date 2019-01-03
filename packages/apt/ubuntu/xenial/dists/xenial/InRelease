@@ -4,7 +4,7 @@ Hash: SHA256
 Origin: Adeptio-Project
 Label: adeptiocore
 Codename: xenial
-Date: Thu, 03 Jan 2019 18:17:44 UTC
+Date: Thu, 03 Jan 2019 18:38:30 UTC
 Architectures: amd64
 Components: main
 Description: Apt repository for adeptio-project
@@ -23,17 +23,17 @@ SHA256:
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQIcBAEBCAAGBQJcLlHJAAoJENUVbewffzA00D8QAK+041CMk7udMU3UlRuJ0TA4
-RS+Mr3KQ4NWXAXekdVwpkncsGbSltaA8S8LnFkSwbfo4HnZ6yR2k17ZpfVsk5Lez
-GE7zAbi+BxDs/W3Uq8fQ7Pd1cBBbW2q4RkrlhVbAKf3tcSCEwOX26jGmvg6wy3eL
-JIqe5VDeE7TMjNvuA4A2ja5yqohsBQ1bnwjp1Ga0cGwYt5Hl4HjFM9tF6L0RNCDd
-0t9dR2ixq+2SvEwCKRr4auM1Zr6xljDie/3L0B5i1xw2oBJhaLW+BM/o2xbX1H0b
-mcoiR5HDdaEcDzNctmj0+SYicO+3GjTNuPjelvlQBgc9EkEDM5Yft6JCE2HJz90T
-k63OvaKn57l+7HEUvRVGOt3rxstdkM4gmpfThq28hAFfp20Dar1HrapOVdGpLH7E
-zC+84+mN06kCk6NCwDr2xkr353EAHYWkJyfU2jVrvN3c53DUJQXgxvmNZcPREQqM
-F0S2tW9nP8xLrULHOaIzchjIau03b39lnFTKnnuWNOPtN9ifwHY63q9oLH2RGL2+
-62ktf+xd2FT9glAPIEiN7pMnjx5meIEApUKlauGlhbcSSeiH6WrGNqLpyI5Vz4oA
-InidfYTy5bUGy4400aUvzSEktVGqvFq0gqR/DK2FjLvQ58C6M0m3uGxZsdeEmu3z
-9Eo8X04joXafu/MCInoH
-=zn5w
+iQIcBAEBCAAGBQJcLlanAAoJENUVbewffzA06oQQAKXaf6zxxzrFp0r7hhUYOsrk
+Ton6dYBcllN4jXjGvWWQsstGeRNd9R9pHv/fyKhKkG5tTIljfbZxZcP33ToF+w7m
+oVq1CzRG2eepnjeq6Ie1Q5va+08BDKVx1fBVmu3OnOQJ70PDnXljriCQsqWFGDhM
+amrVHP72F+gDRP0fCNzBx270P4TKafgtYkbdjHGqDTyWSM3Kv40RVir+f4Rt+C37
+JXc0YDd4WOOM8npv9qFYrKVzBDaNwDHl01UT/jDkRT7ljwSgcpA7bxihjL8QGUmj
+nCeOevrhafLFGfyVtfoP9y6webjWOGIqHFTAaigyTvjXwdlECRtPDsogGdRcEwbO
+37zFRCX8D8ThEMwU5I1ICknxWFHlA+0F+230deus4hP0olm88qRvgba4uSVgmnWf
+uy12l+8LQ5ZUVRW5z6qEPQBeROk9gfq4cjaPrWsNIAveDzfCCB3qkpOnKsh/p0vF
+4miqX9gpZ7MlNzb+FjWduTVPbvcTvpYYd5C2uK/MUBaJOrkxBGmMnYQUzmKi3QQG
+7ZUdAySdHsPMk2wYaomIWDKkuXoDBT25q450IgUD18YxAqZFjJJG3cgvv0FKbnl7
+B0+wmw87C8Ogz/ec8kOGL47IAwc2uJRUhWDu8cfdSK7JCXFHq+PZkbwfwJ0KZEPF
+HcHuojbhbrXDKjlMFS1H
+=wFyX
 -----END PGP SIGNATURE-----

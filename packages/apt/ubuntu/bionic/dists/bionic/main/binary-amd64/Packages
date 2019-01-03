@@ -7,7 +7,7 @@ Depends: bash, libboost-filesystem-dev (>=1.58.0), libboost-program-options-dev 
 Homepage: https://adeptio.cc
 Priority: optional
 Section: devel
-Filename: pool/main/a/adeptiocore/adeptiocore-bionic_2.0.0.0_amd64.deb
+Filename: pool/main/a/adeptiocore/adeptiocore_2.0.0.0_amd64.deb
 Size: 2129578
 SHA256: c1a5db153d0670087d7b576eea92099ea15a88f3b11dfee38efb61a6712c6ca2
 SHA1: 811ab8735385d33f902345173974bb2b956f58b6
