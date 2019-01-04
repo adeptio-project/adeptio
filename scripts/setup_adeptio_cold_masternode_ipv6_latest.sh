@@ -242,6 +242,7 @@ bind=[$wanipv6]
 masternodeaddr=[$wanipv6]:9077
 externalip=[$wanipv6]
 masternodeprivkey=$privkey
+enablezeromint=0
 addnode=seed0.adeptio.cc
 addnode=seed1.adeptio.cc
 addnode=seed2.adeptio.cc

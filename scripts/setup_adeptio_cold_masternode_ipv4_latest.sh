@@ -243,6 +243,7 @@ externalip=$wanip
 masternodeaddr=$wanip:9077
 externalip=$wanip
 masternodeprivkey=$privkey
+enablezeromint=0
 addnode=seed0.adeptio.cc
 addnode=seed1.adeptio.cc
 addnode=seed2.adeptio.cc
