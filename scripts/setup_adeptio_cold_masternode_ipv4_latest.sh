@@ -331,6 +331,10 @@ Persistent=true
 [Install]
 WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.timer
 
+echo ""
+echo "Adjusting systemd services please wait..."
+echo ""
+
 sudo chmod 664 /etc/systemd/system/storADEupdater.service
 sudo chmod 664 /etc/systemd/system/storADEupdater.timer
 
