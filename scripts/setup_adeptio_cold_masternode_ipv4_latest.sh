@@ -313,6 +313,7 @@ Type=oneshot
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$HOME/adeptioStorade/storADEserver-updater.sh
 PrivateTmp=true
+
 [Install]
 WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.service
 
