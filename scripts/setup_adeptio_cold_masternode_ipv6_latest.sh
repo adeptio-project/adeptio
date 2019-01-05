@@ -300,6 +300,7 @@ echo "Create storADEserver auto-updater"
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
 sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
+sudo chown -R $real_user:$real_user ~/adeptioStorade/.git/
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Create auto updater for storADEserver"
