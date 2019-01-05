@@ -260,7 +260,7 @@ EOF
 
 # Firewall //
 echo "Update firewall rules"
-sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer' 
+sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh server' 
 sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
 sudo /usr/sbin/ufw allow 9079/tcp comment 'Adeptio storADEserver protocol TCP'
 sudo /usr/sbin/ufw allow 9079/udp comment 'Adeptio storADEserver protocol UDP'
