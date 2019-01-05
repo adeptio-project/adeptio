@@ -311,7 +311,10 @@ Description=storADEupdater.service
 Type=oneshot
 WorkingDirectory=$HOME/adeptioStorade
 ExecStart=$HOME/adeptioStorade/storADEserver-updater.sh
-PrivateTmp=true" | sudo tee /etc/systemd/system/storADEupdater.service
+PrivateTmp=true
+
+[Install]
+WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.service
 
 echo "Create timer for storADEupdater service"
 echo \
