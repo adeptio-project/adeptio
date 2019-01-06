@@ -201,6 +201,7 @@ echo ""
 sudo systemctl stop adeptiocore &&
 echo ""
 echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet masternodeprivkey (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
+echo""
 read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
 checkpriv_key=$(echo $masternodeprivkey | wc -c)
