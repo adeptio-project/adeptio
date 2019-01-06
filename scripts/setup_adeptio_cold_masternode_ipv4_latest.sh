@@ -23,6 +23,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $(date)
+echo "©Copyright 2017-2018 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
@@ -200,7 +201,7 @@ done
 echo ""
 sudo systemctl stop adeptiocore &&
 echo ""
-echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet ${GREEN}masternodeprivkey${NC} (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
+echo -e "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet ${GREEN}masternodeprivkey${NC} (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
 echo""
 read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
@@ -349,17 +350,18 @@ echo ""
 echo "Masternode config done, starting daemon again"
 echo ""
 sudo systemctl start adeptiocore
-echo "${RED}Setup almost completed. You have to wait few hours to sync the blocks${NC}"
+echo -e "${RED}Setup almost completed. You have to wait few hours to sync the blocks${NC}"
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"
 echo "Your external IP: $wanip"
+echo "Installation log: ~/adeptio_masternode_installation.log"
 echo ""
 echo "In order to start a masternode from Cold Wallet check your current block with explorer block:"
-echo "${GREEN}adeptio-cli getinfo | grep blocks${NC}"
+echo -e "${GREEN}adeptio-cli getinfo | grep blocks${NC}"
 echo "https://explorer.adeptio.cc/api/getblockcount"
 echo ""
 echo "Please start a masternode from Cold Wallet if explorer.adeptio.cc block matches with yours."
 echo "Overall setup completed successfully"
-echo "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.gg/RBXjTBa"
+echo -e "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.gg/RBXjTBa"
 echo ""
