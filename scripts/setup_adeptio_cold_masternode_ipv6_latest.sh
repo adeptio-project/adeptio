@@ -23,7 +23,8 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $(date)
-echo "©Copyright 2017-2018 Adeptio Developer Team"
+echo ""
+echo "©Copyright 2017-2019 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
