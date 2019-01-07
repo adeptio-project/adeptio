@@ -5,6 +5,10 @@ Adeptio Core
 
 Can be found at: [adeptio wiki](http://wiki.adeptio.cc). You can find some usefull information here as well.
 
+### Building instruction at wiki
+
+[https://wiki.adeptio.cc/books/building-the-wallet](https://wiki.adeptio.cc/books/building-the-wallet)
+
 Setup
 ---------------------
 [Adeptio Core](http://adeptio.cc) is the original Adeptio client and it builds the backbone of the network. However, it downloads and stores the entire history of Adeptio transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
