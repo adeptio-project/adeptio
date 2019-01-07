@@ -1,7 +1,5 @@
 # What is installation scripts?
 
-![Alt text](https://wiki.adeptio.cc/uploads/images/gallery/2019-01-Jan/ZtvcLCP8pSUpRqVC-Selection_163.png)
-
 Instalation scripts is used to setup adeptio masternode in the easiest way as possible. It maintains all required dependencies and library for Linux VPS. Masternode operator need to insert **masternodeprivkey**. That's all, nothing more from VPS setup side.
 
 # Is it safe?
