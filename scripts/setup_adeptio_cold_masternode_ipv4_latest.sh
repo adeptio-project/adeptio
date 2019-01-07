@@ -311,16 +311,13 @@ sudo systemctl enable storADEserver.service
 sudo systemctl start storADEserver.service
 sudo systemctl daemon-reload
 
-# Create storADEserver auto-updater
-echo -e "${GREEN}7/10 Create storADEserver auto-updater${NC}"
-echo ""
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
 sudo chown -R $real_user:$real_user ~/adeptioStorade/
 sudo chown -R $real_user:$real_user ~/adeptioStorade/.git/
 
 # Start daemon after reboot // Systemd take care of this;
-echo -e "${GREEN}8/10 Create auto updater for storADEserver${NC}"
+echo -e "${GREEN}7/10 Create auto updater for storADEserver${NC}"
 echo ""
 echo \
 "[Unit]
@@ -335,7 +332,9 @@ PrivateTmp=true
 [Install]
 WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.service
 
-echo -e "${GREEN}9/10 Create timer for storADEupdater service${NC}"
+echo ""
+echo -e "${GREEN}8/10 Create timer for storADEupdater service${NC}"
+echo ""
 echo \
 "[Unit]
 Description=Run storADEupdater unit daily @ 00:00:00 (UTC)
@@ -349,7 +348,7 @@ Persistent=true
 WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.timer
 
 echo ""
-echo "Adjusting systemd services please wait..."
+echo -e "${GREEN}9/10 Adjusting systemd services please wait...${NC}"
 echo ""
 
 sudo chmod 664 /etc/systemd/system/storADEupdater.service
@@ -362,7 +361,7 @@ sudo systemctl enable storADEupdater.timer
 
 # Final start
 echo ""
-echo -e "${GREEN}10/10 Masternode config done, starting adeptiocore again${NC}"
+echo -e "${GREEN}10/10 Masternode config done, storADE platform installed - starting adeptiocore again${NC}"
 echo ""
 sudo systemctl start adeptiocore
 echo -e "${RED}The blockchain is syncing from scratch. You have to wait few hours to sync all the blocks!${NC}"
