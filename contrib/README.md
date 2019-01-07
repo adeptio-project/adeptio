@@ -2,7 +2,7 @@ Wallet Tools
 ---------------------
 
 ### [BitRPC](/contrib/bitrpc) ###
-Allows for sending of all standard Bitcoin commands via RPC rather than as command line args.
+Allows for sending of all standard Adeptio commands via RPC rather than as command line args.
 
 ### [SpendFrom](/contrib/spendfrom) ###
 
