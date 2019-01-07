@@ -1,6 +1,10 @@
 Adeptio Core
 =====================
 
+### Most up-to-date documentation
+
+Can be found at adeptio wiki: wiki.adeptio.cc But you can find some usefull information here too.
+
 Setup
 ---------------------
 [Adeptio Core](http://adeptio.cc) is the original Adeptio client and it builds the backbone of the network. However, it downloads and stores the entire history of Adeptio transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
