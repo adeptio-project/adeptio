@@ -23,7 +23,7 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: http://www.adeptio.org
-Vcs-Git: git://github.com/ADE-Project/ADE.git
+Vcs-Git: git://github.com/adeptio-project/adeptio.git
 Vcs-Browser: http://github.com/ADE-Project/ADE
 
 Package: adeptiod
