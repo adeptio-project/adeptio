@@ -142,6 +142,8 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 ~~No premine was made*. There is only 0.5% dev fee from fixed blocks.~~
 
+*There is 7.5% dev fee from fixed blocks*
+
 *Development Fee address: https://explorer.adeptio.cc/address/ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf*
 
 *Premine: (#1 Block) 50 002 ADE for five init MasterNodes required for succesful network start*
@@ -152,7 +154,7 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 Hybrid algorithm ensures the security of network and distributes the rewards among the PoW/PoS and masternodes
 
-We don't own the majority of coin supply, because no premine was made
+We don't own the majority of coin supply, because of no premine
 
 StorADE system functionality makes adeptio unique project
 
