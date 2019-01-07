@@ -368,7 +368,7 @@ echo -e "${RED}The blockchain is syncing from scratch. You have to wait few hour
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"
-echo "Your external IPv6: $wanipv6"
+echo "Your external IPv6 addr: $wanipv6"
 echo "Installation log: ~/adeptio_masternode_installation.log"
 echo ""
 echo "In order to start a masternode from Cold Wallet check your current block with explorer block by typing in the terminal:"
