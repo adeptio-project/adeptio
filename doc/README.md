@@ -3,7 +3,7 @@ Adeptio Core
 
 ### Most up-to-date documentation
 
-Can be found at adeptio wiki: wiki.adeptio.cc But you can find some usefull information here too.
+Can be found at: [adeptio wiki](http://adeptio.cc) You can find some usefull information here as well.
 
 Setup
 ---------------------

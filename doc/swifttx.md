@@ -11,10 +11,6 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubrawtxlock`: publishes the raw transaction when locked via HyperSend
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via HyperSend
 
-This mechanism has been integrated into Bitcore-Node-ADE which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/ADE-Project/insight-api-adeptio#web-socket-api](https://github.com/ADE-Project/insight-api-adeptio#web-socket-api) 
-* API: [https://github.com/ADE-Project/insight-api-adeptio#hypersend-transactions](https://github.com/ADE-Project/insight-api-adeptio#hypersend-transactions) 
-
 ####Command line option
 
 When a wallet HyperSend transaction is successfully locked a shell command provided in this option is executed (`%s` in `<cmd>` is replaced by TxID):

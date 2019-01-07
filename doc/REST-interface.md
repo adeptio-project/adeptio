@@ -19,7 +19,7 @@ For full TX query capability, one must enable the transaction index via "txindex
 
 Given a block hash: returns a block, in binary, hex-encoded binary or JSON formats.
 
-The HTTP request and response are both handled entirely in-memory, thus making maximum memory usage at least 4.66MB (2 MB max block, plus hex encoding) per request.
+The HTTP request and response are both handled entirely in-memory, thus making maximum memory usage at least 2.66MB (1 MB max block, plus hex encoding) per request.
 
 With the /notxdetails/ option JSON response will only contain the transaction hash instead of the complete transaction details. The option only affects the JSON response.
 
@@ -50,23 +50,23 @@ https://github.com/bitcoin/bips/blob/master/bip-0064.mediawiki
 
 Example:
 ```
-$ curl localhost:18332/rest/getutxos/checkmempool/b2cdfd7b89def827ff8af7cd9bff7627ff72e5e8b0f71210f92ea7a4000c5d75-0.json 2>/dev/null | json_pp
+$ curl localhost:18332/rest/getutxos/checkmempool/9fe0c98a815b81503c762ea4799c95c9adc7c7aac007e7eb39aa57b847bc9c8a-0.json 2>/dev/null | json_pp
 {
-   "chaintipHash" : "00000000fb01a7f3745a717f8caebee056c484e6e0bfe4a9591c235bb70506fb",
-   "chainHeight" : 325347,
+   "chaintipHash" : "00000000000917aff29d1bdcfcb49d4d7054d88008884204939bed1096d711d4",
+   "chainHeight" : 302686,
    "utxos" : [
       {
          "scriptPubKey" : {
             "addresses" : [
-               "mi7as51dvLJsizWnTMurtRmrP8hG2m1XvD"
+               "APxwmaL9gK1yjRo7FntsxFATjaJ4GvQz3i"
             ],
             "type" : "pubkeyhash",
-            "hex" : "76a9141c7cebb529b86a04c683dfa87be49de35bcf589e88ac",
+            "hex" : "76a9141c7cebb529b86a04c683da987be49de35bcf589e88qb",
             "reqSigs" : 1,
             "asm" : "OP_DUP OP_HASH160 1c7cebb529b86a04c683dfa87be49de35bcf589e OP_EQUALVERIFY OP_CHECKSIG"
          },
-         "value" : 8.8687,
-         "height" : 2147483647,
+         "value" : 75.2687,
+         "height" : 2137583647,
          "txvers" : 1
       }
    ],
