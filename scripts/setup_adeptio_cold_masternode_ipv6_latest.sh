@@ -107,7 +107,7 @@ if [ "$OS_version" -eq "1" ]; then
         fi
 # Download adeptio sources //
 echo ""
-echo -e "${GREEN}1/10 Downloading adeptio sources...${BC}" 
+echo -e "${GREEN}1/10 Downloading adeptio sources...${NC}" 
 echo ""
 cd ~
 rm -fr adeptio*.zip
