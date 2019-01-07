@@ -20,7 +20,6 @@ The seeds compiled into the release are created from adeptio' DNS seed data, lik
     ping -c 1 seed9.adeptio.cc | awk 'NR==1{gsub(/\(|\)/,"",$3);print $3}' >> seeds_main.txt
     ping -c 1 seed10.adeptio.cc | awk 'NR==1{gsub(/\(|\)/,"",$3);print $3}' >> seeds_main.txt
     ping -c 1 seed11.adeptio.cc | awk 'NR==1{gsub(/\(|\)/,"",$3);print $3}' >> seeds_main.txt
-
     python3 makeseeds.py < seeds_main.txt > nodes_main.txt
     python3 generate-seeds.py . > ../../src/chainparamsseeds.h
 
