@@ -27,9 +27,12 @@ echo ""
 echo "©Copyright 2017-2019 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
-echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo ""
+echo "Installation content:"
+echo "adeptio core v2.0.0.0 + latest storADE code"
 echo
-echo "This setup can be launched only once"
+echo "Setup can be launched only once"
 echo "Do you agree?"
 echo -e "${GREEN}y${NC}/${RED}n"${NC}?
 read agree
@@ -103,6 +106,8 @@ if [ "$OS_version" -eq "1" ]; then
         if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
+echo "Download adeptio sources" 
+echo ""
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
@@ -144,6 +149,7 @@ EOF
 
 #Create adeptiocore.service
 echo "Create adeptiocore.service for systemd"
+echo ""
 echo \
 "[Unit]
 Description=Adeptio Core Wallet daemon & service
@@ -176,6 +182,7 @@ sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
 # Check if user is root? If not create sudoers files to manage systemd services
 echo ""
 echo "Check if user is root? If not create sudoers files to manage systemd services"
+echo ""
 if [ "$EUID" -ne 0 ]; then
 sudo echo \
 "%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
@@ -263,6 +270,7 @@ EOF
 
 # Firewall //
 echo "Update firewall rules"
+echo ""
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh server' 
 sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
 sudo /usr/sbin/ufw allow 9079/tcp comment 'Adeptio storADEserver protocol TCP'
@@ -272,6 +280,7 @@ echo ""
 
 #Create storADEserver service for systemd
 echo "Create storADEserver service for systemd"
+echo ""
 sudo echo \
 "[Unit]
 Description=Adeptio storADEserver daemon for encrypted file storage
@@ -292,6 +301,7 @@ sudo chmod 664 /etc/systemd/system/storADEserver.service
 
 # Download storADEserver files from Github;
 echo "Download storADEserver files from Github;"
+echo ""
 cd ~/
 git clone https://github.com/adeptio-project/adeptioStorade.git
 
@@ -301,6 +311,7 @@ sudo systemctl daemon-reload
 
 # Create storADEserver auto-updater
 echo "Create storADEserver auto-updater"
+echo ""
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
 sudo chown -R $real_user:$real_user ~/adeptioStorade/
@@ -308,6 +319,7 @@ sudo chown -R $real_user:$real_user ~/adeptioStorade/.git/
 
 # Start daemon after reboot // Systemd take care of this;
 echo "Create auto updater for storADEserver"
+echo ""
 echo \
 "[Unit]
 Description=storADEupdater.service
