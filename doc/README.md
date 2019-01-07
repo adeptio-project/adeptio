@@ -5,7 +5,7 @@ Adeptio Core
 
 Can be found at: [adeptio wiki](http://wiki.adeptio.cc). You can find some usefull information here as well.
 
-### Building instruction at wiki
+### Up-to-date building instructions
 
 [https://wiki.adeptio.cc/books/building-the-wallet](https://wiki.adeptio.cc/books/building-the-wallet)
 
