@@ -45,7 +45,7 @@ The following are developer notes on how to build Adeptio on your native platfor
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
 - [RHEL7/Centos7 Build Notes](build-rhel-centos.md)
-- [Windows Build Notes](https://wiki.adeptio.cc/books/building-the-wallet)
+- [Windows Building](https://wiki.adeptio.cc/books/building-the-wallet)
 
 License
 ---------------------
