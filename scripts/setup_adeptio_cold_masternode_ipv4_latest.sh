@@ -30,7 +30,7 @@ echo
 echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo ""
 echo "Installation content:"
-echo "adeptio core v2.0.0.0 + latest storADE code"
+echo "adeptio core v2.0.0.0 + latest storADE platform code"
 echo
 echo "Setup can be launched only once"
 echo "Do you agree?"
@@ -106,7 +106,8 @@ if [ "$OS_version" -eq "1" ]; then
         if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
-echo "Download adeptio sources" 
+echo ""
+echo -e "${GREEN}1/10 Downloading adeptio sources...${BC}" 
 echo ""
 cd ~
 rm -fr adeptio*.zip
@@ -148,7 +149,7 @@ addnode=seed11.adeptio.cc
 EOF
 
 #Create adeptiocore.service
-echo "Create adeptiocore.service for systemd"
+echo -e "${GREEN}2/10 Create adeptiocore.service for systemd${NC}"
 echo ""
 echo \
 "[Unit]
@@ -178,11 +179,10 @@ sudo systemctl enable adeptiocore
 real_user=$(echo $USER) 
 
 sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
- 
+
 # Check if user is root? If not create sudoers files to manage systemd services
 echo ""
-echo "Check if user is root? If not create sudoers files to manage systemd services"
-echo ""
+echo -e "${GREEN}3/10 Check if user is root? If not create sudoers files to manage systemd services${NC}"
 if [ "$EUID" -ne 0 ]; then
 sudo echo \
 "%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
@@ -216,6 +216,7 @@ privkey=$(echo $masternodeprivkey)
 checkpriv_key=$(echo $masternodeprivkey | wc -c)
 if [ "$checkpriv_key" -ne "52" ];
 then
+	echo ""
 	echo "Looks like your $privkey is not correct, it should cointain 52 symbols, please paste it one more time"
 	read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
@@ -269,7 +270,7 @@ addnode=seed11.adeptio.cc
 EOF
 
 # Firewall //
-echo "Update firewall rules"
+echo -e "${GREEN}4/10 Update firewall rules${NC}"
 echo ""
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh server' 
 sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
@@ -279,7 +280,7 @@ sudo /usr/sbin/ufw --force enable
 echo ""
 
 #Create storADEserver service for systemd
-echo "Create storADEserver service for systemd"
+echo -e "${GREEN}5/10 Create storADEserver service for systemd${NC}"
 echo ""
 sudo echo \
 "[Unit]
@@ -300,7 +301,8 @@ WantedBy=default.target" | sudo tee /etc/systemd/system/storADEserver.service
 sudo chmod 664 /etc/systemd/system/storADEserver.service
 
 # Download storADEserver files from Github;
-echo "Download storADEserver files from Github;"
+echo ""
+echo -e "${GREEN}6/10 Downloading storADEserver files from Github...${NC}"
 echo ""
 cd ~/
 git clone https://github.com/adeptio-project/adeptioStorade.git
@@ -310,7 +312,7 @@ sudo systemctl start storADEserver.service
 sudo systemctl daemon-reload
 
 # Create storADEserver auto-updater
-echo "Create storADEserver auto-updater"
+echo -e "${GREEN}7/10 Create storADEserver auto-updater${NC}"
 echo ""
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
@@ -318,7 +320,7 @@ sudo chown -R $real_user:$real_user ~/adeptioStorade/
 sudo chown -R $real_user:$real_user ~/adeptioStorade/.git/
 
 # Start daemon after reboot // Systemd take care of this;
-echo "Create auto updater for storADEserver"
+echo -e "${GREEN}8/10 Create auto updater for storADEserver${NC}"
 echo ""
 echo \
 "[Unit]
@@ -333,7 +335,7 @@ PrivateTmp=true
 [Install]
 WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.service
 
-echo "Create timer for storADEupdater service"
+echo -e "${GREEN}9/10 Create timer for storADEupdater service${NC}"
 echo \
 "[Unit]
 Description=Run storADEupdater unit daily @ 00:00:00 (UTC)
@@ -360,10 +362,10 @@ sudo systemctl enable storADEupdater.timer
 
 # Final start
 echo ""
-echo "Masternode config done, starting daemon again"
+echo -e "${GREEN}10/10 Masternode config done, starting adeptiocore again${NC}"
 echo ""
 sudo systemctl start adeptiocore
-echo -e "${RED}Setup almost completed. You have to wait few hours to sync the blocks!${NC}"
+echo -e "${RED}The blockchain is syncing from scratch. You have to wait few hours to sync all the blocks!${NC}"
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"
