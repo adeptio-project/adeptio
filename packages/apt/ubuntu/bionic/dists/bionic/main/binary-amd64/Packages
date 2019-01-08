@@ -8,9 +8,9 @@ Homepage: https://adeptio.cc
 Priority: optional
 Section: devel
 Filename: pool/main/a/adeptiocore/adeptiocore_2.0.0.0_amd64.deb
-Size: 2129578
-SHA256: c1a5db153d0670087d7b576eea92099ea15a88f3b11dfee38efb61a6712c6ca2
-SHA1: 811ab8735385d33f902345173974bb2b956f58b6
-MD5sum: 1b7e460f153cc2e872cb7d17159567cf
+Size: 2129478
+SHA256: 9ebcf49a60a54d63111d14377225b6e670ef13af0d645e09cea30867268eb3ea
+SHA1: befb35951fbd353d2039a8505ef4e1c3208b5255
+MD5sum: b798a721251f836e92e87e66fc10ec82
 Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset.
 
