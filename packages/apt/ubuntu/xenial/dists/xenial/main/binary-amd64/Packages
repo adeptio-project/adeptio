@@ -9,9 +9,9 @@ Vcs-Git: https://github.com/adeptio-project/adeptioDPKG.git
 Priority: optional
 Section: devel
 Filename: pool/main/a/adeptiocore/adeptiocore_2.0.0.0_amd64.deb
-Size: 2172284
-SHA256: f8710d84bda7ed435e634c00c3f7a055a0160ffe48b449aa99bc3b8219227627
-SHA1: 6f4e52e6e2ecdeba3bd7fb49d8e2b740b409cff2
-MD5sum: ea9297d58aec2aff3b0c753047b55635
+Size: 2172364
+SHA256: 894c5e846de8094585fbd9ef16889f8cfe078a18d165ee1b3dab40c3c897aca9
+SHA1: 2a274c6234092de6a15da363834dda65fb3bef72
+MD5sum: 0cda3d079dab19a2202d1e440e41aac0
 Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority.
 
