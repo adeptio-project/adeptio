@@ -1,4 +1,4 @@
-Building ADE
+Building Adeptio Core
 
 Use the autogen script to prepare the build environment.
 
@@ -8,6 +8,8 @@ Use the autogen script to prepare the build environment.
 
 Always verify the signatures and checksums.
 
+More detail explanation how to build the wallet: https://wiki.adeptio.cc/books/building-the-wallet
+
 See doc/build-*.md for instructions on building adeptiod,
 the intended-for-services, no-graphical-interface, reference
-implementation of ADE.
+implementation of Adeptio Core.

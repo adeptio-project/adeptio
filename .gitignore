@@ -63,7 +63,6 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-*.patch
 .adeptio
 *.a
 *.pb.cc
@@ -127,3 +126,7 @@ qa/pull-tester/test.*/*
 .idea
 CMakeLists.txt
 cmake-build-debug
+
+*.deb
+adeptiod
+adeptio-cli

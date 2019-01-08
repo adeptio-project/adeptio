@@ -14,15 +14,15 @@ function clean_up {
    done
 }
 
-WORKINGDIR="/tmp/bitcoin"
+WORKINGDIR="/tmp/adeptio"
 TMPFILE="hashes.tmp"
 
 #this URL is used if a version number is not specified as an argument to the script
-SIGNATUREFILE="https://bitcoin.org/bin/0.9.2.1/SHA256SUMS.asc"
+SIGNATUREFILE="https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/sha256sums.asc"
 
-SIGNATUREFILENAME="SHA256SUMS.asc"
+SIGNATUREFILENAME="sha256sums.asc"
 RCSUBDIR="test/"
-BASEDIR="https://bitcoin.org/bin/"
+BASEDIR="https://adeptio.cc/bin/"
 VERSIONPREFIX="bitcoin-"
 RCVERSIONSTRING="rc"
 

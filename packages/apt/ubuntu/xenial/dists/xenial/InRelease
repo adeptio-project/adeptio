@@ -1,0 +1,39 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Origin: Adeptio-Project
+Label: adeptiocore
+Codename: xenial
+Date: Thu, 03 Jan 2019 18:38:30 UTC
+Architectures: amd64
+Components: main
+Description: Apt repository for adeptio-project
+MD5Sum:
+ 28abc75098d9856b7944bc507a2a5eac 941 main/binary-amd64/Packages
+ ef1d484bc2c1d07ed51a84711a43d923 580 main/binary-amd64/Packages.gz
+ 359f12df3b4c10d43f36afc4c1e51cbd 127 main/binary-amd64/Release
+SHA1:
+ 1ae3f58c8ee6ce280210728000c394eb601d3c18 941 main/binary-amd64/Packages
+ a069c6c47b143a0d1c3f02dbfc669f38571d4a4a 580 main/binary-amd64/Packages.gz
+ 48e65906e63780dc9d6abffde5fd24b23d046d0e 127 main/binary-amd64/Release
+SHA256:
+ e43aecdad5448f000e4b52daa82842c7fc71a331ce424802d49192092ad1823b 941 main/binary-amd64/Packages
+ 47097d97495602425a289834d0d05cc6bb93ae7433f5fde73e01855272bf0146 580 main/binary-amd64/Packages.gz
+ 02b64c775341e70d322166450f76b1b4af5730df3670cdb911bedf5639980aea 127 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAEBCAAGBQJcLlanAAoJENUVbewffzA06oQQAKXaf6zxxzrFp0r7hhUYOsrk
+Ton6dYBcllN4jXjGvWWQsstGeRNd9R9pHv/fyKhKkG5tTIljfbZxZcP33ToF+w7m
+oVq1CzRG2eepnjeq6Ie1Q5va+08BDKVx1fBVmu3OnOQJ70PDnXljriCQsqWFGDhM
+amrVHP72F+gDRP0fCNzBx270P4TKafgtYkbdjHGqDTyWSM3Kv40RVir+f4Rt+C37
+JXc0YDd4WOOM8npv9qFYrKVzBDaNwDHl01UT/jDkRT7ljwSgcpA7bxihjL8QGUmj
+nCeOevrhafLFGfyVtfoP9y6webjWOGIqHFTAaigyTvjXwdlECRtPDsogGdRcEwbO
+37zFRCX8D8ThEMwU5I1ICknxWFHlA+0F+230deus4hP0olm88qRvgba4uSVgmnWf
+uy12l+8LQ5ZUVRW5z6qEPQBeROk9gfq4cjaPrWsNIAveDzfCCB3qkpOnKsh/p0vF
+4miqX9gpZ7MlNzb+FjWduTVPbvcTvpYYd5C2uK/MUBaJOrkxBGmMnYQUzmKi3QQG
+7ZUdAySdHsPMk2wYaomIWDKkuXoDBT25q450IgUD18YxAqZFjJJG3cgvv0FKbnl7
+B0+wmw87C8Ogz/ec8kOGL47IAwc2uJRUhWDu8cfdSK7JCXFHq+PZkbwfwJ0KZEPF
+HcHuojbhbrXDKjlMFS1H
+=wFyX
+-----END PGP SIGNATURE-----

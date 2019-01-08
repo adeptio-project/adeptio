@@ -1,23 +1,21 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-12-23
-#:: Version: v1.0.0.3
+#:: Copyright // 2018-01-02
+#:: Version: v2.0.0.0 xerus
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
 cat << "ADE"
 
 
-
-           _____  ______        __   ___   ___   ____                _                    _____  ______ 
-     /\   |  __ \|  ____|      /_ | / _ \ / _ \ |___ \     _        | |             /\   |  __ \|  ____|
-    /  \  | |  | | |__    __   _| || | | | | | |  __) |  _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
-   / /\ \ | |  | |  __|   \ \ / / || | | | | | | |__ <  |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
-  / ____ \| |__| | |____   \ V /| || |_| | |_| | ___) |   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
- /_/    \_\_____/|______|   \_/ |_(_)___(_)___(_)____/          |___/\__\___/|_|/_/    \_\_____/|______|
-                                                                                                        
-                                                                                                        
-                                                      
+           _____  ______        ___    ___    __   __                                 _                    _____  ______ 
+     /\   |  __ \|  ____|      |__ \  / _ \   \ \ / /                       _        | |             /\   |  __ \|  ____|
+    /  \  | |  | | |__    __   __ ) || | | |   \ V / ___ _ __ _   _ ___   _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
+   / /\ \ | |  | |  __|   \ \ / // / | | | |    > < / _ \ '__| | | / __| |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
+  / ____ \| |__| | |____   \ V // /_ | |_| |   / . \  __/ |  | |_| \__ \   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
+ /_/    \_\_____/|______|   \_/|____(_)___/   /_/ \_\___|_|   \__,_|___/         |___/\__\___/|_|/_/    \_\_____/|______|
+                                                                                                                         
+                                                                                                                         
 ADE
 
 RED='\033[0;31m'
@@ -25,11 +23,16 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $(date)
-echo -e "${GREEN}== adeptio v1.0.0.3 ==${NC}"
+echo ""
+echo "©Copyright 2017-2019 Adeptio Developer Team"
+echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
-echo "Good day. This is automated cold masternode setup for adeptio coin. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
+echo ""
+echo "Installation content:"
+echo "adeptio core v2.0.0.0 + latest storADE platform code"
 echo
-echo "This setup can be launched only once"
+echo "Setup can be launched only once"
 echo "Do you agree?"
 echo -e "${GREEN}y${NC}/${RED}n"${NC}?
 read agree
@@ -88,7 +91,7 @@ if [ "$OS_version" -eq "1" ]; then
 	if [ $? -ne "0" ]; then echo "Cannot update ubuntu repos" && exit 1; fi
         sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 	if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
 	if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         else
         sudo add-apt-repository ppa:bitcoin/bitcoin -y
@@ -99,17 +102,20 @@ if [ "$OS_version" -eq "1" ]; then
         if [ $? -ne "0" ]; then echo "Unable to install libdb dependencies" && exit 1; fi
         sudo apt-get install libboost-system1.58-dev libboost-system1.58.0 -y
         if [ $? -ne "0" ]; then echo "Unable to install libboost dependencies" && exit 1; fi
-        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl -y
+        sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev  bsdmainutils software-properties-common libminiupnpc-dev libcrypto++-dev libboost-all-dev libboost-system-dev libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev libboost-filesystem-dev libboost-thread-dev libssl-dev libssl-dev software-properties-common unzip libzmq3-dev ufw wget git python-openssl libevent-dev -y
         if [ $? -ne "0" ]; then echo "Unable to install major dependencies" && exit 1; fi
         fi
 # Download adeptio sources //
+echo ""
+echo -e "${GREEN}1/10 Downloading adeptio sources...${NC}" 
+echo ""
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v1.0.0.3/adeptiod-v1.0.0.3-legacy.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64-legacy.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
@@ -127,6 +133,7 @@ server=1
 listen=1
 daemon=1
 staking=1
+bind=[$wanipv6]
 addnode=seed0.adeptio.cc
 addnode=seed1.adeptio.cc
 addnode=seed2.adeptio.cc
@@ -142,16 +149,17 @@ addnode=seed11.adeptio.cc
 EOF
 
 #Create adeptiocore.service
-echo "Create adeptiocore.service for systemd"
+echo -e "${GREEN}2/10 Create adeptiocore.service for systemd${NC}"
+echo ""
 echo \
 "[Unit]
 Description=Adeptio Core Wallet daemon & service
 After=network.target
 
 [Service]
-User=$(echo $USER)
+User=root
 Type=forking
-ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid
+ExecStart=/usr/bin/adeptiod -daemon -pid=$(echo $HOME)/.adeptio/adeptiod.pid --datadir=$(echo $HOME)/.adeptio/
 PIDFile=$(echo $HOME)/.adeptio/adeptiod.pid
 ExecStop=/usr/bin/adeptio-cli stop
 Restart=always
@@ -168,13 +176,13 @@ sudo chmod 664 /etc/systemd/system/adeptiocore.service
 
 sudo systemctl enable adeptiocore
 
-real_user=$(who | awk '{print $1}' | head -1)
- 
+real_user=$(echo $USER) 
+
 sudo chown -R $real_user:$real_user $(echo $HOME)/.adeptio/
 
 # Check if user is root? If not create sudoers files to manage systemd services
 echo ""
-echo "Check if user is root? If not create sudoers files to manage systemd services"
+echo -e "${GREEN}3/10 Check if user is root? If not create sudoers files to manage systemd services${NC}"
 if [ "$EUID" -ne 0 ]; then
 sudo echo \
 "%$real_user ALL= NOPASSWD: /bin/systemctl start adeptiocore
@@ -201,12 +209,14 @@ done
 echo ""
 sudo systemctl stop adeptiocore &&
 echo ""
-echo "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet masternodeprivkey (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
+echo -e "Shutting down daemon, reconfiguring adeptio.conf, we want to know your cold wallet ${GREEN}masternodeprivkey${NC} (example: 7UwDGWAKNCAvyy9MFEnrf4JBBL2aVaDm2QzXqCQzAugULf7PUFD), please input now:"
+echo""
 read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
 checkpriv_key=$(echo $masternodeprivkey | wc -c)
 if [ "$checkpriv_key" -ne "52" ];
 then
+	echo ""
 	echo "Looks like your $privkey is not correct, it should cointain 52 symbols, please paste it one more time"
 	read masternodeprivkey
 privkey=$(echo $masternodeprivkey)
@@ -237,11 +247,13 @@ server=1
 listen=1
 daemon=1
 staking=1
-maxconnections=125
+maxconnections=256
 masternode=1
+bind=[$wanipv6]
 masternodeaddr=[$wanipv6]:9077
 externalip=[$wanipv6]
 masternodeprivkey=$privkey
+enablezeromint=0
 addnode=seed0.adeptio.cc
 addnode=seed1.adeptio.cc
 addnode=seed2.adeptio.cc
@@ -257,8 +269,9 @@ addnode=seed11.adeptio.cc
 EOF
 
 # Firewall //
-echo "Update firewall rules"
-sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer' 
+echo -e "${GREEN}4/10 Update firewall rules${NC}"
+echo ""
+sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh server' 
 sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
 sudo /usr/sbin/ufw allow 9079/tcp comment 'Adeptio storADEserver protocol TCP'
 sudo /usr/sbin/ufw allow 9079/udp comment 'Adeptio storADEserver protocol UDP'
@@ -266,7 +279,8 @@ sudo /usr/sbin/ufw --force enable
 echo ""
 
 #Create storADEserver service for systemd
-echo "Create storADEserver service for systemd"
+echo -e "${GREEN}5/10 Create storADEserver service for systemd${NC}"
+echo ""
 sudo echo \
 "[Unit]
 Description=Adeptio storADEserver daemon for encrypted file storage
@@ -286,7 +300,9 @@ WantedBy=default.target" | sudo tee /etc/systemd/system/storADEserver.service
 sudo chmod 664 /etc/systemd/system/storADEserver.service
 
 # Download storADEserver files from Github;
-echo "Download storADEserver files from Github;"
+echo ""
+echo -e "${GREEN}6/10 Downloading storADEserver files from Github...${NC}"
+echo ""
 cd ~/
 git clone https://github.com/adeptio-project/adeptioStorade.git
 
@@ -294,27 +310,73 @@ sudo systemctl enable storADEserver.service
 sudo systemctl start storADEserver.service
 sudo systemctl daemon-reload
 
-# Create storADEserver auto-updater
-echo "Create storADEserver auto-updater"
 cd ~/adeptioStorade
 sudo chmod +x ~/adeptioStorade/storADEserver-updater.sh
-sudo chown $real_user:$real_user ~/adeptioStorade/storADEserver-updater.sh
+sudo chown -R $real_user:$real_user ~/adeptioStorade/
+sudo chown -R $real_user:$real_user ~/adeptioStorade/.git/
 
 # Start daemon after reboot // Systemd take care of this;
-echo "Update crontab"
-crontab -l | { cat; echo "0 0 * * * $HOME/adeptioStorade/storADEserver-updater.sh"; } | crontab -
-echo "Crontab update done"
+echo -e "${GREEN}7/10 Create auto updater for storADEserver${NC}"
+echo ""
+echo \
+"[Unit]
+Description=storADEupdater.service
+ 
+[Service]
+Type=oneshot
+WorkingDirectory=$HOME/adeptioStorade
+ExecStart=$HOME/adeptioStorade/storADEserver-updater.sh
+PrivateTmp=true
+
+[Install]
+WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.service
+
+echo ""
+echo -e "${GREEN}8/10 Create timer for storADEupdater service${NC}"
+echo ""
+echo \
+"[Unit]
+Description=Run storADEupdater unit daily @ 00:00:00 (UTC)
+ 
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Unit=storADEupdater.service
+Persistent=true
+ 
+[Install]
+WantedBy=timers.target" | sudo tee /etc/systemd/system/storADEupdater.timer
+
+echo ""
+echo -e "${GREEN}9/10 Adjusting systemd services please wait...${NC}"
+echo ""
+
+sudo chmod 664 /etc/systemd/system/storADEupdater.service
+sudo chmod 664 /etc/systemd/system/storADEupdater.timer
+
+sudo systemctl start storADEupdater.service
+sudo systemctl start storADEupdater.timer
+sudo systemctl enable storADEupdater.service
+sudo systemctl enable storADEupdater.timer
 
 # Final start
 echo ""
-echo "Masternode config done, starting daemon again"
+echo -e "${GREEN}10/10 Masternode config done, storADE platform installed - starting adeptiocore again${NC}"
 echo ""
 sudo systemctl start adeptiocore
-echo ""
-echo "Setup almost completed. You have to wait some time to sync blocks"
+echo -e "${RED}The blockchain is syncing from scratch. You have to wait few hours to sync all the blocks!${NC}"
 echo ""
 echo "Setup summary:"
 echo "Masternode privkey: $privkey"
-echo "Your external IPv6: $wanipv6"
+echo "Your external IPv6 addr: $wanipv6"
+echo "Installation log: ~/adeptio_masternode_installation.log"
+echo "storADE datadir: "$(echo $HOME/adeptioStorade/)"" 
+echo "Adeptio Core datadir: "$(echo $HOME/.adeptio/)""
 echo ""
-echo "Setup completed. Please start a masternode from Cold Wallet"
+echo "In order to start a masternode from Cold Wallet check your current block with explorer block by typing in the terminal:"
+echo -e "${GREEN}adeptio-cli getinfo | grep blocks${NC}"
+echo "https://explorer.adeptio.cc/api/getblockcount"
+echo ""
+echo "Please start a masternode from Cold Wallet if explorer.adeptio.cc block matches with yours."
+echo "Overall setup completed successfully"
+echo -e "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.gg/RBXjTBai${NC}"
+echo ""

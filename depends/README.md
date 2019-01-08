@@ -1,5 +1,7 @@
 ### Usage
 
+**More detail explanation can be found at adeptio wiki: https://wiki.adeptio.cc/books/building-the-wallet**
+
 To build dependencies for the current arch+OS:
 
     make

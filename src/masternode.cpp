@@ -989,6 +989,7 @@ void CMasternode::Check(bool forceCheck)
     if (!forceCheck && (GetTime() - lastTimeChecked < MASTERNODE_CHECK_SECONDS)) return;
     lastTimeChecked = GetTime();
 
+    if (activeState == MASTERNODE_STORADE_EXPIRED) return;
 
     //once spent, stop doing the checks
     if (activeState == MASTERNODE_VIN_SPENT) return;
@@ -1026,6 +1027,13 @@ void CMasternode::Check(bool forceCheck)
             }
         }
     }
+
+    // The "StorADE" service needs the correct default port to work properly
+    //if(!storADEserver::CheckStorADEport(addr)) {
+        //activeState = MASTERNODE_STORADE_EXPIRED; // Postpone to v2.1.0.0
+        //LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
+        //return; 
+    //}
 
     activeState = MASTERNODE_ENABLED; // OK
 }
@@ -1107,6 +1115,8 @@ std::string CMasternode::GetStatus()
         return "EXPIRED";
     case CMasternode::MASTERNODE_OUTPOINT_SPENT:
         return "OUTPOINT_SPENT";
+    case CMasternode::MASTERNODE_STORADE_EXPIRED:
+        return "STORADE_EXPIRED";
     case CMasternode::MASTERNODE_REMOVE:
         return "REMOVE";
     case CMasternode::MASTERNODE_WATCHDOG_EXPIRED:
@@ -1256,23 +1266,28 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
 
     return true;
 }
-/*
-     bool storADEserver::CheckStorADEport(std::string strService, std::string& strErrorRet, std::string strContext)
-{
-    CService service = CService(strService);
-    int storADEport = Params().GetStorADEdefaultPort();
 
-    if (service.GetPort() != storADEport) {
-        strErrorRet = strprintf("Invalid port %u for storADEserver %s, only %d is supported on %s-net.",
-                                        service.GetPort(), strService, storADEport, Params().NetworkIDString());
-        LogPrint("storADEserver", "%s - %s\n", strContext, strErrorRet);
+bool storADEserver::CheckStorADEport(CService addrDest)
+{
+    SOCKET hSocket;
+    int storADEport = Params().GetStorADEdefaultPort();
+    addrDest.SetPort(storADEport);
+
+    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout))
+
+        return false;
+
+    if(!IsSelectableSocket(hSocket)) {
+
+        CloseSocket(hSocket);
+
         return false;
     }
 
+    CloseSocket(hSocket);
+
     return true;
-    return false;
 }
-*/
 
 bool CMasternodeBroadcast::CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext)
 {
