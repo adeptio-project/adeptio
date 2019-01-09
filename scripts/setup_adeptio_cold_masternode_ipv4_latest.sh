@@ -381,3 +381,5 @@ echo "Please start a masternode from Cold Wallet if explorer.adeptio.cc block ma
 echo "Overall setup completed successfully"
 echo -e "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.adeptio.cc${NC}"
 echo ""
+echo -e "${GREEN}©2018-2019 powered by adeptio-project${NC}"
+echo ""
