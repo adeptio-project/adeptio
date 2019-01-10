@@ -111,7 +111,9 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 [Adeptio Explorer 2](https://blocks.adeptio.cc/)
 
-[Adeptio Exchange](https://crex24.com/exchange/ADE-BTC)
+[Adeptio Exchange Crex24](https://crex24.com/exchange/ADE-BTC)
+
+[Adeptio Exchange BiteBTC](https://bitebtc.com/trade/ade_btc)
 
 [Adeptio Stats](https://stats.adeptio.cc/)
 
