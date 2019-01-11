@@ -5,7 +5,7 @@
 [![](https://img.shields.io/github/last-commit/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/commits/master)
 [![](https://img.shields.io/github/release/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/releases)
 [![](https://img.shields.io/website-up-down-green-red/https/adeptio.cc.svg?label=adeptio.cc)](https://adeptio.cc)
-![](https://img.shields.io/twitter/follow/adeptioproject.svg?label=Follow&style=social)
+[![](https://img.shields.io/twitter/follow/adeptioproject.svg?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=adeptioproject)
 
 # What is Adeptio?
 
