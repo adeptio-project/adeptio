@@ -201,7 +201,7 @@ Since we are a 100% open-source project we strongly prefer if you create a pull-
 
 # License
 
-Adeptio is released under the terms of the MIT license. See [COPYING](https://raw.githubusercontent.com/adeptio-project/adeptio/master/COPYING) or for more information:
+Adeptio is released under the terms of the MIT license. See [COPYING](https://opensource.org/licenses/MIT) or for more information:
 
 [https://opensource.org/licenses/MIT](URL)
 
