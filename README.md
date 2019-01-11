@@ -1,6 +1,11 @@
 # From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
 [![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
+[![](https://img.shields.io/github/downloads/adeptio-project/adeptio/total.svg)](https://github.com/adeptio-project/adeptio/releases)
+[![](https://img.shields.io/github/last-commit/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/commits/master)
+[![](https://img.shields.io/github/release/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/releases)
+[![](https://img.shields.io/website-up-down-green-red/https/adeptio.cc.svg?label=adeptio.cc)](https://adeptio.cc)
+![](https://img.shields.io/twitter/follow/adeptioproject.svg?label=Follow&style=social)
 
 # What is Adeptio?
 
