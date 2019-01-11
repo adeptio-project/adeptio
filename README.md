@@ -5,7 +5,7 @@
 [![](https://img.shields.io/github/last-commit/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/commits/master)
 [![](https://img.shields.io/github/release/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/releases)
 [![](https://img.shields.io/website-up-down-green-red/https/adeptio.cc.svg?label=adeptio.cc)](https://adeptio.cc)
-<a href="discord.adeptio.cc">
+<a href="https://discord.gg/RBXjTBa">
 <img src="https://img.shields.io/discord/447850979627630603.svg?logo=discord"
 alt="chat on Discord"></a>
 [![](https://img.shields.io/twitter/follow/adeptioproject.svg?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=adeptioproject)
