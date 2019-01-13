@@ -1,19 +1,19 @@
 Origin: Adeptio-Project
-Label: adeptiocore
+Label: adeptio-qt
 Codename: xenial
-Date: Sat, 12 Jan 2019 01:11:48 UTC
+Date: Sun, 13 Jan 2019 17:21:33 UTC
 Architectures: amd64
 Components: main
 Description: Apt repository for adeptio-project
 MD5Sum:
- 39f279209fa4e589fee291cffdf20e02 965 main/binary-amd64/Packages
- 69f21aa2b3db820d98e929da4e08ea1b 575 main/binary-amd64/Packages.gz
+ 71fafe0c8d2e23fc13cc39bf49fd56b6 2010 main/binary-amd64/Packages
+ 59733d1c999c4cdefe1e50a234b1cac1 749 main/binary-amd64/Packages.gz
  359f12df3b4c10d43f36afc4c1e51cbd 127 main/binary-amd64/Release
 SHA1:
- df9d9bf5dfa5b5e636e3ec5fd87040876de06525 965 main/binary-amd64/Packages
- 6c53d401c511909b5b5a6a799f1ba54db0ee8c5c 575 main/binary-amd64/Packages.gz
+ 3c7d4a1e9e27d7bb24618a1972605a2c005163d1 2010 main/binary-amd64/Packages
+ b4f57c1dc6e3bd4dee3b69d6d3c6dacbaa2e1a23 749 main/binary-amd64/Packages.gz
  48e65906e63780dc9d6abffde5fd24b23d046d0e 127 main/binary-amd64/Release
 SHA256:
- 52ddde4731c9e4cea36b472d355026515723a7f653af8d8b0e23ff36e6eb393c 965 main/binary-amd64/Packages
- 2acad44827ed405bd5263fcdf846c28cccb21f01c81fe8606b4d1a1be14cffce 575 main/binary-amd64/Packages.gz
+ b818ce3f0b10868f65bb5415728f8cc236f3b433083a226853ce67d123354e14 2010 main/binary-amd64/Packages
+ b600a2548405c8ca77fda81a811bd727f261ec3960797639b30bb817ab959a21 749 main/binary-amd64/Packages.gz
  02b64c775341e70d322166450f76b1b4af5730df3670cdb911bedf5639980aea 127 main/binary-amd64/Release
