@@ -1,13 +1,24 @@
 # From Latin language // ădeptĭo - act of obtaining, attainment, achievement.
 
-![Alt text](https://explorer.adeptio.cc/images/adeptio.png)
-
 [![Build Status](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/badge/icon)](https://development.adeptio.cc/job/Adeptio-CI-master-Weekly-Build/)
+[![](https://img.shields.io/github/downloads/adeptio-project/adeptio/total.svg)](https://github.com/adeptio-project/adeptio/releases)
+[![](https://img.shields.io/github/last-commit/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/commits/master)
+[![](https://img.shields.io/github/release/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/releases)
+[![](https://img.shields.io/github/issues/adeptio-project/adeptio.svg)](https://github.com/adeptio-project/adeptio/issues)
+[![](https://img.shields.io/website-up-down-green-red/https/adeptio.cc.svg?label=adeptio.cc)](https://adeptio.cc)
+<a href="https://discord.gg/RBXjTBa">
+<img src="https://img.shields.io/discord/447850979627630603.svg?logo=discord"
+alt="chat on Discord"></a>
+[![](https://img.shields.io/twitter/follow/adeptioproject.svg?label=Follow&style=social)](https://twitter.com/intent/user?screen_name=adeptioproject)
+
 
 # What is Adeptio?
 
 Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset.
+
 [storADE](https://github.com/adeptio-project/adeptioStorade) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
+
+![Alt text](https://github.com/adeptio-project/adeptio/raw/master/logo/1_shadow.png)
 
 For more information see:
 
@@ -99,7 +110,7 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 ~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.
 
-![Alt text](https://blog.adeptio.cc/wp-content/uploads/2018/11/68747470733a2f2f6578706c6f7265722e6164657074696f2e63632f696d616765732f6164657074696f5f7265776172645f6469737472692e706e67.png)
+![Alt text](https://raw.githubusercontent.com/adeptio-project/adeptio/master/logo/graphs/ade_reward_distri.png)
 
 # Resources
 
@@ -111,7 +122,9 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 [Adeptio Explorer 2](https://blocks.adeptio.cc/)
 
-[Adeptio Exchange](https://crex24.com/exchange/ADE-BTC)
+[Adeptio Exchange Crex24](https://crex24.com/exchange/ADE-BTC)
+
+[Adeptio Exchange BiteBTC](https://bitebtc.com/trade/ade_btc)
 
 [Adeptio Stats](https://stats.adeptio.cc/)
 
@@ -188,7 +201,7 @@ Since we are a 100% open-source project we strongly prefer if you create a pull-
 
 # License
 
-Adeptio is released under the terms of the MIT license. See [COPYING](https://raw.githubusercontent.com/adeptio-project/adeptio/master/COPYING) or for more information:
+Adeptio is released under the terms of the MIT license. See [COPYING](https://opensource.org/licenses/MIT) or for more information:
 
 [https://opensource.org/licenses/MIT](URL)
 

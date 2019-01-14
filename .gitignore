@@ -130,3 +130,5 @@ cmake-build-debug
 *.deb
 adeptiod
 adeptio-cli
+
+packages/*
