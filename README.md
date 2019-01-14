@@ -22,7 +22,7 @@ Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywher
 
 For more information see:
 
-https://adeptio.cc
+https://adeptio.cc/adeptio_whitepaper_latest.pdf
 
 # Development
 
