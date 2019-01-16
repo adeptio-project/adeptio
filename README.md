@@ -108,7 +108,7 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 <tr><td>Block 4838401 - infinite</td><td>1 ADE</td><td>+ ~0.518M per year </td><td>DevFee 7.5%</td><td>POS</td>
 </table>
 
-~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.
+**~3360 days or ~9.199 years to reach 13th reward phase (1 ADE) per block.**
 
 ![Alt text](https://raw.githubusercontent.com/adeptio-project/adeptio/master/logo/graphs/ade_reward_distri.png)
 
