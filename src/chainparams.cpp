@@ -269,8 +269,8 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017
         nMaxMoneyOut = 100000000 * COIN;
-        nZerocoinStartHeight = 0;
-        nZerocoinStartTime = 0;
+        nZerocoinStartHeight = 1000000;
+        nZerocoinStartTime = 1577836800;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
@@ -337,7 +337,7 @@ public:
         nMintRequiredConfirmations = 100; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 5; //Block headers must be this version once zerocoin is active
+        nZerocoinHeaderVersion = 6; //Block headers must be this version once zerocoin is active
         nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zADE to be stakable
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
