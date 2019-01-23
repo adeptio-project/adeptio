@@ -18,8 +18,6 @@ Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywher
 
 [storADE](https://github.com/adeptio-project/adeptioStorade) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
 
-![Alt text](https://raw.githubusercontent.com/adeptio-project/adeptio/master/logo/adeptio_comparison/adeptio_blockchain_comparison.png)
-
 ![Alt text](https://github.com/adeptio-project/adeptio/raw/master/logo/1_shadow.png)
 
 For more information see:
@@ -189,6 +187,8 @@ No ICO
 # What's the difference between adeptio and other cryptocurrencies?
 
 You should check our [whitepaper](https://github.com/adeptio-project/adeptio#further-information). Our long term goal is to use adeptio as a base core blockchain.
+
+![Alt text](https://raw.githubusercontent.com/adeptio-project/adeptio/master/logo/adeptio_comparison/adeptio_blockchain_comparison.png)
 
 # Who is adeptio team?
 
