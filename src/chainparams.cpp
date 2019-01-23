@@ -264,7 +264,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Adeptio: 1 day
         nTargetSpacing = 1 * 60;  // Adeptio: 1 minute
-        nLastPOWBlock = 20;
+        nLastPOWBlock = 200;
         nMaturity = 10;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017
