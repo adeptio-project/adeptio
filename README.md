@@ -83,6 +83,8 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Maturity: 100 Confirmations
 
+• Transaction speed: ~86tx / sec
+
 • Prefix: ADE adresses start with the capital letter "A"
 
 *Premine masternodes will be burnt after 1 year from init start.*
