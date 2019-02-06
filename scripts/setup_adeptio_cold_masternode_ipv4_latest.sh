@@ -134,18 +134,6 @@ listen=1
 daemon=1
 staking=1
 bind=$wanip
-addnode=seed0.adeptio.cc
-addnode=seed1.adeptio.cc
-addnode=seed2.adeptio.cc
-addnode=seed3.adeptio.cc
-addnode=seed4.adeptio.cc
-addnode=seed5.adeptio.cc
-addnode=seed6.adeptio.cc
-addnode=seed7.adeptio.cc
-addnode=seed8.adeptio.cc
-addnode=seed9.adeptio.cc
-addnode=seed10.adeptio.cc
-addnode=seed11.adeptio.cc
 EOF
 
 #Create adeptiocore.service
@@ -255,18 +243,6 @@ masternodeaddr=$wanip:9077
 externalip=$wanip
 masternodeprivkey=$privkey
 enablezeromint=0
-addnode=seed0.adeptio.cc
-addnode=seed1.adeptio.cc
-addnode=seed2.adeptio.cc
-addnode=seed3.adeptio.cc
-addnode=seed4.adeptio.cc
-addnode=seed5.adeptio.cc
-addnode=seed6.adeptio.cc
-addnode=seed7.adeptio.cc
-addnode=seed8.adeptio.cc
-addnode=seed9.adeptio.cc
-addnode=seed10.adeptio.cc
-addnode=seed11.adeptio.cc
 EOF
 
 # Firewall //
