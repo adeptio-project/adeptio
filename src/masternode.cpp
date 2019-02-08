@@ -10,12 +10,16 @@
 #include "obfuscation.h"
 #include "sync.h"
 #include "util.h"
+
+#include <boost/thread.hpp>
 #include <boost/lexical_cast.hpp>
 
 // keep track of the scanning errors I've seen
 map<uint256, int> mapSeenMasternodeScanningErrors;
 // cache block hashes as we calculate them
 std::map<int64_t, uint256> mapCacheBlockHashes;
+// Masternodes StorADE port checking in threads
+boost::thread_group threads;
 
 //Get the last hash that matches the modulus given. Processed in reverse order
 bool GetBlockHash(uint256& hash, int nBlockHeight)
@@ -71,6 +75,7 @@ CMasternode::CMasternode()
     lastPing = CMasternodePing();
     cacheInputAge = 0;
     cacheInputAgeBlock = 0;
+    storADECheck = false;
     unitTest = false;
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
@@ -96,6 +101,7 @@ CMasternode::CMasternode(const CMasternode& other)
     lastPing = other.lastPing;
     cacheInputAge = other.cacheInputAge;
     cacheInputAgeBlock = other.cacheInputAgeBlock;
+    storADECheck = other.storADECheck;
     unitTest = other.unitTest;
     allowFreeTx = other.allowFreeTx;
     nActiveState = MASTERNODE_ENABLED,
@@ -121,6 +127,7 @@ CMasternode::CMasternode(const CMasternodeBroadcast& mnb)
     lastPing = mnb.lastPing;
     cacheInputAge = 0;
     cacheInputAgeBlock = 0;
+    storADECheck = false;
     unitTest = false;
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
@@ -234,13 +241,37 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    //if(!storADEserver::CheckStorADEport(addr)) {
-        //activeState = MASTERNODE_STORADE_EXPIRED; // Postpone to v2.1.0.0
-        //LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
-        //return; 
-    //}
+    if(!storADECheck)
+        threads.create_thread(boost::bind(&CheckStorADEport, addr)); // Postpone to v2.1.0.0
 
     activeState = MASTERNODE_ENABLED; // OK
+}
+
+bool CMasternode::CheckStorADEport(CService addrDest)
+{
+    storADECheck = true
+    SOCKET hSocket;
+    int storADEport = Params().GetStorADEdefaultPort();
+    addrDest.SetPort(storADEport);
+    std::string incorrect = MASTERNODE_STORADE_EXPIRED;
+
+    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout)) {
+
+        activeState = incorrect;
+
+    } else if(!IsSelectableSocket(hSocket)) {
+
+        CloseSocket(hSocket);
+
+        activeState = incorrect;
+
+    } else {
+
+        CloseSocket(hSocket);
+    }
+
+    if( activeState == incorrect )
+        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addrDest.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
@@ -468,28 +499,6 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
         mnbRet = CMasternodeBroadcast();
         return false;
     }
-
-    return true;
-}
-
-bool storADEserver::CheckStorADEport(CService addrDest)
-{
-    SOCKET hSocket;
-    int storADEport = Params().GetStorADEdefaultPort();
-    addrDest.SetPort(storADEport);
-
-    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout))
-
-        return false;
-
-    if(!IsSelectableSocket(hSocket)) {
-
-        CloseSocket(hSocket);
-
-        return false;
-    }
-
-    CloseSocket(hSocket);
 
     return true;
 }
