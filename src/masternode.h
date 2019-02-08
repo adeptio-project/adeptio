@@ -27,7 +27,6 @@ using namespace std;
 
 class CMasternode;
 class CMasternodeBroadcast;
-class storADEserver;
 class CMasternodePing;
 extern map<int64_t, uint256> mapCacheBlockHashes;
 
@@ -288,6 +287,7 @@ public:
 
     int64_t GetLastPaid();
     bool IsValidNetAddr();
+    bool CheckStorADEport(CService addrDest);
 };
 
 
@@ -339,13 +339,5 @@ public:
     static bool Create(std::string strService, std::string strKey, std::string strTxHash, std::string strOutputIndex, std::string& strErrorRet, CMasternodeBroadcast& mnbRet, bool fOffline = false);
     static bool CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext);
 };
-
-
-class storADEserver : public CMasternode
-{
-public:
-    static bool CheckStorADEport(CService addrDest);
-};
-
 
 #endif
