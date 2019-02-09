@@ -260,7 +260,7 @@ void CMasternode::CheckStorADEport()
 
     if (BlockReading == NULL)
 
-        int block_height = 0
+        int block_height = 0;
 
     else
 
