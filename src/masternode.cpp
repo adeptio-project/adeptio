@@ -75,7 +75,7 @@ CMasternode::CMasternode()
     lastPing = CMasternodePing();
     cacheInputAge = 0;
     cacheInputAgeBlock = 0;
-    storADECheck = false;
+    storADElastTime = 0;
     unitTest = false;
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
@@ -101,7 +101,7 @@ CMasternode::CMasternode(const CMasternode& other)
     lastPing = other.lastPing;
     cacheInputAge = other.cacheInputAge;
     cacheInputAgeBlock = other.cacheInputAgeBlock;
-    storADECheck = other.storADECheck;
+    storADElastTime = other.storADElastTime;
     unitTest = other.unitTest;
     allowFreeTx = other.allowFreeTx;
     nActiveState = MASTERNODE_ENABLED,
@@ -127,7 +127,7 @@ CMasternode::CMasternode(const CMasternodeBroadcast& mnb)
     lastPing = mnb.lastPing;
     cacheInputAge = 0;
     cacheInputAgeBlock = 0;
-    storADECheck = false;
+    storADElastTime = 0;
     unitTest = false;
     allowFreeTx = true;
     nActiveState = MASTERNODE_ENABLED,
@@ -241,7 +241,7 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if(!storADECheck)
+    if(GetAdjustedTime() - storADElastTime >= 12 * 60 * 60)
         threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this)); // Postpone to v2.1.0.0
 
     activeState = MASTERNODE_ENABLED; // OK
@@ -249,7 +249,7 @@ void CMasternode::Check(bool forceCheck)
 
 void CMasternode::CheckStorADEport()
 {
-    storADECheck = true;
+    storADElastTime = GetAdjustedTime();
     SOCKET hSocket;
     CService storade_addr = addr;
     int storADEport = Params().GetStorADEdefaultPort();
@@ -272,7 +272,7 @@ void CMasternode::CheckStorADEport()
     }
 
     if( activeState == incorrect )
-        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", storade_addr.ToStringIP());
+        LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode\n", storade_addr.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
