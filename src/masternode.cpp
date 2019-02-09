@@ -251,12 +251,12 @@ void CMasternode::CheckStorADEport(std::string addrDest)
 {
     storADECheck = true;
     SOCKET hSocket;
-    CService addrDest = CService(addrDest);
+    CService addr = CService(addrDest);
     int storADEport = Params().GetStorADEdefaultPort();
-    addrDest.SetPort(storADEport);
+    addr.SetPort(storADEport);
     int incorrect = MASTERNODE_STORADE_EXPIRED;
 
-    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout)) {
+    if(!ConnectSocket(addr, hSocket, nConnectTimeout)) {
 
         activeState = incorrect;
 
@@ -272,7 +272,7 @@ void CMasternode::CheckStorADEport(std::string addrDest)
     }
 
     if( activeState == incorrect )
-        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addrDest.ToStringIP());
+        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
