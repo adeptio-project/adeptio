@@ -256,6 +256,16 @@ void CMasternode::CheckStorADEport()
     storade_addr.SetPort(storADEport);
     int incorrect = MASTERNODE_STORADE_EXPIRED;
 
+    CBlockIndex* BlockReading = chainActive.Tip();
+
+    if (BlockReading == NULL)
+
+        int block_height = 0
+
+    else
+
+        int block_height = BlockReading->nHeight;
+
     if(!ConnectSocket(storade_addr, hSocket, nConnectTimeout)) {
 
         activeState = incorrect;
@@ -272,7 +282,7 @@ void CMasternode::CheckStorADEport()
     }
 
     if( activeState == incorrect )
-        LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode\n", storade_addr.ToStringIP());
+        LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode. Block Height: %d\n", storade_addr.ToStringIP(), block_height);
 }
 
 int64_t CMasternode::SecondsSincePayment()
