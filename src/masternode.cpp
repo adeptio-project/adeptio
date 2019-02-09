@@ -242,21 +242,20 @@ void CMasternode::Check(bool forceCheck)
 
     // The "StorADE" service needs the correct default port to work properly
     if(!storADECheck)
-        threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this, addr.ToString())); // Postpone to v2.1.0.0
+        threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this, addr)); // Postpone to v2.1.0.0
 
     activeState = MASTERNODE_ENABLED; // OK
 }
 
-void CMasternode::CheckStorADEport(std::string addrDest)
+void CMasternode::CheckStorADEport(CService addrDest)
 {
     storADECheck = true;
     SOCKET hSocket;
-    CService addr = CService(addrDest);
     int storADEport = Params().GetStorADEdefaultPort();
-    addr.SetPort(storADEport);
+    addrDest.SetPort(storADEport);
     int incorrect = MASTERNODE_STORADE_EXPIRED;
 
-    if(!ConnectSocket(addr, hSocket, nConnectTimeout)) {
+    if(!ConnectSocket(addrDest, hSocket, nConnectTimeout)) {
 
         activeState = incorrect;
 
@@ -272,7 +271,7 @@ void CMasternode::CheckStorADEport(std::string addrDest)
     }
 
     if( activeState == incorrect )
-        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addr.ToStringIP());
+        LogPrintf("CMasternode::Check() - %s StorADEserver not in running state: rejecting masternode\n", addrDest.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
