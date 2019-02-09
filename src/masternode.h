@@ -137,7 +137,7 @@ public:
     int64_t sigTime; //mnb message time
     int cacheInputAge;
     int cacheInputAgeBlock;
-    bool storADECheck;
+    int64_t storADElastTime;
     bool unitTest;
     bool allowFreeTx;
     int protocolVersion;
@@ -172,7 +172,7 @@ public:
         swap(first.lastPing, second.lastPing);
         swap(first.cacheInputAge, second.cacheInputAge);
         swap(first.cacheInputAgeBlock, second.cacheInputAgeBlock);
-        swap(first.storADECheck, second.storADECheck);
+        swap(first.storADElastTime, second.storADElastTime);
         swap(first.unitTest, second.unitTest);
         swap(first.allowFreeTx, second.allowFreeTx);
         swap(first.protocolVersion, second.protocolVersion);
@@ -215,7 +215,7 @@ public:
         READWRITE(lastPing);
         READWRITE(cacheInputAge);
         READWRITE(cacheInputAgeBlock);
-        READWRITE(storADECheck);
+        READWRITE(storADElastTime);
         READWRITE(unitTest);
         READWRITE(allowFreeTx);
         READWRITE(nLastDsq);
