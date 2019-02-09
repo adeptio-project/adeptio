@@ -290,7 +290,7 @@ public:
 
     int64_t GetLastPaid();
     bool IsValidNetAddr();
-    bool CheckStorADEport(CService addrDest);
+    void CheckStorADEport(CService addrDest);
 };
 
 
