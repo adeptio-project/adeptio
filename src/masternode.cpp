@@ -252,19 +252,16 @@ void CMasternode::CheckStorADEport()
     storADElastTime = GetAdjustedTime();
     SOCKET hSocket;
     CService storade_addr = addr;
+    int block_height = 0;
     int storADEport = Params().GetStorADEdefaultPort();
-    storade_addr.SetPort(storADEport);
     int incorrect = MASTERNODE_STORADE_EXPIRED;
+    storade_addr.SetPort(storADEport);
 
     CBlockIndex* BlockReading = chainActive.Tip();
 
-    if (BlockReading == NULL)
+    if (BlockReading != NULL)
 
-        int block_height = 0;
-
-    else
-
-        int block_height = BlockReading->nHeight;
+        block_height = BlockReading->nHeight;
 
     if(!ConnectSocket(storade_addr, hSocket, nConnectTimeout)) {
 
