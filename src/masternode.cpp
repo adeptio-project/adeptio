@@ -247,7 +247,7 @@ void CMasternode::Check(bool forceCheck)
     activeState = MASTERNODE_ENABLED; // OK
 }
 
-bool CMasternode::CheckStorADEport(CService addrDest)
+void CMasternode::CheckStorADEport(CService addrDest)
 {
     storADECheck = true;
     SOCKET hSocket;
