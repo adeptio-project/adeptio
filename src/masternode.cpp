@@ -253,7 +253,7 @@ bool CMasternode::CheckStorADEport(CService addrDest)
     SOCKET hSocket;
     int storADEport = Params().GetStorADEdefaultPort();
     addrDest.SetPort(storADEport);
-    std::string incorrect = MASTERNODE_STORADE_EXPIRED;
+    int incorrect = MASTERNODE_STORADE_EXPIRED;
 
     if(!ConnectSocket(addrDest, hSocket, nConnectTimeout)) {
 
