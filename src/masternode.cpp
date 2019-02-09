@@ -241,8 +241,9 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
+    CService storade_addr = addr
     if(!storADECheck)
-        threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, addr)); // Postpone to v2.1.0.0
+        threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, storade_addr)); // Postpone to v2.1.0.0
 
     activeState = MASTERNODE_ENABLED; // OK
 }
