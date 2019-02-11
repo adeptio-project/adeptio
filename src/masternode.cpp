@@ -241,8 +241,20 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if(GetAdjustedTime() - storADElastTime >= 12 * 60 * 60)
-        threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this)); // Postpone to v2.1.0.0
+    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 60 ) {
+
+        int block_height = 0;
+
+        CBlockIndex* BlockReading = chainActive.Tip();
+
+        if (BlockReading != NULL)
+
+            block_height = BlockReading->nHeight;
+
+        if(block_height > 351398) // Postpone to v2.1.0.0
+
+            threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
+    }
 
     activeState = MASTERNODE_ENABLED; // OK
 }
@@ -252,16 +264,9 @@ void CMasternode::CheckStorADEport()
     storADElastTime = GetAdjustedTime();
     SOCKET hSocket;
     CService storade_addr = addr;
-    int block_height = 0;
     int storADEport = Params().GetStorADEdefaultPort();
     int incorrect = MASTERNODE_STORADE_EXPIRED;
     storade_addr.SetPort(storADEport);
-
-    CBlockIndex* BlockReading = chainActive.Tip();
-
-    if (BlockReading != NULL)
-
-        block_height = BlockReading->nHeight;
 
     if(!ConnectSocket(storade_addr, hSocket, nConnectTimeout)) {
 
@@ -279,7 +284,7 @@ void CMasternode::CheckStorADEport()
     }
 
     if( activeState == incorrect )
-        LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode. Block Height: %d\n", storade_addr.ToStringIP(), block_height);
+        LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode.\n", storade_addr.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
