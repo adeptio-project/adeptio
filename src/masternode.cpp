@@ -241,7 +241,7 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 60 ) {
+    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 1 ) {
 
         int block_height = 0;
 
@@ -251,7 +251,7 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        if(block_height >= 354300) // Postpone to v2.1.0.0
+        if(block_height >= 357697) // Postpone to v2.1.0.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
