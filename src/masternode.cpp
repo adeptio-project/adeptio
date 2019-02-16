@@ -241,7 +241,7 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 1 ) {
+    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 60 ) {
 
         int block_height = 0;
 
