@@ -130,6 +130,8 @@ Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respective
 
 [Adeptio Exchange Escodex](https://wallet.escodex.com/market/ESCODEX.ADE_ESCODEX.BTC)
 
+[Adeptio Exchange AmsterDex](https://amsterdex.com/exchange?market=ade)
+
 [Adeptio Stats](https://stats.adeptio.cc/)
 
 [Adeptio Wiki](https://wiki.adeptio.cc/)
