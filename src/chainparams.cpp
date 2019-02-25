@@ -63,12 +63,15 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
         (10000, uint256("0x0000000000084511d9aafddf73098f56e0cd1043984671aa909a1a12716113df"))
         (100000, uint256("0x000000000018c06c5e0776f504503331c635cf3843f41355ea486ac5bc879c51"))
         (200000, uint256("0x0000000000012840e2d1e2d058971ed6a87434e6b776defee35808b6f94aaa3e"))
-        (297000, uint256("0x00000000000662025ccae2abe1090f092a633e4d8336008905fe17cee999da02"));
+        (297000, uint256("0x00000000000662025ccae2abe1090f092a633e4d8336008905fe17cee999da02"))
+        (300000, uint256("0x000000000000e754529022cbc1991189a333fd6c2580a94bda09128174915b07"))
+        (350000, uint256("0x8bd65475ce1a1b91107ec005b80ae73a39dd8a615e487365191eab3f3a724c44"))
+        (370000, uint256("0x93c1e14ff1ab4498a48242bb41cdf3627d7bdfd643e9c6e5e175f798520f5328"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1546474571, // * UNIX timestamp of last checkpoint block
-    318886,    // * total number of transactions between genesis and last checkpoint
+    1551027382, // * UNIX timestamp of last checkpoint block
+    425224,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -197,6 +200,26 @@ public:
         vSeeds.push_back(CDNSSeedData("seed10.adeptio.cc", "seed10.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("seed11.adeptio.cc", "seed11.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("seed12.adeptio.cc", "seed12.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed13.adeptio.cc", "seed13.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed14.adeptio.cc", "seed14.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed15.adeptio.cc", "seed15.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed16.adeptio.cc", "seed16.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed17.adeptio.cc", "seed17.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed18.adeptio.cc", "seed18.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed19.adeptio.cc", "seed19.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed20.adeptio.cc", "seed20.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed21.adeptio.cc", "seed21.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed22.adeptio.cc", "seed22.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed23.adeptio.cc", "seed23.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed24.adeptio.cc", "seed24.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed25.adeptio.cc", "seed25.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed26.adeptio.cc", "seed26.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed27.adeptio.cc", "seed27.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed28.adeptio.cc", "seed28.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed29.adeptio.cc", "seed29.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed30.adeptio.cc", "seed30.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed31.adeptio.cc", "seed31.adeptio.cc"));
+        vSeeds.push_back(CDNSSeedData("seed32.adeptio.cc", "seed32.adeptio.cc"));
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
