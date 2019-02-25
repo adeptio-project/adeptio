@@ -1291,8 +1291,6 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
     if( GetListenPort() != Params().GetDefaultPort() )
         return InitError(strprintf(_("Your specify port is %i, but it must be %i."), GetListenPort(), Params().GetDefaultPort()));
     if (mapArgs.count("-bind") || mapArgs.count("-whitebind")) {
-    if (fListen) {
-        if (mapArgs.count("-bind") || mapArgs.count("-whitebind")) {
             BOOST_FOREACH (std::string strBind, mapMultiArgs["-bind"]) {
                 CService addrBind;
                 if (!Lookup(strBind.c_str(), addrBind, GetListenPort(), false))
