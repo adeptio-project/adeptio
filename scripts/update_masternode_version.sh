@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#:: Adeptio dev team
+#:: Adeptio dev team. Thanks to community member Skakyn34 for backbone
 #:: Copyright // 2018-02-25
 #:: Version: v1.0
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
