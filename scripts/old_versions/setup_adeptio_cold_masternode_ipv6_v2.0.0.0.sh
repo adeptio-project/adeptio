@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-02-25
-#:: Version: v2.1.0.0 heron
+#:: Copyright // 2018-01-02
+#:: Version: v2.0.0.0 xerus
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
 cat << "ADE"
-           _____  ______        ___   __   _    _                                    _                    _____  ______ 
-     /\   |  __ \|  ____|      |__ \ /_ | | |  | |                         _        | |             /\   |  __ \|  ____|
-    /  \  | |  | | |__    __   __ ) | | | | |__| | ___ _ __ ___  _ __    _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
-   / /\ \ | |  | |  __|   \ \ / // /  | | |  __  |/ _ \ '__/ _ \| '_ \  |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
-  / ____ \| |__| | |____   \ V // /_ _| | | |  | |  __/ | | (_) | | | |   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
- /_/    \_\_____/|______|   \_/|____(_)_| |_|  |_|\___|_|  \___/|_| |_|         |___/\__\___/|_|/_/    \_\_____/|______|
-                                                                                                                        
-                                                                                                                        
+
+
+           _____  ______        ___    ___    __   __                                 _                    _____  ______ 
+     /\   |  __ \|  ____|      |__ \  / _ \   \ \ / /                       _        | |             /\   |  __ \|  ____|
+    /  \  | |  | | |__    __   __ ) || | | |   \ V / ___ _ __ _   _ ___   _| |_   ___| |_ ___  _ __ /  \  | |  | | |__   
+   / /\ \ | |  | |  __|   \ \ / // / | | | |    > < / _ \ '__| | | / __| |_   _| / __| __/ _ \| '__/ /\ \ | |  | |  __|  
+  / ____ \| |__| | |____   \ V // /_ | |_| |   / . \  __/ |  | |_| \__ \   |_|   \__ \ || (_) | | / ____ \| |__| | |____ 
+ /_/    \_\_____/|______|   \_/|____(_)___/   /_/ \_\___|_|   \__,_|___/         |___/\__\___/|_|/_/    \_\_____/|______|
+                                                                                                                         
+                                                                                                                         
 ADE
 
 RED='\033[0;31m'
@@ -23,12 +25,12 @@ NC='\033[0m'
 echo $(date)
 echo ""
 echo "©Copyright 2017-2019 Adeptio Developer Team"
-echo -e "${GREEN}== adeptio v2.1.0.0 ==${NC}"
+echo -e "${GREEN}== adeptio v2.0.0.0 ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo ""
 echo "Installation content:"
-echo "adeptio core v2.1.0.0 + latest storADE platform code"
+echo "adeptio core v2.0.0.0 + latest storADE platform code"
 echo
 echo "Setup can be launched only once"
 echo "Do you agree?"
@@ -110,10 +112,10 @@ echo ""
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.0.0-linux64.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.0.0-linux64-legacy.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.0.0.0/adeptiod-v2.0.0.0-linux64-legacy.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
@@ -132,6 +134,18 @@ listen=1
 daemon=1
 staking=1
 bind=[$wanipv6]
+addnode=seed0.adeptio.cc
+addnode=seed1.adeptio.cc
+addnode=seed2.adeptio.cc
+addnode=seed3.adeptio.cc
+addnode=seed4.adeptio.cc
+addnode=seed5.adeptio.cc
+addnode=seed6.adeptio.cc
+addnode=seed7.adeptio.cc
+addnode=seed8.adeptio.cc
+addnode=seed9.adeptio.cc
+addnode=seed10.adeptio.cc
+addnode=seed11.adeptio.cc
 EOF
 
 #Create adeptiocore.service
@@ -240,6 +254,18 @@ masternodeaddr=[$wanipv6]:9077
 externalip=[$wanipv6]
 masternodeprivkey=$privkey
 enablezeromint=0
+addnode=seed0.adeptio.cc
+addnode=seed1.adeptio.cc
+addnode=seed2.adeptio.cc
+addnode=seed3.adeptio.cc
+addnode=seed4.adeptio.cc
+addnode=seed5.adeptio.cc
+addnode=seed6.adeptio.cc
+addnode=seed7.adeptio.cc
+addnode=seed8.adeptio.cc
+addnode=seed9.adeptio.cc
+addnode=seed10.adeptio.cc
+addnode=seed11.adeptio.cc
 EOF
 
 # Firewall //
