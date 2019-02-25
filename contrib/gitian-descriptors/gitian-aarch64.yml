@@ -1,5 +1,5 @@
 ---
-name: "adeptio-aarch64-2.0"
+name: "adeptio-aarch64-2.1"
 enable_cache: true
 suites:
 - "xenial"

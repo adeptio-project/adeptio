@@ -1,5 +1,5 @@
 ---
-name: "adeptio-osx-2.0"
+name: "adeptio-osx-2.1"
 enable_cache: true
 suites:
 - "trusty"
