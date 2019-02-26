@@ -21,6 +21,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 echo $(date)
+curr_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
 echo ""
 echo "©Copyright 2017-2019 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio latest version v2.1.0.0 ==${NC}"
@@ -29,6 +30,8 @@ echo "Good day. This is automated masternode wallet updater. Auto updater was te
 echo ""
 echo "Updater content:"
 echo "adeptio core v2.1.0.0 + latest storADE platform code"
+echo ""
+echo "Your current adeptio wallet version is: $(curr_ver)"
 echo
 echo "We want to begin the update process"
 echo "Do you agree?"
@@ -97,3 +100,9 @@ if [ "$OS_version" -eq "1" ]; then
         sudo systemctl start storADEupdater.timer
         echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
         fi
+now_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
+echo "Your Adeptio wallet version after update: $(now_ver)"
+echo ""
+echo -e "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.adeptio.cc${NC}"
+echo ""
+echo -e "${GREEN}©2018-2019 powered by adeptio-project${NC}"
