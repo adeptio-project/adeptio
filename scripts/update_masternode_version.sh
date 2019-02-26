@@ -31,7 +31,7 @@ echo ""
 echo "Updater content:"
 echo "adeptio core v2.1.0.0 + latest storADE platform code"
 echo ""
-echo "Your current adeptio wallet version is: $(curr_ver)"
+echo "Your current adeptio wallet $curr_ver"
 echo
 echo "We want to begin the update process"
 echo "Do you agree?"
@@ -101,7 +101,8 @@ if [ "$OS_version" -eq "1" ]; then
         echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
         fi
 now_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
-echo "Your Adeptio wallet version after update: $(now_ver)"
+echo ""
+echo "Your Adeptio wallet $now_ver after update"
 echo ""
 echo -e "Need additional help? Please visit adeptio Discord channel: ${GREEN}https://discord.adeptio.cc${NC}"
 echo ""
