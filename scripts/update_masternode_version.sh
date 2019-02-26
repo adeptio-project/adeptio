@@ -68,7 +68,7 @@ if [ "$OS_version" -eq "1" ]; then
 	sudo cp -fr adeptio-cli adeptiod /usr/bin/
 	echo -e "${GREEN}4/5 Adeptio wallet is updated... Running for next task...${NC}"
 	rm -fr adeptio-cli adeptiod adeptio-tx adeptio*.zip
-	sudo systemctl stop adeptiocore.service && sleep 30
+	sudo systemctl start adeptiocore.service && sleep 30
 	sudo systemctl start storADEserver.service
 	sudo systemctl start storADEupdater.service
 	sudo systemctl start storADEupdater.timer
@@ -91,7 +91,7 @@ if [ "$OS_version" -eq "1" ]; then
         sudo cp -fr adeptio-cli adeptiod /usr/bin/
         echo -e "${GREEN}4/5 Adeptio wallet is updated${NC}"
         rm -fr adeptio-cli adeptiod adeptio-tx adeptio*.zip
-        sudo systemctl stop adeptiocore.service && sleep 30
+        sudo systemctl start adeptiocore.service && sleep 30
         sudo systemctl start storADEserver.service
         sudo systemctl start storADEupdater.service
         sudo systemctl start storADEupdater.timer
