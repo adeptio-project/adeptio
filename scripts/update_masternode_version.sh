@@ -22,6 +22,7 @@ NC='\033[0m'
 
 echo $(date)
 curr_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
+ver_to_download=$(curl https://img.shields.io/github/release/adeptio-project/adeptio.svg | grep -o "v.\..\..\.." | head -1)
 echo ""
 echo "©Copyright 2017-2019 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio latest version v2.1.0.0 ==${NC}"
@@ -65,7 +66,7 @@ if [ "$OS_version" -eq "1" ]; then
 	sudo systemctl stop storADEserver.service
 	echo -e "${GREEN}2/5 Adeptio services is stopped... Running for next task...${NC}" &&
 	cd ~
-	wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.0.0-linux64.zip
+	wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-$ver_to_download-linux64.zip
 	echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded... Running for next task...${NC}"
 	unzip -o adeptio*.zip
 	sudo cp -fr adeptio-cli adeptiod /usr/bin/
@@ -88,7 +89,7 @@ if [ "$OS_version" -eq "1" ]; then
         sudo systemctl stop storADEserver.service
         echo -e "${GREEN}2/5 Adeptio services is stopped... Running for next task...${NC}" &&
         cd ~
-        wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.0.0-linux64-legacy.zip
+        wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-$ver_to_download-linux64-legacy.zip
         echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded... Running for next task...${NC}"
         unzip -o adeptio*.zip
         sudo cp -fr adeptio-cli adeptiod /usr/bin/
