@@ -76,7 +76,7 @@ if [ "$OS_version" -eq "1" ]; then
 	sudo systemctl start storADEserver.service
 	sudo systemctl start storADEupdater.service
 	sudo systemctl start storADEupdater.timer
-	echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
+	echo -e "${GREEN}5/5 Adeptio services is now started. Update process completed.${NC}"
         else
 	cd ~
         rm -fr adeptio-cli adeptiod adeptio-tx adeptio*.zip
@@ -99,7 +99,7 @@ if [ "$OS_version" -eq "1" ]; then
         sudo systemctl start storADEserver.service
         sudo systemctl start storADEupdater.service
         sudo systemctl start storADEupdater.timer
-        echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
+        echo -e "${GREEN}5/5 Adeptio services is now started. Update process completed.${NC}"
         fi
 now_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
 echo ""
