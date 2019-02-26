@@ -8,6 +8,7 @@ Yes. From now on COLD masternode setup is actively supported eliminating HOT mas
 Further more you can always check the code:
 - [IPv4 setup](setup_adeptio_cold_masternode_ipv4_latest.sh)
 - [IPv6 setup](setup_adeptio_cold_masternode_ipv6_latest.sh)
+- [Masternove version update](update_masternode_version.sh)
 
 # How to install a masternode with auto-install scripts?
 
