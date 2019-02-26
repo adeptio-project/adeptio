@@ -72,28 +72,28 @@ if [ "$OS_version" -eq "1" ]; then
 	sudo systemctl start storADEserver.service
 	sudo systemctl start storADEupdater.service
 	sudo systemctl start storADEupdater.timer
-	echo -e "${GREEN}5/5 Adeptio services is is started. Update procees completed.${NC}"
+	echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
         else
 	cd ~
         rm -fr adeptio-cli adeptiod adeptio-tx adeptio*.zip
         cd /usr/bin/
         sudo rm -fr adeptio-cli adeptiod
-        echo -e "${GREEN}1/5 Old Adeptio wallet is deleted${NC}"
+        echo -e "${GREEN}1/5 Old Adeptio wallet is deleted... Running for next task...${NC}"
         sudo systemctl stop adeptiocore.service
         sudo systemctl stop storADEupdater.timer
         sudo systemctl stop storADEupdater.service
         sudo systemctl stop storADEserver.service
-        echo -e "${GREEN}2/5 Adeptio services is stopped${NC}" &&
+        echo -e "${GREEN}2/5 Adeptio services is stopped... Running for next task...${NC}" &&
         cd ~
         wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.0.0-linux64-legacy.zip
-        echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded${NC}"
+        echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded... Running for next task...${NC}"
         unzip -o adeptio*.zip
         sudo cp -fr adeptio-cli adeptiod /usr/bin/
-        echo -e "${GREEN}4/5 Adeptio wallet is updated${NC}"
+        echo -e "${GREEN}4/5 Adeptio wallet is updated... Running for next task...${NC}"
         rm -fr adeptio-cli adeptiod adeptio-tx adeptio*.zip
         sudo systemctl start adeptiocore.service && sleep 30
         sudo systemctl start storADEserver.service
         sudo systemctl start storADEupdater.service
         sudo systemctl start storADEupdater.timer
-        echo -e "${GREEN}5/5 Adeptio services is is started${NC}"
+        echo -e "${GREEN}5/5 Adeptio services is now started. Update procees completed.${NC}"
         fi
