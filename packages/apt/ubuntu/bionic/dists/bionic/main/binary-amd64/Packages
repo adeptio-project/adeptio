@@ -15,3 +15,21 @@ SHA1: 720286bef419014d1d39f8335495edcc590e8cea
 MD5sum: de65ab92e27c1f9c174990ac2b7e5f64
 Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority.
 
+Package: adeptiocore
+Version: 2.1.0.0
+Architecture: amd64
+Maintainer: Adeptio development team <development@adeptio.cc>
+Installed-Size: 7375
+Depends: bash, libboost-filesystem-dev (>=1.58.0), libboost-program-options-dev (>=1.58.0), libboost-thread-dev (>=1.58.0), libboost-system-dev (>=1.58.0), libevent-dev (>= 2.0.21), openssl (>= 1.0.2g), libminiupnpc-dev (>= 1.9), libzmq3-dev (>= 4.1.4), libminiupnpc-dev (>= 1.9)
+Conflicts: adeptio-qt
+Homepage: https://adeptio.cc
+Vcs-Git: https://github.com/adeptio-project/adeptioDPKG.git
+Priority: optional
+Section: devel
+Filename: pool/main/a/adeptiocore/adeptiocore_2.1.0.0_amd64.deb
+Size: 2732700
+SHA256: 103d2b298739b2a5e9fcf9f4e58fe759959def88b04916f3b0a21391fb2b8a3b
+SHA1: e23d6c7d70ac3d6622ff9755273b1d7c65fead2e
+MD5sum: 91815187db9bc5314d33577bc953490e
+Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority.
+
