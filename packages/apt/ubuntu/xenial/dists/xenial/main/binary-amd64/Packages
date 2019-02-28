@@ -1,3 +1,21 @@
+Package: adeptio-qt
+Version: 2.1.0.0
+Architecture: amd64
+Maintainer: Adeptio development team <development@adeptio.cc>
+Installed-Size: 11223
+Depends: bash, libboost-filesystem-dev (>=1.58.0), libboost-program-options-dev (>=1.58.0), libboost-thread-dev (>=1.58.0), libboost-system-dev (>=1.58.0), libevent-dev (>= 2.0.21), openssl (>= 1.0.2g), libminiupnpc-dev (>= 1.9), libzmq3-dev (>= 4.1.4), libminiupnpc-dev (>= 1.9), libqt5network5 (>= 5.5.1), libqrencode-dev (>= 3.4.4), libqt5widgets5 (>= 5.5.1)
+Conflicts: adeptiocore
+Homepage: https://adeptio.cc
+Vcs-Git: https://github.com/adeptio-project/adeptioDPKG.git
+Priority: optional
+Section: devel
+Filename: pool/main/a/adeptio-qt/adeptio-qt_2.1.0.0_amd64.deb
+Size: 4704388
+SHA256: aab38ba42d6f5378d995dffe4ce95aba50356001188f11b9a2fb2a40b1077581
+SHA1: f8fe9a3ef3f07ccfbbcd157575466a96776f6807
+MD5sum: 7dc4a246615b731e11c8954056947ecf
+Description: Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority.
+
 Package: adeptiocore
 Version: 2.1.0.0
 Architecture: amd64
