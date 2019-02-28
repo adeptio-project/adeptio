@@ -92,7 +92,7 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 Burn addr: https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
 # Reward Distribution
-Masternode / Stakers / DevFund. Distribution ratio of 60% / 30% / 10% respectively.
+Masternode / Stakers / DevFund. Distribution ratio of 70% / 20% / 10% respectively.
 <table>
 <tr><th>Block Height</th><th>Reward Amount</th><th>Circulating amount</th><th>Development fees</th><th>Algo</th>
 <tr><td>Block 2 - 86400</td><td>150 ADE</td><td>~12 960000 ADE</td></td><td>DevFee 0.5%</td><td>POW</td>
