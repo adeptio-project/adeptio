@@ -202,7 +202,84 @@ struct CBlockReject {
     uint256 hashBlock;
 };
 
-/**
+
+class CNodeBlocks
+{
+public:
+    CNodeBlocks():
+            maxSize(0),
+            maxAvg(0)
+    {
+        maxSize = GetArg("-blockspamfiltermaxsize", DEFAULT_BLOCK_SPAM_FILTER_MAX_SIZE);
+        maxAvg = GetArg("-blockspamfiltermaxavg", DEFAULT_BLOCK_SPAM_FILTER_MAX_AVG);
+    }
+
+    bool onBlockReceived(int nHeight) {
+        if(nHeight > 0 && maxSize && maxAvg) {
+            addPoint(nHeight);
+            return true;
+        }
+        return false;
+    }
+
+    bool updateState(CValidationState& state, bool ret)
+    {
+        // No Blocks
+        size_t size = points.size();
+        if(size == 0)
+            return ret;
+
+        // Compute the number of the received blocks
+        size_t nBlocks = 0;
+        for(auto point : points)
+        {
+            nBlocks += point.second;
+        }
+
+        // Compute the average value per height
+        double nAvgValue = (double)nBlocks / size;
+
+        // Ban the node if try to spam
+        bool banNode = (nAvgValue >= 1.5 * maxAvg && size >= maxAvg) ||
+                       (nAvgValue >= maxAvg && nBlocks >= maxSize) ||
+                       (nBlocks >= maxSize * 3);
+        if(banNode)
+        {
+            // Clear the points and ban the node
+            points.clear();
+            return state.DoS(100, error("block-spam ban node for sending spam"));
+        }
+
+        return ret;
+    }
+
+private:
+    void addPoint(int height)
+    {
+        // Remove the last element in the list
+        if(points.size() == maxSize)
+        {
+            points.erase(points.begin());
+        }
+
+        // Add the point to the list
+        int occurrence = 0;
+        auto mi = points.find(height);
+        if (mi != points.end())
+            occurrence = (*mi).second;
+        occurrence++;
+        points[height] = occurrence;
+    }
+
+private:
+    std::map<int,int> points;
+    size_t maxSize;
+    size_t maxAvg;
+};
+
+
+
+ /**
  * Maintain validation-specific state about nodes, protected by cs_main, instead
  * by CNode's own locks. This simplifies asynchronous operation, where
  * processing of incoming data is done after the ProcessMessage call returns,
@@ -235,6 +312,8 @@ struct CNodeState {
     int nBlocksInFlight;
     //! Whether we consider this a preferred download peer.
     bool fPreferredDownload;
+
+    CNodeBlocks nodeBlocks;
 
     CNodeState()
     {
@@ -1235,6 +1314,12 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
         return state.DoS(100, error("AcceptToMemoryPool: coinstake as individual tx. txid=%s", tx.GetHash().GetHex()),
             REJECT_INVALID, "coinstake");
 
+    // Only accept nLockTime-using transactions that can be mined in the next
+    // block; we don't want our mempool filled up with transactions that can't
+    // be mined yet.
+    if (!CheckFinalTx(tx, STANDARD_LOCKTIME_VERIFY_FLAGS))
+        return state.DoS(0, false, REJECT_NONSTANDARD, "non-final");
+
     // Rather not work on nonstandard transactions (unless -testnet/-regtest)
     string reason;
     if (Params().RequireStandard() && !IsStandardTx(tx, reason))
@@ -1814,58 +1899,58 @@ int64_t GetBlockValue(int nHeight)
         if (nHeight < 200 && nHeight > 0)
             return 250000 * COIN;
     }
-	
-	if (nHeight == 0) return 50002 * COIN;
-		
-	int64_t nSubsidy = 1 * COIN;
-	
-	if(nHeight <= 86400 && nHeight > 0) {
+    
+    if (nHeight == 0) return 50002 * COIN;
+        
+    int64_t nSubsidy = 1 * COIN;
+    
+    if(nHeight <= 86400 && nHeight > 0) {
         nSubsidy = 150 * COIN;
-	} else if (nHeight > 86400 && nHeight <= 151200) {
-		nSubsidy = 125 * COIN;
-	} else if (nHeight > 151200 && nHeight <= 302400) {
-		nSubsidy = 100 * COIN;
-	} else if (nHeight > 302400 && nHeight <= 345600) {
-		nSubsidy = 75 * COIN;
-	} else if (nHeight > 345600 && nHeight <= 388800) {
-		nSubsidy = 50 * COIN;
-	} else if (nHeight > 388800 && nHeight <= 475200) { 
-		nSubsidy = 50 * COIN;
-	} else if (nHeight > 475200 && nHeight <= 518400) { 
-		nSubsidy = 50 * COIN;
-	} else if (nHeight > 518400 && nHeight <= 561600) {
-		nSubsidy = 25 * COIN;
-	} else if (nHeight > 561600 && nHeight <= 604800) {
-		nSubsidy = 10 * COIN;
-	} else if (nHeight > 604800 && nHeight <= 1209600) {
-		nSubsidy = 5 * COIN;
-	} else if (nHeight > 1209600 && nHeight <= 2419200) {
-		nSubsidy = 3 * COIN;
-	} else if (nHeight > 2419200 && nHeight <= 4838400) {
-		nSubsidy = 2 * COIN;
-	} else if (nHeight > 4838400) {
-		nSubsidy = 1 * COIN;
-	}
-	
-	return nSubsidy;
+    } else if (nHeight > 86400 && nHeight <= 151200) {
+        nSubsidy = 125 * COIN;
+    } else if (nHeight > 151200 && nHeight <= 302400) {
+        nSubsidy = 100 * COIN;
+    } else if (nHeight > 302400 && nHeight <= 345600) {
+        nSubsidy = 75 * COIN;
+    } else if (nHeight > 345600 && nHeight <= 388800) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > 388800 && nHeight <= 475200) { 
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > 475200 && nHeight <= 518400) { 
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > 518400 && nHeight <= 561600) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight > 561600 && nHeight <= 604800) {
+        nSubsidy = 10 * COIN;
+    } else if (nHeight > 604800 && nHeight <= 1209600) {
+        nSubsidy = 5 * COIN;
+    } else if (nHeight > 1209600 && nHeight <= 2419200) {
+        nSubsidy = 3 * COIN;
+    } else if (nHeight > 2419200 && nHeight <= 4838400) {
+        nSubsidy = 2 * COIN;
+    } else if (nHeight > 4838400) {
+        nSubsidy = 1 * COIN;
+    }
+    
+    return nSubsidy;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZADEStake)
 {
-	if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200)
             return 0;
     }
-	
-	int64_t ret = 0;
-	
-	if(nHeight <= 86400 && nHeight > 0) {
+    
+    int64_t ret = 0;
+    
+    if(nHeight <= 86400 && nHeight > 0) {
         ret = blockValue / 100 * 20;
-	} else if (nHeight > 86400 && nHeight <= 151200) {
+    } else if (nHeight > 86400 && nHeight <= 151200) {
         ret = blockValue / 100 * 25;
-	} else if (nHeight > 151200 && nHeight <= 152500) {
+    } else if (nHeight > 151200 && nHeight <= 152500) {
         ret = blockValue / 100 * 20;
-	} else if (nHeight > 152500 && nHeight <= 225000) {
+    } else if (nHeight > 152500 && nHeight <= 225000) {
         ret = blockValue / 100 * 30;
         } else if (nHeight > 225000 && nHeight <= 475200) {
         ret = blockValue / 100 * 60;
@@ -2332,8 +2417,8 @@ bool DisconnectBlock(CBlock& block, CValidationState& state, CBlockIndex* pindex
                 if (coins->vout.size() < out.n + 1)
                     coins->vout.resize(out.n + 1);
                 coins->vout[out.n] = undo.txout;
-				
-				// erase the spent input
+                
+                // erase the spent input
                 mapStakeSpent.erase(out); 
             }
         }
@@ -2873,7 +2958,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                                     block.GetHash().GetHex(), pindex->nHeight), REJECT_INVALID, "bad-acc-checkpoint");
 
     if (!control.Wait())
-        return state.DoS(100, false);
+        return state.DoS(100, error("%s: CheckQueue failed", __func__), REJECT_INVALID, "block-validation-failed");
     int64_t nTime2 = GetTimeMicros();
     nTimeVerify += nTime2 - nTimeStart;
     LogPrint("bench", "    - Verify %u txins: %.2fms (%.3fms/txin) [%.2fs]\n", nInputs - 1, 0.001 * (nTime2 - nTimeStart), nInputs <= 1 ? 0 : 0.001 * (nTime2 - nTimeStart) / (nInputs - 1), nTimeVerify * 0.000001);
@@ -2937,8 +3022,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (fTxIndex)
         if (!pblocktree->WriteTxIndex(vPos))
             return state.Abort("Failed to write transaction index");
-		
-	// add additional entries
+        
+    // add additional entries
     for (const CTransaction tx: block.vtx) {
         if (tx.IsCoinBase())
             continue;
@@ -2958,8 +3043,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             it++;
         }
     }
-	
-	
+    
+    
     // add this block to the view's block chain
     view.SetBestBlock(pindex->GetBlockHash());
 
@@ -3036,6 +3121,7 @@ bool static FlushStateToDisk(CValidationState& state, FlushStateMode mode)
                 }
                 setDirtyBlockIndex.erase(it++);
             }
+
             pblocktree->Sync();
             // Finally flush the chainstate (which may refer to block index entries).
             if (!pcoinsTip->Flush())
@@ -3063,16 +3149,17 @@ void static UpdateTip(CBlockIndex* pindexNew)
 {
     chainActive.SetTip(pindexNew);
 
+#ifdef ENABLE_WALLET
     // If turned on AutoZeromint will automatically convert ADE to zADE
-    if (pwalletMain->isZeromintEnabled ())
-        pwalletMain->AutoZeromint ();
-
+    if (pwalletMain && pwalletMain->isZeromintEnabled())
+        pwalletMain->AutoZeromint();
+#endif // ENABLE_WALLET
     // New best block
     nTimeBestReceived = GetTime();
     mempool.AddTransactionsUpdated(1);
 
-    LogPrintf("UpdateTip: new best=%s  height=%d  log2_work=%.8g  tx=%lu  date=%s progress=%f  cache=%u\n",
-        chainActive.Tip()->GetBlockHash().ToString(), chainActive.Height(), log(chainActive.Tip()->nChainWork.getdouble()) / log(2.0), (unsigned long)chainActive.Tip()->nChainTx,
+    LogPrintf("UpdateTip: new best=%s  height=%d version=%d  log2_work=%.8g  tx=%lu  date=%s progress=%f  cache=%u\n",
+        chainActive.Tip()->GetBlockHash().ToString(), chainActive.Height(), chainActive.Tip()->nVersion, log(chainActive.Tip()->nChainWork.getdouble()) / log(2.0), (unsigned long)chainActive.Tip()->nChainTx,
         DateTimeStrFormat("%Y-%m-%d %H:%M:%S", chainActive.Tip()->GetBlockTime()),
         Checkpoints::GuessVerificationProgress(chainActive.Tip()), (unsigned int)pcoinsTip->GetCacheSize());
 
@@ -4220,6 +4307,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     if (pindex->nStatus & BLOCK_HAVE_DATA) {
         // TODO: deal better with duplicate blocks.
         // return state.DoS(20, error("AcceptBlock() : already have block %d %s", pindex->nHeight, pindex->GetBlockHash().ToString()), REJECT_DUPLICATE, "duplicate");
+        LogPrintf("AcceptBlock() : already have block %d %s", pindex->nHeight, pindex->GetBlockHash().ToString());
         return true;
     }
 
@@ -4233,7 +4321,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
     int nHeight = pindex->nHeight;
 
-	if (block.IsProofOfStake()) {
+    if (block.IsProofOfStake()) {
         LOCK(cs_main);
 
         CCoinsViewCache coins(pcoinsTip);
@@ -4366,7 +4454,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
     // Preliminary checks
     int64_t nStartTime = GetTimeMillis();
     bool checked = CheckBlock(*pblock, state);
-	
+    
     int nMints = 0;
     int nSpends = 0;
     for (const CTransaction tx : pblock->vtx) {
@@ -4405,14 +4493,33 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         }
 
         // Store to disk
-        CBlockIndex* pindex = NULL;
+        CBlockIndex* pindex = nullptr;
         bool ret = AcceptBlock (*pblock, state, &pindex, dbp, checked);
         if (pindex && pfrom) {
             mapBlockSource[pindex->GetBlockHash ()] = pfrom->GetId ();
         }
         CheckBlockIndex ();
-        if (!ret)
-            return error ("%s : AcceptBlock FAILED", __func__);
+        if (!ret) {
+            // Check spamming
+            if(pindex && pfrom && GetBoolArg("-blockspamfilter", DEFAULT_BLOCK_SPAM_FILTER)) {
+                CNodeState *nodestate = State(pfrom->GetId());
+                if(nodestate != nullptr) {
+                    nodestate->nodeBlocks.onBlockReceived(pindex->nHeight);
+                    bool nodeStatus = true;
+                    // UpdateState will return false if the node is attacking us or update the score and return true.
+                    nodeStatus = nodestate->nodeBlocks.updateState(state, nodeStatus);
+                    int nDoS = 0;
+                    if (state.IsInvalid(nDoS)) {
+                        if (nDoS > 0)
+                            Misbehaving(pfrom->GetId(), nDoS);
+                        nodeStatus = false;
+                    }
+                    if (!nodeStatus)
+                        return error("%s : AcceptBlock FAILED - block spam protection", __func__);
+                }
+            }
+            return error("%s : AcceptBlock FAILED", __func__);
+        }
     }
 
     if (!ActivateBestChain(state, pblock, checked))
@@ -4457,8 +4564,8 @@ bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex
         return false;
     if (!CheckBlock(block, state, fCheckPOW, fCheckMerkleRoot))
         return false;
-	if (!ContextualCheckBlock(block, state, pindexPrev))
-		return false;
+    if (!ContextualCheckBlock(block, state, pindexPrev))
+        return false;
     if (!ConnectBlock(block, state, &indexDummy, viewNew, true))
         return false;
     assert(state.IsValid());
@@ -5114,6 +5221,7 @@ bool static AlreadyHave(const CInv& inv)
     }
     case MSG_DSTX:
         return mapObfuscationBroadcastTxes.count(inv.hash);
+
     case MSG_BLOCK:
         return mapBlockIndex.count(inv.hash);
     case MSG_TXLOCK_REQUEST:
