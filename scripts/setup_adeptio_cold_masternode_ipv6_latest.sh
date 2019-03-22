@@ -110,10 +110,10 @@ echo ""
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.3.0-linux64.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.3.0/adeptiod-v2.1.3.0-linux64.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.0.0/adeptiod-v2.1.3.0-linux64-legacy.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.3.0/adeptiod-v2.1.3.0-linux64-legacy.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
