@@ -16,7 +16,7 @@ alt="chat on Discord"></a>
 
 Adeptio is a fair cryptocurrency and enables instant payments to anyone, anywhere in the world. Coin uses peer-to-peer technology to operate with no central authority. Adeptio Core combines the best features of different coins in order to create an excellent digital payment asset.
 
-[storADE](https://github.com/adeptio-project/adeptioStorade) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
+[storADE](https://github.com/adeptio-project/adeptioStorade/blob/master/README.md) service technology with valuable adeptio masternode functionality serves storage & streaming platform for every day usage.
 
 ![Alt text](https://github.com/adeptio-project/adeptio/raw/master/logo/1_shadow.png)
 
