@@ -51,9 +51,9 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
-• Algorithm: Hybrid - PoW/PoS
+• Algorithm: Hybrid - ~~PoW~~/PoS
 
-• PoW Algorithm: Quark
+• ~~PoW Algorithm: Quark~~
 
 • PoW Blocks: 2 - 345600
 
@@ -75,9 +75,11 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • IPv6 network: capable
 
-• PoW Ending: ~240 Days
+• ~~PoW Ending: ~240 Days~~
 
 • Masternodes: activated
+
+• storADE: activated
 
 • Masternode Requirements: 10 000 ADE
 
