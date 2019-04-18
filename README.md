@@ -75,7 +75,7 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • IPv6 network: capable
 
-• ~~PoW Ending: ~240 Days~~
+• PoW Ending: ~240 Days
 
 • Masternodes: activated
 
