@@ -41,16 +41,6 @@ Use the autogen script to prepare the build environment.
 
 More information how to build on specific distribution see at: https://wiki.adeptio.cc/books/building-the-wallet
 
-# Install with apt/yum package managers
-
-**Ubuntu 16/18**
-
-https://wiki.adeptio.cc/books/adeptio-repository/page/apt-get-repository-for-ubuntu-1604-1804
-
-**RHEL7/Centos7**
-
-https://wiki.adeptio.cc/books/adeptio-repository/page/yum-repository-for-rhel-7-centos-7
-
 **Precompiled binaries**
 
 Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
@@ -61,9 +51,9 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Premine: (#1 Block) 50,002 for 5 init MasterNodes*
 
-• Algorithm: Hybrid - PoW/PoS
+• Algorithm: Hybrid - ~~PoW~~/PoS
 
-• PoW Algorithm: Quark
+• ~~PoW Algorithm: Quark~~
 
 • PoW Blocks: 2 - 345600
 
@@ -88,6 +78,8 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 • PoW Ending: ~240 Days
 
 • Masternodes: activated
+
+• storADE: activated
 
 • Masternode Requirements: 10 000 ADE
 
