@@ -251,7 +251,7 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        if(block_height >= 475201) // Postpone to v2.1.0.0
+        if(block_height >= 1475201) // Postpone to v2.2.0.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
