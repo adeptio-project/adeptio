@@ -200,8 +200,7 @@ QT_TRANSLATE_NOOP("adeptio-core", ""
 "rebuild the block database if you are sure that your computer's date and "
 "time are correct"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
-"This is a pre-release test build - use at your own risk - do not use for "
-"staking or merchant applications!"),
+"This software is not marked as stable - use at your own risk!"),
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "This product includes software developed by the OpenSSL Project for use in "
 "the OpenSSL Toolkit <https://www.openssl.org/> and cryptographic software "
