@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Параметры командной строки</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Обработано %n блоков истории транзакций</numerusform><numerusform>Обработано %n блоков истории транзакций</numerusform><numerusform>Обработано %n блоков истории транзакций</numerusform><numerusform>Обработано %n блоков истории транзакций</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Синхронизация дополнительных данных: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>Клиент Adeptio Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n активных подключений к сети ADE</numerusform><numerusform>%n активных подключений к сети ADE</numerusform><numerusform>%n активных подключений к сети ADE</numerusform><numerusform>%n активных подключений к сети ADE</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Синхронизация с сетью...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Обновление не требуется</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n часов</numerusform><numerusform>%n часов</numerusform><numerusform>%n часов</numerusform><numerusform>%n часов</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n дней</numerusform><numerusform>%n дней</numerusform><numerusform>%n дней</numerusform><numerusform>%n дней</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n недель</numerusform><numerusform>%n недель</numerusform><numerusform>%n недель</numerusform><numerusform>%n недель</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 и %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n лет</numerusform><numerusform>%n лет</numerusform><numerusform>%n лет</numerusform><numerusform>%n лет</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и в настоящее время &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1130,8 +1106,8 @@ MultiSend: %1</translation>
         <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Может вариироваться +/- %1 uADE при вводе</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Может вариироваться +/- %1 upiv при вводе</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1224,6 +1200,17 @@ MultiSend: %1</translation>
         <translation>Здесь невозможно создать каталог данных.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Вид</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1542,48 +1529,8 @@ MultiSend будет неактивен до тех пор, пока вы не �
         <translation>(нет метки)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Введенный адрес:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>недопустим.
-Пожалуйста, проверьте адрес и попробуйте снова.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Итоговое значение вектора MultiSend превышает 100% ваших вознаграждений
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Введите 1 - 100 для указания процентов.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Сохранили МультиОтправку в памяти, но не удалось сохранить свойства в базе данных.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Вектор MultiSend
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Удалено</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Не удалось найти адрес
-</translation>
     </message>
 </context>
 <context>
@@ -1906,7 +1853,7 @@ Please be patient after clicking import.</source>
         <translation>Автоматически запускать ADE после входа в систему.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>&amp;Запускать ADE при входе в систему</translation>
     </message>
     <message>
@@ -2441,8 +2388,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>КОНФИДЕНЦИАЛЬНОСТЬ</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
-        <translation>Введите сумму в ADE для  конвертации в zADE</translation>
+        <source>Enter an amount of Piv to convert to zADE</source>
+        <translation>Введите сумму в Piv для  конвертации в zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2483,18 +2430,6 @@ zADE are mature when they have more than 20 confirmations AND more than 2 mints 
     <message>
         <source>0 zADE</source>
         <translation>0 zADE</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Уровень безопасности для транзакций Zerocoin. Больше лучше, но требуется больше времени и ресурсов.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Уровень безопасности:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Уровень безопасности 1-100 ( по умолчанию: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2773,14 +2708,6 @@ Please be patient...</source>
 Будьте терпеливы ...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Расходы Zerocoin.
-Вычислительно дорого, может потребоваться несколько минут в зависимости от выбранного уровня безопасности и вашего оборудования.
-Пожалуйста, будьте терпеливы...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) необходимо.
@@ -2927,7 +2854,7 @@ Maximum allowed: </source>
         <translation>Не предоставляется адрес «Pay To», создающий местный платеж</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
+        <source>Invalid Pivx Address</source>
         <translation>неправильный ADE адрес</translation>
     </message>
     <message>
@@ -2951,20 +2878,8 @@ Maximum allowed: </source>
         <translation>к вновь созданному (неиспользуемому и поэтому анонимному) локальному адресу &lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>с безопасным уровнем</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Подтвердить отправку монет</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Для версии 1 zADE требуется уровень безопасности 100, который можно успешно тратить.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zADE</source>
-        <translation>Не удалось провести zADE</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2983,11 +2898,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Провести Zerocoin не удалось со статусом =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of ADE to convert to zADE</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3023,13 +2933,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Сумма</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>Введите адрес ADE (например %1)</translation>
     </message>
     <message>
@@ -3072,7 +2985,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 мс</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3385,7 +3302,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>Добро пожаловать в окружение ADE RPC.</translation>
+        <translation>Добро пожаловать в окружение Adeptio RPC.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3434,10 +3351,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Подтвердить повторную синхронизацию Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Используйте стрелки вверх и вниз для навигации по истории, и &lt;b&gt;Ctrl-L&lt;/b&gt; для очистки экрана.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3511,6 +3424,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Дополнительный ярлык для связи с новым адресом приема.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>С&amp;умма:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>Необязательное сообщение для присоединения к платежному запросу, которое будет отображаться при открытии запроса. Примечание. Сообщение не будет отправлено с оплатой через сеть ADE.</translation>
     </message>
@@ -3533,10 +3450,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Необязательная сумма для запроса. Оставьте это пустое или ноль, чтобы не запрашивать определенную сумму.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Количество:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3581,6 +3494,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Copy amount</source>
         <translation>Копировать сумму</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Копировать адрес</translation>
     </message>
 </context>
 <context>
@@ -3651,6 +3568,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Сообщение</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3788,8 +3709,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>(Умный платеж еще не инициализирован. Обычно это занимает несколько блоков....)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -3935,17 +3856,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Плата в %1 раз выше, чем %2 за КБ, считается безумно высокой.</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Предполагается начать подтверждение в пределах %n блоков.</numerusform><numerusform>Предполагается начать подтверждение в пределах %n блоков.</numerusform><numerusform>Предполагается начать подтверждение в пределах %n блоков.</numerusform><numerusform>Предполагается начать подтверждение в пределах %n блоков.</numerusform></translation>
-    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>Адрес получателя недействителен, повторите проверку.</translation>
     </message>
     <message>
-        <source>using HyperSend</source>
-        <translation>используйте HyperSend</translation>
+        <source>using SwiftX</source>
+        <translation>используйте SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -4261,10 +4178,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Открыть для  %n блоков</numerusform><numerusform>Открыть для  %n блоков</numerusform><numerusform>Открыть для  %n блоков</numerusform><numerusform>Открыть для  %n блоков</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Открыть до %1</translation>
@@ -4286,36 +4199,36 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>%1 подтверждения</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
-        <translation>%1 / офлайн (проверено через HyperSend)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1 / офлайн (проверено через SwiftX)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
-        <translation>%1 / подтверждено (проверено через HyperSend)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1 / подтверждено (проверено через SwiftX)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
-        <translation>%1 подтверждений (проверено через HyperSend)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 подтверждений (проверено через SwiftX)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 / офлайн (проверка HyperSend - %2 %3 подписей)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 / офлайн (проверка SwiftX - %2 %3 подписей)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1 / подтверждено (выполняется проверка HyperSend - %2 %3 подписей)</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1 / подтверждено (выполняется проверка SwiftX - %2 %3 подписей)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 подтверждений (Проверка HyperSend в процессе - %2 %3 подписи)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 подтверждений (Проверка SwiftX в процессе - %2 %3 подписи)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1 / офлайн (проверка HyperSend не выполнена)</translation>
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1 / офлайн (проверка SwiftX не выполнена)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1 / подтверждено (проверка HyperSend не выполнена)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1 / подтверждено (проверка SwiftX не выполнена)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -4324,10 +4237,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, еще не была успешно передана</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, передается через %n узлов</numerusform><numerusform>, передается через %n узлов</numerusform><numerusform>, передается через %n узлов</numerusform><numerusform>, передается через %n узлов</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4368,10 +4277,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Кредит</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>созревает в %n блоков</numerusform><numerusform>созревает в %n блоков</numerusform><numerusform>созревает в %n блоков</numerusform><numerusform>созревает в %n блоков</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4470,10 +4375,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Address</source>
         <translation>Адрес</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Открыть для %n блоков</numerusform><numerusform>Открыть для %n блоков</numerusform><numerusform>Открыть для %n блоков</numerusform><numerusform>Открыть для  %n блоков</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4824,8 +4725,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Отправить Монеты</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend не поддерживает отправку значений, которые еще высоки. В настоящее время транзакции ограничены %1 ADE.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftX не поддерживает отправку значений, которые еще высоки. В настоящее время транзакции ограничены %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4856,7 +4757,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Select zADE to Spend</source>
         <translation>Выберите zADE чтобы потратить</translation>
@@ -4877,11 +4778,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>Выбрать / Отменить выбор</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Расходы</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -5265,8 +5162,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Copyright (C) 2014-%i Разработчики Dash Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2018-%i Разработчики Adeptio Core</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2015-%i Разработчики Adeptio Core</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5313,12 +5210,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Включить автоматическую чистку Zerocoin (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Включить публикацию хеш-транзакции (заблокированной через HyperSend) в &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Включить публикацию хеш-транзакции (заблокированной через SwiftX) в &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Включить публикацию необработанных транзакций (заблокированных через HyperSend) в &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Включить публикацию необработанных транзакций (заблокированных через SwiftX) в &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5369,6 +5266,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Ошибка при восстановлении открытого ключа.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Ошибка записи zerocoinDB на диск</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -5403,6 +5304,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Не удалось прослушивать любой порт. Используйте -listen = 0, если вы этого хотите.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Не удалось проанализировать хост: строка порта</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5557,8 +5462,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Выбранная стоимость монет меньше цели платежа</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>Параметры HyperSend:</translation>
+        <source>SwiftX options:</source>
+        <translation>Параметры SwiftX:</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
@@ -5581,12 +5486,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>Отключите все специфические функции ADE (Masternodes, Zerocoin, HyperSend, Бюджетирование) (0-1, по умолчанию: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Отключите все специфические функции ADE (Masternodes, Zerocoin, SwiftX, Бюджетирование) (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable HyperSend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Включить HyperSend, показать подтверждения для заблокированных транзакций (bool, default: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Включить SwiftX, показать подтверждения для заблокированных транзакций (bool, default: %s)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -5625,8 +5530,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Укажите собственный путь резервного копирования, чтобы добавить копию любой резервной копии кошелька. Если задано как dir, каждая резервная копия генерирует файл с отметкой времени. Если он установлен как файл, он будет переписывать в этот файл каждую резервную копию.</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend требует ввода с не менее чем 6 подтверждениями, вам может потребоваться несколько минут и повторите попытку.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX требует ввода с не менее чем 6 подтверждениями, вам может потребоваться несколько минут и повторите попытку.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5679,10 +5584,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to create mint</source>
         <translation>Не удалось создать монетный двор</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Не удалось десериализовать</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6125,14 +6026,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Расходы на монеты использовались</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Новая транзакция с мошенничеством не подтвердила</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Выбранная монетка - недействительна</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Транзакция не подтверждена</translation>
     </message>
@@ -6266,7 +6159,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zADE</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zXlq</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zPiv</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>
@@ -6279,10 +6172,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Verifying wallet...</source>
         <translation>Проверка кошелька ...</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Для версии 1 zADE требуется уровень безопасности 100, который можно успешно тратить.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

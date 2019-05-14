@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The ADE developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,12 +9,12 @@
 #include "clientversion.h"
 #include "init.h"
 #include "networkstyle.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
 #include "version.h"
 
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 
 #include <QApplication>
@@ -60,16 +60,16 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixPaint.setFont(QFont(font, 28 * fontFactor));
     fm = pixPaint.fontMetrics();
     //titleTextWidth = fm.width(titleText);
-    //pixPaint.drawText(paddingLeft, paddingTop, titleText);
+    pixPaint.drawText(paddingLeft, paddingTop, titleText);
 
     pixPaint.setFont(QFont(font, 15 * fontFactor));
-    //pixPaint.drawText(paddingLeft, paddingTop + titleVersionVSpace, versionText);
+    pixPaint.drawText(paddingLeft, paddingTop + titleVersionVSpace, versionText);
 
     // draw copyright stuff
     pixPaint.setFont(QFont(font, 10 * fontFactor));
-    //pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace, copyrightTextBtc);
-    //pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 12, copyrightTextDash);
-    //pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 24, copyrightTextADE);
+    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace, copyrightTextBtc);
+    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 12, copyrightTextDash);
+    pixPaint.drawText(paddingLeft, paddingTop + titleCopyrightVSpace + 24, copyrightTextADE);
 
     // draw additional text if special network
     if (!titleAddText.isEmpty()) {
@@ -78,7 +78,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
         pixPaint.setFont(boldFont);
         fm = pixPaint.fontMetrics();
         int titleAddTextWidth = fm.width(titleAddText);
-        //pixPaint.drawText(pixmap.width() - titleAddTextWidth - 10, pixmap.height() - 25, titleAddText);
+        pixPaint.drawText(pixmap.width() - titleAddTextWidth - 10, pixmap.height() - 25, titleAddText);
     }
 
     pixPaint.end();
@@ -162,7 +162,7 @@ void SplashScreen::paintEvent(QPaintEvent* event)
     painter.drawPixmap(0, 0, pixmap);
     QRect r = rect().adjusted(5, 5, -5, -5);
     painter.setPen(curColor);
-    //painter.drawText(r, curAlignment, curMessage);
+    painter.drawText(r, curAlignment, curMessage);
 }
 
 void SplashScreen::closeEvent(QCloseEvent* event)

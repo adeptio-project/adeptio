@@ -9,7 +9,7 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 
 #include <sstream>
 #include <iostream>
@@ -83,13 +83,12 @@ void Accumulator::setValue(CBigNum bnValue) {
     this->value = bnValue;
 }
 
-Accumulator& Accumulator::operator += (const PublicCoin& c) {
-    this->accumulate(c);
-    return *this;
+void Accumulator::setInitialValue() {
+    this->value = this->params->accumulatorBase;
 }
 
-Accumulator& Accumulator::operator = (Accumulator rhs) {
-    if (this != &rhs) std::swap(*this, rhs);
+Accumulator& Accumulator::operator += (const PublicCoin& c) {
+    this->accumulate(c);
     return *this;
 }
 
@@ -122,6 +121,10 @@ const CBigNum& AccumulatorWitness::getValue() const {
     return this->witness.getValue();
 }
 
+const PublicCoin& AccumulatorWitness::getPublicCoin() const {
+    return this->element;
+}
+
 bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &publicCoin) const {
     Accumulator temp(witness);
     temp += element;
@@ -139,13 +142,6 @@ bool AccumulatorWitness::VerifyWitness(const Accumulator& a, const PublicCoin &p
 AccumulatorWitness& AccumulatorWitness::operator +=(
     const PublicCoin& rhs) {
     this->AddElement(rhs);
-    return *this;
-}
-
-AccumulatorWitness& AccumulatorWitness::operator =(AccumulatorWitness rhs) {
-    // Not pretty, but seems to work (SPOCK)
-    if (&witness != &rhs.witness) this->witness = rhs.witness;
-    if (&element != &rhs.element) std::swap(element, rhs.element);
     return *this;
 }
 

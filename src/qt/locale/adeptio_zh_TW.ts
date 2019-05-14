@@ -669,6 +669,9 @@
     <name>FreespaceChecker</name>
     </context>
 <context>
+    <name>GovernancePage</name>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>Adeptio Core</source>
@@ -749,7 +752,14 @@
     </message>
     </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
     </context>
 <context>
     <name>QRImageWidget</name>
@@ -780,6 +790,10 @@
     <message>
         <source>Label</source>
         <translation>標記</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -957,7 +971,7 @@
     </message>
     </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     </context>
 <context>
     <name>adeptio-core</name>

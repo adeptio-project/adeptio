@@ -1,11 +1,11 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "reverse_iterate.h"
 #include "util.h"
 #include "libzerocoin/Denominations.h"
-#include "primitives/zerocoin.h"
+#include "zade/zerocoin.h"
 #include <list>
 #include <map>
 std::vector<CMintMeta> SelectMintsFromList(const CAmount nValueTarget, CAmount& nSelectedValue,

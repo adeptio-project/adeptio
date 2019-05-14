@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>Opzioni riga di &amp;Comando</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Elaborato 1 blocco dalla cronologia delle transazioni</numerusform><numerusform>Elaborati %n blocchi dalla cronologia delle transazioni.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizzazione dati addizionali: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>Adeptio Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n connessione attiva alla rete ADEIX</numerusform><numerusform>%n connessioni attive alla rete ADEIX</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sincronizzazione con la rete ...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Aggiornato</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n ora</numerusform><numerusform>%n ore</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n giorno</numerusform><numerusform>%n giorni</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n settimana</numerusform><numerusform>%n settimane</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 e %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n anno</numerusform><numerusform>%n anni</numerusform></translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -860,7 +836,7 @@ MultiSend: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Il portafoglio è &lt;b&gt;crittografato&lt;/b&gt; e attualmente &lt;b&gt;bloccato&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1126,7 +1102,7 @@ MultiSend: %1</translation>
         <translation>Questa etichetta diventa rossa se uno dei destinatari riceve un importo inferiore a %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
+        <source>Can vary +/- %1 upiv per input.</source>
         <translation>Può variare di +/- %1 uADE per input.</translation>
     </message>
     <message>
@@ -1212,6 +1188,17 @@ MultiSend: %1</translation>
         <translation>Impossibile creare la cartella dati qui.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Modulo</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1530,47 +1517,8 @@ MultiSend non verrà attivato a meno che tu non prema su Attiva</translation>
         <translation>(nessuna etichetta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>L'indirizzo immesso:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>è invalido.
-Per favore controlla l'indirizzo e riprova nuovamente.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>L'ammontare totale del tuo vettore MultiSend è superiore al 100% della tua ricompensa per lo stake
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Per favore inserisci 1 - 100 come percentuale.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>MultiSend è stato salvato con successo in memoria, ma il salvataggio delle proprietà nel database non è andato a buon fine.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vettore InvioMultiplo
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Eliminato</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Impossibile trovare l'indirizzo
-</translation>
     </message>
 </context>
 <context>
@@ -1875,7 +1823,7 @@ Se il conio automatico è attivato questa percentuale si stabilizzerà all'incir
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>AutoMint è attivo e impostato su</translation>
+        <translation>Conio automatico è attivo e impostato su</translation>
     </message>
     <message>
         <source>To disable AutoMint add 'enablezeromint=0' in adeptio.conf.</source>
@@ -1961,7 +1909,7 @@ Per attivare il Conio automatico cambiare 'enablezeromint=0' in 'enablezeromint=
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
+        <source>Enter an amount of Piv to convert to zADE</source>
         <translation>Immetti un importo di ADE da convertire in zADE</translation>
     </message>
     <message>
@@ -2174,7 +2122,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -2191,6 +2139,10 @@ Per cambiare la percentuale (riavvio non necessario):
     <message>
         <source>Insufficient funds!</source>
         <translation>Fondi insufficienti!</translation>
+    </message>
+    <message>
+        <source>medium</source>
+        <translation>media</translation>
     </message>
     <message>
         <source>Amount After Fee:</source>
@@ -2226,7 +2178,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Converma invio monete</translation>
+        <translation>Conferma invio monete</translation>
     </message>
     <message>
         <source>Sending successful, return code: </source>
@@ -2238,10 +2190,17 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Ammontare</translation>
+    </message>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
     </message>
     </context>
 <context>
@@ -2269,6 +2228,10 @@ Per cambiare la percentuale (riavvio non necessario):
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Q&amp;uantità:</translation>
+    </message>
+    <message>
         <source>&amp;Label:</source>
         <translation>&amp;Etichetta:</translation>
     </message>
@@ -2279,6 +2242,10 @@ Per cambiare la percentuale (riavvio non necessario):
     <message>
         <source>Copy amount</source>
         <translation>Copia ammontare</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copia indirizzo</translation>
     </message>
 </context>
 <context>
@@ -2305,6 +2272,10 @@ Per cambiare la percentuale (riavvio non necessario):
     <message>
         <source>Label</source>
         <translation>Etichetta</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizzo</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -2346,8 +2317,12 @@ Per cambiare la percentuale (riavvio non necessario):
         <translation>Priorità:</translation>
     </message>
     <message>
+        <source>medium</source>
+        <translation>media</translation>
+    </message>
+    <message>
         <source>Fee:</source>
-        <translation>Tassa:</translation>
+        <translation>Commissione:</translation>
     </message>
     <message>
         <source>Dust:</source>
@@ -2359,7 +2334,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>After Fee:</source>
-        <translation>Al netto della commissione:</translation>
+        <translation>Importo al netto della commissione:</translation>
     </message>
     <message>
         <source>Change:</source>
@@ -2407,15 +2382,19 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     <message>
         <source>Copy fee</source>
-        <translation>Copia commissioni</translation>
+        <translation>Copia commissione</translation>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation>Copia al netto della commissione</translation>
+        <translation>Copia importo al netto della commissione</translation>
     </message>
     <message>
         <source>Copy bytes</source>
         <translation>Copia byte</translation>
+    </message>
+    <message>
+        <source>Copy priority</source>
+        <translation>Copia priorità</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -2666,7 +2645,7 @@ Per cambiare la percentuale (riavvio non necessario):
     </message>
     </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

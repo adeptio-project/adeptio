@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2013 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 #include <boost/foreach.hpp>
 #include <openssl/aes.h>
 #include <openssl/evp.h>
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::vector<unsigned char>& chSalt, const unsigned int nRounds, const unsigned int nDerivationMethod)
 {
@@ -27,8 +27,8 @@ bool CCrypter::SetKeyFromPassphrase(const SecureString& strKeyData, const std::v
             (unsigned char*)&strKeyData[0], strKeyData.size(), nRounds, chKey, chIV);
 
     if (i != (int)WALLET_CRYPTO_KEY_SIZE) {
-        OPENSSL_cleanse(chKey, sizeof(chKey));
-        OPENSSL_cleanse(chIV, sizeof(chIV));
+        memory_cleanse(chKey, sizeof(chKey));
+        memory_cleanse(chIV, sizeof(chIV));
         return false;
     }
 
@@ -256,7 +256,6 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
 
         uint256 hashSeed;
         if (CWalletDB(pwalletMain->strWalletFile).ReadCurrentSeedHash(hashSeed)) {
-
             uint256 nSeed;
             if (!GetDeterministicSeed(hashSeed, nSeed)) {
                 return error("Failed to read zADE seed from DB. Wallet is probably corrupt.");
@@ -268,7 +267,7 @@ bool CCryptoKeyStore::Unlock(const CKeyingMaterial& vMasterKeyIn)
             CKey key;
             key.MakeNewKey(true);
             uint256 seed = key.GetPrivKey_256();
-            LogPrintf("%s: first run of zADE wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
+            LogPrintf("%s: first run of zade wallet detected, new seed generated. Seedhash=%s\n", __func__, Hash(seed.begin(), seed.end()).GetHex());
             pwalletMain->zwalletMain->SetMasterSeed(seed, true);
             pwalletMain->zwalletMain->GenerateMintPool();
         }
@@ -401,7 +400,7 @@ bool CCryptoKeyStore::AddDeterministicSeed(const uint256& seed)
         if (db.WriteZADESeed(hashSeed, ToByteVector(seed))) {
             return true;
         }
-        strErr = "save zADEseed to wallet";
+        strErr = "save zadeseed to wallet";
     }
                 //the use case for this is no password set seed, mint dzADE,
 

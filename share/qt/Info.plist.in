@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>io.adeptio.ADE-Qt</string>
+  <string>io.adeptio.Pivx-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>io.adeptio.ADEPayment</string>
+      <string>io.adeptio.PivxPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>adeptio</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>io.adeptio.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>ADE payment request</string>
+      <string>Pivx payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

@@ -617,6 +617,14 @@
         <translation>%1 geride. blok tarıyor %2</translation>
     </message>
     <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonymization and staking only</source>
+        <translation>Cüzdan şifrelenmiştirve şu anda sadece anonimleştirme ve staking yapılabilmesi amacıyla kilitsiz&lt;/b&gt; hale getirilmiştir.</translation>
+    </message>
+    <message>
+        <source>Tor is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
+        <translation>Tor &lt;b&gt;etkin&lt;/b&gt; hale getirilmiştir: %1</translation>
+    </message>
+    <message>
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
     </message>
@@ -786,7 +794,7 @@
     </message>
     <message>
         <source>Sent MultiSend transaction</source>
-        <translation>MultiSend işlemi gönderildi</translation>
+        <translation>ÇokluGönderi işlemi gönderildi</translation>
     </message>
     <message>
         <source>Date: %1
@@ -804,7 +812,7 @@ Adres: %4
         <source>Staking is active
  MultiSend: %1</source>
         <translation>Staking aktif
- Multisend: %1</translation>
+ ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>Active</source>
@@ -817,8 +825,8 @@ Adres: %4
     <message>
         <source>Staking is not active
  MultiSend: %1</source>
-        <translation>staking inaktif
- Multisend: %1</translation>
+        <translation>Staking etkin değildir
+ÇokluGönderi: %1</translation>
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
@@ -836,7 +844,7 @@ Adres: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Cüzdan&lt;b&gt;şifreli&lt;/b&gt;ve şu anda&lt;b&gt;kilitli&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1194,6 +1202,17 @@ Adres: %4
     </message>
 </context>
 <context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
+<context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
@@ -1402,7 +1421,7 @@ Adres: %4
     <name>MultiSendDialog</name>
     <message>
         <source>MultiSend</source>
-        <translation>MultiSend</translation>
+        <translation>ÇokluGönderi</translation>
     </message>
     <message>
         <source>Enter whole numbers 1 - 100</source>
@@ -1417,18 +1436,8 @@ Adres: %4
         <translation>Gönderim adresi girin</translation>
     </message>
     <message>
-        <source>MultiSend allows you to automatically send up to 100% of your stake or masternode reward to a list of other ADE addresses after it matures.
-To Add: enter percentage to give and ADE address to add to the MultiSend vector.
-To Delete: Enter address to delete and press delete.
-MultiSend will not be activated unless you have clicked Activate</source>
-        <translation>MultiSend, olgunlaştıktan sonra diğer ADE adreslerinin bir listesine otomatik olarak kazancınızın 100% 'ünü veya grup yazınızı ödüllendirmenize olanak tanır.
-Eklemek için: Verilecek yüzdeyi ve MultiSend vektörüne eklemek için ADE adresi girin.
-Silme: Silinecek adresi girin ve silmek için basın.
-MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</translation>
-    </message>
-    <message>
         <source>Add to MultiSend Vector</source>
-        <translation>Ekle MultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörüne Ekle</translation>
     </message>
     <message>
         <source>Add</source>
@@ -1436,7 +1445,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Deactivate MultiSend</source>
-        <translation>Deaktif et MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkisiz hale getir</translation>
     </message>
     <message>
         <source>Deactivate</source>
@@ -1476,7 +1485,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Delete Address From MultiSend Vector</source>
-        <translation>MultiSend Vector den adresi sil</translation>
+        <translation>ÇokluGönderi Vektöründen Adresi Sil</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1484,7 +1493,7 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>Activate MultiSend</source>
-        <translation>aktifle MultiSend</translation>
+        <translation>ÇokluGönderi'yi Etkinleştir</translation>
     </message>
     <message>
         <source>Activate</source>
@@ -1492,11 +1501,11 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
     </message>
     <message>
         <source>View MultiSend Vector</source>
-        <translation>GösterMultiSend Vector</translation>
+        <translation>ÇokluGönderi Vektörünü Görüntüle</translation>
     </message>
     <message>
         <source>View MultiSend</source>
-        <translation>Göster multisend</translation>
+        <translation>ÇokluGönderi'yi Görüntüle</translation>
     </message>
     <message>
         <source>Send For Stakes</source>
@@ -1511,42 +1520,42 @@ MultiSend, Etkinleştir'i tıklamadığınız sürece etkinleştirilmeyecektir</
         <translation>(etiket yok)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Girilen adres:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>Masternode Ödülleri için ÇokluGönderi Etkinleştirilmiştir</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>ÇokluGönderi Etkin değildir</translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>geçersiz.
-Lütfen adresi kontrol edin ve tekrar deneyin.</translation>
+        <translation>Girili adres: %1 geçersiz.
+Lütfen adresi kontrol ediniz ve tekrar deneyiniz.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation> MultiSend vectorünüzün toplam miktarı stake ödülünün  100% ünden fazla 
-</translation>
+        <source>Removed %1</source>
+        <translation>Kaldırıldı %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>Adres bulunamadı.</translation>
+    </message>
+    <message>
+        <source>MultiSend activated</source>
+        <translation>ÇokluGönderi geçerli hale getirildi</translation>
+    </message>
+    <message>
+        <source>First Address Not Valid</source>
+        <translation>İlk Adres Geçersiz</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Lütfen 1 - 100 arası yüzdelik miktarı girin</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vector
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Silindi</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Adres bulunamıyor
-</translation>
     </message>
 </context>
 <context>
@@ -1869,7 +1878,7 @@ Unutmayın, cüzdan, yeni adresi içeren işlemleri bulmak için blok zinciri ye
         <translation>Sisteme giriş yaptıktan sonra otomatik olarak ADE'i başlatın.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>&amp; Sistem oturum açma işleminde ADE'i başlat</translation>
     </message>
     <message>
@@ -1909,6 +1918,10 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port using &amp;UPnP</translation>
+    </message>
+    <message>
+        <source>Enable automatic minting of ADE units to zADE</source>
+        <translation>ADE birimlerinin zADE'e otomatik basımını ektinleştir</translation>
     </message>
     <message>
         <source>Enable zADE Automint</source>
@@ -2058,7 +2071,15 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <source>The supplied proxy address is invalid.</source>
         <translation>Verilen proxy adresi geçersiz.</translation>
     </message>
-    </context>
+    <message>
+        <source>The supplied proxy port is invalid.</source>
+        <translation>Verilen proxy port adresi geçersiz.</translation>
+    </message>
+    <message>
+        <source>The supplied proxy settings are invalid.</source>
+        <translation>Verilen proxy seçenekleri geçersiz.</translation>
+    </message>
+</context>
 <context>
     <name>OverviewPage</name>
     <message>
@@ -2098,12 +2119,28 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Staklanmış veya masternod ödülleri henüz olgunlaşmamış</translation>
     </message>
     <message>
+        <source>Current locked balance in watch-only addresses</source>
+        <translation>Mevcut kilitli bakiye sadece görüntülenebilir adreslerde.</translation>
+    </message>
+    <message>
         <source>Your current ADE balance, unconfirmed and immature transactions included</source>
         <translation>Güncel ADE bakiyeniz, onaylanmamış ve olgunlaşmamış işlemler dahil</translation>
     </message>
     <message>
         <source>zADE Balance</source>
         <translation>zADE Bakiyesi</translation>
+    </message>
+    <message>
+        <source>Mature: more than 20 confirmation and more than 1 mint of the same denomination after it was minted.
+These zADE are spendable.</source>
+        <translation>Olgun: basılmış olduktan sonra 20'den fazla onay alınmış ve aynı ölçü biriminden 1 kereden fazla basılmış.
+Bu zADE ler harcanabilir.</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 taneden daha az basım bulunmakta.</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ADE network after a connection is established, but this process has not completed yet.</source>
@@ -2220,7 +2257,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
     </message>
     <message>
         <source>Cannot start adeptio: click-to-pay handler</source>
-        <translation>ADE başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <translation>Pivx başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid ADE address or malformed URI parameters.</source>
@@ -2373,6 +2410,18 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>GİZLİLİK</translation>
     </message>
     <message>
+        <source>Enter an amount of Piv to convert to zADE</source>
+        <translation>ZPiv'e dönüştürmek için bir miktar Piv girin</translation>
+    </message>
+    <message>
+        <source>zADE Control</source>
+        <translation>zADE Kontrolü</translation>
+    </message>
+    <message>
+        <source>zADE Selected:</source>
+        <translation>zPiv Seçildi:</translation>
+    </message>
+    <message>
         <source>Quantity Selected:</source>
         <translation>Seçilen miktar:</translation>
     </message>
@@ -2403,18 +2452,6 @@ zADE, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
     <message>
         <source>0 zADE</source>
         <translation>0 zADE</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Zerocoin İşlemleri için Güvenlik Seviyesi. Daha fazlası iyidir, ancak daha fazla zaman ve kaynak gerekmektedir.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Güvenlik seviyesi:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Güvenlik seviyesi 1 - 100 (varsayılan: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2487,6 +2524,12 @@ zADE, 20'den fazla teyit bulunduğunda olgunlaşır ve bundan sonra aynı mezhep
     <message>
         <source>Denom. with value 1:</source>
         <translation>Denom. değer 1 ile:</translation>
+    </message>
+    <message>
+        <source>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 1 mint of the same denomination after it was minted</source>
+        <translation>Doğrulanmamış: 20'den az doğrulama
+Olgunlaşmamış: onaylandı, ancak basıldıktan sonra aynı ölçü biriminden 1 basım daha az miktarda.</translation>
     </message>
     <message>
         <source>AutoMint Status</source>
@@ -2635,14 +2678,6 @@ Please be patient...</source>
 Lütfen sabırlı olun...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Harcanıyor Zerocoin.
-Hesaplaması pahalı, biraz fazla  hardware. ve seçili güvenlik seviyesine bağlı olarak.
-Lütfen sabırlı olun...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) gerekli.
@@ -2705,8 +2740,8 @@ Maksimum bırakılan: </translation>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
-        <translation>Geçersiz ADE Adresi</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Geçersiz Pivx Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2727,10 +2762,6 @@ Maksimum bırakılan: </translation>
     <message>
         <source> to a newly generated (unused and therefore anonymous) local address &lt;br /&gt;</source>
         <translation>yeni üretilen (kullanılmayan ve bu nedenle isimsiz) yerel adrese &lt;br /&gt;</translation>
-    </message>
-    <message>
-        <source>with Security Level </source>
-        <translation>Güvenlik seviyesi ile</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2784,13 +2815,16 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Miktar</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>Gir bir ADE addres (e.g. %1)</translation>
     </message>
     <message>
@@ -2833,7 +2867,11 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>ADE CORE</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3113,7 +3151,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>ADE RPC konsola hoşgeldiniz</translation>
+        <translation>Adeptio RPC konsola hoşgeldiniz</translation>
     </message>
     <message>
         <source>This will delete your local blockchain folders and the wallet will synchronize the complete Blockchain from scratch.&lt;br /&gt;&lt;br /&gt;</source>
@@ -3134,10 +3172,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Blockchaini resenkronize etmeyi onaylayın</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Geçmişi görmek için ukarı ve aşağı okları kullanın, ve &lt;b&gt;Ctrl-L&lt;/b&gt; ekranı silmek için.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3199,6 +3233,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Yeni alma adresi ile ilişkilendirilebilecek isteğe bağlı bir etiket.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Miktar:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>Talep açıldığında görüntülenecek ödeme isteğine eklemek için isteğe bağlı bir mesaj. Not: Mesaj, ödemenin ADE şebekesi üzerinden gönderilmeyecektir.</translation>
     </message>
@@ -3217,10 +3255,6 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>İsteğe bağlı olarak isteğe bağlı bir miktar. Belirli bir miktar talep etmemek için bu boş bırakın veya sıfırlayın.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>miktar:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3265,6 +3299,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Copy amount</source>
         <translation>Miktarı kopyala</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Adresi Kopyala</translation>
     </message>
 </context>
 <context>
@@ -3335,6 +3373,10 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     <message>
         <source>Message</source>
         <translation>Mesaj</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>adres</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3468,8 +3510,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>(Akıllı ücret henüz başlatılmadı.Bu genellikle birkaç blok alıyor ...)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -3954,36 +3996,36 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>%1 doğrulama</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
-        <translation>%1 / çevrimdışı (HyperSend ile doğrulanmış)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1 / çevrimdışı (SwiftX ile doğrulanmış)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
-        <translation>%1 / doğrulandı (HyperSend ile doğrulandı)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1 / doğrulandı (SwiftX ile doğrulandı)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
-        <translation>%1 doğrulama (HyperSend ile doğrulandı)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 doğrulama (SwiftX ile doğrulandı)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 / çevrimdışı (HyperSend doğrulama işlemi devam ediyor - %3 imzalardan %2 si)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 / çevrimdışı (SwiftX doğrulama işlemi devam ediyor - %3 imzalardan %2 si)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1 / onaylandı (HyperSend doğrulama işlemi - %3 imzalardan %2 si)</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1 / onaylandı (SwiftX doğrulama işlemi - %3 imzalardan %2 si)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 doğrulama (HyperSend doğrulama işlemi - %3 imzalardan %2 si)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 doğrulama (SwiftX doğrulama işlemi - %3 imzalardan %2 si)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1 / çevrimdışı (HyperSend doğrulama başarısız)</translation>
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1 / çevrimdışı (SwiftX doğrulama başarısız)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1 / onaylandı (HyperSend doğrulama başarısız oldu)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1 / onaylandı (SwiftX doğrulama başarısız oldu)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -4436,8 +4478,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Koinleri göder</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 ADE ile sınırlıdır.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftX yüksek değerler göndermeyi desteklemiyor. İşlemler şu anda %1 ADE ile sınırlıdır.</translation>
     </message>
 </context>
 <context>
@@ -4464,7 +4506,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>
@@ -4481,11 +4523,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <source>Select/Deselect All</source>
         <translation>Seç/Çıkar Hepsini</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Harcanabilir</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -4665,8 +4703,8 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
         <translation>Geçersiz private key.</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>HyperSend seçenekleri:</translation>
+        <source>SwiftX options:</source>
+        <translation>SwiftX seçenekleri:</translation>
     </message>
     <message>
         <source> mints updated, </source>

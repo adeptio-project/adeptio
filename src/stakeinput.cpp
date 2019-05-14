@@ -1,15 +1,15 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "accumulators.h"
+#include "zade/accumulators.h"
 #include "chain.h"
-#include "primitives/deterministicmint.h"
+#include "zade/deterministicmint.h"
 #include "main.h"
 #include "stakeinput.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 
-CZXlqStake::CZXlqStake(const libzerocoin::CoinSpend& spend)
+CZPivStake::CZPivStake(const libzerocoin::CoinSpend& spend)
 {
     this->nChecksum = spend.getAccumulatorChecksum();
     this->denom = spend.getDenomination();
@@ -19,7 +19,7 @@ CZXlqStake::CZXlqStake(const libzerocoin::CoinSpend& spend)
     fMint = false;
 }
 
-int CZXlqStake::GetChecksumHeightFromMint()
+int CZPivStake::GetChecksumHeightFromMint()
 {
     int nHeightChecksum = chainActive.Height() - Params().Zerocoin_RequiredStakeDepth();
 
@@ -30,12 +30,12 @@ int CZXlqStake::GetChecksumHeightFromMint()
     return GetChecksumHeight(nChecksum, denom);
 }
 
-int CZXlqStake::GetChecksumHeightFromSpend()
+int CZPivStake::GetChecksumHeightFromSpend()
 {
     return GetChecksumHeight(nChecksum, denom);
 }
 
-uint32_t CZXlqStake::GetChecksum()
+uint32_t CZPivStake::GetChecksum()
 {
     return nChecksum;
 }
@@ -43,7 +43,7 @@ uint32_t CZXlqStake::GetChecksum()
 // The zADE block index is the first appearance of the accumulator checksum that was used in the spend
 // note that this also means when staking that this checksum should be from a block that is beyond 60 minutes old and
 // 100 blocks deep.
-CBlockIndex* CZXlqStake::GetIndexFrom()
+CBlockIndex* CZPivStake::GetIndexFrom()
 {
     if (pindexFrom)
         return pindexFrom;
@@ -65,21 +65,28 @@ CBlockIndex* CZXlqStake::GetIndexFrom()
     return pindexFrom;
 }
 
-CAmount CZXlqStake::GetValue()
+CAmount CZPivStake::GetValue()
 {
     return denom * COIN;
 }
 
 //Use the first accumulator checkpoint that occurs 60 minutes after the block being staked from
-bool CZXlqStake::GetModifier(uint64_t& nStakeModifier)
+// In case of regtest, next accumulator of 60 blocks after the block being staked from
+bool CZPivStake::GetModifier(uint64_t& nStakeModifier)
 {
     CBlockIndex* pindex = GetIndexFrom();
     if (!pindex)
-        return false;
+        return error("%s: failed to get index from", __func__);
+
+    if(Params().NetworkID() == CBaseChainParams::REGTEST) {
+        // Stake modifier is fixed for now, move it to 60 blocks after this pindex in the future..
+        nStakeModifier = pindexFrom->nStakeModifier;
+        return true;
+    }
 
     int64_t nTimeBlockFrom = pindex->GetBlockTime();
     while (true) {
-        if (pindex->GetBlockTime() - nTimeBlockFrom > 60*60) {
+        if (pindex->GetBlockTime() - nTimeBlockFrom > 60 * 60) {
             nStakeModifier = pindex->nAccumulatorCheckpoint.Get64();
             return true;
         }
@@ -91,7 +98,7 @@ bool CZXlqStake::GetModifier(uint64_t& nStakeModifier)
     }
 }
 
-CDataStream CZXlqStake::GetUniqueness()
+CDataStream CZPivStake::GetUniqueness()
 {
     //The unique identifier for a zADE is a hash of the serial
     CDataStream ss(SER_GETHASH, 0);
@@ -99,7 +106,7 @@ CDataStream CZXlqStake::GetUniqueness()
     return ss;
 }
 
-bool CZXlqStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CZPivStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     CBlockIndex* pindexCheckpoint = GetIndexFrom();
     if (!pindexCheckpoint)
@@ -112,15 +119,14 @@ bool CZXlqStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
     if (libzerocoin::ExtractVersionFromSerial(mint.GetSerialNumber()) < 2)
         return error("%s: serial extract is less than v2", __func__);
 
-    int nSecurityLevel = 100;
     CZerocoinSpendReceipt receipt;
-    if (!pwallet->MintToTxIn(mint, nSecurityLevel, hashTxOut, txIn, receipt, libzerocoin::SpendType::STAKE, GetIndexFrom()))
+    if (!pwallet->MintToTxIn(mint, hashTxOut, txIn, receipt, libzerocoin::SpendType::STAKE, pindexCheckpoint))
         return error("%s\n", receipt.GetStatusMessage());
 
     return true;
 }
 
-bool CZXlqStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CZPivStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     //Create an output returning the zADE that was staked
     CTxOut outReward;
@@ -148,48 +154,48 @@ bool CZXlqStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nT
     return true;
 }
 
-bool CZXlqStake::GetTxFrom(CTransaction& tx)
+bool CZPivStake::GetTxFrom(CTransaction& tx)
 {
     return false;
 }
 
-bool CZXlqStake::MarkSpent(CWallet *pwallet, const uint256& txid)
+bool CZPivStake::MarkSpent(CWallet *pwallet, const uint256& txid)
 {
-    CzADETracker* zADETracker = pwallet->zADETracker.get();
+    CzADETracker* zadeTracker = pwallet->zadeTracker.get();
     CMintMeta meta;
-    if (!zADETracker->GetMetaFromStakeHash(hashSerial, meta))
+    if (!zadeTracker->GetMetaFromStakeHash(hashSerial, meta))
         return error("%s: tracker does not have serialhash", __func__);
 
-    zADETracker->SetPubcoinUsed(meta.hashPubcoin, txid);
+    zadeTracker->SetPubcoinUsed(meta.hashPubcoin, txid);
     return true;
 }
 
 //!ADE Stake
-bool CADEStake::SetInput(CTransaction txPrev, unsigned int n)
+bool CPivStake::SetInput(CTransaction txPrev, unsigned int n)
 {
     this->txFrom = txPrev;
     this->nPosition = n;
     return true;
 }
 
-bool CADEStake::GetTxFrom(CTransaction& tx)
+bool CPivStake::GetTxFrom(CTransaction& tx)
 {
     tx = txFrom;
     return true;
 }
 
-bool CADEStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
+bool CPivStake::CreateTxIn(CWallet* pwallet, CTxIn& txIn, uint256 hashTxOut)
 {
     txIn = CTxIn(txFrom.GetHash(), nPosition);
     return true;
 }
 
-CAmount CADEStake::GetValue()
+CAmount CPivStake::GetValue()
 {
     return txFrom.vout[nPosition].nValue;
 }
 
-bool CADEStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
+bool CPivStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTotal)
 {
     vector<valtype> vSolutions;
     txnouttype whichType;
@@ -224,7 +230,7 @@ bool CADEStake::CreateTxOuts(CWallet* pwallet, vector<CTxOut>& vout, CAmount nTo
     return true;
 }
 
-bool CADEStake::GetModifier(uint64_t& nStakeModifier)
+bool CPivStake::GetModifier(uint64_t& nStakeModifier)
 {
     int nStakeModifierHeight = 0;
     int64_t nStakeModifierTime = 0;
@@ -238,7 +244,7 @@ bool CADEStake::GetModifier(uint64_t& nStakeModifier)
     return true;
 }
 
-CDataStream CADEStake::GetUniqueness()
+CDataStream CPivStake::GetUniqueness()
 {
     //The unique identifier for a ADE stake is the outpoint
     CDataStream ss(SER_NETWORK, 0);
@@ -247,7 +253,7 @@ CDataStream CADEStake::GetUniqueness()
 }
 
 //The block that the UTXO was added to the chain
-CBlockIndex* CADEStake::GetIndexFrom()
+CBlockIndex* CPivStake::GetIndexFrom()
 {
     uint256 hashBlock = 0;
     CTransaction tx;

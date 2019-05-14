@@ -8,37 +8,38 @@ EXTRA_LIBRARIES += qt/libbitcoinqt.a
 # adeptio qt core #
 QT_TS = \
   qt/locale/adeptio_bg.ts \
-  qt/locale/adeptio_ca.ts \
-  qt/locale/adeptio_cs.ts \
-  qt/locale/adeptio_da.ts \
-  qt/locale/adeptio_de.ts \
-  qt/locale/adeptio_en.ts \
-  qt/locale/adeptio_en_US.ts \
-  qt/locale/adeptio_eo.ts \
-  qt/locale/adeptio_es.ts \
-  qt/locale/adeptio_es_ES.ts \
-  qt/locale/adeptio_fi.ts \
-  qt/locale/adeptio_fr_FR.ts \
-  qt/locale/adeptio_hi_IN.ts \
-  qt/locale/adeptio_hr.ts \
-  qt/locale/adeptio_hr_HR.ts \
-  qt/locale/adeptio_it.ts \
-  qt/locale/adeptio_ja.ts \
-  qt/locale/adeptio_ko_KR.ts \
-  qt/locale/adeptio_lt_LT.ts \
-  qt/locale/adeptio_nl.ts \
-  qt/locale/adeptio_pl.ts \
-  qt/locale/adeptio_pt.ts \
-  qt/locale/adeptio_pt_BR.ts \
-  qt/locale/adeptio_ro_RO.ts \
-  qt/locale/adeptio_ru.ts \
-  qt/locale/adeptio_sk.ts \
-  qt/locale/adeptio_sv.ts \
-  qt/locale/adeptio_tr.ts \
-  qt/locale/adeptio_uk.ts \
-  qt/locale/adeptio_vi.ts \
-  qt/locale/adeptio_zh_CN.ts \
-  qt/locale/adeptio_zh_TW.ts
+   qt/locale/adeptio_ca.ts \
+   qt/locale/adeptio_cs.ts \
+   qt/locale/adeptio_da.ts \
+   qt/locale/adeptio_de.ts \
+   qt/locale/adeptio_en.ts \
+   qt/locale/adeptio_en_GB.ts \
+   qt/locale/adeptio_en_US.ts \
+   qt/locale/adeptio_eo.ts \
+   qt/locale/adeptio_es.ts \
+   qt/locale/adeptio_es_ES.ts \
+   qt/locale/adeptio_fi.ts \
+   qt/locale/adeptio_fr_FR.ts \
+   qt/locale/adeptio_hi_IN.ts \
+   qt/locale/adeptio_hr.ts \
+   qt/locale/adeptio_hr_HR.ts \
+   qt/locale/adeptio_it.ts \
+   qt/locale/adeptio_ja.ts \
+   qt/locale/adeptio_ko_KR.ts \
+   qt/locale/adeptio_lt_LT.ts \
+   qt/locale/adeptio_nl.ts \
+   qt/locale/adeptio_pl.ts \
+   qt/locale/adeptio_pt.ts \
+   qt/locale/adeptio_pt_BR.ts \
+   qt/locale/adeptio_ro_RO.ts \
+   qt/locale/adeptio_ru.ts \
+   qt/locale/adeptio_sk.ts \
+   qt/locale/adeptio_sv.ts \
+   qt/locale/adeptio_tr.ts \
+   qt/locale/adeptio_uk.ts \
+   qt/locale/adeptio_vi.ts \
+   qt/locale/adeptio_zh_CN.ts \
+   qt/locale/adeptio_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -48,6 +49,7 @@ QT_FORMS_UI = \
   qt/forms/blockexplorer.ui \
   qt/forms/obfuscationconfig.ui \
   qt/forms/editaddressdialog.ui \
+  qt/forms/governancepage.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
   qt/forms/masternodelist.ui \
@@ -64,7 +66,7 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
   qt/forms/transactiondescdialog.ui \
-  qt/forms/zADEcontroldialog.ui
+  qt/forms/zadecontroldialog.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -83,6 +85,7 @@ QT_MOC_CPP = \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_obfuscationconfig.cpp \
   qt/moc_editaddressdialog.cpp \
+  qt/moc_governancepage.cpp \
   qt/moc_guiutil.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
@@ -101,6 +104,7 @@ QT_MOC_CPP = \
   qt/moc_qvaluecombobox.cpp \
   qt/moc_receivecoinsdialog.cpp \
   qt/moc_privacydialog.cpp \
+  qt/moc_proposalframe.cpp \
   qt/moc_receiverequestdialog.cpp \
   qt/moc_recentrequeststablemodel.cpp \
   qt/moc_rpcconsole.cpp \
@@ -118,7 +122,7 @@ QT_MOC_CPP = \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp \
-  qt/moc_zADEcontroldialog.cpp
+  qt/moc_zadecontroldialog.cpp
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -157,6 +161,7 @@ BITCOIN_QT_H = \
   qt/csvmodelwriter.h \
   qt/obfuscationconfig.h \
   qt/editaddressdialog.h \
+  qt/governancepage.h \
   qt/guiconstants.h \
   qt/guiutil.h \
   qt/intro.h \
@@ -175,6 +180,7 @@ BITCOIN_QT_H = \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
+  qt/proposalframe.h \
   qt/qvalidatedlineedit.h \
   qt/qvaluecombobox.h \
   qt/receivecoinsdialog.h \
@@ -199,7 +205,7 @@ BITCOIN_QT_H = \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
   qt/winshutdownmonitor.h \
-  qt/zADEcontroldialog.h
+  qt/zadecontroldialog.h
 
 RES_ICONS = \
   qt/res/icons/add.png \
@@ -210,6 +216,7 @@ RES_ICONS = \
   qt/res/icons/bitcoin.png \
   qt/res/icons/bitcoin_testnet.ico \
   qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
   qt/res/icons/browse.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
@@ -247,6 +254,8 @@ RES_ICONS = \
   qt/res/icons/remove.png \
   qt/res/icons/send.png \
   qt/res/icons/send_dark.png \
+  qt/res/icons/governance.png \
+  qt/res/icons/governance_dark.png \
   qt/res/icons/staking_active.png \
   qt/res/icons/staking_inactive.png \
   qt/res/icons/synced.png \
@@ -263,9 +272,12 @@ RES_ICONS = \
   qt/res/icons/unit_uadeptio.png \
   qt/res/icons/unit_tadeptio.png \
   qt/res/icons/unit_tmadeptio.png \
-  qt/res/icons/unit_tuadeptio.png
+  qt/res/icons/unit_tuadeptio.png \
+  qt/res/icons/yesvote.png \
+  qt/res/icons/novote.png \
+  qt/res/icons/abstainvote.png
 
-BITCOIN_QT_CPP = \
+BITCOIN_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/bitcoinaddressvalidator.cpp \
   qt/bitcoinamountfield.cpp \
@@ -290,12 +302,9 @@ BITCOIN_QT_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-if TARGET_WINDOWS
-BITCOIN_QT_CPP += qt/winshutdownmonitor.cpp
-endif
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-if ENABLE_WALLET
-BITCOIN_QT_CPP += \
+BITCOIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -305,6 +314,7 @@ BITCOIN_QT_CPP += \
   qt/coincontroltreewidget.cpp \
   qt/obfuscationconfig.cpp \
   qt/editaddressdialog.cpp \
+  qt/governancepage.cpp \
   qt/masternodelist.cpp \
   qt/multisenddialog.cpp \
   qt/multisigdialog.cpp\
@@ -314,6 +324,7 @@ BITCOIN_QT_CPP += \
   qt/paymentserver.cpp \
   qt/receivecoinsdialog.cpp \
   qt/privacydialog.cpp \
+  qt/proposalframe.cpp \
   qt/receiverequestdialog.cpp \
   qt/recentrequeststablemodel.cpp \
   qt/sendcoinsdialog.cpp \
@@ -329,14 +340,21 @@ BITCOIN_QT_CPP += \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp \
-  qt/zADEcontroldialog.cpp
+  qt/zadecontroldialog.cpp
 
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png \
   qt/res/images/adeptio_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
@@ -345,10 +363,7 @@ RES_IMAGES = \
   qt/res/images/upArrow_small.png \
   qt/res/images/leftArrow_small_dark.png \
   qt/res/images/rightArrow_small_dark.png \
-  qt/res/images/qtreeview_selected.png \
-  qt/res/images/walletFrame.png \
-  qt/res/images/walletFrame_bg.png \
-  qt/res/images/walletFrame_bg.png
+  qt/res/images/qtreeview_selected.png
 
 RES_CSS = \
   qt/res/css/default.css
@@ -388,7 +403,6 @@ $(QT_MOC_CPP): $(PROTOBUF_H)
 qt_adeptio_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_adeptio_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_adeptio_qt_SOURCES = qt/adeptio.cpp
 if TARGET_DARWIN
@@ -399,7 +413,7 @@ if TARGET_WINDOWS
 endif
 qt_adeptio_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_adeptio_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_adeptio_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
 qt_adeptio_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
@@ -408,7 +422,7 @@ qt_adeptio_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL)
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_adeptio_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_adeptio_qt_LIBTOOLFLAGS = --tag CXX
+qt_adeptio_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -419,7 +433,7 @@ $(srcdir)/qt/adeptiostrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wal
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/adeptiostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/adeptiostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/adeptio.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/adeptio_en.ts
 

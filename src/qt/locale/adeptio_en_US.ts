@@ -239,8 +239,8 @@
         <translation>&amp;BIP 38 Encrypt</translation>
     </message>
     <message>
-        <source>Enter a ADE Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Enter a ADE Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</translation>
+        <source>Enter a Pivx Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
+        <translation>Enter a Pivx Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -1670,8 +1670,8 @@ Please check the address and try again.</translation>
         <translation>Automatically start ADE after logging in to the system.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
-        <translation>&amp;Start Adeptio on system login</translation>
+        <source>&amp;Start ADE on system login</source>
+        <translation>&amp;Start ADE on system login</translation>
     </message>
     <message>
         <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
@@ -2182,8 +2182,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Amount</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
-        <translation>Enter a Adeptio (ADE) address (e.g. %1)</translation>
+        <source>Enter a ADE address (e.g. %1)</source>
+        <translation>Enter a ADE address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2896,8 +2896,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Add &amp;Recipient</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftTX</source>
+        <translation>SwiftTX</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2960,8 +2960,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>any available funds (not recommended)</translation>
     </message>
     <message>
-        <source>and HyperSend</source>
-        <translation>and HyperSend</translation>
+        <source>and SwiftTX</source>
+        <translation>and SwiftTX</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3322,16 +3322,16 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>conflicted</translation>
     </message>
     <message>
-        <source>%1/offline (verified via hypersend)</source>
-        <translation>%1/offline (verified via hypersend)</translation>
+        <source>%1/offline (verified via swifttx)</source>
+        <translation>%1/offline (verified via swifttx)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via hypersend)</source>
-        <translation>%1/confirmed (verified via hypersend)</translation>
+        <source>%1/confirmed (verified via swifttx)</source>
+        <translation>%1/confirmed (verified via swifttx)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via hypersend)</source>
-        <translation>%1 confirmations (verified via hypersend)</translation>
+        <source>%1 confirmations (verified via swifttx)</source>
+        <translation>%1 confirmations (verified via swifttx)</translation>
     </message>
     <message>
         <source>%1/offline</source>
@@ -3346,24 +3346,24 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</translation>
+        <source>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/offline (SwiftTX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</translation>
+        <source>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/confirmed (SwiftTX verification in progress - %2 of %3 signatures )</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</translation>
+        <source>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 confirmations (SwiftTX verification in progress - %2 of %3 signatures)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1/offline (HyperSend verification failed)</translation>
+        <source>%1/offline (SwiftTX verification failed)</source>
+        <translation>%1/offline (SwiftTX verification failed)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1/confirmed (HyperSend verification failed)</translation>
+        <source>%1/confirmed (SwiftTX verification failed)</source>
+        <translation>%1/confirmed (SwiftTX verification failed)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3840,8 +3840,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Send Coins</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</translation>
+        <source>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftTX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -3930,8 +3930,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Obfuscation, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>Disable all ADE specific functionality (Masternodes, Obfuscation, HyperSend, Budgeting) (0-1, default: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</source>
+        <translation>Disable all ADE specific functionality (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, default: %u)</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
@@ -3942,8 +3942,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Enable spork administration functionality with the appropriate private key.</translation>
     </message>
     <message>
-        <source>Enable hypersend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Enable hypersend, show confirmations for locked transactions (bool, default: %s)</translation>
+        <source>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Enable swifttx, show confirmations for locked transactions (bool, default: %s)</translation>
     </message>
     <message>
         <source>Enable use of automated obfuscation for funds stored in this wallet (0-1, default: %u)</source>
@@ -4074,8 +4074,8 @@ https://www.transifex.com/adeptio-project/adeptio-project-translations</translat
         <translation>Support filtering of blocks and transaction with bloom filters (default: %u)</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
+        <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
@@ -4282,8 +4282,8 @@ for example: alertnotify=echo %%s | mail -s "ADE Alert" admin@foo.com
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2018-%i The Adeptio Core Developers</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2017-%i The Adeptio Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4554,8 +4554,8 @@ for example: alertnotify=echo %%s | mail -s "ADE Alert" admin@foo.com
         <translation>Enable publish hash block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction (locked via SwiftTX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4566,8 +4566,8 @@ for example: alertnotify=echo %%s | mail -s "ADE Alert" admin@foo.com
         <translation>Enable publish raw block in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction (locked via SwiftTX) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4938,8 +4938,8 @@ for example: alertnotify=echo %%s | mail -s "ADE Alert" admin@foo.com
         <translation>Submitted to masternode, waiting in queue %s</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>HyperSend options:</translation>
+        <source>SwiftTX options:</source>
+        <translation>SwiftTX options:</translation>
     </message>
     <message>
         <source>Synchronization failed</source>

@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 #include "sendcoinsentry.h"
 #include "walletmodel.h"
 #include "coincontrol.h"
-#include "zADEcontroldialog.h"
+#include "zadecontroldialog.h"
 #include "spork.h"
 #include "askpassphrasedialog.h"
 
@@ -22,8 +22,8 @@
 #include <QSettings>
 #include <utilmoneystr.h>
 #include <QtWidgets>
-#include <primitives/deterministicmint.h>
-#include <accumulators.h>
+#include <zade/deterministicmint.h>
+#include <zade/accumulators.h>
 
 PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint | Qt::WindowCloseButtonHint),
                                                           ui(new Ui::PrivacyDialog),
@@ -85,14 +85,6 @@ PrivacyDialog::PrivacyDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
 
     // ADE settings
     QSettings settings;
-    if (!settings.contains("nSecurityLevel")){
-        nSecurityLevel = 42;
-        settings.setValue("nSecurityLevel", nSecurityLevel);
-    }
-    else{
-        nSecurityLevel = settings.value("nSecurityLevel").toInt();
-    }
-
     if (!settings.contains("fMinimizeChange")){
         fMinimizeChange = false;
         settings.setValue("fMinimizeChange", fMinimizeChange);
@@ -140,7 +132,6 @@ void PrivacyDialog::setModel(WalletModel* walletModel)
                                SLOT(setBalance(CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount, CAmount)));
         connect(walletModel->getOptionsModel(), SIGNAL(zeromintEnableChanged(bool)), this, SLOT(updateAutomintStatus()));
         connect(walletModel->getOptionsModel(), SIGNAL(zeromintPercentageChanged(int)), this, SLOT(updateAutomintStatus()));
-        ui->securityLevel->setValue(nSecurityLevel);
     }
 }
 
@@ -302,19 +293,19 @@ void PrivacyDialog::on_pushButtonSpendzADE_clicked()
     sendzADE();
 }
 
-void PrivacyDialog::on_pushButtonZXlqControl_clicked()
+void PrivacyDialog::on_pushButtonZPivControl_clicked()
 {
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZXlqControlDialog* zXlqControl = new ZXlqControlDialog(this);
-    zXlqControl->setModel(walletModel);
-    zXlqControl->exec();
+    ZPivControlDialog* zPivControl = new ZPivControlDialog(this);
+    zPivControl->setModel(walletModel);
+    zPivControl->exec();
 }
 
-void PrivacyDialog::setZXlqControlLabels(int64_t nAmount, int nQuantity)
+void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzXlqSelected_int->setText(QString::number(nAmount));
+    ui->labelzPivSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -334,7 +325,7 @@ void PrivacyDialog::sendzADE()
     }
     else{
         if (!address.IsValid()) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid ADE Address"), QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Invalid Pivx Address"), QMessageBox::Ok, QMessageBox::Ok);
             ui->payTo->setFocus();
             return;
         }
@@ -380,10 +371,6 @@ void PrivacyDialog::sendzADE()
         }
     }
 
-    // Persist Security Level for next start
-    nSecurityLevel = ui->securityLevel->value();
-    settings.setValue("nSecurityLevel", nSecurityLevel);
-
     // Spend confirmation message box
 
     // Add address info if available
@@ -402,8 +389,7 @@ void PrivacyDialog::sendzADE()
         strAddress = tr(" to a newly generated (unused and therefore anonymous) local address <br />");
     }
 
-    QString strSecurityLevel = tr("with Security Level ") + ui->securityLevel->text() + " ?";
-    strQuestionString += strAmount + strAddress + strSecurityLevel;
+    strQuestionString += strAmount + strAddress;
 
     // Display message box
     QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm send coins"),
@@ -417,25 +403,16 @@ void PrivacyDialog::sendzADE()
     }
 
     int64_t nTime = GetTimeMillis();
-    ui->TEMintStatus->setPlainText(tr("Spending Zerocoin.\nComputationally expensive, might need several minutes depending on the selected Security Level and your hardware.\nPlease be patient..."));
+    ui->TEMintStatus->setPlainText(tr("Spending Zerocoin.\nComputationally expensive, might need several minutes depending on your hardware.\nPlease be patient..."));
     ui->TEMintStatus->repaint();
 
     // use mints from zADE selector if applicable
     vector<CMintMeta> vMintsToFetch;
     vector<CZerocoinMint> vMintsSelected;
-    if (!ZXlqControlDialog::setSelectedMints.empty()) {
-        vMintsToFetch = ZXlqControlDialog::GetSelectedMints();
+    if (!ZPivControlDialog::setSelectedMints.empty()) {
+        vMintsToFetch = ZPivControlDialog::GetSelectedMints();
 
         for (auto& meta : vMintsToFetch) {
-            if (meta.nVersion < libzerocoin::PrivateCoin::PUBKEY_VERSION) {
-                //version 1 coins have to use full security level to successfully spend.
-                if (nSecurityLevel < 100) {
-                    QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Version 1 zADE require a security level of 100 to successfully spend."), QMessageBox::Ok, QMessageBox::Ok);
-                    ui->TEMintStatus->setPlainText(tr("Failed to spend zADE"));
-                    ui->TEMintStatus->repaint();
-                    return;
-                }
-            }
             CZerocoinMint mint;
             if (!pwalletMain->GetMint(meta.hashSerial, mint)) {
                 ui->TEMintStatus->setPlainText(tr("Failed to fetch mint associated with serial hash"));
@@ -452,22 +429,15 @@ void PrivacyDialog::sendzADE()
     bool fSuccess = false;
     if(ui->payTo->text().isEmpty()){
         // Spend to newly generated local address
-        fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtxNew, receipt, vMintsSelected, fMintChange, fMinimizeChange);
+        fSuccess = pwalletMain->SpendZerocoin(nAmount, wtxNew, receipt, vMintsSelected, fMintChange, fMinimizeChange);
     }
     else {
         // Spend to supplied destination address
-        fSuccess = pwalletMain->SpendZerocoin(nAmount, nSecurityLevel, wtxNew, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address);
+        fSuccess = pwalletMain->SpendZerocoin(nAmount, wtxNew, receipt, vMintsSelected, fMintChange, fMinimizeChange, &address);
     }
 
     // Display errors during spend
     if (!fSuccess) {
-        if (receipt.GetStatus() == ZADE_SPEND_V1_SEC_LEVEL) {
-            QMessageBox::warning(this, tr("Spend Zerocoin"), tr("Version 1 zADE require a security level of 100 to successfully spend."), QMessageBox::Ok, QMessageBox::Ok);
-            ui->TEMintStatus->setPlainText(tr("Failed to spend zADE"));
-            ui->TEMintStatus->repaint();
-            return;
-        }
-
         int nNeededSpends = receipt.GetNeededSpends(); // Number of spends we would need for this transaction
         const int nMaxSpends = Params().Zerocoin_MaxSpendsPerTransaction(); // Maximum possible spends for one zADE transaction
         if (nNeededSpends > nMaxSpends) {
@@ -495,9 +465,9 @@ void PrivacyDialog::sendzADE()
             walletModel->updateAddressBookLabels(address.Get(), "(no label)", "send");
     }
 
-    // Clear zADE selector in case it was used
-    ZXlqControlDialog::setSelectedMints.clear();
-    ui->labelzXlqSelected_int->setText(QString("0"));
+    // Clear zade selector in case it was used
+    ZPivControlDialog::setSelectedMints.clear();
+    ui->labelzPivSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment
@@ -515,7 +485,7 @@ void PrivacyDialog::sendzADE()
 
     CAmount nValueOut = 0;
     for (const CTxOut& txout: wtxNew.vout) {
-        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " ADE, ";
+        strStats += tr("value out: ") + FormatMoney(txout.nValue).c_str() + " Piv, ";
         nValueOut += txout.nValue;
 
         strStats += tr("address: ");
@@ -651,7 +621,7 @@ void PrivacyDialog::setBalance(const CAmount& balance, const CAmount& unconfirme
         mapImmature.insert(make_pair(denom, 0));
     }
 
-    std::vector<CMintMeta> vMints = pwalletMain->zADETracker->GetMints(false);
+    std::vector<CMintMeta> vMints = pwalletMain->zadeTracker->GetMints(false);
     map<libzerocoin::CoinDenomination, int> mapMaturityHeights = GetMintMaturityHeight();
     for (auto& meta : vMints){
         // All denominations

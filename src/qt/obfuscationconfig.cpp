@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash Developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2016-2017 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -85,8 +85,8 @@ void ObfuscationConfig::configure(bool enabled, int coins, int rounds)
     QSettings settings;
 
     settings.setValue("nObfuscationRounds", rounds);
-    settings.setValue("nAnonymizeADEAmount", coins);
+    settings.setValue("nAnonymizePivxAmount", coins);
 
     nZeromintPercentage = rounds;
-    nAnonymizeADEAmount = coins;
+    nAnonymizePivxAmount = coins;
 }

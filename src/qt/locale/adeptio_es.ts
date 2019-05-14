@@ -267,7 +267,7 @@
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Passphrase: </source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Opciones de linea de comandos</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform><numerusform>Procesados %n bloques del histórico de transacciones.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Sincronizando datos adicionales: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>Cliente Adeptio Core</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n conexión(es) activas a la red ADE</numerusform><numerusform>%n conexión(es) activas a la red ADE</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sincronizando con la red...</translation>
@@ -762,7 +754,7 @@
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
-        <translation><numerusform>%n horas</numerusform><numerusform>%n horas</numerusform></translation>
+        <translation><numerusform>%n hora</numerusform><numerusform>%n horas</numerusform></translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
@@ -770,7 +762,7 @@
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
-        <translation><numerusform>%n semanas</numerusform><numerusform>%n semanas</numerusform></translation>
+        <translation><numerusform>%n semana</numerusform><numerusform>%n semanas</numerusform></translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -778,7 +770,7 @@
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
-        <translation><numerusform>%n años</numerusform><numerusform>%n años</numerusform></translation>
+        <translation><numerusform>%n año</numerusform><numerusform>%n años</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +856,7 @@ MultiEnvío: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>El monedero está &lt;b&gt;encriptado&lt;/b&gt; y actualmente &lt;b&gt;bloqueado&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -915,11 +907,11 @@ MultiEnvío: %1</translation>
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -1130,8 +1122,8 @@ MultiEnvío: %1</translation>
         <translation>Esta etiqueta se vuelve roja, si algún destinatario recibe una cantidad menor que %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Puede variar +/- %1 uADE por entrada.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Puede variar +/- %1 upiv por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1224,6 +1216,17 @@ MultiEnvío: %1</translation>
         <translation>No se puede crear un directorio de datos aquí.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1542,48 +1545,54 @@ MultiEnvío no se activará a menos que haga usted click en Activar</translation
         <translation>(sin etiqueta)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>La dirección introducida:
-</translation>
+        <source>MultiSend Active for Stakes and Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Stakes y Masternode</translation>
     </message>
     <message>
-        <source> is invalid.
+        <source>MultiSend Active for Stakes</source>
+        <translation>MultiSend Activado para Stakes</translation>
+    </message>
+    <message>
+        <source>MultiSend Active for Masternode Rewards</source>
+        <translation>MultiSend Activado para las recompensas de Masternode</translation>
+    </message>
+    <message>
+        <source>MultiSend Not Active</source>
+        <translation>MultiSend Desactivado </translation>
+    </message>
+    <message>
+        <source>The entered address: %1 is invalid.
 Please check the address and try again.</source>
-        <translation>es inválida.
-Por favor compruebe la dirección e inténtelo de nuevo.</translation>
+        <translation>La dirección introducida: %1 es inválida.
+Por favor comprueba la dirección e inténtalo nuevamente.</translation>
     </message>
     <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>La cantidad total de su vector MultiEnvío es superior al 100% de su recompensa de stake
-</translation>
+        <source>The total amount of your MultiSend vector is over 100% of your stake reward</source>
+        <translation>La cantidad total de tu vector de MultiEnvío es superior al 100% de tu recompensa de Stake</translation>
+    </message>
+    <message>
+        <source>Saved the MultiSend to memory, but failed saving properties to the database.</source>
+        <translation>El MultiSend se guardó en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.</translation>
+    </message>
+    <message>
+        <source>MultiSend Vector</source>
+        <translation>Vector de MultiSend</translation>
+    </message>
+    <message>
+        <source>Removed %1</source>
+        <translation>Removido %1</translation>
+    </message>
+    <message>
+        <source>Could not locate address</source>
+        <translation>No se pudo localizar la dirección</translation>
+    </message>
+    <message>
+        <source>Unable to activate MultiSend, check MultiSend vector</source>
+        <translation>No fue posible activar el MultiSend, verifica el vector de MultiSend</translation>
     </message>
     <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Por favor Introduzca 1 - 100 por ciento.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Se guardó MultiEnvío en la memoria, pero se produjo un error al guardar las propiedades en la base de datos.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Vector MultiEnvío
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Borrado</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>No se pudo localizar la dirección
-</translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1675,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Add an input to fund the outputs</source>
@@ -1906,7 +1915,7 @@ Por favor, tenga paciencia después de hacer clic en importar.</translation>
         <translation>Arrancar ADE automáticamente después de identificarse en el sistema.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>&amp;Arrancar ADE al inicio del sistema</translation>
     </message>
     <message>
@@ -2442,8 +2451,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en ad
         <translation>PRIVACIDAD</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
-        <translation>Introduzca la cantidad de ADE que desea convertir a zXlq</translation>
+        <source>Enter an amount of Piv to convert to zADE</source>
+        <translation>Introduzca la cantidad de ADE que desea convertir a zPiv</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2486,18 +2495,6 @@ zADE son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
         <translation>0 zADE</translation>
     </message>
     <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Nivel de Seguridad para Transacciones Zerocoin. Cuanto más mejor, pero necesitará más tiempo y recursos.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Nivel de Seguridad:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Nivel de Seguridad 1 - 100 (por defecto: 42)</translation>
-    </message>
-    <message>
         <source>Pay &amp;To:</source>
         <translation>Pagar &amp;A:</translation>
     </message>
@@ -2531,7 +2528,7 @@ zADE son maduros cuando tienen más de 20 confirmaciones Y más de 2 mints de la
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>C&amp;antidad:</translation>
+        <translation>Cantidad:</translation>
     </message>
     <message>
         <source>Convert Change to Zerocoin (might cost additional fees)</source>
@@ -2718,7 +2715,7 @@ Para cambiar el porcentaje (no se requiere reiniciar):
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Octetos:</translation>
+        <translation>Bytes:</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2773,14 +2770,6 @@ Para cambiar el porcentaje (no se requiere reiniciar):
 Please be patient...</source>
         <translation>Ejecutando ResetMintZerocoin: reescaneando el blockchain entero, esto necesitará hasta 30 minutos dependiendo de su hardware.
 Por favor espere...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Gastando Zerocoin.
-Esto es computacionalmente intensivo, puede necesitar varios minutos dependiendo del Nivel de Seguridad elegido y el hardware de su máquina.
-Por favor tenga paciencia...</translation>
     </message>
     <message>
         <source>) needed.
@@ -2929,7 +2918,7 @@ Máximo permitido:</translation>
         <translation>No se especificó drección 'Pagar A', por lo que asumimos un pago local</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
+        <source>Invalid Pivx Address</source>
         <translation>Dirección ADE Inválida</translation>
     </message>
     <message>
@@ -2953,20 +2942,8 @@ Máximo permitido:</translation>
         <translation>a una dirección local recién generada (no utilizada y, por lo tanto, anónima)&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>con Nivel de Seguridad</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Confirmar enviar monedas</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>La versión 1 zADE requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zADE</source>
-        <translation>Error al enviar zADE</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2985,11 +2962,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Gastar Zerocoin falló con estado =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of ADE to convert to zADE</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3025,13 +2997,16 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>Introduzca una dirección ADE (p.e. %1)</translation>
     </message>
     <message>
@@ -3074,7 +3049,11 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3437,10 +3416,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Confirmar resincronización del Blockchain</translation>
     </message>
     <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Use las teclas arriba y abajo para navegar por la historia, y &lt;b&gt;Ctrl-L&lt;/b&gt; para limpiar la pantalla.</translation>
-    </message>
-    <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
         <translation>Escriba &lt;b&gt;help&lt;/b&gt; para ver una lista de posibles comandos.</translation>
     </message>
@@ -3512,6 +3487,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Una etiqueta opcional a asociar con la nueva dirección de recepción.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Cantidad:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>Un mensaje opcional a adjuntar a la solicitud de pago, que será mostrado cuando se abra la solicitud. Nota: El mensaje no se envía junto al pago por la red ADE.</translation>
     </message>
@@ -3534,10 +3513,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Una cantidad opcional a solicitar. Deje esto vacío o en cero para no pedir una cantidad específica.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Cantidad:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3582,6 +3557,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Copy amount</source>
         <translation>Copiar cantidad</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Copiar dirección</translation>
     </message>
 </context>
 <context>
@@ -3654,6 +3633,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Mensaje</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Dirección</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Cantidad</translation>
     </message>
@@ -3698,7 +3681,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Cantidad:</translation>
+        <translation>Suma:</translation>
     </message>
     <message>
         <source>Priority:</source>
@@ -3789,8 +3772,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>(La comisión automática no se ha inicializado todavía. Esto normalmente necesita unos cuantos bloques...)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -3936,17 +3919,13 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Una comisión %1 veces más alta que %2 por kB se considera exageradamente alta.</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform><numerusform>Estimamos que empezará la confirmación en %n bloques.</numerusform></translation>
-    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>La dirección de destino no es válida, por favor compruébelo de nuevo.</translation>
     </message>
     <message>
-        <source>using HyperSend</source>
-        <translation>usando o HyperSend</translation>
+        <source>using SwiftX</source>
+        <translation>usando o SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -4021,7 +4000,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -4029,7 +4008,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Remove this entry</source>
@@ -4111,7 +4090,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+A</source>
-        <translation>Alt + A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -4119,7 +4098,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Alt+P</source>
-        <translation>Alt + P</translation>
+        <translation>Alt+P</translation>
     </message>
     <message>
         <source>Enter the message you want to sign here</source>
@@ -4262,10 +4241,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4287,36 +4262,36 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>%1 confirmaciones</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
-        <translation>%1/offline (verificado via hypersend)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/offline (verificado via swifttx)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
-        <translation>%1/confirmado (verificado via hypersend)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1/confirmado (verificado via swifttx)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
-        <translation>%1 confirmaciones (verificado via hypersend)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 confirmaciones (verificado via swifttx)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (verificación HyperSend en marcha - %2 de %3 firmas)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/offline (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmado (verificación HyperSend en marcha - %2 de %3 firmas)</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/confirmado (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmaciones (verificación HyperSend en marcha - %2 de %3 firmas)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 confirmaciones (verificación SwiftTX en marcha - %2 de %3 firmas)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1/offline (falló la verificación HyperSend)</translation>
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1/offline (falló la verificación SwiftTX)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1/confirmado (falló la verificación HyperSend)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1/confirmado (falló la verificación SwiftTX)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -4325,10 +4300,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, no ha sido correctamente transmitida todavía</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, retransmitido a través de %n nodos</numerusform><numerusform>, retransmitido a través de %n nodos</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4369,10 +4340,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Credit</source>
         <translation>Crédito</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>madura en %n bloques más</numerusform><numerusform>maduracíon en %n bloques más</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4472,10 +4439,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>Address</source>
         <translation>Dirección</translation>
     </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Abierto para %n bloques más</numerusform><numerusform>Abierto para %n bloques más</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Abierto hasta %1</translation>
@@ -4558,7 +4521,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
     <message>
         <source>Received ADE from zADE</source>
-        <translation>ADE recibidos desde zADE </translation>
+        <translation>ADE recibidos desde zADE</translation>
     </message>
     <message>
         <source>Minted Change as zADE from zADE Spend</source>
@@ -4825,8 +4788,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Enviar Monedas</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 ADE.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftTX no soporta el envío de importes tan altos todavía. Las transacciones están actualmente limitadas a %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4857,7 +4820,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Select zADE to Spend</source>
         <translation>Selecciona zADE para Gastar</translation>
@@ -4878,11 +4841,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <source>Select/Deselect All</source>
         <translation>Seleccionar/Deseleccionar Todos</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Es Gastable</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -5266,8 +5225,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2018-%i The Adeptio Core Developers</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2017-%i The Adeptio Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5314,12 +5273,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Habilitar creación automática de Zerocoin (0-1, por defecto: %u)</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Activar inclusión del hash de la transacción (fijada mediante HyperSend) en &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Activar inclusión del hash de la transacción (fijada mediante SwiftTX) en &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Activar inclusión de la transacción en bruto (fijada mediante HyperSend) en &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Activar inclusión de la transacción en bruto (fijada mediante SwiftTX) en &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5370,6 +5329,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Error al recuperar clave pública.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Error al escribir zerocoinDB en el disco</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -5404,6 +5367,10 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Falló la escucha en cualquiera de los puertos. Usar -listen=0 si quieres esto.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Error al analizar el host: cadena del puerto</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5558,8 +5525,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>El valor de las monedas seleccionadas es menor que el monto a pagar</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>Opciones HyperSend:</translation>
+        <source>SwiftX options:</source>
+        <translation>Opciones SwiftX:</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
@@ -5582,12 +5549,12 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
 </translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>Desabilitar toda la funcionalidad especifica ADE (Masternodes, Obfuscation, HyperSend, Budgeting) (0-1, predeterminado: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Desabilitar toda la funcionalidad especifica ADE (Masternodes, Obfuscation, SwiftTX, Budgeting) (0-1, predeterminado: %u)</translation>
     </message>
     <message>
-        <source>Enable HyperSend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Activar hypersend, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Activar swifttx, mostrar confirmaciones para transacciones bloqueadas (bool, predeterminado: %s)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -5626,8 +5593,8 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>Especifique una ruta de copia de seguridad personalizada para agregar una copia de cualquier copia de seguridad de monedero. Si se establece como directorio, cada copia de seguridad genera un archivo con marcas de tiempo. Si se establece como archivo, se reescribirá en ese archivo cada copia de seguridad generada.</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend requiere entradas con al menos 6 confirmaciones, es posible que deba esperar unos minutos e intente de nuevo.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX requiere entradas con al menos 6 confirmaciones, es posible que deba esperar unos minutos e intente de nuevo.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5680,10 +5647,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Failed to create mint</source>
         <translation>Error al acuñar</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Error al deserializar</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6126,14 +6089,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
         <translation>El gasto de moneda se ha usado</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>La nueva transacción de gasto de moneda no se verificó</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>La moneda acuñada seleccionada es una moneda no válida</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>La transacción no se verificó</translation>
     </message>
@@ -6280,10 +6235,6 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     <message>
         <source>Verifying wallet...</source>
         <translation>Verificando el monedero...</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>La versión 1 zADE requiere un nivel de seguridad de 100 para gastar exitosamente.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

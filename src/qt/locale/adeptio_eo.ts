@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Komando-linio opcioj</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n bloko de tansakcio historo procesita</numerusform><numerusform>%n blokoj de tansakcio historo procesita</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Ĝisdatiĝante pliaj datumo: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>ADE Kerno kliento</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n aktiva ligo(j) al la ADE reto</numerusform><numerusform>%n aktiva ligo(j) al la ADE reto</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Ĝisdatiĝante kun reto...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Ĝisdata</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n horo</numerusform><numerusform>%n horoj</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n tago</numerusform><numerusform>%n tagoj</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n semajno</numerusform><numerusform>%n semajnoj</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 kaj %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n jaro</numerusform><numerusform>%n jaroj</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ Muktisendi: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Monujo estas &lt;b&gt;ĉifrita&lt;/b&gt; kaj nuntempe &lt;b&gt;ŝlosita&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1122,8 +1098,8 @@ Muktisendi: %1</translation>
         <translation>Ĉi tiun etikedo ruĝiĝas se iu ajna ricevanto ricevas totalo pli malgranda ol %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Povas varii +/- %1 uADE per enigo.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Povas varii +/- %1 upiv per enigo.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1216,6 +1192,17 @@ Muktisendi: %1</translation>
         <translation>Ne povas krei datumoj dosierujo ĉi tie.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formo</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1460,42 +1447,8 @@ Muktisendi: %1</translation>
         <translation>(neniu etikedo)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>La enirita adreson:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>estas nevalida
-Bonvolu kontroku la adreson kaj riprovu</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Totala sumo de via multisendo vektoro estas super 100% de via stako rekompenco
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Bonvolu eniru 1 - 100 por porcento.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>Multisendo vektoro
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Forigita</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Ne eblis loki adreson
-</translation>
     </message>
 </context>
 <context>
@@ -1550,7 +1503,7 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Kvanto</translation>
+        <translation>Kvanto:</translation>
     </message>
     <message>
         <source>Add an input to fund the outputs</source>
@@ -1694,7 +1647,7 @@ Bonvolu kontroku la adreson kaj riprovu</translation>
         <translation>Sperta</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>&amp;Komencu ADE en sistem-ensaluto</translation>
     </message>
     <message>
@@ -1849,7 +1802,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
-        <translation>Pago peto dosiero ne povas estas legi! Ĉi tio ADEas esti kauzita por nevalida pago peto dosiero.</translation>
+        <translation>Pago peto dosiero ne povas estas legi! Ĉi tio pivas esti kauzita por nevalida pago peto dosiero.</translation>
     </message>
     <message>
         <source>Payment request rejected</source>
@@ -1887,7 +1840,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Kvanto</translation>
+        <translation>Kvanto:</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -1923,7 +1876,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
+        <translation>Elektu antaŭe uzatan adreson</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1949,7 +1902,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Priority:</source>
-        <translation>Prioritato</translation>
+        <translation>Prioritato:</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -1961,7 +1914,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>no</source>
-        <translation>no</translation>
+        <translation>ne</translation>
     </message>
     <message>
         <source>Bytes:</source>
@@ -1977,7 +1930,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Change:</source>
-        <translation>Ŝanĝo:</translation>
+        <translation>Ŝanĝu:</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -2004,8 +1957,8 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Mesaĝo: eniri kvanto &gt; 0.</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
-        <translation>Nevalida ADE adreso</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Nevalida Pivx adreso</translation>
     </message>
     <message>
         <source>Confirm send coins</source>
@@ -2019,6 +1972,9 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <source>address: </source>
         <translation>adreso:</translation>
     </message>
+    </context>
+<context>
+    <name>ProposalFrame</name>
     </context>
 <context>
     <name>QObject</name>
@@ -2037,6 +1993,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>UNKNOWN</source>
         <translation>NEKONATA</translation>
+    </message>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>ADE kerno</translation>
     </message>
     </context>
 <context>
@@ -2102,7 +2062,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>Bonvenon al la ADE RPC konzolo.</translation>
+        <translation>Bonvenon al la Adeptio RPC konzolo.</translation>
     </message>
     <message>
         <source>1 &amp;hour</source>
@@ -2115,10 +2075,6 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <message>
         <source>1 &amp;week</source>
         <translation>1&amp;semajno</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Uzi la sagojn supran kaj malsupran por esplori la historion, kaj &lt;b&gt;Ctr-L&lt;/b&gt; por malplenigi la ekraron.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -2183,6 +2139,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <source>Copy amount</source>
         <translation>Kopii kvanto</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopi adreson</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -2234,6 +2194,10 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <translation>Mesaĝo</translation>
     </message>
     <message>
+        <source>Address</source>
+        <translation>Adreso</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation>Sumo:</translation>
     </message>
@@ -2266,11 +2230,11 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Amount:</source>
-        <translation>Kvanto</translation>
+        <translation>Kvanto:</translation>
     </message>
     <message>
         <source>Priority:</source>
-        <translation>Prioritato</translation>
+        <translation>Prioritato:</translation>
     </message>
     <message>
         <source>medium</source>
@@ -2282,7 +2246,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>no</source>
-        <translation>no</translation>
+        <translation>ne</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -2290,7 +2254,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Change:</source>
-        <translation>Ŝanĝo:</translation>
+        <translation>Ŝanĝu:</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
@@ -2354,7 +2318,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Confirm send coins</source>
-        <translation>Konfirmu sendi monon</translation>
+        <translation>Konfirmu sendi monojn</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2377,7 +2341,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
+        <translation>Elektu antaŭe uzatan adreson</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2415,7 +2379,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     <name>SignVerifyMessageDialog</name>
     <message>
         <source>Choose previously used address</source>
-        <translation>Elektu antaŭan uzatan adreson</translation>
+        <translation>Elektu antaŭe uzatan adreson</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2447,7 +2411,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>La enirita adreso ne rilatas al ŝlosilo</translation>
+        <translation>La enirita adreso ne rilatas al ŝlosilo.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -2649,7 +2613,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
     </message>
     </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>
@@ -2658,11 +2622,7 @@ Nematura: konfirmita, sed malpli ol 1 minto el la samo nomado post ĝin estis mi
         <source>zADE</source>
         <translation>zADE</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Estas elspezebla</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>

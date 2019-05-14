@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,10 +8,10 @@
 
 #include "base58.h"
 #include "obfuscation.h"
-#include "hypersend.h"
+#include "swifttx.h"
 #include "timedata.h"
-#include "wallet.h"
-#include "zADEchain.h"
+#include "wallet/wallet.h"
+#include "zadechain.h"
 
 #include <stdint.h>
 
@@ -55,7 +54,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         if (!wtx.IsZerocoinSpend() && !ExtractDestination(wtx.vout[1].scriptPubKey, address))
             return parts;
 
-        if (wtx.IsZerocoinSpend() && (fZSpendFromMe || wallet->zADETracker->HasMintTx(hash))) {
+        if (wtx.IsZerocoinSpend() && (fZSpendFromMe || wallet->zadeTracker->HasMintTx(hash))) {
             //zADE stake reward
             sub.involvesWatchAddress = false;
             sub.type = TransactionRecord::StakeZADE;
@@ -75,7 +74,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
         } else {
             //Masternode reward
             CTxDestination destMN;
-            int nIndexMN = wtx.vout.size() - 2;
+            int nIndexMN = wtx.vout.size() - 1;
             if (ExtractDestination(wtx.vout[nIndexMN].scriptPubKey, destMN) && IsMine(*wallet, destMN)) {
                 isminetype mine = wallet->IsMine(wtx.vout[nIndexMN]);
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
@@ -83,22 +82,13 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 sub.address = CBitcoinAddress(destMN).ToString();
                 sub.credit = wtx.vout[nIndexMN].nValue;
             }
-            CTxDestination destDF;
-            int nIndexDF = wtx.vout.size() - 1;
-            if (ExtractDestination(wtx.vout[nIndexDF].scriptPubKey, destDF) && IsMine(*wallet, destDF)) {
-                isminetype mine = wallet->IsMine(wtx.vout[nIndexDF]);
-                sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
-                sub.type = TransactionRecord::RecvFromOther;
-                sub.address = CBitcoinAddress(destMN).ToString();
-                sub.credit = wtx.vout[nIndexDF].nValue;
-            }
         }
 
         parts.append(sub);
     } else if (wtx.IsZerocoinSpend()) {
         //zerocoin spend outputs
         bool fFeeAssigned = false;
-        for (const CTxOut txout : wtx.vout) {
+        for (const CTxOut& txout : wtx.vout) {
             // change that was reminted as zerocoins
             if (txout.IsZerocoinMint()) {
                 // do not display record if this isn't from our wallet
@@ -108,7 +98,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
                 isminetype mine = wallet->IsMine(txout);
                 TransactionRecord sub(hash, nTime);
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
-                sub.type = TransactionRecord::ZerocoinSpend_Change_zXlq;
+                sub.type = TransactionRecord::ZerocoinSpend_Change_zPiv;
                 sub.address = mapValue["zerocoinmint"];
                 if (!fFeeAssigned) {
                     sub.debit -= (wtx.GetZerocoinSpent() - wtx.GetValueOut());
@@ -325,7 +315,7 @@ bool IsZADEType(TransactionRecord::Type type)
         case TransactionRecord::ZerocoinMint:
         case TransactionRecord::ZerocoinSpend:
         case TransactionRecord::RecvFromZerocoinSpend:
-        case TransactionRecord::ZerocoinSpend_Change_zXlq:
+        case TransactionRecord::ZerocoinSpend_Change_zPiv:
         case TransactionRecord::ZerocoinSpend_FromMe:
             return true;
         default:

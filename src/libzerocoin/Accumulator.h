@@ -9,7 +9,7 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 #ifndef ACCUMULATOR_H_
 #define ACCUMULATOR_H_
 
@@ -70,7 +70,7 @@ public:
     const CBigNum& getValue() const;
 
     void setValue(CBigNum bnValue);
-
+    void setInitialValue();
 
     // /**
     //  * Used to set the accumulator value
@@ -87,7 +87,6 @@ public:
      * @return a refrence to the updated accumulator.
      */
     Accumulator& operator +=(const PublicCoin& c);
-    Accumulator& operator =(Accumulator rhs);
     bool operator==(const Accumulator rhs) const;
     ADD_SERIALIZE_METHODS;
     template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
@@ -134,6 +133,7 @@ public:
      * @return the value of the witness
      */
     const CBigNum& getValue() const;
+    const PublicCoin& getPublicCoin() const;
     void resetValue(const Accumulator& checkpoint, const PublicCoin coin);
 
     /** Checks that this is a witness to the accumulation of coin
@@ -149,8 +149,6 @@ public:
      * @return
      */
     AccumulatorWitness& operator +=(const PublicCoin& rhs);
-
-    AccumulatorWitness& operator =(AccumulatorWitness rhs);
 private:
     Accumulator witness;
     PublicCoin element; // was const but changed to use setting in assignment

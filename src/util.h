@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,19 +28,21 @@
 
 #include <boost/filesystem/path.hpp>
 #include <boost/thread/exceptions.hpp>
+#include <boost/thread/condition_variable.hpp> // for boost::thread_interrupted
 
 //ADE only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
-extern bool fEnableHyperSend;
-extern int nHyperSendDepth;
+extern bool fEnableSwiftTX;
+extern int nSwiftTXDepth;
 extern int nZeromintPercentage;
 extern const int64_t AUTOMINT_DELAY;
 extern int nPreferredDenom;
-extern int nAnonymizeADEAmount;
+extern int nAnonymizePivxAmount;
 extern int nLiquidityProvider;
 extern bool fEnableZeromint;
+extern bool fEnableAutoConvert;
 extern int64_t enforceMasternodePaymentsTime;
 extern std::string strMasterNodeAddr;
 extern int keysLoaded;

@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;명령행 옵션</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n 블록의 거래내역 확인됨</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>추가 데이터 동기화: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>Adeptio Core 클라이언트</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n 개의 ADE 네트웍에 연결됨</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>네트워크 동기화중...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>최신</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n 시간</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n 일</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n 주</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 그리고 %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n 년</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -864,7 +840,7 @@ Address: %4
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>지갑은 &lt;b&gt;암호화&lt;/ b&gt;되어 있으며 현재 &lt;b&gt;잠겨 있습니다&lt;/ b&gt;.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1130,8 +1106,8 @@ Address: %4
         <translation>받는 사람이 %1 보다 작은 금액을 받으면 라벨이 빨간색으로 변경됩니다.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Can vary +/- %1 uADE per input.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Can vary +/- %1 upiv per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1224,6 +1200,17 @@ Address: %4
         <translation>여기에 디렉토리를 만들 수 없습니다.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1542,48 +1529,8 @@ MultiSend will not be activated unless you have clicked Activate</source>
         <translation>(라벨 없음)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>입력된 주소:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>올바르지 않습니다.
-주소를 확인하고 다시 시도해주세요.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>다중전송 벡터의 총 금액이 스테이크 보상 금액의 100 % 이상입니다
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>퍼센트로 1 - 100을 입력하십시오.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>MultiSend를 메모리에 저장했지만 데이터베이스에 대한 속성 저장에 실패했습니다.
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>다중전송 벡터
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>제거됨</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>주소를 찾을 수 없습니다
-</translation>
     </message>
 </context>
 <context>
@@ -1906,7 +1853,7 @@ Please be patient after clicking import.</source>
         <translation>시스템 로그인 후 ADE을 자동으로 시작합니다.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>&amp;시스템 로그인시 ADE 시작</translation>
     </message>
     <message>
@@ -2261,7 +2208,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <source>AutoMint is currently disabled.
 To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.conf</source>
         <translation>자동 저장 기능이 현재 사용 중지되었습니다 .
-자동 변환을 사용하려면 ADEotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
+자동 변환을 사용하려면 pivotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2441,7 +2388,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
+        <source>Enter an amount of Piv to convert to zADE</source>
         <translation>zADE로 변환할 ADE 수량을 입력하세요.</translation>
     </message>
     <message>
@@ -2483,18 +2430,6 @@ zADE는 성명서가 20 개 이상 있고 명칭이 동일하지 않은 2 개 �
     <message>
         <source>0 zADE</source>
         <translation>0 zADE</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>제로코인 전송 시큐리티 레벨.  높을수록 좋지만, 시간과 많은 자원이 필요합니다.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>시큐리티 레벨:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>시큐리티 레벨 1 - 100 (기본값: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2718,7 +2653,7 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Bytes:</source>
-        <translation>Bytes:</translation>
+        <translation>바이트:</translation>
     </message>
     <message>
         <source>Insufficient funds!</source>
@@ -2726,11 +2661,11 @@ To change the percentage (no restart required):
     </message>
     <message>
         <source>Coins automatically selected</source>
-        <translation>코인 자동으로 선택됨</translation>
+        <translation>자동으로 선택됩니다.</translation>
     </message>
     <message>
         <source>medium</source>
-        <translation>중간</translation>
+        <translation>5 중간</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2773,14 +2708,6 @@ To change the percentage (no restart required):
 Please be patient...</source>
         <translation>제로코인 생성 초기화 진행중... : 전체 블록체인을 다시 검색합니다. 하드웨어에 따라 최대 30분이 걸릴수 있습니다.
 기다려주세요...</translation>
-    </message>
-    <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>제로코인 전송중입니다.
-시큐리티 레벨과 여러분의 하드웨어에 따라 수 분이 걸립니다.
-조금만 기다려주세요...</translation>
     </message>
     <message>
         <source>) needed.
@@ -2929,7 +2856,7 @@ Maximum allowed: </source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
+        <source>Invalid Pivx Address</source>
         <translation>잘못된 ADE 주소</translation>
     </message>
     <message>
@@ -2953,20 +2880,8 @@ Maximum allowed: </source>
         <translation>새로 생성된 개인 지갑 주소(미사용된 익명의) &lt;br /&gt; 로</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>시큐리티 레벨</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>코인 전송 확인</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>zADE 버전 1은 성공적으로 보내기 위해서 100 시큐리티 레벨이 필요합니다.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zADE</source>
-        <translation>zADE 전송 실패</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2984,11 +2899,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>제로코인 송금 실패 상태 =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of ADE to convert to zADE</comment>
-        <translation><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3024,13 +2934,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>ADE 주소를 입력하세요 (예 %1)</translation>
     </message>
     <message>
@@ -3073,7 +2986,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3386,7 +3303,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>ADE RPC 콘솔에 오신 것을 환영합니다.</translation>
+        <translation>Adeptio RPC 콘솔에 오신 것을 환영합니다.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3435,10 +3352,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>블록체인 동기화를 다시 하시겠습니까?</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>위 아래 화살표를 사용하여 기록을 탐색하고 &lt;b&gt;Ctrl-L&lt;/b&gt; 화면을 지웁니다.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3512,6 +3425,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>새로운 수신 주소와 연결할 선택적 라벨.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>금&amp;액:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>요청이 열릴 때 표시되는 결제 요청에 첨부할 선택적 메세지 입니다. 참고: ADE 네트워크를 통한 결제는 메세지가 전송되지 않습니다.</translation>
     </message>
@@ -3534,10 +3451,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>요청할 선택적 금액. 이 금액을 비워두거나 특정 금액을 요청하지 않으려면 0으로 두세요.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;금액:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3583,6 +3496,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Copy amount</source>
         <translation>금액 복사</translation>
     </message>
+    <message>
+        <source>Copy address</source>
+        <translation>주소 복사</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -3616,7 +3533,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Address</source>
-        <translation>마스터노드 주소</translation>
+        <translation>주소</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3652,6 +3569,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>메세지</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3706,7 +3627,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>medium</source>
-        <translation>중간</translation>
+        <translation>5 중간</translation>
     </message>
     <message>
         <source>Fee:</source>
@@ -3789,8 +3710,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>(스마트 수수료가 아직 초기화 되지 않았습니다. 일반적으로 몇 블록이 지나야됩니다...)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -3936,17 +3857,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>KB당 %1보다 %2배 많은 수수료는 너무 높은 수수료입니다.</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>%n 개의 블록 내에서 컨펌이 시작할 것으로 추정됨.</numerusform></translation>
-    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>수신자 주소가 유효하지 않습니다. 다시 확인해주세요.</translation>
     </message>
     <message>
-        <source>using HyperSend</source>
-        <translation>HyperSend 사용</translation>
+        <source>using SwiftX</source>
+        <translation>SwiftX 사용</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -4262,10 +4179,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 블럭 더 열기</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>%1까지 열기</translation>
@@ -4287,37 +4200,37 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>%1 확인</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
-        <translation>%1/오프라인 (hypersend를 통해 확인 됨)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/오프라인 (swifttx를 통해 확인 됨)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
-        <translation>%1/확인 됨 (hypersend를 통해 확인 됨)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1/확인 됨 (swifttx를 통해 확인 됨)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
-        <translation>%1 확인 (hypersend를 통해 확인 됨)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>%1 확인 (swifttx를 통해 확인 됨)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/오프라인 (HyperSend 확인 진행 중 - %2 중 %3 서명)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1/오프라인 (SwiftTX 확인 진행 중 - %2 중 %3 서명)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/확인 됨 (HyperSend 확인 진행 중 - %2 중 %3 서명)</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1/확인 됨 (SwiftTX 확인 진행 중 - %2 중 %3 서명)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 확인 (HyperSend 확인 진행 중 - %2 중 %3 서명)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 확인 (SwiftTX 확인 진행 중 - %2 중 %3 서명)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1/오프라인 (HyperSend 확인 실패)
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1/오프라인 (SwiftTX 확인 실패)
 </translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1/확인 됨 (HyperSend 확인 실패)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1/확인 됨 (SwiftTX 확인 실패)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -4326,10 +4239,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, 아직 성공적으로 브로드캐스트되지 않았습니다</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, %n 노드를 통한 브로드캐스트</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4370,10 +4279,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>크레딧</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>%n 블록안에 생성됨</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4472,10 +4377,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Address</source>
         <translation>주소</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>%n 블럭 더 열기</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4666,7 +4567,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Received with</source>
-        <translation>수신 됨</translation>
+        <translation>수신됨</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -4746,7 +4647,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Confirmed</source>
-        <translation>확정</translation>
+        <translation>확정됨</translation>
     </message>
     <message>
         <source>Watch-only</source>
@@ -4826,8 +4727,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>코인 전송 </translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 ADE로 제한됩니다.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftTX는 아직 높은 값을 전송하는 것을 지원하지 않습니다. 트랜잭션은 현재 %1 ADE로 제한됩니다.</translation>
     </message>
 </context>
 <context>
@@ -4858,7 +4759,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Select zADE to Spend</source>
         <translation>사용할 zADE 선택</translation>
@@ -4879,11 +4780,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>전체 선택 / 해제</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>전송가능한 코인수</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -5267,8 +5164,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Copyright (C) 2014-%i The Dash Core 개발자들</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2018-%i The Adeptio Core 개발자</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2015-%i The Adeptio Core 개발자</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5315,12 +5212,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>자동 제로코인 생성 (0-1, 기본값: %u)</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>&lt;address&gt; 에서 해시 전송 게시 가능 (HyperSend로 설정된)</translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>&lt;address&gt; 에서 해시 전송 게시 가능 (SwiftTX로 설정된)</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>&lt;address&gt;에서 Raw 트랜잭션 게시 지원 (HyperSend를 통해 잠겨진)</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>&lt;address&gt;에서 Raw 트랜잭션 게시 지원 (SwiftTX를 통해 잠겨진)</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5371,6 +5268,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>공개 키를 복구하는 중 오류가 발생했습니다.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>디스크에 zerocoinDB 쓰기 오류</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>에러</translation>
     </message>
@@ -5405,6 +5306,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>어떠한 포트에서도 수신하는 것에 실패했습니다. 원하신다면 -listen=0 을 사용하십시오.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>호스트 : 포트 문자열을 구문 분석하지 못했습니다.</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5559,8 +5464,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>지불대상보다 적은 코인 선택됨</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>HyperSend 옵션:</translation>
+        <source>SwiftX options:</source>
+        <translation>SwiftX 옵션:</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
@@ -5583,12 +5488,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>ADE의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, HyperSend, Budgeting) (0-1, 기본값: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>ADE의 모든 특정 기능들을 비활성화합니다(마스터노드, 난독화, SwiftTX, Budgeting) (0-1, 기본값: %u)</translation>
     </message>
     <message>
-        <source>Enable HyperSend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>hypersend 활성화, 잠긴 트랜잭션들에 대한 확인 표시 (bool, 기본값: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>swiftTX 활성화, 잠긴 트랜잭션들에 대한 확인 표시 (bool, 기본값: %s)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -5627,8 +5532,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Specify custom backup path to add a copy of any wallet backup. If set as dir, every backup generates a timestamped file. If set as file, will rewrite to that file every backup.</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend는 최소 6회 확인이 필요한 입력으로 몇 분 후에 다시 시도해야 할 수 있습니다.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX는 최소 6회 확인이 필요한 입력으로 몇 분 후에 다시 시도해야 할 수 있습니다.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5681,10 +5586,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to create mint</source>
         <translation>생성 실패</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>디시리얼 실패</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6127,14 +6028,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>전송이 이미 되었습니다.</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>신규로 전송된 거래가 확인되지 않았습니다.</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>선택한 생성 코인은 유효하지 않은 동전입니다.</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>거래가 확인되지 않았습니다.</translation>
     </message>
@@ -6281,10 +6174,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Verifying wallet...</source>
         <translation>지갑 인증 중...</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>zADE 버전 1은 성공적으로 보내기 위해서 100 시큐리티 레벨이 필요합니다.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

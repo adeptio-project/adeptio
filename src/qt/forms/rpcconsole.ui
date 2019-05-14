@@ -1326,7 +1326,7 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="wallet_customzADEbackuppath_label">
+        <widget class="QLabel" name="wallet_customzadebackuppath_label">
          <property name="text">
           <string>Custom zADE Backup Path:</string>
          </property>
@@ -1336,7 +1336,7 @@
         </widget>
        </item>
        <item row="4" column="1" colspan="3">
-        <widget class="QLabel" name="wallet_customzADEbackuppath">
+        <widget class="QLabel" name="wallet_customzadebackuppath">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
          </property>

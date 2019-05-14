@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@
 #include "base58.h"
 #include "bip38.h"
 #include "init.h"
-#include "wallet.h"
+#include "wallet/wallet.h"
 #include "askpassphrasedialog.h"
 
 #include <string>
@@ -26,9 +26,7 @@ Bip38ToolDialog::Bip38ToolDialog(QWidget* parent) : QDialog(parent, Qt::WindowSy
 {
     ui->setupUi(this);
 
-#if QT_VERSION >= 0x040700
     ui->decryptedKeyOut_DEC->setPlaceholderText(tr("Click \"Decrypt Key\" to compute key"));
-#endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_ENC, this);
     ui->addressIn_ENC->installEventFilter(this);

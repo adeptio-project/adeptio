@@ -1,14 +1,14 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "rpc/client.h"
 
 #include "rpc/protocol.h"
-#include "ui_interface.h"
+#include "guiinterface.h"
 #include "util.h"
 
 #include <set>
@@ -33,6 +33,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getaddednodeinfo", 0},
         {"setgenerate", 0},
         {"setgenerate", 1},
+        {"generate", 0},
         {"getnetworkhashps", 0},
         {"getnetworkhashps", 1},
         {"sendtoaddress", 1},
@@ -49,6 +50,12 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getbalance", 1},
         {"getbalance", 2},
         {"getblockhash", 0},
+        { "waitforblockheight", 0 },
+        { "waitforblockheight", 1 },
+        { "waitforblock", 1 },
+        { "waitforblock", 2 },
+        { "waitfornewblock", 0 },
+        { "waitfornewblock", 1 },
         {"move", 2},
         {"move", 3},
         {"sendfrom", 2},
@@ -79,6 +86,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getrawtransaction", 1},
         {"createrawtransaction", 0},
         {"createrawtransaction", 1},
+        {"createrawtransaction", 2},
         {"signrawtransaction", 1},
         {"signrawtransaction", 2},
         {"sendrawtransaction", 1},
@@ -100,10 +108,6 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"setban", 2},
         {"setban", 3},
         {"spork", 1},
-        {"mnbudget", 3},
-        {"mnbudget", 4},
-        {"mnbudget", 6},
-        {"mnbudget", 8},
         {"preparebudget", 2},
         {"preparebudget", 3},
         {"preparebudget", 5},
@@ -122,6 +126,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"autocombinerewards", 1},
         {"getzerocoinbalance", 0},
         {"listmintedzerocoins", 0},
+        {"listmintedzerocoins", 1},
         {"listspentzerocoins", 0},
         {"listzerocoinamounts", 0},
         {"mintzerocoin", 0},
@@ -129,7 +134,8 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"spendzerocoin", 0},
         {"spendzerocoin", 1},
         {"spendzerocoin", 2},
-        {"spendzerocoin", 3},
+        {"spendrawzerocoin", 2},
+        {"spendzerocoinmints", 0},
         {"importzerocoins", 0},
         {"exportzerocoins", 0},
         {"exportzerocoins", 1},
@@ -137,11 +143,22 @@ static const CRPCConvertParam vRPCConvertParams[] =
         {"getspentzerocoinamount", 1},
         {"generatemintlist", 0},
         {"generatemintlist", 1},
-        {"searchdzADE", 0},
-        {"searchdzADE", 1},
-        {"searchdzADE", 2},
+        {"searchdzade", 0},
+        {"searchdzade", 1},
+        {"searchdzade", 2},
         {"getaccumulatorvalues", 0},
-        {"getfeeinfo", 0}
+        {"getaccumulatorwitness",2},
+        {"getmintsvalues", 2},
+        {"enableautomintaddress", 0},
+        {"getmintsinblocks", 0},
+        {"getmintsinblocks", 1},
+        {"getmintsinblocks", 2},
+        {"getserials", 0},
+        {"getserials", 1},
+        {"getserials", 2},
+        {"getfeeinfo", 0},
+        {"getchecksumblock", 1},
+        {"getchecksumblock", 2},
     };
 
 class CRPCConvertTable

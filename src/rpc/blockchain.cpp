@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2018 The ADE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,13 +14,28 @@
 #include "txdb.h"
 #include "util.h"
 #include "utilmoneystr.h"
-#include "accumulatormap.h"
-#include "accumulators.h"
+#include "zade/accumulatormap.h"
+#include "zade/accumulators.h"
+#include "wallet/wallet.h"
+#include "zadechain.h"
 
 #include <stdint.h>
+#include <fstream>
+#include <iostream>
 #include <univalue.h>
+#include <mutex>
+#include <condition_variable>
 
 using namespace std;
+
+struct CUpdatedBlock
+{
+    uint256 hash;
+    int height;
+};
+static std::mutex cs_blockchange;
+static std::condition_variable cond_blockchange;
+static CUpdatedBlock latestblock;
 
 extern void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry);
 void ScriptPubKeyToJSON(const CScript& scriptPubKey, UniValue& out, bool fIncludeHex);
@@ -66,6 +81,7 @@ UniValue blockheaderToJSON(const CBlockIndex* blockindex)
     result.push_back(Pair("version", blockindex->nVersion));
     result.push_back(Pair("merkleroot", blockindex->hashMerkleRoot.GetHex()));
     result.push_back(Pair("time", (int64_t)blockindex->nTime));
+    result.push_back(Pair("mediantime", (int64_t)blockindex->GetMedianTimePast()));
     result.push_back(Pair("nonce", (uint64_t)blockindex->nNonce));
     result.push_back(Pair("bits", strprintf("%08x", blockindex->nBits)));
     result.push_back(Pair("difficulty", GetDifficulty(blockindex)));
@@ -105,6 +121,7 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
     }
     result.push_back(Pair("tx", txs));
     result.push_back(Pair("time", block.GetBlockTime()));
+    result.push_back(Pair("mediantime", (int64_t)blockindex->GetMedianTimePast()));
     result.push_back(Pair("nonce", (uint64_t)block.nNonce));
     result.push_back(Pair("bits", strprintf("%08x", block.nBits)));
     result.push_back(Pair("difficulty", GetDifficulty(blockindex)));
@@ -116,17 +133,105 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
     if (pnext)
         result.push_back(Pair("nextblockhash", pnext->GetBlockHash().GetHex()));
 
+    result.push_back(Pair("modifier", strprintf("%016x", blockindex->nStakeModifier)));
+
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    UniValue zADEObj(UniValue::VOBJ);
+    UniValue zadeObj(UniValue::VOBJ);
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zADEObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zadeObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zADEObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.push_back(Pair("zADEsupply", zADEObj));
+    zadeObj.push_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
+    result.push_back(Pair("zADEsupply", zadeObj));
 
     return result;
 }
+
+UniValue getchecksumblock(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 2 || params.size() > 3)
+        throw runtime_error(
+            "getchecksumblock\n"
+            "\nFinds the first occurrence of a certain accumulator checksum."
+            "\nReturns the block hash or, if fVerbose=true, the JSON block object\n"
+
+            "\nArguments:\n"
+            "1. \"checksum\"      (string, required) The hex encoded accumulator checksum\n"
+            "2. \"denom\"         (integer, required) The denomination of the accumulator\n"
+            "3. fVerbose          (boolean, optional, default=false) true for a json object, false for the hex encoded hash\n"
+
+            "\nResult (for fVerbose = true):\n"
+            "{\n"
+            "  \"hash\" : \"hash\",     (string) the block hash (same as provided)\n"
+            "  \"confirmations\" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain\n"
+            "  \"size\" : n,            (numeric) The block size\n"
+            "  \"height\" : n,          (numeric) The block height or index\n"
+            "  \"version\" : n,         (numeric) The block version\n"
+            "  \"merkleroot\" : \"xxxx\", (string) The merkle root\n"
+            "  \"tx\" : [               (array of string) The transaction ids\n"
+            "     \"transactionid\"     (string) The transaction id\n"
+            "     ,...\n"
+            "  ],\n"
+            "  \"time\" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)\n"
+            "  \"mediantime\" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)\n"
+            "  \"nonce\" : n,           (numeric) The nonce\n"
+            "  \"bits\" : \"1d00ffff\", (string) The bits\n"
+            "  \"difficulty\" : x.xxx,  (numeric) The difficulty\n"
+            "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
+            "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
+            "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
+            "  \"zADEsupply\" :\n"
+            "  {\n"
+            "     \"1\" : n,            (numeric) supply of 1 zADE denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zADE denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zADE denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zADE denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zADE denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zADE denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zADE denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zADE denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zADE denominations\n"
+            "  }\n"
+            "}\n"
+
+            "\nResult (for verbose=false):\n"
+            "\"data\"             (string) A string that is serialized, hex-encoded data for block 'hash'.\n"
+
+            "\nExamples:\n" +
+            HelpExampleCli("getchecksumblock", "\"00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2\", 5") +
+            HelpExampleRpc("getchecksumblock", "\"00000000000fd08c2fb661d2fcb0d49abb3a91e5f27082ce64feed3b4dede2e2\", 5"));
+
+
+    LOCK(cs_main);
+
+    // param 0
+    std::string acc_checksum_str = params[0].get_str();
+    uint256 checksum_256(acc_checksum_str);
+    uint32_t acc_checksum = checksum_256.Get32();
+    // param 1
+    libzerocoin::CoinDenomination denomination = libzerocoin::IntToZerocoinDenomination(params[1].get_int());
+    // param 2
+    bool fVerbose = false;
+    if (params.size() > 2)
+        fVerbose = params[2].get_bool();
+
+    int checksumHeight = GetChecksumHeight(acc_checksum, denomination);
+
+    if (checksumHeight == 0)
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
+
+    CBlockIndex* pblockindex = chainActive[checksumHeight];
+
+    if (!fVerbose)
+        return pblockindex->GetBlockHash().GetHex();
+
+    CBlock block;
+    if (!ReadBlockFromDisk(block, pblockindex))
+        throw JSONRPCError(RPC_INTERNAL_ERROR, "Can't read block from disk");
+
+    return blockToJSON(block, pblockindex);
+}
+
 
 UniValue getblockcount(const UniValue& params, bool fHelp)
 {
@@ -160,6 +265,148 @@ UniValue getbestblockhash(const UniValue& params, bool fHelp)
 
     LOCK(cs_main);
     return chainActive.Tip()->GetBlockHash().GetHex();
+}
+
+void RPCNotifyBlockChange(const uint256 hashBlock)
+{
+    CBlockIndex* pindex = nullptr;
+    pindex = mapBlockIndex.at(hashBlock);
+    if(pindex) {
+        std::lock_guard<std::mutex> lock(cs_blockchange);
+        latestblock.hash = pindex->GetBlockHash();
+        latestblock.height = pindex->nHeight;
+    }
+    cond_blockchange.notify_all();
+}
+
+UniValue waitfornewblock(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw std::runtime_error(
+            "waitfornewblock ( timeout )\n"
+            "\nWaits for a specific new block and returns useful info about it.\n"
+            "\nReturns the current block on timeout or exit.\n"
+
+            "\nArguments:\n"
+            "1. timeout (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.\n"
+
+            "\nResult:\n"
+            "{                           (json object)\n"
+            "  \"hash\" : {       (string) The blockhash\n"
+            "  \"height\" : {     (int) Block height\n"
+            "}\n"
+
+            "\nExamples:\n"
+            + HelpExampleCli("waitfornewblock", "1000")
+            + HelpExampleRpc("waitfornewblock", "1000")
+        );
+    int timeout = 0;
+    if (params.size() > 0)
+        timeout = params[0].get_int();
+    CUpdatedBlock block;
+    {
+        std::unique_lock<std::mutex> lock(cs_blockchange);
+        block = latestblock;
+        if(timeout)
+            cond_blockchange.wait_for(lock, std::chrono::milliseconds(timeout), [&block]{return latestblock.height != block.height || latestblock.hash != block.hash || !IsRPCRunning(); });
+        else
+            cond_blockchange.wait(lock, [&block]{return latestblock.height != block.height || latestblock.hash != block.hash || !IsRPCRunning(); });
+        block = latestblock;
+    }
+    UniValue ret(UniValue::VOBJ);
+    ret.push_back(Pair("hash", block.hash.GetHex()));
+    ret.push_back(Pair("height", block.height));
+    return ret;
+}
+
+UniValue waitforblock(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 1 || params.size() > 2)
+        throw std::runtime_error(
+            "waitforblock blockhash ( timeout )\n"
+            "\nWaits for a specific new block and returns useful info about it.\n"
+            "\nReturns the current block on timeout or exit.\n"
+
+            "\nArguments:\n"
+            "1. \"blockhash\" (required, string) Block hash to wait for.\n"
+            "2. timeout       (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.\n"
+
+            "\nResult:\n"
+            "{                           (json object)\n"
+            "  \"hash\" : {       (string) The blockhash\n"
+            "  \"height\" : {     (int) Block height\n"
+            "}\n"
+
+            "\nExamples:\n"
+            + HelpExampleCli("waitforblock", "\"0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862\", 1000")
+            + HelpExampleRpc("waitforblock", "\"0000000000079f8ef3d2c688c244eb7a4570b24c9ed7b4a8c619eb02596f8862\", 1000")
+        );
+    int timeout = 0;
+
+    uint256 hash = uint256S(params[0].get_str());
+
+    if (params.size() > 1)
+        timeout = params[1].get_int();
+
+    CUpdatedBlock block;
+    {
+        std::unique_lock<std::mutex> lock(cs_blockchange);
+        if(timeout)
+            cond_blockchange.wait_for(lock, std::chrono::milliseconds(timeout), [&hash]{return latestblock.hash == hash || !IsRPCRunning();});
+        else
+            cond_blockchange.wait(lock, [&hash]{return latestblock.hash == hash || !IsRPCRunning(); });
+        block = latestblock;
+    }
+
+    UniValue ret(UniValue::VOBJ);
+    ret.push_back(Pair("hash", block.hash.GetHex()));
+    ret.push_back(Pair("height", block.height));
+    return ret;
+}
+
+UniValue waitforblockheight(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 1 || params.size() > 2)
+        throw std::runtime_error(
+            "waitforblockheight height ( timeout )\n"
+            "\nWaits for (at least) block height and returns the height and hash\n"
+            "of the current tip.\n"
+            "\nReturns the current block on timeout or exit.\n"
+
+            "\nArguments:\n"
+            "1. height  (required, int) Block height to wait for (int)\n"
+            "2. timeout (int, optional, default=0) Time in milliseconds to wait for a response. 0 indicates no timeout.\n"
+
+            "\nResult:\n"
+            "{                           (json object)\n"
+            "  \"hash\" : {       (string) The blockhash\n"
+            "  \"height\" : {     (int) Block height\n"
+            "}\n"
+
+            "\nExamples:\n"
+            + HelpExampleCli("waitforblockheight", "\"100\", 1000")
+            + HelpExampleRpc("waitforblockheight", "\"100\", 1000")
+        );
+    int timeout = 0;
+
+    int height = params[0].get_int();
+
+    if (params.size() > 1)
+        timeout = params[1].get_int();
+
+    CUpdatedBlock block;
+    {
+        std::unique_lock<std::mutex> lock(cs_blockchange);
+        if(timeout)
+            cond_blockchange.wait_for(lock, std::chrono::milliseconds(timeout), [&height]{return latestblock.height >= height || !IsRPCRunning();});
+        else
+            cond_blockchange.wait(lock, [&height]{return latestblock.height >= height || !IsRPCRunning(); });
+        block = latestblock;
+    }
+    UniValue ret(UniValue::VOBJ);
+    ret.push_back(Pair("hash", block.hash.GetHex()));
+    ret.push_back(Pair("height", block.height));
+    return ret;
 }
 
 UniValue getdifficulty(const UniValue& params, bool fHelp)
@@ -317,6 +564,7 @@ UniValue getblock(const UniValue& params, bool fHelp)
             "     ,...\n"
             "  ],\n"
             "  \"time\" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)\n"
+            "  \"mediantime\" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)\n"
             "  \"nonce\" : n,           (numeric) The nonce\n"
             "  \"bits\" : \"1d00ffff\", (string) The bits\n"
             "  \"difficulty\" : x.xxx,  (numeric) The difficulty\n"
@@ -390,8 +638,9 @@ UniValue getblockheader(const UniValue& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"merkleroot\" : \"xxxx\", (string) The merkle root\n"
             "  \"time\" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)\n"
-            "  \"bits\" : \"1d00ffff\", (string) The bits\n"
+            "  \"mediantime\" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)\n"
             "  \"nonce\" : n,           (numeric) The nonce\n"
+            "  \"bits\" : \"1d00ffff\", (string) The bits\n"
             "}\n"
 
             "\nResult (for verbose=false):\n"
@@ -546,7 +795,7 @@ UniValue gettxout(const UniValue& params, bool fHelp)
 
 UniValue verifychain(const UniValue& params, bool fHelp)
 {
-    if (fHelp || params.size() > 2)
+    if (fHelp || params.size() > 1)
         throw runtime_error(
             "verifychain ( numblocks )\n"
             "\nVerifies blockchain database.\n"
@@ -565,13 +814,41 @@ UniValue verifychain(const UniValue& params, bool fHelp)
     int nCheckLevel = 4;
     int nCheckDepth = GetArg("-checkblocks", 288);
     if (params.size() > 0)
-        nCheckDepth = params[1].get_int();
+        nCheckDepth = params[0].get_int();
 
     fVerifyingBlocks = true;
     bool fVerified = CVerifyDB().VerifyDB(pcoinsTip, nCheckLevel, nCheckDepth);
     fVerifyingBlocks = false;
 
     return fVerified;
+}
+
+/** Implementation of IsSuperMajority with better feedback */
+static UniValue SoftForkMajorityDesc(int minVersion, CBlockIndex* pindex, int nRequired)
+{
+    int nFound = 0;
+    CBlockIndex* pstart = pindex;
+    for (int i = 0; i < Params().ToCheckBlockUpgradeMajority() && pstart != NULL; i++)
+    {
+        if (pstart->nVersion >= minVersion)
+            ++nFound;
+        pstart = pstart->pprev;
+    }
+    UniValue rv(UniValue::VOBJ);
+    rv.push_back(Pair("status", nFound >= nRequired));
+    rv.push_back(Pair("found", nFound));
+    rv.push_back(Pair("required", nRequired));
+    rv.push_back(Pair("window", Params().ToCheckBlockUpgradeMajority()));
+    return rv;
+}
+static UniValue SoftForkDesc(const std::string &name, int version, CBlockIndex* pindex)
+{
+    UniValue rv(UniValue::VOBJ);
+    rv.push_back(Pair("id", name));
+    rv.push_back(Pair("version", version));
+    rv.push_back(Pair("enforce", SoftForkMajorityDesc(version, pindex, Params().EnforceBlockUpgradeMajority())));
+    rv.push_back(Pair("reject", SoftForkMajorityDesc(version, pindex, Params().RejectBlockOutdatedMajority())));
+    return rv;
 }
 
 UniValue getblockchaininfo(const UniValue& params, bool fHelp)
@@ -590,6 +867,19 @@ UniValue getblockchaininfo(const UniValue& params, bool fHelp)
             "  \"difficulty\": xxxxxx,     (numeric) the current difficulty\n"
             "  \"verificationprogress\": xxxx, (numeric) estimate of verification progress [0..1]\n"
             "  \"chainwork\": \"xxxx\"     (string) total amount of work in active chain, in hexadecimal\n"
+            "  \"softforks\": [            (array) status of softforks in progress\n"
+            "     {\n"
+            "        \"id\": \"xxxx\",        (string) name of softfork\n"
+            "        \"version\": xx,         (numeric) block version\n"
+            "        \"enforce\": {           (object) progress toward enforcing the softfork rules for new-version blocks\n"
+            "           \"status\": xx,       (boolean) true if threshold reached\n"
+            "           \"found\": xx,        (numeric) number of blocks with the new version found\n"
+            "           \"required\": xx,     (numeric) number of blocks required to trigger\n"
+            "           \"window\": xx,       (numeric) maximum size of examined window of recent blocks\n"
+            "        },\n"
+            "        \"reject\": { ... }      (object) progress toward rejecting pre-softfork blocks (same fields as \"enforce\")\n"
+            "     }, ...\n"
+            "  ]\n"
             "}\n"
 
             "\nExamples:\n" +
@@ -605,6 +895,10 @@ UniValue getblockchaininfo(const UniValue& params, bool fHelp)
     obj.push_back(Pair("difficulty", (double)GetDifficulty()));
     obj.push_back(Pair("verificationprogress", Checkpoints::GuessVerificationProgress(chainActive.Tip())));
     obj.push_back(Pair("chainwork", chainActive.Tip()->nChainWork.GetHex()));
+    CBlockIndex* tip = chainActive.Tip();
+    UniValue softforks(UniValue::VARR);
+    softforks.push_back(SoftForkDesc("bip65", 5, tip));
+    obj.push_back(Pair("softforks",             softforks));
     return obj;
 }
 
@@ -965,3 +1259,223 @@ UniValue getaccumulatorvalues(const UniValue& params, bool fHelp)
 
     return ret;
 }
+
+
+UniValue getaccumulatorwitness(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() != 2)
+        throw runtime_error(
+                "getaccumulatorwitness \"commitmentCoinValue, coinDenomination\"\n"
+                "\nReturns the accumulator witness value associated with the coin\n"
+
+                "\nArguments:\n"
+                "1. coinValue             (string, required) the commitment value of the coin in HEX.\n"
+                "2. coinDenomination      (numeric, required) the coin denomination.\n"
+
+                "\nResult:\n"
+                "{\n"
+                "  \"Accumulator Value\": \"xxx\"  (string) Accumulator hex value\n"
+                "  \"Denomination\": \"d\"         (integer) Accumulator denomination\n"
+                "  \"Mints added\": \"d\"          (integer) Number of mints added to the accumulator\n"
+                "  \"Witness Value\": \"xxx\"      (string) Witness hex value\n"
+                "}\n"
+
+                "\nExamples:\n" +
+                HelpExampleCli("getaccumulatorwitness", "\"5fb87fb7bb638e83bfc14bcf33ac6f8064c9884dc72a4e652666abcf42cc47f9da0a7aca58076b0122a19b25629a6b6e7461f188baa7c00865b862cdb270d934873648aa12dd66e3242da40e4c17c78b70fded35e2d9c72933b455fadce9684586b1d48b10570d66feebe51ccebb1d98595217d06f41e66d5a0d9246d46ec3dd\" 5") + HelpExampleRpc("getaccumulatorwitness", "\"5fb87fb7bb638e83bfc14bcf33ac6f8064c9884dc72a4e652666abcf42cc47f9da0a7aca58076b0122a19b25629a6b6e7461f188baa7c00865b862cdb270d934873648aa12dd66e3242da40e4c17c78b70fded35e2d9c72933b455fadce9684586b1d48b10570d66feebe51ccebb1d98595217d06f41e66d5a0d9246d46ec3dd\", 5"));
+
+
+    CBigNum coinValue;
+    coinValue.SetHex(params[0].get_str());
+
+    int d = params[1].get_int();
+    libzerocoin::CoinDenomination denomination = libzerocoin::IntToZerocoinDenomination(d);
+    libzerocoin::ZerocoinParams* zcparams = Params().Zerocoin_Params(false);
+
+    // Public coin
+    libzerocoin::PublicCoin pubCoin(zcparams, coinValue, denomination);
+
+    //Compute Accumulator and Witness
+    libzerocoin::Accumulator accumulator(zcparams, pubCoin.getDenomination());
+    libzerocoin::AccumulatorWitness witness(zcparams, accumulator, pubCoin);
+    string strFailReason = "";
+    int nMintsAdded = 0;
+    CZerocoinSpendReceipt receipt;
+
+    if (!GenerateAccumulatorWitness(pubCoin, accumulator, witness, nMintsAdded, strFailReason)) {
+        receipt.SetStatus(_(strFailReason.c_str()), ZADE_FAILED_ACCUMULATOR_INITIALIZATION);
+        throw JSONRPCError(RPC_DATABASE_ERROR, receipt.GetStatusMessage());
+    }
+
+    UniValue obj(UniValue::VOBJ);
+    obj.push_back(Pair("Accumulator Value", accumulator.getValue().GetHex()));
+    obj.push_back(Pair("Denomination", accumulator.getDenomination()));
+    obj.push_back(Pair("Mints added",nMintsAdded));
+    obj.push_back(Pair("Witness Value", witness.getValue().GetHex()));
+
+    return obj;
+}
+
+UniValue getmintsinblocks(const UniValue& params, bool fHelp) {
+    if (fHelp || params.size() != 3)
+        throw runtime_error(
+                "getmintsinblocks \"height\" \"range\" \"coinDenomination\"\n"
+                "\nReturns the number of mints of a certain denomination"
+                "\noccurred in blocks [height, height+1, height+2, ..., height+range-1]\n"
+
+                "\nArguments:\n"
+                "1. height             (numeric, required) block height where the search starts.\n"
+                "2. range              (numeric, required) number of blocks to include.\n"
+                "2. coinDenomination   (numeric, required) coin denomination.\n"
+
+                "\nResult:\n"
+                "{\n"
+                "  \"Starting block\": \"x\"           (integer) First counted block\n"
+                "  \"Ending block\": \"x\"             (integer) Last counted block\n"
+                "  \"Number of d-denom mints\": \"x\"  (integer) number of mints of the required d denomination\n"
+                "}\n"
+
+                "\nExamples:\n" +
+                HelpExampleCli("getmintsinblocks", "1200000 1000 5") +
+                HelpExampleRpc("getmintsinblocks", "1200000, 1000, 5"));
+
+    int nBestHeight = chainActive.Height();
+
+    int heightStart = params[0].get_int();
+    if (heightStart < Params().Zerocoin_StartHeight())
+        heightStart = Params().Zerocoin_StartHeight();
+
+    int range = params[1].get_int();
+    if (range < 1)
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid block range. Must be strictly positive.");
+
+    int heightEnd = heightStart + range - 1;
+    if (heightEnd > nBestHeight)
+        heightEnd = nBestHeight;
+
+    int d = params[2].get_int();
+    libzerocoin::CoinDenomination denom = libzerocoin::IntToZerocoinDenomination(d);
+    if (denom == libzerocoin::CoinDenomination::ZQ_ERROR)
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid denomination. Must be in {1, 5, 10, 50, 100, 500, 1000, 5000}");
+
+    int num_of_mints = 0;
+    CBlockIndex* pindex = chainActive[heightStart];
+
+    while (true) {
+        num_of_mints += count(pindex->vMintDenominationsInBlock.begin(), pindex->vMintDenominationsInBlock.end(), denom);
+        if (pindex->nHeight < heightEnd)
+            pindex = chainActive.Next(pindex);
+        else
+            break;
+    }
+
+    UniValue obj(UniValue::VOBJ);
+    obj.push_back(Pair("Starting block", heightStart));
+    obj.push_back(Pair("Ending block", pindex->nHeight));
+    obj.push_back(Pair("Number of "+ std::to_string(d) +"-denom mints", num_of_mints));
+
+    return obj;
+}
+
+
+UniValue getserials(const UniValue& params, bool fHelp) {
+    if (fHelp || params.size() < 2 || params.size() > 3)
+        throw runtime_error(
+            "getserials \"hash\"\n"
+            "\nLook the inputs of any tx in a range of blocks and returns the serial numbers for any coinspend.\n"
+
+            "\nArguments:\n"
+            "1. starting_height   (numeric, required) the height of the first block to check\n"
+            "2. range             (numeric, required) the amount of blocks to check\n"
+            "3. fVerbose          (boolean, optional, default=False) return verbose output\n"
+
+            "\nExamples:\n" +
+            HelpExampleCli("getserials", "1254000 1000") +
+            HelpExampleRpc("getserials", "1254000, 1000"));
+
+    LOCK(cs_main);
+
+    int nBestHeight = chainActive.Height();
+
+    int heightStart = params[0].get_int();
+    if (heightStart < Params().Zerocoin_StartHeight())
+        heightStart = Params().Zerocoin_StartHeight();
+
+    int range = params[1].get_int();
+    if (range < 1)
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid block range. Must be strictly positive.");
+
+    int heightEnd = heightStart + range - 1;
+    if (heightEnd > nBestHeight)
+        heightEnd = nBestHeight;
+
+    bool fVerbose = false;
+    if (params.size() > 2) {
+        fVerbose = params[2].get_bool();
+    }
+
+    CBlockIndex* pblockindex = chainActive[heightStart];
+
+    UniValue serialsObj(UniValue::VOBJ);    // for fVerbose
+    UniValue serialsArr(UniValue::VARR);
+
+    while (true) {
+        CBlock block;
+        if (!ReadBlockFromDisk(block, pblockindex))
+                throw JSONRPCError(RPC_INTERNAL_ERROR, "Can't read block from disk");
+
+        // loop through each tx in the block
+        for (const CTransaction& tx : block.vtx) {
+            std::string txid = tx.GetHash().GetHex();
+            // collect the destination (first output) if fVerbose
+            std::string spentTo = "";
+            if (fVerbose) {
+                if (tx.vout[0].IsZerocoinMint()) {
+                    spentTo = "Zerocoin Mint";
+                } else if (tx.vout[0].IsEmpty()) {
+                    spentTo = "Zerocoin Stake";
+                } else {
+                    txnouttype type;
+                    vector<CTxDestination> addresses;
+                    int nRequired;
+                    if (!ExtractDestinations(tx.vout[0].scriptPubKey, type, addresses, nRequired)) {
+                        spentTo = strprintf("type: %d", GetTxnOutputType(type));
+                    } else {
+                        spentTo = CBitcoinAddress(addresses[0]).ToString();
+                    }
+                }
+            }
+            // loop through each input
+            for (const CTxIn& txin : tx.vin) {
+                if (txin.scriptSig.IsZerocoinSpend()) {
+                    libzerocoin::CoinSpend spend = TxInToZerocoinSpend(txin);
+                    std::string serial_str = spend.getCoinSerialNumber().ToString(16);
+                    if (!fVerbose) {
+                        serialsArr.push_back(serial_str);
+                    } else {
+                        int denom = libzerocoin::ZerocoinDenominationToInt(spend.getDenomination());
+                        UniValue s(UniValue::VOBJ);
+                        s.push_back(Pair("serial", serial_str));
+                        s.push_back(Pair("denom", denom));
+                        s.push_back(Pair("bitsize", (int)serial_str.size()*4));
+                        s.push_back(Pair("spentTo", spentTo));
+                        s.push_back(Pair("txid", txid));
+                        s.push_back(Pair("blocknum", pblockindex->nHeight));
+                        s.push_back(Pair("blocktime", block.GetBlockTime()));
+                        serialsArr.push_back(s);
+                    }
+
+                }
+
+            } // end for vin in tx
+        } // end for tx in block
+
+        if (pblockindex->nHeight < heightEnd) pblockindex = chainActive.Next(pblockindex);
+        else break;
+
+    } // end for blocks
+
+    return serialsArr;
+
+}
+
+

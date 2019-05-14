@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2017 The ADEX developers
 // Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -169,7 +169,6 @@ public:
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 100000000 * COIN;
-	strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
 		
         /** Height or Time Based Activations **/
         nLastPOWBlock = 345600;

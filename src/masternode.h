@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2017 The ADEX developers
 // Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -278,7 +278,6 @@ public:
         std::string strStatus = "ACTIVE";
 
         if (activeState == CMasternode::MASTERNODE_ENABLED) strStatus = "ENABLED";
-        if (activeState == CMasternode::MASTERNODE_PRE_ENABLED) strStatus = "PRE_ENABLED";
         if (activeState == CMasternode::MASTERNODE_EXPIRED) strStatus = "EXPIRED";
         if (activeState == CMasternode::MASTERNODE_VIN_SPENT) strStatus = "VIN_SPENT";
         if (activeState == CMasternode::MASTERNODE_STORADE_EXPIRED) strStatus = "STORADE_EXPIRED";

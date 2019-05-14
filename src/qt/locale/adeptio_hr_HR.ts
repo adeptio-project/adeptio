@@ -251,7 +251,7 @@
     </message>
     <message>
         <source>Address:</source>
-        <translation>Adresa:</translation>
+        <translation>Adresa: </translation>
     </message>
     <message>
         <source>Enter a ADE Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>Opcije naredbene linije</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform><numerusform>Obrađeno %n blokova povijesti transakcija.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Usklađivanje dodatnih podataka: %p%</translation>
@@ -736,10 +732,6 @@
         <source>Adeptio Core client</source>
         <translation>ADEIX Core Klijent</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n aktivne veze na ADE mrežu</numerusform><numerusform>%n aktivne veze na ADE mrežu</numerusform><numerusform>%n aktivne veze na ADE mrežu</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Sinkronizacija s mrežom...</translation>
@@ -760,25 +752,9 @@
         <source>Up to date</source>
         <translation>Ažurirano</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform><numerusform>%n sati</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform><numerusform>%n dana</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform><numerusform>%n tjedni</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 i %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform><numerusform>%n godine</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -836,7 +812,7 @@ Višestruko slanje: %1</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Aktivno</translation>
+        <translation>Aktivno </translation>
     </message>
     <message>
         <source>Not Active</source>
@@ -864,7 +840,7 @@ Višestruko slanje: %1</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Novčanik je 1. šifriran 1. i trenutno 2. zaključan 2.</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1130,8 +1106,8 @@ Višestruko slanje: %1</translation>
         <translation>Ova oznaka postaje crvena ako neki primatelj prima iznos manji od %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Može varirati +/- %1 uADE po unosu.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Može varirati +/- %1 upiv po unosu.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1224,6 +1200,17 @@ Višestruko slanje: %1</translation>
         <translation>Ovdje nije moguće stvoriti direktorij za podatke.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Obrazac</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1542,45 +1529,8 @@ MultiSend neće biti aktiviran dok ne kliknete Aktiviraj</translation>
         <translation>(bez oznake)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Unesena adresa:</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>je netočna.
-Provjerite adresu i pokušajte ponovo.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Ukupna količina vašeg MultiSend vektora iznosi preko 100% vaše nagrade uloga
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Unesite 1 - 100 za postotak.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Spremio je MultiSend u memoriju, ali nije spasio svojstva u bazi podataka.</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Uklonjeno</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Nije moguće pronaći adresu</translation>
     </message>
 </context>
 <context>
@@ -1905,7 +1855,7 @@ Budite strpljivi nakon što kliknete uvoz.</translation>
         <translation>Automatski pokrenite ADE nakon prijave u sustav.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>Pokrenite ADE na prijavi u sustav</translation>
     </message>
     <message>
@@ -2442,8 +2392,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
-        <translation>Unesite iznos ADE za pretvorbu u zADE</translation>
+        <source>Enter an amount of Piv to convert to zADE</source>
+        <translation>Unesite iznos Piv za pretvorbu u zADE</translation>
     </message>
     <message>
         <source>zADE Control</source>
@@ -2484,18 +2434,6 @@ zADE su zreli kada imaju više od 20 potvrda I više od 2 mint od iste denominac
     <message>
         <source>0 zADE</source>
         <translation>0 zADE</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Razina sigurnosti za Zerocoin transakcije. Više je bolje, ali treba više vremena i resursa.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Razina sigurnosti:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Razina sigurnosti 1 - 100 (zadano: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2773,14 +2711,6 @@ Please be patient...</source>
         <translation>Pokretanje ResetMintZerocoin: ponovno skeniranje potpunog blockchain, to će trajati i do 30 minuta, ovisno o vašem hardveru.</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Potrošnja Zerocoina.
-Zahtjevan izračun, možda će trebati nekoliko minuta ovisno o odabranoj razini sigurnosti i vašem hardveru.
-Budite strpljivi ...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) potrebno.
@@ -2926,8 +2856,8 @@ Maksimalno dopušteno:</translation>
         <translation>Nije dodijeljena adresa "Plati", stvarajući lokalnu uplatu</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
-        <translation>Nevažeća ADE Adresa</translation>
+        <source>Invalid Pivx Address</source>
+        <translation>Nevažeća Pivx Adresa</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>
@@ -2950,20 +2880,8 @@ Maksimalno dopušteno:</translation>
         <translation>na novo generiranu (neiskorištenu i stoga anonimnu) lokalnu adresu</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>s razinom sigurnosti</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Potvrdite slanje novca</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zADE zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zADE</source>
-        <translation>Neuspjelo trošenje zADE</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2981,11 +2899,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Utrošak Zerocoina nije uspjela s statusom =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of ADE to convert to zADE</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3021,13 +2934,16 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Iznos</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>Unesite ADE adresu (npr., %1)</translation>
     </message>
     <message>
@@ -3070,7 +2986,11 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>%1 ms</source>
         <translation>%1 ms</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3383,7 +3303,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>Dobrodošli na ADE RPC konzolu.</translation>
+        <translation>Dobrodošli na Adeptio RPC konzolu.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3432,10 +3352,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Potvrdite resync Blockchain</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Upotrijebite strelice gore i dolje za kretanje po povijesti, a Ctrl-L za brisanje zaslona.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3509,6 +3425,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Dodatna oznaka za povezivanje s novom adresom primatelja.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Količina:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>Dodatna poruka priložena zahtjevu za plaćanje, koji će se prikazati kada se zahtjev otvori. Napomena: poruka neće biti poslana s plaćanjem putem ADE mreže.</translation>
     </message>
@@ -3531,10 +3451,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Neobavezna količina za zahtjev. Ostavite ovo prazno ili nulu da ne zatražite određeni iznos.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>Iznos:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3579,6 +3495,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Copy amount</source>
         <translation>Kopiraj iznos</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Kopiraj adresu</translation>
     </message>
 </context>
 <context>
@@ -3650,6 +3570,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Message</source>
         <translation>Poruka</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3789,8 +3713,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>(Smart naknada još nije inicirana. To obično traje nekoliko blokova ...)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
-        <translation>HyperSend</translation>
+        <source>SwiftX</source>
+        <translation>SwiftX</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -3936,17 +3860,13 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Naknada %1 puta veća od %2 po kB smatra se nerazumljivo visokom naknadom.</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u%n blokova.</numerusform><numerusform>Procijenjeno za početak potvrde u %n blokova.</numerusform></translation>
-    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>Adresa primatelja nije važeća, ponovo provjerite.</translation>
     </message>
     <message>
-        <source>using HyperSend</source>
-        <translation>koristi HyperSend</translation>
+        <source>using SwiftX</source>
+        <translation>koristi SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -4262,10 +4182,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Otvori dok %1</translation>
@@ -4287,36 +4203,36 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>%1 potvrđeno</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
-        <translation>%1/offline (provjereno s HyperSend)</translation>
+        <source>%1/offline (verified via SwiftX)</source>
+        <translation>%1/offline (provjereno s SwiftX)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
-        <translation>%1 / potvrđeno (potvrđeno putem usluge HyperSend)</translation>
+        <source>%1/confirmed (verified via SwiftX)</source>
+        <translation>%1 / potvrđeno (potvrđeno putem usluge SwiftX)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
-        <translation>Potvrde %1 (potvrđene putem HyperSend-a)</translation>
+        <source>%1 confirmations (verified via SwiftX)</source>
+        <translation>Potvrde %1 (potvrđene putem SwiftX-a)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 / offline (HyperSend potvrda u tijeku - %2 od %3 potpisa)</translation>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>%1 / offline (SwiftX potvrda u tijeku - %2 od %3 potpisa)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
-        <translation>%1 / potvrđeno (provjera HyperSend u tijeku -%2 od %3 potpisa)</translation>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
+        <translation>%1 / potvrđeno (provjera SwiftX u tijeku -%2 od %3 potpisa)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
-        <translation>Potvrde %1 (provjera HyperSend u tijeku -%2 od %3 potpisa)</translation>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
+        <translation>Potvrde %1 (provjera SwiftX u tijeku -%2 od %3 potpisa)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
-        <translation>%1 / offline (HyperSend verifikacija nije uspjela)</translation>
+        <source>%1/offline (SwiftX verification failed)</source>
+        <translation>%1 / offline (SwiftX verifikacija nije uspjela)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
-        <translation>%1 / potvrđeno (nije uspjela HyperSend provjera)</translation>
+        <source>%1/confirmed (SwiftX verification failed)</source>
+        <translation>%1 / potvrđeno (nije uspjela SwiftX provjera)</translation>
     </message>
     <message>
         <source>Status</source>
@@ -4325,10 +4241,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, još nije uspješno emitiran</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform><numerusform>, emitiraju se preko %n čvorova</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4369,10 +4281,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Credit</source>
         <translation>Kredit</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform><numerusform>sazrijeva se u %n više blokova</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4472,10 +4380,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Address</source>
         <translation>Adresa</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform><numerusform>Otvori se za %n više blokova</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4826,8 +4730,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Salji novac</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
-        <translation>HyperSend ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 ADE.</translation>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <translation>SwiftX ne podržava slanje visokih vrijednosti. Transakcije su trenutačno ograničene na %1 ADE.</translation>
     </message>
 </context>
 <context>
@@ -4858,7 +4762,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Select zADE to Spend</source>
         <translation>Odabrani zADE za utrošiti</translation>
@@ -4879,11 +4783,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <source>Select/Deselect All</source>
         <translation>Odaberite/poništi odabir za Sve</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>Je moguće utrošiti</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -5267,8 +5167,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Autorska prava (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Autorska prava (C) 2015-%i The Adeptio Core Developers</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Autorska prava (C) 2017-%i The Adeptio Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5316,12 +5216,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Omogući automatsko Zerocoin stvaranje (0-1, zadano: %u)</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Omogući objavu hash transakcije (zaključano putem usluge HyperSend) u </translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Omogući objavu hash transakcije (zaključano putem usluge SwiftX) u </translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Omogući objavljivanje neobrađene transakcije (zaključano putem usluge HyperSend) u</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Omogući objavljivanje neobrađene transakcije (zaključano putem usluge SwiftX) u</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5370,6 +5270,10 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Error recovering public key.</source>
         <translation>Pogreška prilikom vraćanja javnog ključa.</translation>
+    </message>
+    <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Greška u zapisivanju zerocoinDB na disk</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5560,8 +5464,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Odabrana vrijednost novčića je manja od količine za plačanje</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>HyperSend opcije:</translation>
+        <source>SwiftX options:</source>
+        <translation>SwiftX opcije:</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
@@ -5583,12 +5487,12 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>uklonjene nepotvrđene transakcije</translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>Onemogući sve specifične funkcije ADE (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, zadano: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Onemogući sve specifične funkcije ADE (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, zadano: %u)</translation>
     </message>
     <message>
-        <source>Enable HyperSend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>Omogućite HyperSend, prikažite potvrde za zaključane transakcije (bool, zadano: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Omogućite SwiftX, prikažite potvrde za zaključane transakcije (bool, zadano: %s)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -5627,8 +5531,8 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Navedite put prilagođenog sigurnosnog kopiranja da biste dodali kopiju sigurnosne kopije lisnice. Ako je postavljeno kao dir, svaka sigurnosna kopija generira vremensku datoteku. Ako je postavljen kao datoteka, prepisat će na tu datoteku svaku kopiju.</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend zahtijeva ulaze s najmanje 6 potvrda, možda ćete morati pričekati nekoliko minuta i pokušati ponovo.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftX zahtijeva ulaze s najmanje 6 potvrda, možda ćete morati pričekati nekoliko minuta i pokušati ponovo.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5681,10 +5585,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Failed to create mint</source>
         <translation>Nije uspjelo kovanje</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Deserializiranje nije uspjelo</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6127,14 +6027,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Korištena je potrošnja novčića</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Nova transakcija potrošnje novca nije potvrđena</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Odabrano je kovanje novčića za nevažeći novčić</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Transakcija nije potvrđena</translation>
     </message>
@@ -6281,10 +6173,6 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     <message>
         <source>Verifying wallet...</source>
         <translation>Provjera novčanika...</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Verzija 1 zADE zahtjeva sigurnosnu razinu 100 da se uspješno utroši.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>

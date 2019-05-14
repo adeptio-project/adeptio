@@ -608,10 +608,6 @@
         <source>&amp;Command-line options</source>
         <translation>&amp;Kommandozeilenoptionen</translation>
     </message>
-    <message numerus="yes">
-        <source>Processed %n blocks of transaction history.</source>
-        <translation><numerusform>%n Blöcke der Transaktionshistorie bearbeitet.</numerusform><numerusform>%n Blöcke des Transaktionsverlaufs verarbeitet.</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing additional data: %p%</source>
         <translation>Synchronisiere zusätzliche Daten:  %p%</translation>
@@ -732,10 +728,6 @@
         <source>Adeptio Core client</source>
         <translation>Adeptio Core Client</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to ADE network</source>
-        <translation><numerusform>%n aktive Verbindung(en) zum ADE Netzwerk</numerusform><numerusform>%n aktive Verbindung(en) zum ADE Netzwerk</numerusform></translation>
-    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Synchronisiere mit Netzwerk...</translation>
@@ -756,25 +748,9 @@
         <source>Up to date</source>
         <translation>Auf aktuellem Stand</translation>
     </message>
-    <message numerus="yes">
-        <source>%n hour(s)</source>
-        <translation><numerusform>%n Stunden</numerusform><numerusform>%n Stunden</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n day(s)</source>
-        <translation><numerusform>%n Tage</numerusform><numerusform>%n Tage</numerusform></translation>
-    </message>
-    <message numerus="yes">
-        <source>%n week(s)</source>
-        <translation><numerusform>%n Wochen</numerusform><numerusform>%n Wochen</numerusform></translation>
-    </message>
     <message>
         <source>%1 and %2</source>
         <translation>%1 und %2</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n year(s)</source>
-        <translation><numerusform>%n Jahre</numerusform><numerusform>%n Jahre</numerusform></translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -859,7 +835,7 @@ Adresse: %4</translation>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet ist &lt;b&gt;verschlüsselt&lt;/b&gt; und aktuell &lt;b&gt;gesperrt&lt;/b&gt;</translation>
     </message>
-</context>
+    </context>
 <context>
     <name>BlockExplorer</name>
     <message>
@@ -1125,8 +1101,8 @@ Adresse: %4</translation>
         <translation>Diese Bezeichnung wird rot, wenn ein Empfänger einen Betrag erhält, der kleiner ist als %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 uADE per input.</source>
-        <translation>Kann um +/- %1 uADE pro Eingang variieren.</translation>
+        <source>Can vary +/- %1 upiv per input.</source>
+        <translation>Kann um +/- %1 upiv pro Eingang variieren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1219,6 +1195,17 @@ Adresse: %4</translation>
         <translation>Datenverzeichnis kann hier nicht angelegt werden.</translation>
     </message>
 </context>
+<context>
+    <name>GovernancePage</name>
+    <message>
+        <source>Form</source>
+        <translation>Formular</translation>
+    </message>
+    <message>
+        <source>0</source>
+        <translation>0</translation>
+    </message>
+    </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
@@ -1533,48 +1520,8 @@ MultiSend wird nicht aktiviert bis Sie auf Aktivieren geklickt haben.</translati
         <translation>(keine Bezeichnung)</translation>
     </message>
     <message>
-        <source>The entered address:
-</source>
-        <translation>Die eingegebene Adresse:
-</translation>
-    </message>
-    <message>
-        <source> is invalid.
-Please check the address and try again.</source>
-        <translation>ist ungültig.
-Bitte Adresse überprüfen und nochmals versuchen.</translation>
-    </message>
-    <message>
-        <source>The total amount of your MultiSend vector is over 100% of your stake reward
-</source>
-        <translation>Die Gesamtzahl des MultiSend Vektors ist über 100% des Stake Rewards
-</translation>
-    </message>
-    <message>
         <source>Please Enter 1 - 100 for percent.</source>
         <translation>Bitte eine Zahl zwischen 1-100 in Prozent eingeben.</translation>
-    </message>
-    <message>
-        <source>Saved the MultiSend to memory, but failed saving properties to the database.
-</source>
-        <translation>Gespeichert den MultiSend im Speicher, aber Fehler beim Speichern von Eigenschaften in der Datenbank
-</translation>
-    </message>
-    <message>
-        <source>MultiSend Vector
-</source>
-        <translation>MultiSend Vektor
-</translation>
-    </message>
-    <message>
-        <source>Removed </source>
-        <translation>Gelöscht</translation>
-    </message>
-    <message>
-        <source>Could not locate address
-</source>
-        <translation>Konnte Adresse nicht ermitteln
-</translation>
     </message>
 </context>
 <context>
@@ -1897,7 +1844,7 @@ Bitte haben Sie etwas Geduld, nachdem Sie auf Importieren geklickt haben.</trans
         <translation>ADE automatisch nach dem Login starten.</translation>
     </message>
     <message>
-        <source>&amp;Start Adeptio on system login</source>
+        <source>&amp;Start ADE on system login</source>
         <translation>ADE automatisch beim System Login &amp;starten.</translation>
     </message>
     <message>
@@ -2243,7 +2190,7 @@ Falls das automatische Prägen aktiviert ist, wird sich dieser Prozentsatz um de
     </message>
     <message>
         <source>AutoMint is currently enabled and set to </source>
-        <translation>Automatisches Prägen ist aktiv und eingestellt auf</translation>
+        <translation>Automatisches Prägen ist aktiv und eingestellt auf </translation>
     </message>
     <message>
         <source>To disable AutoMint add 'enablezeromint=0' in adeptio.conf.</source>
@@ -2433,7 +2380,7 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
         <translation>PRIVATSPHÄRE</translation>
     </message>
     <message>
-        <source>Enter an amount of ADE to convert to zADE</source>
+        <source>Enter an amount of Piv to convert to zADE</source>
         <translation>Geben Sie den Betrag ein, den sie von ADE in zADE umwandeln möchten</translation>
     </message>
     <message>
@@ -2475,18 +2422,6 @@ zADE sind ausgereift wenn sie mehr als 20 Bestätigungen und mehr als 2 Prägung
     <message>
         <source>0 zADE</source>
         <translation>0 zADE</translation>
-    </message>
-    <message>
-        <source>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</source>
-        <translation>Sicherheitsstufe für Zerocoin-Transaktionen. Höher ist besser, benötigt jedoch mehr Zeit und Ressourcen.</translation>
-    </message>
-    <message>
-        <source>Security Level:</source>
-        <translation>Sicherheitsstufe:</translation>
-    </message>
-    <message>
-        <source>Security Level 1 - 100 (default: 42)</source>
-        <translation>Sicherheitsstufe 1 - 100 (Voreinstellung: 42)</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
@@ -2766,14 +2701,6 @@ Please be patient...</source>
 Bitte haben Sie etwas Geduld...</translation>
     </message>
     <message>
-        <source>Spending Zerocoin.
-Computationally expensive, might need several minutes depending on the selected Security Level and your hardware.
-Please be patient...</source>
-        <translation>Zerocoin ausgeben.
-Rechnerisch aufwändig. Kann je nach ausgewähltem Sicherheitsstufe und Ihrer Hardware mehrere Minuten benötigen.
-Bitte haben Sie Geduld...</translation>
-    </message>
-    <message>
         <source>) needed.
 Maximum allowed: </source>
         <translation>) benötigt.
@@ -2920,7 +2847,7 @@ Maximal erlaubt:</translation>
         <translation>Keine "Pay To"-Adresse zur Verfügung. Erstelle lokale Zahlung</translation>
     </message>
     <message>
-        <source>Invalid ADE Address</source>
+        <source>Invalid Pivx Address</source>
         <translation>Ungültige ADE-Adresse </translation>
     </message>
     <message>
@@ -2944,20 +2871,8 @@ Maximal erlaubt:</translation>
         <translation>an eine neu generierte (unbenutzte und daher anonyme) lokale Adresse&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>with Security Level </source>
-        <translation>mit Sicherheitsstufe</translation>
-    </message>
-    <message>
         <source>Confirm send coins</source>
         <translation>Sende Coins bestätigen</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zADE benötigen eine Sicherheitsstufe von 100 um erfolgreich ausgegeben werden zu können.</translation>
-    </message>
-    <message>
-        <source>Failed to spend zADE</source>
-        <translation>zADE Überweisung fehlgeschlagen</translation>
     </message>
     <message>
         <source>Failed to fetch mint associated with serial hash</source>
@@ -2976,11 +2891,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Spend Zerocoin failed with status = </source>
         <translation>Ausgeben Zerocoin fehlgeschlagen mit Status =</translation>
-    </message>
-    <message numerus="yes">
-        <source>PrivacyDialog</source>
-        <comment>Enter an amount of ADE to convert to zADE</comment>
-        <translation><numerusform>PrivacyDialog</numerusform><numerusform>PrivacyDialog</numerusform></translation>
     </message>
     <message>
         <source>denomination: </source>
@@ -3016,13 +2926,16 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
+    <name>ProposalFrame</name>
+    </context>
+<context>
     <name>QObject</name>
     <message>
         <source>Amount</source>
         <translation>Betrag</translation>
     </message>
     <message>
-        <source>Enter a Adeptio (ADE) address (e.g. %1)</source>
+        <source>Enter a ADE address (e.g. %1)</source>
         <translation>ADE-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>
@@ -3065,7 +2978,11 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>%1 ms</source>
         <translation>%1 Ms</translation>
     </message>
-</context>
+    <message>
+        <source>Adeptio Core</source>
+        <translation>Adeptio Core</translation>
+    </message>
+    </context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -3377,7 +3294,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>Welcome to the Adeptio RPC console.</source>
-        <translation>Willkommen in der ADE RPC-Konsole.</translation>
+        <translation>Willkommen in der Adeptio RPC-Konsole.</translation>
     </message>
     <message>
         <source>&amp;Disconnect Node</source>
@@ -3426,10 +3343,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Confirm resync Blockchain</source>
         <translation>Synchronisation der Blockchain bestätigen</translation>
-    </message>
-    <message>
-        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
-        <translation>Nutze die Pfeiltasten um durch ehemals genutze Konsolenbefehle zu scrollen und &lt;b&gt;Ctrl-L&lt;/b&gt; um das Konsolenfenster zu leeren.</translation>
     </message>
     <message>
         <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
@@ -3503,6 +3416,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Ein optionales Etikett, das mit der neuen Empfangsadresse verknüpft werden soll.</translation>
     </message>
     <message>
+        <source>A&amp;mount:</source>
+        <translation>Betra&amp;g:</translation>
+    </message>
+    <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the ADE network.</source>
         <translation>Eine optionale Nachricht an die Zahlungsaufforderung anhängen, die bei der Eröffnung der Anforderung angezeigt wird. Hinweis: Die Nachricht wird nicht mit der Zahlung über das ADE-Netzwerk gesendet.</translation>
     </message>
@@ -3525,10 +3442,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
         <translation>Einen optionalen Betrag anfordern. Lassen Sie diesen leer oder Null, um einen unbestimmten Betrag anzufordern.</translation>
-    </message>
-    <message>
-        <source>&amp;Amount:</source>
-        <translation>&amp;Betrag:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -3573,6 +3486,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Copy amount</source>
         <translation>Betrag kopieren</translation>
+    </message>
+    <message>
+        <source>Copy address</source>
+        <translation>Adresse kopieren</translation>
     </message>
 </context>
 <context>
@@ -3643,6 +3560,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Message</source>
         <translation>Nachricht</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
     </message>
     <message>
         <source>Amount</source>
@@ -3780,7 +3701,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>("Intelligente" Gebühren sind noch nicht berechnet. Dies dauert normalerweise ein paar Blöcke...)</translation>
     </message>
     <message>
-        <source>HyperSend</source>
+        <source>SwiftX</source>
         <translation>Swift Transaktion</translation>
     </message>
     <message>
@@ -3927,17 +3848,13 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>A fee %1 times higher than %2 per kB is considered an insanely high fee.</source>
         <translation>Eine Gebühr %1 mal höher als %2 pro kB gilt als wahnsinnig hohe Gebühr.</translation>
     </message>
-    <message numerus="yes">
-        <source>Estimated to begin confirmation within %n block(s).</source>
-        <translation><numerusform>Voraussichtlich beginnt die Betätigung in %n Blöcken.</numerusform><numerusform>Voraussichtlich beginnt die Betätigung in %n Blöcken.</numerusform></translation>
-    </message>
     <message>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>Die Adresse des Empfängers ist nicht gültig, bitte erneut prüfen.</translation>
     </message>
     <message>
-        <source>using HyperSend</source>
-        <translation>mit HyperSend</translation>
+        <source>using SwiftX</source>
+        <translation>mit SwiftX</translation>
     </message>
     <message>
         <source> split into %1 outputs using the UTXO splitter.</source>
@@ -4178,11 +4095,11 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
-        <translation>Die eingegebene Adresse passt nicht zu einem Schlüssel</translation>
+        <translation>Die eingegebene Adresse passt zu keinem Schlüssel</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
-        <translation>Wallet-Entsperrung wurde abgebrochen.</translation>
+        <translation>Entsperrung der Wallet wurde abgebrochen.</translation>
     </message>
     <message>
         <source>Private key for the entered address is not available.</source>
@@ -4253,10 +4170,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
 </context>
 <context>
     <name>TransactionDesc</name>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Geöffnet für %n weitere Blöcke</numerusform><numerusform>Geöffnet für %n weitere Blöcke</numerusform></translation>
-    </message>
     <message>
         <source>Open until %1</source>
         <translation>Offen bis %1</translation>
@@ -4278,35 +4191,35 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>%1 Bestätigungen</translation>
     </message>
     <message>
-        <source>%1/offline (verified via HyperSend)</source>
+        <source>%1/offline (verified via SwiftX)</source>
         <translation>%1/offline (verifiziert via Swift Transaktion)</translation>
     </message>
     <message>
-        <source>%1/confirmed (verified via HyperSend)</source>
+        <source>%1/confirmed (verified via SwiftX)</source>
         <translation>%1/bestätigt (verifiziert via Swift Transaktion)</translation>
     </message>
     <message>
-        <source>%1 confirmations (verified via HyperSend)</source>
+        <source>%1 confirmations (verified via SwiftX)</source>
         <translation>%1 Bestätigungen (verifiziert via Swift Transaktion)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification in progress - %2 of %3 signatures)</source>
+        <source>%1/offline (SwiftX verification in progress - %2 of %3 signatures)</source>
         <translation>%1/offline (Swift Transaktion wird verifiziert - %2 aus %3 Signaturen)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification in progress - %2 of %3 signatures )</source>
+        <source>%1/confirmed (SwiftX verification in progress - %2 of %3 signatures )</source>
         <translation>%1/bestätigt (Swift Transaktion wird verifiziert - %2 von %3 Signaturen)</translation>
     </message>
     <message>
-        <source>%1 confirmations (HyperSend verification in progress - %2 of %3 signatures)</source>
+        <source>%1 confirmations (SwiftX verification in progress - %2 of %3 signatures)</source>
         <translation>%1 Bestätigungen (Swift Transaktion wird verifiziert - %2 von %3 Signaturen)</translation>
     </message>
     <message>
-        <source>%1/offline (HyperSend verification failed)</source>
+        <source>%1/offline (SwiftX verification failed)</source>
         <translation>%1/offline (Swift Transaktion konnte nicht verifiziert werden)</translation>
     </message>
     <message>
-        <source>%1/confirmed (HyperSend verification failed)</source>
+        <source>%1/confirmed (SwiftX verification failed)</source>
         <translation>%1/bestätigt (Swift Transaktion konnte nicht verifiziert werden)</translation>
     </message>
     <message>
@@ -4316,10 +4229,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>, has not been successfully broadcast yet</source>
         <translation>, wurde noch nicht erfolgreich übertragen</translation>
-    </message>
-    <message numerus="yes">
-        <source>, broadcast through %n node(s)</source>
-        <translation><numerusform>, über %n Knoten übertragen</numerusform><numerusform>, über %n Knoten übertragen</numerusform></translation>
     </message>
     <message>
         <source>Date</source>
@@ -4360,10 +4269,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Credit</source>
         <translation>Gutschrift</translation>
-    </message>
-    <message numerus="yes">
-        <source>matures in %n more block(s)</source>
-        <translation><numerusform>reift noch %n weitere Blöcke</numerusform><numerusform>reift noch %n weitere Blöcke</numerusform></translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -4462,10 +4367,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Address</source>
         <translation>Adresse</translation>
-    </message>
-    <message numerus="yes">
-        <source>Open for %n more block(s)</source>
-        <translation><numerusform>Geöffnet für %n weitere Blöcke</numerusform><numerusform>Geöffnet für %n weitere Blöcke</numerusform></translation>
     </message>
     <message>
         <source>Open until %1</source>
@@ -4732,7 +4633,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
-        <translation>Kommagetrennte-Datei (*.csv)</translation>
+        <translation>Kommagetrennte Datei (*.csv)</translation>
     </message>
     <message>
         <source>Confirmed</source>
@@ -4816,7 +4717,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>ADEs überweisen</translation>
     </message>
     <message>
-        <source>HyperSend doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
+        <source>SwiftX doesn't support sending values that high yet. Transactions are currently limited to %1 ADE.</source>
         <translation>Swift Transaktionen unterstützen das senden solch hoher Beträge noch nicht. Transaktionen sind momentan auf %1 ADE begrenzt.</translation>
     </message>
 </context>
@@ -4832,7 +4733,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Daten der aktuellen Ansicht in eine Datei exportieren</translation>
+        <translation>Daten aus der aktuellen Ansicht in eine Datei exportieren</translation>
     </message>
     <message>
         <source>Selected amount:</source>
@@ -4848,7 +4749,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>ZXlqControlDialog</name>
+    <name>ZPivControlDialog</name>
     <message>
         <source>Select zADE to Spend</source>
         <translation>Wählen Sie die zADE aus, die Sie ausgeben möchten</translation>
@@ -4869,11 +4770,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <source>Select/Deselect All</source>
         <translation>Alle Aus-/Abwählen</translation>
     </message>
-    <message>
-        <source>Is Spendable</source>
-        <translation>ist aufwendbar</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>adeptio-core</name>
     <message>
@@ -5257,8 +5154,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2018-%i The Adeptio Core Developers</source>
-        <translation>Copyright (C) 2018-%i The Adeptio Core Developers</translation>
+        <source>Copyright (C) 2017-%i The Adeptio Core Developers</source>
+        <translation>Copyright (C) 2017-%i The Adeptio Core Developers</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -5305,12 +5202,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Automatische Zerocoin-Prägung ermöglichen (0-1, Standard: %u)</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Aktivieren Sie die Veröffentlichung der Hash-Transaktion (gesperrt über HyperSend) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Aktivieren Sie die Veröffentlichung der Hash-Transaktion (gesperrt über SwiftX) in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via HyperSend) in &lt;address&gt;</source>
-        <translation>Aktivieren Sie die Publish-Raw-Transaktion (gesperrt über HyperSend) in&lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via SwiftX) in &lt;address&gt;</source>
+        <translation>Aktivieren Sie die Publish-Raw-Transaktion (gesperrt über SwiftX) in&lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable the client to act as a masternode (0-1, default: %u)</source>
@@ -5361,6 +5258,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Fehler bei der Wiederherstellung des öffentlichen Schlüssels.</translation>
     </message>
     <message>
+        <source>Error writing zerocoinDB to disk</source>
+        <translation>Fehler beim Schreiben von zerocoinDB auf die Festplatte</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
@@ -5395,6 +5296,10 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation>Abhören jeglicher Ports fehlgeschlagen. Nutzen Sie -listen=0 falls dies erwünscht ist.</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Fehler beim Analysieren von host: port string</translation>
     </message>
     <message>
         <source>Failed to read block</source>
@@ -5549,8 +5454,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Ausgewählter Coinwert ist geringer als der Zielbetrag</translation>
     </message>
     <message>
-        <source>HyperSend options:</source>
-        <translation>HyperSend Optionen:</translation>
+        <source>SwiftX options:</source>
+        <translation>SwiftX Optionen:</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
@@ -5573,12 +5478,12 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
 </translation>
     </message>
     <message>
-        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, HyperSend, Budgeting) (0-1, default: %u)</source>
-        <translation>Deaktivieren Sie alle ADE-spezifischen Funktionen (Masternodes, Zerocoin, HyperSend, Budgetierung) (0-1, Standard: %u)</translation>
+        <source>Disable all ADE specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)</source>
+        <translation>Deaktivieren Sie alle ADE-spezifischen Funktionen (Masternodes, Zerocoin, SwiftX, Budgetierung) (0-1, Standard: %u)</translation>
     </message>
     <message>
-        <source>Enable HyperSend, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation>hypersend aktivieren, Bestätigungen für gesperrte Transaktionen anzeigen (bool, default: %s)</translation>
+        <source>Enable SwiftX, show confirmations for locked transactions (bool, default: %s)</source>
+        <translation>Swifttx aktivieren, Bestätigungen für gesperrte Transaktionen anzeigen (bool, default: %s)</translation>
     </message>
     <message>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
@@ -5617,8 +5522,8 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Benutzerdefinierten Sicherungspfad festlegen, in den Kopien von allen Wallet-Sicherungen abgelegt werden. Wenn ein Verzeichnis ausgewählt ist, wird jede Sicherung als Datei mit Zeitstempel erstellt. Wenn eine Datei ausgewählt ist, wird diese Datei bei jeder Sicherung überschrieben.</translation>
     </message>
     <message>
-        <source>HyperSend requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>HyperSend benötigt mindestens 6 confirmations, Sie sollten ggf. einige Minuten abwarten und dann erneut probieren.</translation>
+        <source>SwiftX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>SwiftTX benötigt mindestens 6 confirmations, Sie sollten ggf. einige Minuten abwarten und dann erneut probieren.</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>
@@ -5671,10 +5576,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Failed to create mint</source>
         <translation>Fehler beim Erstellen von Minze</translation>
-    </message>
-    <message>
-        <source>Failed to deserialize</source>
-        <translation>Fehler beim Deserialisieren</translation>
     </message>
     <message>
         <source>Failed to find Zerocoins in wallet.dat</source>
@@ -6117,14 +6018,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
         <translation>Die Münzausgabe wurde verwendet</translation>
     </message>
     <message>
-        <source>The new spend coin transaction did not verify</source>
-        <translation>Die neue Münzausgabe wurde nicht überprüft</translation>
-    </message>
-    <message>
-        <source>The selected mint coin is an invalid coin</source>
-        <translation>Die ausgewählte Münze ist eine ungültige Münze</translation>
-    </message>
-    <message>
         <source>The transaction did not verify</source>
         <translation>Die Transaktion wurde nicht verifiziert</translation>
     </message>
@@ -6271,10 +6164,6 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     <message>
         <source>Verifying wallet...</source>
         <translation>Verifiziere Wallet...</translation>
-    </message>
-    <message>
-        <source>Version 1 zADE require a security level of 100 to successfully spend.</source>
-        <translation>Version 1 zADE benötigen eine Sicherheitsstufe von 100 um erfolgreich ausgegeben werden zu können.</translation>
     </message>
     <message>
         <source>Wallet %s resides outside data directory %s</source>
