@@ -1,8 +1,0 @@
-/usr/bin/adeptio-cli		--	gen_context(system_u:object_r:adeptio_exec_t,s0)
-/usr/sbin/adeptiod		--	gen_context(system_u:object_r:adeptio_exec_t,s0)
-/usr/lib(64)?/adeptio/adeptiod		--	gen_context(system_u:object_r:adeptio_exec_t,s0)
-
-/etc/adeptio(/.*)?		gen_context(system_u:object_r:adeptio_conf_t,s0)
-/var/lib/adeptio(/.*)?		gen_context(system_u:object_r:adeptio_var_lib_t,s0)
-
-(/var)?/run/adeptiod(/.*)?   gen_context(system_u:object_r:adeptio_var_run_t,s0)

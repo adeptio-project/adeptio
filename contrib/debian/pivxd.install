@@ -1,3 +1,0 @@
-usr/local/bin/adeptiod usr/bin
-usr/local/bin/adeptio-cli usr/bin
-debian/examples/adeptio.conf etc/adeptio
