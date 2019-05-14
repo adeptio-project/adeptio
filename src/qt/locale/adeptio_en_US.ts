@@ -4530,8 +4530,8 @@ for example: alertnotify=echo %%s | mail -s "ADE Alert" admin@foo.com
         <translation>Invalid script detected.</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
-        <translation>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</translation>
+        <source>This software is not marked as stable - use at your own risk!</source>
+        <translation>This software is not marked as stable - use at your own risk!</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

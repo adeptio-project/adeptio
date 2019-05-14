@@ -5466,7 +5466,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>Параметры SwiftX:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>Это предварительная версия сборки - используйте на свой страх и риск - не используйте для ставок или коммерческих приложений!</translation>
     </message>
     <message>

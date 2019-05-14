@@ -5622,7 +5622,7 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>SwiftTX opties:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>Dit is een pre-release test build - gebruik op eigen risico - niet gebruiken voor staking of handel applicaties!</translation>
     </message>
     <message>

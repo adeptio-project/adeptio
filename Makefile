@@ -240,8 +240,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/bitcoin-util-test.py \
 	$(top_srcdir)/test/util/rpcauth-test.py COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -284,14 +283,14 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /opt/adeptio/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/adeptio/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /opt/adeptio/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /opt/adeptio/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /opt/adeptio/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /root/adeptio/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/adeptio/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/adeptio/build-aux/missing automake-1.15
 AVX2_CXXFLAGS = -mavx -mavx2
 AWK = mawk
 BDB_CFLAGS = 
@@ -390,7 +389,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /opt/adeptio/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /root/adeptio/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -503,10 +502,10 @@ X11XCB_LIBS =
 XGETTEXT = /usr/bin/xgettext
 ZMQ_CFLAGS = 
 ZMQ_LIBS = -lzmq
-abs_builddir = /opt/adeptio
-abs_srcdir = /opt/adeptio
-abs_top_builddir = /opt/adeptio
-abs_top_srcdir = /opt/adeptio
+abs_builddir = /root/adeptio
+abs_srcdir = /root/adeptio
+abs_top_builddir = /root/adeptio
+abs_top_srcdir = /root/adeptio
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -538,7 +537,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /opt/adeptio/build-aux/install-sh
+install_sh = ${SHELL} /root/adeptio/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale

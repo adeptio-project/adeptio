@@ -5538,7 +5538,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
         <translation>SwiftTX optioner:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>Denne release er en testrelease. Anvendelse på eget ansvar - bør ikke anvendes til staking eller handelsapplikationer!</translation>
     </message>
     <message>

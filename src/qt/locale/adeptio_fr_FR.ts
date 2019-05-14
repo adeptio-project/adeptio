@@ -5732,7 +5732,7 @@ S'il vous plaît soyez patient ...</translation>
         <translation>Options SwiftX:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>Il s'agit d'une pré-version de test - à utiliser à vos risques et périls - ne pas utiliser pour le staking ni pour les applications marchandes!</translation>
     </message>
     <message>

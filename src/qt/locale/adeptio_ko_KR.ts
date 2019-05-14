@@ -5468,7 +5468,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
         <translation>SwiftX 옵션:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>이것은 사전 릴리스 테스트 빌드입니다 - 사용상 책임은 귀하에게 있습니다. - staking이나 상업적인 용도로는 절대 사용하지 마십시오!</translation>
     </message>
     <message>

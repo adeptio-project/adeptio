@@ -5647,7 +5647,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
         <translation>SwiftX alternativ:</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>Det här är en för-släppt test byggnad - använd på din egna risk - använd inte för staking eller handel applikationer!</translation>
     </message>
     <message>

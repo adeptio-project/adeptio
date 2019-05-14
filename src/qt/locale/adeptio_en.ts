@@ -7483,7 +7483,7 @@ Please be patient...</source>
     </message>
     <message>
         <location line="-281"/>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

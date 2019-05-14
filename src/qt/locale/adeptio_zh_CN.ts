@@ -1580,7 +1580,7 @@ Address: %4
         <translation>信息</translation>
     </message>
     <message>
-        <source>This is a pre-release test build - use at your own risk - do not use for staking or merchant applications!</source>
+        <source>This software is not marked as stable - use at your own risk!</source>
         <translation>这是一个预发行测试版本 - 您自己承担风险 - 不要用于商业应用！</translation>
     </message>
     <message>
