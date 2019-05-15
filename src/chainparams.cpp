@@ -117,7 +117,7 @@ public:
         pchMessageStart[0] = 0x44;
         pchMessageStart[1] = 0x24;
         pchMessageStart[2] = 0x25;
-        pchMessageStart[3] = 0x15;
+        pchMessageStart[3] = 0x14;
         vAlertPubKey = ParseHex("0440c946f36751aa0229d5e7f04c3032392e41c794db4b7eb76e0ee132f2b88d872bc9aa142db38fdee812cda69e282d3c537e5a19fcb5f6c6a7fc2192b88ca137");
         nDefaultPort = 9077;
         storADEport = 9079;
@@ -130,15 +130,15 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Adeptio: 1 day
         nTargetSpacing = 1 * 60;  // Adeptio: 1 minute
-        nMaturity = 100;
+        nMaturity = 15;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 21000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100;
+        nLastPOWBlock = 250;
         nModifierUpdateBlock = 615800;
         nZerocoinStartHeight = 863787;
-        nZerocoinStartTime = 1508214600; // 2099y (Disabled)
+        nZerocoinStartTime = 1508214600;
         nBlockEnforceSerialRange = 895400; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 891737; //First block that bad serials emerged
@@ -208,9 +208,9 @@ public:
         vSeeds.push_back(CDNSSeedData("seed32.adeptio.cc", "seed32.adeptio.cc"));
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 24);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 16);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 194);
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
         // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md 109 	0x8000006d
