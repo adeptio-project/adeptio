@@ -382,7 +382,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // Adeptio: 1 day
         nTargetSpacing = 1 * 60;        // Adeptio: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        nLastPOWBlock = 250;
+        nLastPOWBlock = 1400;
         nMaturity = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
