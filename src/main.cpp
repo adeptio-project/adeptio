@@ -1906,11 +1906,9 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
-    } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 45) {
-        nSubsidy = 2 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 300) {
+    } else if (nHeight <= 45 && nHeight >= 300) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight <= 400 && nHeight > Params().LAST_POW_BLOCK()) {
+    } else if (nHeight <= 300 && nHeight > 400) {
         nSubsidy = 4 * COIN;
     } else if (nHeight <= 400 && nHeight >= 500) {
         nSubsidy = 5 * COIN;
@@ -1927,8 +1925,6 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= 1000 && nHeight >= 1100) {
         nSubsidy = 12 * COIN;
     } else if (nHeight <= 1100 && nHeight >= 1200) {
-        nSubsidy = 13 * COIN;
-    } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         nSubsidy = 14 * COIN;
     } else {
         nSubsidy = 15 * COIN;
@@ -1976,7 +1972,7 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
             ret = blockValue * .55;
         } else if (mNodeCoins <= (nMoneySupply * .4) && mNodeCoins > (nMoneySupply * .35)) {
             ret = blockValue * .5;
-        } else if (mNodeCoins <= (nMoneySupply * .45) && mNodeCoins > (nMoneySupply * .4)) {
+        } else if (mNodeCoins <= (nMoneySupply * .45) && mNodeCoins > (nMoneySupply * .4)) {z
             ret = blockValue * .45;
         } else if (mNodeCoins <= (nMoneySupply * .5) && mNodeCoins > (nMoneySupply * .45)) {
             ret = blockValue * .4;
