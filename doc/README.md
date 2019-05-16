@@ -22,7 +22,7 @@ Unpack the files into a directory, and then run adeptio-qt.exe.
 
 ### OSX
 
-Drag ADE-Qt to your applications folder, and then run ADE-Qt.
+Drag Adeptio-qt to your applications folder, and then run Adeptio-qt.
 
 ### Need Help?
 

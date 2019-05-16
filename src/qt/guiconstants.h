@@ -55,7 +55,7 @@ static const int MAX_URI_LENGTH = 255;
 
 #define QAPP_ORG_NAME "ADE"
 #define QAPP_ORG_DOMAIN "adeptio.org"
-#define QAPP_APP_NAME_DEFAULT "ADE-Qt"
-#define QAPP_APP_NAME_TESTNET "ADE-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "Adeptio-qt"
+#define QAPP_APP_NAME_TESTNET "Adeptio-qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H
