@@ -251,7 +251,7 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        if(block_height >= 260) // Start storADE in v2.1.4.0
+        if(block_height >= 250) // Start storADE in v2.1.4.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
