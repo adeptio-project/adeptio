@@ -10,4 +10,4 @@ Type=Application
 Icon=adeptio128
 MimeType=x-scheme-handler/adeptio;
 Categories=Office;Finance;
-StartupWMClass=Pivx-qt
+StartupWMClass=Adeptio-qt

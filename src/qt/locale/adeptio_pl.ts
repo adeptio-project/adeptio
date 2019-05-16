@@ -3024,8 +3024,8 @@ Maksymalna dozwolona:</translation>
         <translation>Nie podano adresu "Zapłać do", tworząc płatność lokalną</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
-        <translation>Nieprawidłowy adres Pivx</translation>
+        <source>Invalid Adeptio Address</source>
+        <translation>Nieprawidłowy adres Adeptio</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>

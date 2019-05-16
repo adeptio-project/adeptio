@@ -2918,7 +2918,7 @@ Máximo permitido:</translation>
         <translation>No se especificó drección 'Pagar A', por lo que asumimos un pago local</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
+        <source>Invalid Adeptio Address</source>
         <translation>Dirección ADE Inválida</translation>
     </message>
     <message>

@@ -2854,7 +2854,7 @@ Maximum allowed: </source>
         <translation>Не предоставляется адрес «Pay To», создающий местный платеж</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
+        <source>Invalid Adeptio Address</source>
         <translation>неправильный ADE адрес</translation>
     </message>
     <message>

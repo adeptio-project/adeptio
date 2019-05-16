@@ -2257,7 +2257,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
     </message>
     <message>
         <source>Cannot start adeptio: click-to-pay handler</source>
-        <translation>Pivx başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
+        <translation>Adeptio başlatılamıyor: tıkla ve ödeme işleyicisi</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid ADE address or malformed URI parameters.</source>
@@ -2740,8 +2740,8 @@ Maksimum bırakılan: </translation>
         <translation>Sağlanan 'Ödeme Yapmak İçin' adresi yok, yerel ödeme oluşturun</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
-        <translation>Geçersiz Pivx Adresi</translation>
+        <source>Invalid Adeptio Address</source>
+        <translation>Geçersiz Adeptio Adresi</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>

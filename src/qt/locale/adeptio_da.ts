@@ -2897,7 +2897,7 @@ Maksimum tilladt:</translation>
         <translation>Ingen 'Betal til' adresse, der er oprettet, skaber lokal betaling</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
+        <source>Invalid Adeptio Address</source>
         <translation> Ugyldig ADE adresse</translation>
     </message>
     <message>

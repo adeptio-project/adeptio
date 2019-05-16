@@ -2966,8 +2966,8 @@ Maximaal toegestaan:</translation>
         <translation>Geen 'Betaal aan' adres verstrekt, lokale betaling wordt gemaakt</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
-        <translation>Ongeldig Pivx addres</translation>
+        <source>Invalid Adeptio Address</source>
+        <translation>Ongeldig Adeptio addres</translation>
     </message>
     <message>
         <source>Invalid Send Amount</source>

@@ -255,7 +255,7 @@
     </message>
     <message>
         <source>Enter a ADE Address that you would like to encrypt using BIP 38. Enter a passphrase in the middle box. Press encrypt to compute the encrypted private key.</source>
-        <translation>Въведете Pivx адрес, който искате да криптиране с BIP 38. Въведете парола в средното поле. Натиснете 'криптирай', за да се изчисли криптирания таен ключ. </translation>
+        <translation>Въведете Adeptio адрес, който искате да криптиране с BIP 38. Въведете парола в средното поле. Натиснете 'криптирай', за да се изчисли криптирания таен ключ. </translation>
     </message>
     <message>
         <source>The ADE address to encrypt</source>
@@ -2848,7 +2848,7 @@ Maximum allowed: </source>
         <translation>Без 'Плати На' адрес, плащането е локално</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
+        <source>Invalid Adeptio Address</source>
         <translation>Невалиден ADE адрес</translation>
     </message>
     <message>

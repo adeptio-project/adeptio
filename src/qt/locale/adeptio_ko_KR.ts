@@ -2856,7 +2856,7 @@ Maximum allowed: </source>
         <translation>주소를 입력하지 않아, 신규 주소를 생성합니다.</translation>
     </message>
     <message>
-        <source>Invalid Pivx Address</source>
+        <source>Invalid Adeptio Address</source>
         <translation>잘못된 ADE 주소</translation>
     </message>
     <message>

@@ -1,4 +1,4 @@
-Name "Pivx Core (-bit)"
+Name "Adeptio Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 3.0.0
-!define COMPANY "Pivx Core project"
+!define COMPANY "Adeptio Core project"
 !define URL https://www.adeptio.org
 
 # MUI Symbol Definitions
@@ -19,7 +19,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Pivx Core"
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Adeptio Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\adeptio-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/adeptio/share/pixmaps/nsis-wizard.bmp"
@@ -50,16 +50,16 @@ Var StartMenuGroup
 # Installer attributes
 OutFile /root/adeptio/adeptio-${VERSION}-win-setup.exe
 !if "" == "64"
-InstallDir $PROGRAMFILES64\Pivx
+InstallDir $PROGRAMFILES64\Adeptio
 !else
-InstallDir $PROGRAMFILES\Pivx
+InstallDir $PROGRAMFILES\Adeptio
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.0
-VIAddVersionKey ProductName "Pivx Core"
+VIAddVersionKey ProductName "Adeptio Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -92,7 +92,7 @@ Section -post SEC0001
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\adeptio-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Pivx Core (testnet, -bit).lnk" "$INSTDIR\adeptio-qt" "-testnet" "$INSTDIR\adeptio-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Adeptio Core (testnet, -bit).lnk" "$INSTDIR\adeptio-qt" "-testnet" "$INSTDIR\adeptio-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -104,7 +104,7 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "adeptio" "URL Protocol" ""
-    WriteRegStr HKCR "adeptio" "" "URL:Pivx"
+    WriteRegStr HKCR "adeptio" "" "URL:Adeptio"
     WriteRegStr HKCR "adeptio\DefaultIcon" "" $INSTDIR\adeptio-qt
     WriteRegStr HKCR "adeptio\shell\open\command" "" '"$INSTDIR\adeptio-qt" "%1"'
 SectionEnd
@@ -136,8 +136,8 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Pivx Core (testnet, -bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\Pivx.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Adeptio Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Adeptio.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log

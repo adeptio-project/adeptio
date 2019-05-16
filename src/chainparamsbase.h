@@ -11,7 +11,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between adeptio-cli and adeptiod)
- * of a given instance of the Pivx system.
+ * of a given instance of the Adeptio system.
  */
 class CBaseChainParams
 {
