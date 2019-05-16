@@ -2178,11 +2178,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 
     if (nHeight <= 300) {
         ret = blockValue / 5;
-    } else if (nHeight <= 300 && nHeight > 400) {
+    } else if (nHeight < 300 && nHeight > 400) {
         ret = blockValue / (100 / 30);
-    } else if (nHeight <= 400 && nHeight >= 500) {
+    } else if (nHeight = 400 && nHeight > 500) {
         ret = 50 * COIN;
-    } else if (nHeight <= 500 && nHeight >= 600) {
+    } else if (nHeight < 500 && nHeight > 600) {
         ret = blockValue / 2;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
