@@ -365,6 +365,7 @@ static const CRPCCommand vRPCCommands[] =
         { "hidden",             "waitforblockheight",     &waitforblockheight,     true,  true,  false  },
 
         /* ADE features */
+        {"adeptio", "masternode", &masternode, true, true, false},
         {"adeptio", "listmasternodes", &listmasternodes, true, true, false},
         {"adeptio", "getmasternodecount", &getmasternodecount, true, true, false},
         {"adeptio", "masternodeconnect", &masternodeconnect, true, true, false},
