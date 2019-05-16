@@ -1906,25 +1906,25 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
-    } else if (nHeight <= 45 && nHeight >= 300) {
+    } else if (nHeight <= 300 && nHeight >= 45) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight <= 300 && nHeight > 400) {
+    } else if (nHeight <= 400 && nHeight > 300) {
         nSubsidy = 4 * COIN;
-    } else if (nHeight <= 400 && nHeight >= 500) {
+    } else if (nHeight <= 500 && nHeight >= 400) {
         nSubsidy = 5 * COIN;
-    } else if (nHeight <= 500 && nHeight >= 600) {
+    } else if (nHeight <= 600 && nHeight >= 500) {
         nSubsidy = 6 * COIN;
-    } else if (nHeight <= 600 && nHeight >= 700) {
+    } else if (nHeight <= 700 && nHeight >= 600) {
         nSubsidy = 8 * COIN;
-    } else if (nHeight <= 700 && nHeight >= 800) {
+    } else if (nHeight <= 800 && nHeight >= 700) {
         nSubsidy = 9 * COIN;
-    } else if (nHeight <= 800 && nHeight >= 900) {
+    } else if (nHeight <= 900 && nHeight >= 800) {
         nSubsidy = 10 * COIN;
-    } else if (nHeight <= 900 && nHeight >= 1000) {
+    } else if (nHeight <= 1000 && nHeight >= 9000) {
         nSubsidy = 11 * COIN;
-    } else if (nHeight <= 1000 && nHeight >= 1100) {
+    } else if (nHeight <= 1100 && nHeight >= 1000) {
         nSubsidy = 12 * COIN;
-    } else if (nHeight <= 1100 && nHeight >= 1200) {
+    } else if (nHeight <= 1200 && nHeight >= 1100) {
         nSubsidy = 14 * COIN;
     } else {
         nSubsidy = 15 * COIN;
@@ -2176,13 +2176,13 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight <= 43200) {
+    if (nHeight <= 300) {
         ret = blockValue / 5;
-    } else if (nHeight < 86400 && nHeight > 43200) {
+    } else if (nHeight <= 300 && nHeight > 400) {
         ret = blockValue / (100 / 30);
-    } else if (nHeight < (Params().NetworkID() == CBaseChainParams::TESTNET ? 145000 : 151200) && nHeight >= 86400) {
+    } else if (nHeight <= 400 && nHeight >= 500) {
         ret = 50 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
+    } else if (nHeight <= 500 && nHeight >= 600) {
         ret = blockValue / 2;
     } else if (nHeight < Params().Zerocoin_Block_V2_Start()) {
         return GetSeeSaw(blockValue, nMasternodeCount, nHeight);
