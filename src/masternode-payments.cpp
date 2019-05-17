@@ -572,7 +572,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
     CBitcoinAddress developerfeeaddress(Params().GetDeveloperFeePayee());
     CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
-    double devfeePercent = pindexPrev->nHeight + 1 >= DEV_FEE_BLOCK_ACTIVATION ? DEV_FEE_PERCENT : 0.00;
+    double devfeePercent = nBlockHeight >= DEV_FEE_BLOCK_ACTIVATION ? DEV_FEE_PERCENT : 0.00;
     
     CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count, txNew.IsZerocoinSpend());
     CAmount requiredDeveloperPayment = nReward * devfeePercent;
