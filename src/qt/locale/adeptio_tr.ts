@@ -2419,7 +2419,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in adeptio.co
     </message>
     <message>
         <source>zADE Selected:</source>
-        <translation>zPiv Seçildi:</translation>
+        <translation>zAde Seçildi:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>

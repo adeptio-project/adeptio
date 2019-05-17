@@ -298,14 +298,14 @@ void PrivacyDialog::on_pushButtonZPivControl_clicked()
     if (!walletModel || !walletModel->getOptionsModel())
         return;
 
-    ZPivControlDialog* zPivControl = new ZPivControlDialog(this);
-    zPivControl->setModel(walletModel);
-    zPivControl->exec();
+    ZPivControlDialog* zAdeControl = new ZPivControlDialog(this);
+    zAdeControl->setModel(walletModel);
+    zAdeControl->exec();
 }
 
 void PrivacyDialog::setZPivControlLabels(int64_t nAmount, int nQuantity)
 {
-    ui->labelzPivSelected_int->setText(QString::number(nAmount));
+    ui->labelzAdeSelected_int->setText(QString::number(nAmount));
     ui->labelQuantitySelected_int->setText(QString::number(nQuantity));
 }
 
@@ -467,7 +467,7 @@ void PrivacyDialog::sendzADE()
 
     // Clear zade selector in case it was used
     ZPivControlDialog::setSelectedMints.clear();
-    ui->labelzPivSelected_int->setText(QString("0"));
+    ui->labelzAdeSelected_int->setText(QString("0"));
     ui->labelQuantitySelected_int->setText(QString("0"));
 
     // Some statistics for entertainment

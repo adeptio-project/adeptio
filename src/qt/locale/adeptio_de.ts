@@ -1101,8 +1101,8 @@ Adresse: %4</translation>
         <translation>Diese Bezeichnung wird rot, wenn ein Empfänger einen Betrag erhält, der kleiner ist als %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Kann um +/- %1 upiv pro Eingang variieren.</translation>
+        <source>Can vary +/- %1 uade per input.</source>
+        <translation>Kann um +/- %1 uade pro Eingang variieren.</translation>
     </message>
     <message>
         <source>(no label)</source>

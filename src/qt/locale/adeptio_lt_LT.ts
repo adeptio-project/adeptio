@@ -1098,8 +1098,8 @@ MultiSend: %1</translation>
         <translation>Ši etiketė taps raudona, jei gavėjas gaus sumą mažesnę už %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Gali skirtis +/- %1 upiv kiekvienoje įvestyje.</translation>
+        <source>Can vary +/- %1 uade per input.</source>
+        <translation>Gali skirtis +/- %1 uade kiekvienoje įvestyje.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2220,7 +2220,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     <message>
         <source>zADE Control</source>
-        <translation>zPiv Kontrolė</translation>
+        <translation>zAde Kontrolė</translation>
     </message>
     <message>
         <source>zADE Selected:</source>

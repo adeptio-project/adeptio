@@ -291,7 +291,7 @@ void Shutdown()
     StopTorControl();
     // Shutdown witness thread if it's enabled
     if (nLocalServices == NODE_BLOOM_LIGHT_ZC) {
-        lightWorker.StopLightZpivThread();
+        lightWorker.StopLightZadeThread();
     }
 #ifdef ENABLE_WALLET
     delete pwalletMain;
@@ -535,7 +535,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #ifdef ENABLE_WALLET
     strUsage += HelpMessageGroup(_("Staking options:"));
     strUsage += HelpMessageOpt("-staking=<n>", strprintf(_("Enable staking functionality (0-1, default: %u)"), 1));
-    strUsage += HelpMessageOpt("-pivstake=<n>", strprintf(_("Enable or disable staking functionality for ADE inputs (0-1, default: %u)"), 1));
+    strUsage += HelpMessageOpt("-adestake=<n>", strprintf(_("Enable or disable staking functionality for ADE inputs (0-1, default: %u)"), 1));
     strUsage += HelpMessageOpt("-zadestake=<n>", strprintf(_("Enable or disable staking functionality for zADE inputs (0-1, default: %u)"), 1));
     strUsage += HelpMessageOpt("-reservebalance=<amt>", _("Keep the specified amount available for spending at all times (default: 0)"));
     if (GetBoolArg("-help-debug", false)) {
@@ -2002,7 +2002,7 @@ bool AppInit2()
 
     if (nLocalServices & NODE_BLOOM_LIGHT_ZC) {
         // Run a thread to compute witnesses
-        lightWorker.StartLightZpivThread(threadGroup);
+        lightWorker.StartLightZadeThread(threadGroup);
     }
 
 #ifdef ENABLE_WALLET

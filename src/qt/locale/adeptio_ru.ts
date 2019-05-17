@@ -1106,8 +1106,8 @@ MultiSend: %1</translation>
         <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Может вариироваться +/- %1 upiv при вводе</translation>
+        <source>Can vary +/- %1 uade per input.</source>
+        <translation>Может вариироваться +/- %1 uade при вводе</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -6159,7 +6159,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zADE</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zPiv</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) zAde</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>

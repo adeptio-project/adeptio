@@ -50,12 +50,12 @@ public:
         return true;
     }
 
-    void StartLightZpivThread(boost::thread_group& threadGroup) {
+    void StartLightZadeThread(boost::thread_group& threadGroup) {
         LogPrintf("%s thread start\n", "adeptio-light-thread");
         threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZADESimplified, this));
     }
 
-    void StopLightZpivThread() {
+    void StopLightZadeThread() {
         threadIns.interrupt();
         LogPrintf("%s thread interrupted\n", "adeptio-light-thread");
     }

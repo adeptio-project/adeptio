@@ -1122,8 +1122,8 @@ MultiEnvío: %1</translation>
         <translation>Esta etiqueta se vuelve roja, si algún destinatario recibe una cantidad menor que %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Puede variar +/- %1 upiv por entrada.</translation>
+        <source>Can vary +/- %1 uade per input.</source>
+        <translation>Puede variar +/- %1 uade por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2452,7 +2452,7 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en ad
     </message>
     <message>
         <source>Enter an amount of Piv to convert to zADE</source>
-        <translation>Introduzca la cantidad de ADE que desea convertir a zPiv</translation>
+        <translation>Introduzca la cantidad de ADE que desea convertir a zAde</translation>
     </message>
     <message>
         <source>zADE Control</source>

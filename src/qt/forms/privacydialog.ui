@@ -736,14 +736,14 @@
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected">
+                         <widget class="QLabel" name="labelzAdeSelected">
                           <property name="text">
                            <string>zADE Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected_int">
+                         <widget class="QLabel" name="labelzAdeSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>
