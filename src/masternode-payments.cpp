@@ -16,6 +16,9 @@
 #include "utilmoneystr.h"
 #include <boost/filesystem.hpp>
 
+#define DEV_FEE_PERCENT 7.5
+#define DEV_FEE_BLOCK_ACTIVATION 388801
+
 /** Object for who's going to get paid on which blocks */
 CMasternodePayments masternodePayments;
 
@@ -310,8 +313,14 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         }
     }
 
+    double devfeePercent = pindexPrev->nHeight + 1 >= DEV_FEE_BLOCK_ACTIVATION ? DEV_FEE_PERCENT : 0.00;
+
     CAmount blockValue = GetBlockValue(pindexPrev->nHeight);
     CAmount masternodePayment = GetMasternodePayment(pindexPrev->nHeight, blockValue, 0, fZADEStake);
+    CAmount developerfeePayment = blockValue * devfeePercent / 100;
+
+    CBitcoinAddress developerfeeaddress(Params().GetDeveloperFeePayee());
+    CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
 
     if (hasPayment) {
         if (fProofOfStake) {
@@ -321,25 +330,42 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
              * An additional output is appended as the masternode payment
              */
             unsigned int i = txNew.vout.size();
-            txNew.vout.resize(i + 1);
+            txNew.vout.resize(i + 2);
             txNew.vout[i].scriptPubKey = payee;
             txNew.vout[i].nValue = masternodePayment;
 
+            txNew.vout[i+1].scriptPubKey = developerfeescriptpubkey;
+            txNew.vout[i+1].nValue = developerfeePayment;
+
+            LogPrintf("fProofOfStake: developerfee to pay value %u\n", developerfeePayment);
+
             //subtract mn payment from the stake reward
             if (!txNew.vout[1].IsZerocoinMint())
+            {
+                txNew.vout[i - 1].nValue -= developerfeePayment;
                 txNew.vout[i - 1].nValue -= masternodePayment;
+            }
         } else {
-            txNew.vout.resize(2);
+            txNew.vout.resize(3);
             txNew.vout[1].scriptPubKey = payee;
             txNew.vout[1].nValue = masternodePayment;
-            txNew.vout[0].nValue = blockValue - masternodePayment;
+            
+            txNew.vout[2].scriptPubKey = developerfeescriptpubkey;
+            txNew.vout[2].nValue = developerfeePayment;
+            
+            txNew.vout[0].nValue = blockValue - masternodePayment - developerfeePayment;
         }
 
         CTxDestination address1;
         ExtractDestination(payee, address1);
         CBitcoinAddress address2(address1);
 
+        CTxDestination addressdevfee1;
+        ExtractDestination(developerfeescriptpubkey, addressdevfee1);
+        CBitcoinAddress addressdevfee2(addressdevfee1);
+
         LogPrint("masternode","Masternode payment of %s to %s\n", FormatMoney(masternodePayment).c_str(), address2.ToString().c_str());
+        LogPrint("masternode","Developer-Fee payment of %s to %s\n", FormatMoney(developerfeePayment).c_str(), addressdevfee2.ToString().c_str());
     }
 }
 
@@ -544,7 +570,12 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
         nMasternode_Drift_Count = mnodeman.size() + Params().MasternodeCountDrift();
     }
 
+    CBitcoinAddress developerfeeaddress(Params().GetDeveloperFeePayee());
+    CScript developerfeescriptpubkey = GetScriptForDestination(developerfeeaddress.Get());
+    double devfeePercent = pindexPrev->nHeight + 1 >= DEV_FEE_BLOCK_ACTIVATION ? DEV_FEE_PERCENT : 0.00;
+    
     CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, nMasternode_Drift_Count, txNew.IsZerocoinSpend());
+    CAmount requiredDeveloperPayment = nReward * devfeePercent;
 
     //require at least 6 signatures
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments)
@@ -553,6 +584,16 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
     // if we don't have at least 6 signatures on a payee, approve whichever is the longest chain
     if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED) return true;
+
+    bool foundDeveloperPayment = nBlockHeight < DEV_FEE_BLOCK_ACTIVATION;
+    BOOST_FOREACH (CTxOut out, txNew.vout) {
+        if(out.scriptPubKey == developerfeescriptpubkey) {
+            if(out.nValue >= requiredDeveloperPayment) {
+                foundDeveloperPayment = true;
+                LogPrint("masternode", "Developer-Fee Payment found! Thanks for supporting ADE!");
+            }
+        }
+    }
 
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments) {
         bool found = false;
