@@ -17,7 +17,7 @@
 #include <boost/filesystem.hpp>
 
 #define DEV_FEE_PERCENT 7.5
-#define DEV_FEE_BLOCK_ACTIVATION 388801
+#define DEV_FEE_BLOCK_ACTIVATION 46
 
 /** Object for who's going to get paid on which blocks */
 CMasternodePayments masternodePayments;
