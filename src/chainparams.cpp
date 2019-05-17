@@ -55,7 +55,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints = 
     boost::assign::map_list_of 
     (0, uint256("00000b67abd9db69a4aef47c2e4cda09303033afb08b39f9b6fa87b7be8794d8"))
-    (206, uint256("6499a29b473e021d60c09568bc14ebbc223411c8f8880637b4e7d29c01c9cd8c"));
+  //  (206, uint256("6499a29b473e021d60c09568bc14ebbc223411c8f8880637b4e7d29c01c9cd8c"));
 
  
  
@@ -138,7 +138,7 @@ public:
         strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
  
         /** Height or Time Based Activations **/ 
-        nLastPOWBlock = 106; 
+        nLastPOWBlock = 1550; 
         nModifierUpdateBlock = 9999999; 
         nZerocoinStartHeight = 9999999; // 9,9M 
         nZerocoinStartTime = 1599999999; 
