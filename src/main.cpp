@@ -1906,25 +1906,25 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
-    } else if (nHeight <= 300 && nHeight >= 45) {
+    } else if (nHeight <= 49 && nHeight >= 45) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight <= 399 && nHeight >= 300) {
+    } else if (nHeight <= 99 && nHeight >= 50) {
         nSubsidy = 4 * COIN;
-    } else if (nHeight <= 499 && nHeight >= 400) {
+    } else if (nHeight <= 149 && nHeight >= 100) {
         nSubsidy = 5 * COIN;
-    } else if (nHeight <= 599 && nHeight >= 500) {
+    } else if (nHeight <= 199 && nHeight >= 150) {
         nSubsidy = 6 * COIN;
-    } else if (nHeight <= 699 && nHeight >= 600) {
+    } else if (nHeight <= 249 && nHeight >= 200) {
         nSubsidy = 8 * COIN;
-    } else if (nHeight <= 799 && nHeight >= 700) {
+    } else if (nHeight <= 299 && nHeight >= 250) {
         nSubsidy = 9 * COIN;
-    } else if (nHeight <= 899 && nHeight >= 800) {
+    } else if (nHeight <= 349 && nHeight >= 300) {
         nSubsidy = 10 * COIN;
-    } else if (nHeight <= 999 && nHeight >= 900) {
-        nSubsidy = 11 * COIN;
-    } else if (nHeight <= 1099 && nHeight >= 1000) {
+    } else if (nHeight <= 399 && nHeight >= 350) {
+        nSubsidy = 11 * COuN;
+    } else if (nHeight <= 449 && nHeight >= 400) {
         nSubsidy = 12 * COIN;
-    } else if (nHeight <= 1199 && nHeight >= 1100) {
+    } else if (nHeight <= 499 && nHeight >= 450) {
         nSubsidy = 14 * COIN;
     } else {
         nSubsidy = 15 * COIN;
@@ -2176,7 +2176,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight <= 250) {
+    if (nHeight <= 250) { // 80% for Masternode - adeptio req for storADE
         ret = blockValue / (100 / 80);
     } else if (nHeight <= 400 && nHeight > 250) {
         ret = blockValue / (100 / 80);
