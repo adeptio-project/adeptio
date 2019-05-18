@@ -139,16 +139,16 @@ public:
  
         /** Height or Time Based Activations **/ 
         nLastPOWBlock = 1550; 
-        nModifierUpdateBlock = 9999999; 
-        nZerocoinStartHeight = 9999999; // 9,9M 
+        nModifierUpdateBlock = 19999999; 
+        nZerocoinStartHeight = 19999999; // 19,9M 
         nZerocoinStartTime = 1599999999; 
         nBlockEnforceSerialRange = 9999999; //Enforce serial range starting this block 
-        nBlockRecalculateAccumulators = 9999999; //Trigger a recalculation of accumulators 
-        nBlockFirstFraudulent = 9999999; //First block that bad serials emerged 
+        nBlockRecalculateAccumulators = 19999999; //Trigger a recalculation of accumulators 
+        nBlockFirstFraudulent = 19999999; //First block that bad serials emerged 
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint 
-        nBlockEnforceInvalidUTXO = 9999999; //Start enforcing the invalid UTXO's 
+        nBlockEnforceInvalidUTXO = 19999999; //Start enforcing the invalid UTXO's 
         nInvalidAmountFiltered = 268200*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid 
-        nBlockZerocoinV2 = 9999999; //!> The block that zerocoin v2 becomes active.
+        nBlockZerocoinV2 = 19999999; //!> The block that zerocoin v2 becomes active.
         nBlockDoubleAccumulated = 1050010; 
         nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key 
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM 
