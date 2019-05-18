@@ -1907,27 +1907,27 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
     } else if (nHeight <= 49 && nHeight >= 45) {
-        nSubsidy = 3 * COIN;
+        nSubsidy = 1 * COIN;
     } else if (nHeight <= 99 && nHeight >= 50) {
-        nSubsidy = 4 * COIN;
+        nSubsidy = 2 * COIN;
     } else if (nHeight <= 149 && nHeight >= 100) {
-        nSubsidy = 5 * COIN;
+        nSubsidy = 3 * COIN;
     } else if (nHeight <= 199 && nHeight >= 150) {
-        nSubsidy = 6 * COIN;
+        nSubsidy = 4 * COIN;
     } else if (nHeight <= 249 && nHeight >= 200) {
-        nSubsidy = 8 * COIN;
+        nSubsidy = 5 * COIN;
     } else if (nHeight <= 299 && nHeight >= 250) {
-        nSubsidy = 9 * COIN;
+        nSubsidy = 6 * COIN;
     } else if (nHeight <= 349 && nHeight >= 300) {
-        nSubsidy = 10 * COIN;
+        nSubsidy = 7 * COIN;
     } else if (nHeight <= 399 && nHeight >= 350) {
-        nSubsidy = 11 * COuN;
+        nSubsidy = 8 * COIN;
     } else if (nHeight <= 449 && nHeight >= 400) {
-        nSubsidy = 12 * COIN;
+        nSubsidy = 9 * COIN;
     } else if (nHeight <= 499 && nHeight >= 450) {
-        nSubsidy = 14 * COIN;
+        nSubsidy = 10 * COIN;
     } else {
-        nSubsidy = 15 * COIN;
+        nSubsidy = 11 * COIN;
     }
     return nSubsidy;
 }
