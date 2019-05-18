@@ -1907,27 +1907,27 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
     } else if (nHeight <= 49 && nHeight >= 45) {
-        nSubsidy = 1 * COIN;
+        nSubsidy = 10 * COIN;
     } else if (nHeight <= 69 && nHeight >= 50) {
-        nSubsidy = 2 * COIN;
+        nSubsidy = 9 * COIN;
     } else if (nHeight <= 89 && nHeight >= 70) {
-        nSubsidy = 3 * COIN;
+        nSubsidy = 8 * COIN;
     } else if (nHeight <= 109 && nHeight >= 90) {
-        nSubsidy = 4 * COIN;
+        nSubsidy = 7 * COIN;
     } else if (nHeight <= 129 && nHeight >= 110) {
-        nSubsidy = 3 * COIN;
+        nSubsidy = 6 * COIN;
     } else if (nHeight <= 149 && nHeight >= 130) {
-        nSubsidy = 2 * COIN;
+        nSubsidy = 5 * COIN;
     } else if (nHeight <= 169 && nHeight >= 150) {
-        nSubsidy = 1 * COIN;
+        nSubsidy = 4 * COIN;
     } else if (nHeight <= 189 && nHeight >= 170) {
-        nSubsidy = 0.5 * COIN;
+        nSubsidy = 3 * COIN;
     } else if (nHeight <= 209 && nHeight >= 190) {
-        nSubsidy = 0.25 * COIN;
+        nSubsidy = 2 * COIN;
     } else if (nHeight <= 229 && nHeight >= 210) {
-        nSubsidy = 0.10 * COIN;
+        nSubsidy = 1 * COIN;
     } else {
-        nSubsidy = 0.05 * COIN;
+        nSubsidy = 0.5 * COIN;
     }
     return nSubsidy;
 }
@@ -2177,11 +2177,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     }
 
     if (nHeight <= 250) { // 80% for Masternode - adeptio req for storADE
-        ret = blockValue / (100 / 80);
+        ret = blockValue / 5;
     } else if (nHeight <= 400 && nHeight > 250) {
-        ret = blockValue / (100 / 80);
+        ret = blockValue / 10;
     } else {
-        ret = blockValue / (100 / 80);
+        ret = blockValue / 20;
     }
 
     return ret;
