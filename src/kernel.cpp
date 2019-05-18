@@ -256,7 +256,8 @@ bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifier, int
         nStakeModifier = pindexFrom->nStakeModifier;
         return true;
     }
-    int64_t nStakeModifierSelectionInterval = GetStakeModifierSelectionInterval();
+//  int64_t nStakeModifierSelectionInterval = GetStakeModifierSelectionInterval();
+    int64_t nStakeModifierSelectionInterval = 10; // mr_nemo change
     const CBlockIndex* pindex = pindexFrom;
     CBlockIndex* pindexNext = chainActive[pindexFrom->nHeight + 1];
 
