@@ -3835,6 +3835,7 @@ config.status:1454: creating share/qt/Info.plist
 config.status:1454: creating test/config.ini
 config.status:1454: creating contrib/devtools/split-debug.sh
 config.status:1454: creating src/config/adeptio-config.h
+config.status:1635: src/config/adeptio-config.h is unchanged
 config.status:1714: executing depfiles commands
 config.status:1714: executing libtool commands
 configure:35724: === configuring in src/univalue (/home/tomand/adeptio/src/univalue)

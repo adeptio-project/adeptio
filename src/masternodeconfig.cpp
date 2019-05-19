@@ -76,7 +76,7 @@ bool CMasternodeConfig::read(std::string& strErr)
                 streamConfig.close();
                 return false;
             }
-        } else if (port == 9077) {
+        } else if (port != 9077) {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
                      _("(9077 could be used only on mainnet)");
