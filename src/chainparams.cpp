@@ -138,10 +138,10 @@ public:
         strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
  
         /** Height or Time Based Activations **/ 
-        nLastPOWBlock = 70;
+        nLastPOWBlock = 200;
         nModifierUpdateBlock = 19999999; // 19,9M 
         nZerocoinStartHeight = 19999999; // 19,9M 
-        nZerocoinStartTime = 1958113662; // 01/19/2032 @ 8:27am
+        nZerocoinStartTime = 1958113662; // 2032y
         nBlockEnforceSerialRange = 19999999; //Enforce serial range starting this block  // 19,9M 
         nBlockRecalculateAccumulators = 19999999; //Trigger a recalculation of accumulators  // 19,9M 
         nBlockFirstFraudulent = 19999999; //First block that bad serials emerged  // 19,9M 
