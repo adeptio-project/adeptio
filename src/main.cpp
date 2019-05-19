@@ -1906,28 +1906,22 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
-    } else if (nHeight <= 49 && nHeight >= 45) {
+    } else if (nHeight <= 20159 && nHeight >= 45) { // SLOW Start for 2 weeks;
+        nSubsidy = 1 * COIN; 
+    } else if (nHeight <= 63359 && nHeight >= 20160) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight <= 106559 && nHeight >= 63360) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight <= 149759 && nHeight >= 106560) {
         nSubsidy = 10 * COIN;
-    } else if (nHeight <= 69 && nHeight >= 50) {
-        nSubsidy = 9 * COIN;
-    } else if (nHeight <= 89 && nHeight >= 70) {
-        nSubsidy = 8 * COIN;
-    } else if (nHeight <= 109 && nHeight >= 90) {
-        nSubsidy = 7 * COIN;
-    } else if (nHeight <= 129 && nHeight >= 110) {
-        nSubsidy = 6 * COIN;
-    } else if (nHeight <= 149 && nHeight >= 130) {
+    } else if (nHeight <= 754559 && nHeight >= 149760) {
         nSubsidy = 5 * COIN;
-    } else if (nHeight <= 169 && nHeight >= 150) {
-        nSubsidy = 4 * COIN;
-    } else if (nHeight <= 189 && nHeight >= 170) {
+    } else if (nHeight <= 1509159 && nHeight >= 754560) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight <= 209 && nHeight >= 190) {
+    } else if (nHeight <= 3018359 && nHeight >= 1509160) {
         nSubsidy = 2 * COIN;
-    } else if (nHeight <= 229 && nHeight >= 210) {
-        nSubsidy = 1 * COIN;
     } else {
-        nSubsidy = 0.5 * COIN;
+        nSubsidy = 1 * COIN;
     }
     return nSubsidy;
 }
@@ -2179,9 +2173,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     if (nHeight <= 250) { // 80% for Masternode - adeptio req for storADE
         ret = blockValue / 5;
     } else if (nHeight <= 400 && nHeight > 250) {
-        ret = blockValue / 10;
+        ret = blockValue / 2.5;
     } else {
-        ret = blockValue / 20;
+        ret = blockValue / 1.25;
     }
 
     return ret;
