@@ -1906,8 +1906,8 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
     } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
         nSubsidy = 1000000 * COIN;
-    } else if (nHeight <= 20159 && nHeight >= 45) { // SLOW Start for 2 weeks;
-        nSubsidy = 1 * COIN; 
+    } else if (nHeight <= 20159 && nHeight >= 45) {
+        nSubsidy = 50 * COIN; 
     } else if (nHeight <= 63359 && nHeight >= 20160) {
         nSubsidy = 50 * COIN;
     } else if (nHeight <= 106559 && nHeight >= 63360) {
