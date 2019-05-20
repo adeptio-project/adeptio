@@ -286,7 +286,7 @@ void CMasternode::CheckStorADEport()
     if( activeState == incorrect )
         LogPrintf("CMasternode::CheckStorADEport() - %s StorADEserver not in running state: rejecting masternode.\n", storade_addr.ToStringIP());
     else
-        LogPrintf("CMasternode::CheckStorADEport() - %s StorADE checker started // by adeptio dev team.\n", storade_addr.ToStringIP());
+        LogPrintf("CMasternode::CheckStorADEport() - %s StorADE check success.\n", storade_addr.ToStringIP());
 }
 
 int64_t CMasternode::SecondsSincePayment()
