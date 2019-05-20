@@ -2171,9 +2171,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     }
 
     if (nHeight <= 250) { // 80% for Masternode - adeptio req for storADE
-        ret = blockValue / 5;
-    } else if (nHeight <= 400 && nHeight > 250) {
-        ret = blockValue / 2.5;
+        ret = blockValue / 1.25;
+    } else if (nHeight <= 754559 && nHeight > 250) {
+        ret = blockValue / 1.25;
     } else {
         ret = blockValue / 1.25;
     }
