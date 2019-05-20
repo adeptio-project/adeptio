@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions 
 static Checkpoints::MapCheckpoints mapCheckpoints = 
     boost::assign::map_list_of 
-    (0, uint256("0x0000011f45e88899945308c4bc876c66197d47d7172deaf35a41a8682e0a386b"));
+    (0, uint256("0000069359d0865762d8be44397c148fe34cc3b9403d5667537e33fbaea2a8c9"));
   //  (206, uint256("6499a29b473e021d60c09568bc14ebbc223411c8f8880637b4e7d29c01c9cd8c"));
 
  
@@ -62,8 +62,8 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
  
 static const Checkpoints::CCheckpointData data = { 
     &mapCheckpoints, 
-    1558113662, // * UNIX timestamp of last checkpoint block 
-    311,    // * total number of transactions between genesis and last checkpoint 
+    1558346988, // * UNIX timestamp of last checkpoint block 
+    0,    // * total number of transactions between genesis and last checkpoint 
                 //   (the tx=... number in the SetBestChain debug.log lines) 
     2000        // * estimated number of transactions per day after checkpoint 
 }; 
@@ -153,7 +153,7 @@ public:
         nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key 
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM 
  
-        const char* pszTimestamp = "30 May 2018 // With great power comes great responsibility. Adeptio tech."; 
+        const char* pszTimestamp = "30 May 2018 - 20 May 2019 Phoenix Rebirth // With great power comes great responsibility. Adeptio tech."; 
         CMutableTransaction txNew; 
         txNew.vin.resize(1); 
         txNew.vout.resize(1); 
@@ -164,13 +164,13 @@ public:
         genesis.hashPrevBlock = 0; 
         genesis.hashMerkleRoot = genesis.BuildMerkleTree(); 
         genesis.nVersion = 1; 
-        genesis.nTime = 1558217912; 
+        genesis.nTime = 1558346988; 
         genesis.nBits = 0x1e0ffff0; 
-        genesis.nNonce = 2455045; 
+        genesis.nNonce = 4314804; 
 
         hashGenesisBlock = genesis.GetHash(); 
-        assert(hashGenesisBlock == uint256("0x0000011f45e88899945308c4bc876c66197d47d7172deaf35a41a8682e0a386b")); 
-        assert(genesis.hashMerkleRoot == uint256("0xbce21fc5941cd1cb6f93bf7b3e94faa6a89123d0d973c63abd10b7e6fb786d3c")); 
+        assert(hashGenesisBlock == uint256("0x0000069359d0865762d8be44397c148fe34cc3b9403d5667537e33fbaea2a8c9")); 
+        assert(genesis.hashMerkleRoot == uint256("0x8bf812456b72264c85c2078adee6a95b3bb9608bfb0a936bf1ef284a39829bb3")); 
  
     vFixedSeeds.clear(); 
         vSeeds.clear(); 
@@ -231,11 +231,11 @@ public:
         fHeadersFirstSyncingActive = false; 
  
         nPoolMaxTransactions = 3; 
-        nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30) 
+        nBudgetCycleBlocks = 19999999; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30) 
         strSporkKey = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500"; 
         strSporkKeyOld = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500"; 
         strObfuscationPoolDummyAddress = "ATRg2hVWT2QT1dxndpPTSM2kvXs8LERWHu"; 
-        nStartMasternodePayments = 1558217912; // After 1 day from init start  
+        nStartMasternodePayments = 1558346988; // After 1 day from init start  
  
         /** Zerocoin */ 
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784" 
@@ -303,16 +303,14 @@ public:
         nRejectOldSporkKey = 1548979200; //!> Reject old spork key after 02/01/2019 @ 12:00am (UTC) 
  
         //! Modify the testnet genesis block so the timestamp is valid for a later start. 
-        genesis.nTime = 1557858248; 
+        genesis.nTime = 1558346988; 
         genesis.nBits = 0x1e0ffff0; 
-        genesis.nNonce = 2276399; 
-; 
         genesis.nBits = 0x1e0ffff0; 
-        genesis.nNonce = 2276399; 
+        genesis.nNonce = 4314804; 
  
      
-        hashGenesisBlock = genesis.GetHash(); 
-        assert(hashGenesisBlock == uint256("0x00000b67abd9db69a4aef47c2e4cda09303033afb08b39f9b6fa87b7be8794d8")); 
+       // hashGenesisBlock = genesis.GetHash(); 
+       // assert(hashGenesisBlock == uint256("0x0000069359d0865762d8be44397c148fe34cc3b9403d5667537e33fbaea2a8c9")); 
  
         vFixedSeeds.clear(); 
         vSeeds.clear(); 
@@ -402,11 +400,11 @@ public:
         nFakeSerialBlockheightEnd = -1; 
  
         //! Modify the regtest genesis block so the timestamp is valid for a later start. 
-        genesis.nTime = 0; 
-        genesis.nNonce = 1040779; 
+        genesis.nTime = 1558346988; 
+        genesis.nNonce = 1488330; 
  
         hashGenesisBlock = genesis.GetHash(); 
-        assert(hashGenesisBlock == uint256("0x00000d2002757434399594cb7256eac6a7581331184ae05a3546a782ff3433f4")); 
+        assert(hashGenesisBlock == uint256("0x000005c943ce65e620aae5c4c3a1f09d51e5b15c15ee9428a2505bef5e219d78")); 
  
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds. 
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds. 
