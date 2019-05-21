@@ -240,10 +240,11 @@ void CMasternode::Check(bool forceCheck)
         }
     }
 
+
     // The "StorADE" service needs the correct default port to work properly
     if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 60 ) {
 
-        int block_height = 100;
+        int block_height = 0;
 
         CBlockIndex* BlockReading = chainActive.Tip();
 
@@ -251,10 +252,14 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        if(block_height >= 0) // Start storADE in v3
+        int nodeMastIPVer = addr.GetNetwork();
+
+        int localMastIPVer = activeMasternode.service.GetNetwork();
+
+        if(nodeMastIPVer == localMastIPVer && block_height >= 0) // Start storADE in v3
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
-    }
+}
 
     activeState = MASTERNODE_ENABLED; // OK
 }
