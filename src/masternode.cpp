@@ -241,7 +241,9 @@ void CMasternode::Check(bool forceCheck)
     }
 
     // The "StorADE" service needs the correct default port to work properly
-    if( GetAdjustedTime() - storADElastTime >= 12 * 60 * 60 ) {
+    int64_t storADElastCheck = GetAdjustedTime() - storADElastTime;
+
+    if( (storADElastCheck >= 12 * 60 * 60) || (storADElastCheck >= 1 * 60 * 60 && activeState == MASTERNODE_STORADE_EXPIRED) ) {
 
         int block_height = 0;
 
@@ -251,7 +253,15 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        if(block_height >= 0) // Start storADE in v2.1.4.0
+        int nodeMastIPVer = addr.GetNetwork();
+
+        int localMastIPVer = activeMasternode.service.GetNetwork();
+
+        if(nodeMastIPVer != localMastIPVer)
+
+            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version not match %s!=%s\n", nodeMastIPVer, localMastIPVer);
+
+        else if(block_height >= 0) // Start storADE in v2.1.4.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
