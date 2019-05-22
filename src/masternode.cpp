@@ -253,19 +253,19 @@ void CMasternode::Check(bool forceCheck)
 
             block_height = BlockReading->nHeight;
 
-        int nodeMastIPVer = addr.GetNetwork();
+        int nodeMastIPVer = addr;
 
-        int localMastIPVer = activeMasternode.service.GetNetwork();
+        int localMastIPVer = activeMasternode.service;
 
-        if(nodeMastIPVer != localMastIPVer)
+        if(nodeMastIPVer.GetNetwork() != localMastIPVer.GetNetwork())
 
-            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version not match %s!=%s\n", nodeMastIPVer, localMastIPVer);
+            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version (%s and %s) not match %s!=%s\n", 
+                nodeMastIPVer.ToStringIP(), localMastIPVer.ToStringIP(), nodeMastIPVer.GetNetworkName(), localMastIPVer.GetNetworkName());
 
         else if(block_height >= 0) // Start storADE in v2.1.4.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
-
     activeState = MASTERNODE_ENABLED; // OK
 }
 
