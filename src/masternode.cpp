@@ -244,6 +244,10 @@ void CMasternode::Check(bool forceCheck)
     // The "StorADE" service needs the correct default port to work properly
     int64_t storADElastCheck = GetAdjustedTime() - storADElastTime;
 
+
+    // The "StorADE" service needs the correct default port to work properly
+    int64_t storADElastCheck = GetAdjustedTime() - storADElastTime;
+
     if( (storADElastCheck >= 12 * 60 * 60) || (storADElastCheck >= 1 * 60 * 60 && activeState == MASTERNODE_STORADE_EXPIRED) ) {
 
         int block_height = 0;
@@ -258,16 +262,17 @@ void CMasternode::Check(bool forceCheck)
 
         CService localMastIPVer = activeMasternode.service;
 
-        if(nodeMastIPVer.GetNetwork() != localMastIPVer.GetNetwork())
+        if(nodeMastIPVer.GetNetwork() != localMastIPVer.GetNetwork()) {
 
-            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version (%s and %s) not match %s!=%s\n",
+            storADElastTime = GetAdjustedTime();
+
+            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version (%s and %s) not match %s!=%s\n", 
                 nodeMastIPVer.ToStringIP(), localMastIPVer.ToStringIP(), GetNetworkName(nodeMastIPVer.GetNetwork()), GetNetworkName(localMastIPVer.GetNetwork()));
 
-        else if(block_height >= 0) // Start storADE in v2.1.4.0
+        } else if(block_height >= 0) // Start storADE in v2.1.4.0
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
     }
-
     activeState = MASTERNODE_ENABLED; // OK
 }
 
