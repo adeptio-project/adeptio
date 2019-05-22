@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-02-25
-#:: Version: v2.1.0.0 heron
+#:: Copyright // 2018-04-23
+#:: Version: v2 heron
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
 cat << "ADE"
@@ -16,6 +16,8 @@ cat << "ADE"
                                                                                                                         
 ADE
 
+ver_to_download=$(curl https://img.shields.io/github/release/adeptio-project/adeptio.svg | grep -o "v.\..\..\.." | head -1)
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
@@ -23,12 +25,12 @@ NC='\033[0m'
 echo $(date)
 echo ""
 echo "©Copyright 2017-2019 Adeptio Developer Team"
-echo -e "${GREEN}== adeptio v2.1.0.0 ==${NC}"
+echo -e "${GREEN}== adeptio $ver_to_download ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
 echo ""
 echo "Installation content:"
-echo "adeptio core v2.1.0.0 + latest storADE platform code"
+echo "adeptio core $ver_to_download + latest storADE platform code"
 echo
 echo "Setup can be launched only once"
 echo "Do you agree?"
@@ -110,10 +112,10 @@ echo ""
 cd ~
 rm -fr adeptio*.zip
             if [ "$OS_version" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.3.0/adeptiod-v2.1.3.0-linux64.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/${$ver_to_download}/adeptiod-${$ver_to_download}-linux64.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             elif [ "$OS_version2" -eq "1" ]; then
-                wget https://github.com/adeptio-project/adeptio/releases/download/v2.1.3.0/adeptiod-v2.1.3.0-linux64-legacy.zip
+                wget https://github.com/adeptio-project/adeptio/releases/download/${$ver_to_download}/adeptiod-${$ver_to_download}-linux64-legacy.zip
 		if [ $? -ne "0" ]; then echo "Failed to download adeptiod binary" && exit 1; fi
             fi
 # Manage coin daemon and configuration //
