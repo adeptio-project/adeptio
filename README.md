@@ -89,7 +89,7 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Prefix: ADE adresses start with the capital letter "A"
 
-*Premine masternodes will be burnt after 1 year from init start.*
+*Premine masternodes burnt at block 476177:  https://explorer.adeptio.cc/tx/58d9fddc14a91c685a372b0d603ed9c202a327929560e8f12cfbfe2978a9dc5f
 
 Burn addr: https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
