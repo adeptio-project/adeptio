@@ -260,7 +260,7 @@ void CMasternode::Check(bool forceCheck)
 
             storADElastTime = GetAdjustedTime();
 
-            LogPrintf("CMasternode::Check() - Can't check StorADE, because ip version (%s and %s) not match %s!=%s\n", 
+            LogPrintf("CMasternode::Check() - Not checking StorADE, because ip version (%s and %s) not match %s!=%s\n", 
                 nodeMastIPVer.ToStringIP(), localMastIPVer.ToStringIP(), GetNetworkName(nodeMastIPVer.GetNetwork()), GetNetworkName(localMastIPVer.GetNetwork()));
 
         } else if(block_height >= 0) // Start storADE in v2
