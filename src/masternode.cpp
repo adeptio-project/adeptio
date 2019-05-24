@@ -254,7 +254,7 @@ void CMasternode::Check(bool forceCheck)
 
         CService nodeMastIPVer = addr;
 
-        CService localMastIPVer = activeMasternode.service;
+        CService localMastIPVer = CService(strMasterNodeAddr); //activeMasternode.service;
 
         if(nodeMastIPVer.GetNetwork() != localMastIPVer.GetNetwork()) {
 
