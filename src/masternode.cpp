@@ -201,7 +201,7 @@ void CMasternode::Check(bool forceCheck)
     if (!forceCheck && (GetTime() - lastTimeChecked < MASTERNODE_CHECK_SECONDS)) return;
     lastTimeChecked = GetTime();
 
-//    if (activeState == MASTERNODE_STORADE_EXPIRED) return;
+    if (activeState == MASTERNODE_STORADE_EXPIRED) return;
 
     //once spent, stop doing the checks
     if (activeState == MASTERNODE_VIN_SPENT) return;
