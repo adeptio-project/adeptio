@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://www.adeptio.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/tomand/adeptio/share/pixmaps/adeptio.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/tomand/adeptio/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/tmp/adeptio/share/pixmaps/adeptio.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/tomand/adeptio/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Adeptio Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\adeptio-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/tomand/adeptio/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/tmp/adeptio/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/tomand/adeptio/adeptio-${VERSION}-win-setup.exe
+OutFile /tmp/adeptio/adeptio-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Adeptio
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/tomand/adeptio/release/adeptio-qt
-    File /oname=COPYING.txt /home/tomand/adeptio/COPYING
-    File /oname=readme.txt /home/tomand/adeptio/doc/README_windows.txt
+    File /tmp/adeptio/release/adeptio-qt
+    File /oname=COPYING.txt /tmp/adeptio/COPYING
+    File /oname=readme.txt /tmp/adeptio/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/tomand/adeptio/release/adeptiod
-    File /home/tomand/adeptio/release/adeptio-cli
+    File /tmp/adeptio/release/adeptiod
+    File /tmp/adeptio/release/adeptio-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/tomand/adeptio/doc\*.*
+    File /r /tmp/adeptio/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd

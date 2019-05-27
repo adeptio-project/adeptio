@@ -152,40 +152,40 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Adeptio starting difficulty is 1 / 2^12  //20 
         nSubsidyHalvingInterval = 210000; 
         nMaxReorganizationDepth = 100; 
-        nEnforceBlockUpgradeMajority = 8100; // 75% 
-        nRejectBlockOutdatedMajority = 10260; // 95% 
-        nToCheckBlockUpgradeMajority = 10800; // Approximate expected amount of blocks in 7 days (1440*7.5) 
+        nEnforceBlockUpgradeMajority = 750; // 75% 
+        nRejectBlockOutdatedMajority = 950; // 95% 
+        nToCheckBlockUpgradeMajority = 1000; // Approximate expected amount of blocks in 7 days (1440*7.5) 
         nMinerThreads = 0; 
         nTargetTimespan = 1 * 60; // Adeptio: 1 day 
         nTargetSpacing = 1 * 60;  // Adeptio: 1 minute 
-        nMaturity = 15; 
+        nMaturity = 100; 
         nMasternodeCountDrift = 20; 
-        nMaxMoneyOut = 21000000 * COIN; 
+        nMaxMoneyOut = 100000000 * COIN; 
         strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
  
         /** Height or Time Based Activations **/ 
         nLastPOWBlock = 345600;
-        nModifierUpdateBlock = 19999999; // 19,9M 
-        nZerocoinStartHeight = 19999999; // 19,9M 
-        nZerocoinStartTime = 1958113662; // 2032y
+        nModifierUpdateBlock = 615800; // 19,9M 
+        nZerocoinStartHeight = 1000000; // 19,9M 
+        nZerocoinStartTime = 1577836800; // 2032y
         nBlockEnforceSerialRange = 19999999; //Enforce serial range starting this block  // 19,9M 
         nBlockRecalculateAccumulators = 19999999; //Trigger a recalculation of accumulators  // 19,9M 
         nBlockFirstFraudulent = 19999999; //First block that bad serials emerged  // 19,9M 
         nBlockLastGoodCheckpoint = 0; //Last valid accumulator checkpoint 
         nBlockEnforceInvalidUTXO = 19999999; //Start enforcing the invalid UTXO's  // 19,9M 
-        nInvalidAmountFiltered = 268200*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid 
-        nBlockZerocoinV2 = 19999999; //!> The block that zerocoin v2 becomes active. // 19,9M 
+        nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid 
+        nBlockZerocoinV2 = 91000000; //!> The block that zerocoin v2 becomes active. //
         nBlockDoubleAccumulated = 1050010; 
         nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key 
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM 
  
         const char* pszTimestamp = "30 May 2018 // With great power comes great responsibility. Adeptio tech.";
-        CMutableTransaction txNew; 
+	CMutableTransaction txNew; 
         txNew.vin.resize(1); 
         txNew.vout.resize(1); 
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp)); 
         txNew.vout[0].nValue = 0 * COIN; 
-        vout[0].scriptPubKey = CScript() << ParseHex("040fbf75ea45bf7eb65f9075e8342b7520d077b66f964e9b1963c96cefd9a2c52e93d0def918e0cd3c91f42821f429b2be4505552dede31c96f95f0d843da0beae") << OP_CHECKSIG;
+txNew.vout[0].scriptPubKey = CScript() << ParseHex("040fbf75ea45bf7eb65f9075e8342b7520d077b66f964e9b1963c96cefd9a2c52e93d0def918e0cd3c91f42821f429b2be4505552dede31c96f95f0d843da0beae") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew); 
         genesis.hashPrevBlock = 0; 
         genesis.hashMerkleRoot = genesis.BuildMerkleTree(); 
@@ -388,66 +388,51 @@ static CTestNetParams testNetParams;
 /** 
  * Regression test 
  */ 
-class CRegTestParams : public CTestNetParams 
-{ 
-public: 
-    CRegTestParams() 
-    { 
-        networkID = CBaseChainParams::REGTEST; 
-        strNetworkID = "regtest"; 
-        strNetworkID = "regtest"; 
-        pchMessageStart[0] = 0x14; 
-        pchMessageStart[1] = 0x34; 
-        pchMessageStart[2] = 0x95; 
-        pchMessageStart[3] = 0x64; 
-        nDefaultPort = 19077; 
-        nSubsidyHalvingInterval = 150; 
-        nEnforceBlockUpgradeMajority = 750; 
-        nRejectBlockOutdatedMajority = 950; 
-        nToCheckBlockUpgradeMajority = 1000; 
-        nMinerThreads = 1; 
-        nTargetTimespan = 24 * 60 * 60; // Adeptio: 1 day 
-        nTargetSpacing = 1 * 60;        // Adeptio: 1 minutes 
-        bnProofOfWorkLimit = ~uint256(0) >> 1; 
-        nLastPOWBlock = 1400; 
-        nMaturity = 100; 
-        nMasternodeCountDrift = 4; 
-        nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT 
-        nMaxMoneyOut = 43199500 * COIN; 
-        nZerocoinStartHeight = 300; 
-        nBlockZerocoinV2 = 300; 
-        nZerocoinStartTime = 1501776000; 
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block 
-        nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators 
-        nBlockFirstFraudulent = 999999999; //First block that bad serials emerged 
-        nBlockLastGoodCheckpoint = 999999999; //Last valid accumulator checkpoint 
- 
-        // Fake Serial Attack 
-        nFakeSerialBlockheightEnd = -1; 
- 
-        //! Modify the regtest genesis block so the timestamp is valid for a later start. 
-        genesis.nTime = 1558346988; 
-        genesis.nNonce = 1488330; 
- 
-        hashGenesisBlock = genesis.GetHash(); 
-        assert(hashGenesisBlock == uint256("0x000005c943ce65e620aae5c4c3a1f09d51e5b15c15ee9428a2505bef5e219d78")); 
- 
-        vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds. 
-        vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds. 
- 
-        fMiningRequiresPeers = false; 
-        fAllowMinDifficultyBlocks = true; 
-        fDefaultConsistencyChecks = true; 
-        fRequireStandard = false; 
-        fMineBlocksOnDemand = true; 
-        fTestnetToBeDeprecatedFieldRPC = false; 
-    } 
-    const Checkpoints::CCheckpointData& Checkpoints() const 
-    { 
-        return dataRegtest; 
-    } 
-}; 
-static CRegTestParams regTestParams; 
+class CRegTestParams : public CTestNetParams
+{
+public:
+    CRegTestParams()
+    {
+        networkID = CBaseChainParams::REGTEST;
+        strNetworkID = "regtest";
+        strNetworkID = "regtest";
+        pchMessageStart[0] = 0x14;
+        pchMessageStart[1] = 0x34;
+        pchMessageStart[2] = 0x95;
+        pchMessageStart[3] = 0x64;
+        nSubsidyHalvingInterval = 150;
+        nEnforceBlockUpgradeMajority = 750;
+        nRejectBlockOutdatedMajority = 950;
+        nToCheckBlockUpgradeMajority = 1000;
+        nMinerThreads = 1;
+        nTargetTimespan = 24 * 60 * 60; // Adeptio: 1 day
+        nTargetSpacing = 1 * 60;        // Adeptio: 1 minutes
+        bnProofOfWorkLimit = ~uint256(0) >> 1;
+        genesis.nTime = 1527677778;
+        genesis.nBits = 0x1e0ffff0;
+        genesis.nNonce = 129918;
+        nDefaultPort = 19077;
+
+        hashGenesisBlock = genesis.GetHash();
+        nDefaultPort = 19077;
+        assert(hashGenesisBlock == uint256("0x05ec3f4d9992323d64f4cba4f6ac0079b69277cfc0834a0d6d959fe9ff86b89c"));
+
+        vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
+        vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
+
+        fMiningRequiresPeers = false;
+        fAllowMinDifficultyBlocks = true;
+        fDefaultConsistencyChecks = true;
+        fRequireStandard = false;
+        fMineBlocksOnDemand = true;
+        fTestnetToBeDeprecatedFieldRPC = false;
+    }
+    const Checkpoints::CCheckpointData& Checkpoints() const
+    {
+        return dataRegtest;
+    }
+};
+static CRegTestParams regTestParams;
  
 /** 
  * Unit test 

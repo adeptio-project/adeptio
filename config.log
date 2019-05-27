@@ -3838,9 +3838,9 @@ config.status:1454: creating src/config/adeptio-config.h
 config.status:1635: src/config/adeptio-config.h is unchanged
 config.status:1714: executing depfiles commands
 config.status:1714: executing libtool commands
-configure:35724: === configuring in src/univalue (/home/tomand/adeptio/src/univalue)
+configure:35724: === configuring in src/univalue (/tmp/adeptio/src/univalue)
 configure:35787: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--disable-tests' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' '--disable-jni' --cache-file=/dev/null --srcdir=.
-configure:35724: === configuring in src/secp256k1 (/home/tomand/adeptio/src/secp256k1)
+configure:35724: === configuring in src/secp256k1 (/tmp/adeptio/src/secp256k1)
 configure:35787: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--disable-tests' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' '--disable-jni' --cache-file=/dev/null --srcdir=.
 configure:35806: result: Fixing libtool for -rpath problems.
 
@@ -4199,7 +4199,7 @@ pkg_cv_ZMQ_LIBS=-lzmq
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/tomand/adeptio/build-aux/missing aclocal-1.15'
+ACLOCAL='${SHELL} /tmp/adeptio/build-aux/missing aclocal-1.15'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -4210,9 +4210,9 @@ AM_DEFAULT_VERBOSITY='0'
 AM_V='$(V)'
 AR='/usr/bin/ar'
 ARFLAGS='cr'
-AUTOCONF='${SHELL} /home/tomand/adeptio/build-aux/missing autoconf'
-AUTOHEADER='${SHELL} /home/tomand/adeptio/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /home/tomand/adeptio/build-aux/missing automake-1.15'
+AUTOCONF='${SHELL} /tmp/adeptio/build-aux/missing autoconf'
+AUTOHEADER='${SHELL} /tmp/adeptio/build-aux/missing autoheader'
+AUTOMAKE='${SHELL} /tmp/adeptio/build-aux/missing automake-1.15'
 AVX2_CXXFLAGS='-mavx -mavx2'
 AWK='mawk'
 BDB_CFLAGS=''
@@ -4352,7 +4352,7 @@ LUPDATE='/usr/lib/qt5/bin/lupdate'
 MAINT=''
 MAINTAINER_MODE_FALSE='#'
 MAINTAINER_MODE_TRUE=''
-MAKEINFO='${SHELL} /home/tomand/adeptio/build-aux/missing makeinfo'
+MAKEINFO='${SHELL} /tmp/adeptio/build-aux/missing makeinfo'
 MAKENSIS=''
 MANIFEST_TOOL=':'
 MINIUPNPC_CPPFLAGS=''
@@ -4519,7 +4519,7 @@ host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /home/tomand/adeptio/build-aux/install-sh'
+install_sh='${SHELL} /tmp/adeptio/build-aux/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
