@@ -54,8 +54,34 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions 
 static Checkpoints::MapCheckpoints mapCheckpoints = 
     boost::assign::map_list_of 
-    (0, uint256("0000069359d0865762d8be44397c148fe34cc3b9403d5667537e33fbaea2a8c9"));
-  //  (206, uint256("6499a29b473e021d60c09568bc14ebbc223411c8f8880637b4e7d29c01c9cd8c"));
+    (0, uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"))
+    (1000, uint256("0x0000000000011a4f199d639afd11bf0ab20750737f2b3bfe695b63cfa69dcb6b"))
+        (10000, uint256("0x0000000000084511d9aafddf73098f56e0cd1043984671aa909a1a12716113df"))
+        (100000, uint256("0x000000000018c06c5e0776f504503331c635cf3843f41355ea486ac5bc879c51"))
+        (200000, uint256("0x0000000000012840e2d1e2d058971ed6a87434e6b776defee35808b6f94aaa3e"))
+        (297000, uint256("0x00000000000662025ccae2abe1090f092a633e4d8336008905fe17cee999da02"))
+        (300000, uint256("0x000000000000e754529022cbc1991189a333fd6c2580a94bda09128174915b07"))
+        (350000, uint256("0x8bd65475ce1a1b91107ec005b80ae73a39dd8a615e487365191eab3f3a724c44"))
+        (370000, uint256("0x93c1e14ff1ab4498a48242bb41cdf3627d7bdfd643e9c6e5e175f798520f5328"))
+        (380000, uint256("0x873f9a04931424938a315ea0bdbf45900c4ba33eeaa2c8e91a048833f026e3d7"))
+        (385000, uint256("0x6498719c37edbac2d7440706ddd57b78944120f39867d57d109476a6e7754519"))
+        (389000, uint256("0x6e1b0cf83792d5109a9d0e35bb0d655e3552a7211ea3bfa6b8b721fd9fc4069e"))
+        (390000, uint256("0xf271ab9a6f5f90fdc639d9d0a102ec9d2ba1893b05cb50f64b3dd840900d2234"))
+        (395000, uint256("0x86d90f24e5463e358f128bec5c756de95b34938556610a07db2c4630a0365723"))
+        (395155, uint256("0x916fab063c2c4f3fa53cd3055050c6b6bb244c4f81d6ba06ccdb9951705dde21"))
+        (396137, uint256("0xcef24b6ee76c14e6375455be499030fc713dd20686ac0d7ddb7e15af43f2d302"))
+        (397000, uint256("0x395d2bcb7e81201db55b411ba2e182a44a8e40a51811e32a0e72a8a6cddea291"))
+        (397700, uint256("0x1622e3df94c390f101534d4f6ee64f793efea8e79a2c7955e4e4bd71ae346956"))
+        (397379, uint256("0x4c3e152db5ec70856456a1eacf7fecc614b7b9be92215582ada48e599bb3c09a"))
+        (397724, uint256("0x8ebf117bf078e3af424521c8a6c600f22e5afec8868d6f2a75cd91cc41e6f131"))
+        (398000, uint256("0xba2dbf9133ed928fcb0d705252d560772511058d2ed14800812a3903fe669eb8"))
+        (399000, uint256("0x34387c995763cab3d5f9eaa7b902dd55f89feaf8db4c7cc63ef8d632676c386f"))
+        (400000, uint256("0x13733b1776b3a11cf6af1e6f2419d6c3da1d662f814a1fbb5fb0f5e46954ea64"))
+        (400500, uint256("0xeb8205f82a1d5405e3399fae444a1d0634e5c4f3982e3ffa5e5fce362d6a575b"))
+        (401000, uint256("0x3e283e5777b1de495c965d4e641143feae641a3e76a94fc29724544de0c5d677"))
+        (401400, uint256("0xea10f297909026e8d1f468681674bb8c79f9c46bd11d6efa735fa35d1e6dd2e9"))
+        (450000, uint256("0xaad6ec975d4eb95b31924b52fe12369ee4978363e52e0bb3b2f1fb0832f63255"))
+        (475199, uint256("0xa9d4d607dace292d4be1c9590c1dc250eecc6ffecfa79368dcf05db1501ce741"));
 
  
  
@@ -138,7 +164,7 @@ public:
         strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
  
         /** Height or Time Based Activations **/ 
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 345600;
         nModifierUpdateBlock = 19999999; // 19,9M 
         nZerocoinStartHeight = 19999999; // 19,9M 
         nZerocoinStartTime = 1958113662; // 2032y
@@ -153,25 +179,25 @@ public:
         nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key 
         nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM 
  
-        const char* pszTimestamp = "30 May 2018 - 20 May 2019 Phoenix Rebirth // With great power comes great responsibility. Adeptio tech."; 
+        const char* pszTimestamp = "30 May 2018 // With great power comes great responsibility. Adeptio tech.";
         CMutableTransaction txNew; 
         txNew.vin.resize(1); 
         txNew.vout.resize(1); 
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp)); 
         txNew.vout[0].nValue = 0 * COIN; 
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG; 
+        vout[0].scriptPubKey = CScript() << ParseHex("040fbf75ea45bf7eb65f9075e8342b7520d077b66f964e9b1963c96cefd9a2c52e93d0def918e0cd3c91f42821f429b2be4505552dede31c96f95f0d843da0beae") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew); 
         genesis.hashPrevBlock = 0; 
         genesis.hashMerkleRoot = genesis.BuildMerkleTree(); 
         genesis.nVersion = 1; 
-        genesis.nTime = 1558346988; 
-        genesis.nBits = 0x1e0ffff0; 
-        genesis.nNonce = 4314804; 
+        genesis.nTime = 1527677777;
+        genesis.nBits = 0x1e0ffff0;
+        genesis.nNonce = 4851983;
 
-        hashGenesisBlock = genesis.GetHash(); 
-        assert(hashGenesisBlock == uint256("0x0000069359d0865762d8be44397c148fe34cc3b9403d5667537e33fbaea2a8c9")); 
-        assert(genesis.hashMerkleRoot == uint256("0x8bf812456b72264c85c2078adee6a95b3bb9608bfb0a936bf1ef284a39829bb3")); 
- 
+        hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"));
+        assert(genesis.hashMerkleRoot == uint256("0xc122043047ee9acb36875d258b7ebb0d5c08034d0508fac895969e3a282de447"));
+
     vFixedSeeds.clear(); 
         vSeeds.clear(); 
  
@@ -235,7 +261,7 @@ public:
         strSporkKey = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500"; 
         strSporkKeyOld = "049e53e687fdafd78fd42d730fad0e7ea1819396176a2cb85d7a76fa4559cdbd2c2f05330a6f5cbadb44a6c1d324f167e679e9f3e95d9d5649761a3e7f59bf4500"; 
         strObfuscationPoolDummyAddress = "ATRg2hVWT2QT1dxndpPTSM2kvXs8LERWHu"; 
-        nStartMasternodePayments = 1558346988; // After 1 day from init start  
+        nStartMasternodePayments = 1527764160; // After 1 day from init start  
  
         /** Zerocoin */ 
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784" 

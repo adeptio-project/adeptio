@@ -1901,28 +1901,38 @@ int64_t GetBlockValue(int nHeight)
 
     }
 
-    int64_t nSubsidy = 0;
-    if (nHeight == 0) {
-        nSubsidy = 1949589.90115522 * COIN;     // Premine for SWAP 45949589.90115522 ADE
-    } else if (nHeight < 45 && nHeight > 0) {   // After 1y will be burnt what's left after SWAP. Track the Premine Wallet;
-        nSubsidy = 1000000 * COIN;
-    } else if (nHeight <= 20159 && nHeight >= 45) {
-        nSubsidy = 50 * COIN; 
-    } else if (nHeight <= 63359 && nHeight >= 20160) {
+    if (nHeight == 0) return 50002 * COIN;
+        
+    int64_t nSubsidy = 1 * COIN;
+    
+    if(nHeight <= 86400 && nHeight > 0) {
+        nSubsidy = 150 * COIN;
+    } else if (nHeight > 86400 && nHeight <= 151200) {
+        nSubsidy = 125 * COIN;
+    } else if (nHeight > 151200 && nHeight <= 302400) {
+        nSubsidy = 100 * COIN;
+    } else if (nHeight > 302400 && nHeight <= 345600) {
+        nSubsidy = 75 * COIN;
+    } else if (nHeight > 345600 && nHeight <= 388800) {
         nSubsidy = 50 * COIN;
-    } else if (nHeight <= 106559 && nHeight >= 63360) {
+    } else if (nHeight > 388800 && nHeight <= 475200) { 
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > 475200 && nHeight <= 518400) { 
+        nSubsidy = 50 * COIN;
+    } else if (nHeight > 518400 && nHeight <= 561600) {
         nSubsidy = 25 * COIN;
-    } else if (nHeight <= 149759 && nHeight >= 106560) {
+    } else if (nHeight > 561600 && nHeight <= 604800) {
         nSubsidy = 10 * COIN;
-    } else if (nHeight <= 754559 && nHeight >= 149760) {
+    } else if (nHeight > 604800 && nHeight <= 1209600) {
         nSubsidy = 5 * COIN;
-    } else if (nHeight <= 1509159 && nHeight >= 754560) {
+    } else if (nHeight > 1209600 && nHeight <= 2419200) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight <= 3018359 && nHeight >= 1509160) {
+    } else if (nHeight > 2419200 && nHeight <= 4838400) {
         nSubsidy = 2 * COIN;
-    } else {
+    } else if (nHeight > 4838400) {
         nSubsidy = 1 * COIN;
     }
+    
     return nSubsidy;
 }
 
