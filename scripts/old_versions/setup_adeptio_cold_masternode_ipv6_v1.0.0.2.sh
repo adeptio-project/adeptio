@@ -148,7 +148,7 @@ daemon=1
 staking=1
 maxconnections=125
 masternode=1
-masternodeaddr=[$wanipv6]:9077
+masternodeaddr=[$wanipv6]:9075
 externalip=[$wanipv6]
 masternodeprivkey=$privkey
 addnode=202.182.106.136
@@ -180,7 +180,7 @@ EOF
 # Firewall //
 echo "Update firewall rules"
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh serer' 
-sudo /usr/sbin/ufw allow 9077/tcp
+sudo /usr/sbin/ufw allow 9075/tcp
 sudo /usr/sbin/ufw --force enable
 echo ""
 

@@ -239,7 +239,7 @@ maxconnections=256
 masternode=1
 bind=$wanip
 externalip=$wanip
-masternodeaddr=$wanip:9077
+masternodeaddr=$wanip:9075
 externalip=$wanip
 masternodeprivkey=$privkey
 enablezeromint=0
@@ -249,7 +249,7 @@ EOF
 echo -e "${GREEN}4/10 Update firewall rules${NC}"
 echo ""
 sudo /usr/sbin/ufw limit ssh/tcp comment 'Rate limit for openssh server' 
-sudo /usr/sbin/ufw allow 9077/tcp comment 'Adeptio Wallet daemon'
+sudo /usr/sbin/ufw allow 9075/tcp comment 'Adeptio Wallet daemon'
 sudo /usr/sbin/ufw allow 9079/tcp comment 'Adeptio storADEserver protocol TCP'
 sudo /usr/sbin/ufw allow 9079/udp comment 'Adeptio storADEserver protocol UDP'
 sudo /usr/sbin/ufw --force enable

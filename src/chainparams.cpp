@@ -154,7 +154,7 @@ public:
         pchMessageStart[2] = 0x25;
         pchMessageStart[3] = 0x14;
         vAlertPubKey = ParseHex("0440c946f36751aa0229d5e7f04c3032392e41c794db4b7eb76e0ee132f2b88d872bc9aa142db38fdee812cda69e282d3c537e5a19fcb5f6c6a7fc2192b88ca137");
-        nDefaultPort = 9077;
+        nDefaultPort = 9075;
         storADEport = 9079;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Adeptio starting difficulty is 1 / 2^12  //20
         nSubsidyHalvingInterval = 210000;
@@ -308,7 +308,7 @@ public:
         pchMessageStart[2] = 0x25;
         pchMessageStart[3] = 0x54;
         vAlertPubKey = ParseHex("04cd5eaa8c03460c34747d1d1ff3bae7964a9bea28a7a00f180674a807e558958417541b7ba18fd2ddc1d578a3f2caf06bdce196c72a798c03312c6b2a4e707224");
-        nDefaultPort = 19077;
+        nDefaultPort = 19075;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
@@ -426,10 +426,10 @@ public:
         genesis.nTime = 1527677778;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 129918;		
-        nDefaultPort = 19077;
+        nDefaultPort = 19075;
 
 	hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 19077;
+        nDefaultPort = 19075;
         assert(hashGenesisBlock == uint256("0x05ec3f4d9992323d64f4cba4f6ac0079b69277cfc0834a0d6d959fe9ff86b89c"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.

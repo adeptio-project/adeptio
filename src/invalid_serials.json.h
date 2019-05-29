@@ -145,7 +145,7 @@ std::string LoadInvalidSerials()
             "    \"s\": \"2b294dfe32fe935c5d97f181b0b9bd37c52692aebabbe276c5bdb3e40acd73b5\"\n"
             "  },\n"
             "  {\n"
-            "    \"s\": \"2b9877df96ce356eeba1a17f40fec1a0fc88c11df47d8cb583f8fe1e32b90772\"\n"
+            "    \"s\": \"2b9877df96ce356eeba1a17f40fec1a0fc88c11df47d8cb583f8fe1e32b90752\"\n"
             "  },\n"
             "  {\n"
             "    \"s\": \"2d4640795df9c9b7f31891e3b980763e004781112a9ff39cefa155d394e430dd\"\n"

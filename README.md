@@ -65,7 +65,7 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Max. Coin supply: infinite
 
-• Network Port: 9077
+• Network Port: 9075
 
 • RPC Port: 9078
 

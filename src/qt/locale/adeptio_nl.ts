@@ -5146,8 +5146,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>Je moet een masternodeprivkey opgeven in de configuratie. Raadpleeg de documentatie voor hulp.</translation>
     </message>
     <message>
-        <source>(9077 could be used only on mainnet)</source>
-        <translation>(9077 kan alleen op mainnet worden gebruikt)</translation>
+        <source>(9075 could be used only on mainnet)</source>
+        <translation>(9075 kan alleen op mainnet worden gebruikt)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -5158,8 +5158,8 @@ Ofwel het munten van hogere denominaties (dus minder invoer nodig) of het te bes
         <translation>(standaard: 1)</translation>
     </message>
     <message>
-        <source>(must be 9077 for mainnet)</source>
-        <translation>(moet 9077 voor mainnet zijn)</translation>
+        <source>(must be 9075 for mainnet)</source>
+        <translation>(moet 9075 voor mainnet zijn)</translation>
     </message>
     <message>
         <source>Accept command line and JSON-RPC commands</source>

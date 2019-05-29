@@ -235,10 +235,10 @@ QT_TRANSLATE_NOOP("adeptio-core", ""
 QT_TRANSLATE_NOOP("adeptio-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("adeptio-core", "(9077 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("adeptio-core", "(9075 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("adeptio-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("adeptio-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("adeptio-core", "(must be 9077 for mainnet)"),
+QT_TRANSLATE_NOOP("adeptio-core", "(must be 9075 for mainnet)"),
 QT_TRANSLATE_NOOP("adeptio-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("adeptio-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("adeptio-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
