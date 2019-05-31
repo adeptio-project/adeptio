@@ -9,7 +9,8 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 
 #include <stdexcept>
 #include <iostream>
@@ -284,6 +285,11 @@ bool IsValidSerial(const ZerocoinParams* params, const CBigNum& bnSerial)
     //If V2, the serial is marked with 0xF in the first 4 bits. This is removed for the actual serial.
     CBigNum bnAdjustedSerial = GetAdjustedSerial(bnSerial);
     return bnAdjustedSerial > 0 && bnAdjustedSerial < params->coinCommitmentGroup.groupOrder;
+}
+
+bool IsValidCommitmentToCoinRange(const ZerocoinParams* params, const CBigNum& bnCommitment)
+{
+    return bnCommitment > CBigNum(0) && bnCommitment < params->serialNumberSoKCommitmentGroup.modulus;
 }
 
 } /* namespace libzerocoin */
