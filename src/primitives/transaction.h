@@ -94,6 +94,8 @@ public:
         return (nSequence == std::numeric_limits<uint32_t>::max());
     }
 
+    bool IsZerocoinSpend() const;
+
     friend bool operator==(const CTxIn& a, const CTxIn& b)
     {
         return (a.prevout   == b.prevout &&
@@ -262,8 +264,6 @@ public:
 
     bool HasZerocoinMintOutputs() const;
 
-    //bool IsZerocoinSpend() const;
-    
     bool IsZerocoinSpend() const
     {
         return (vin.size() > 0 && vin[0].prevout.hash == 0 && vin[0].scriptSig[0] == OP_ZEROCOINSPEND);
