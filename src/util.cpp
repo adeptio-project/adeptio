@@ -238,7 +238,23 @@ bool LogAcceptCategory(const char* category)
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
             // "adeptio" is a composite category enabling all ADE-related debug output
-            if (ptrCategory->count(string("adeptio"))) {
+	                if (ptrCategory->count(string("adeptio"))) {
+                ptrCategory->insert(string("alert"));
+                ptrCategory->insert(string("db"));
+                ptrCategory->insert(string("coindb"));
+                ptrCategory->insert(string("rpc"));
+                ptrCategory->insert(string("http"));
+                ptrCategory->insert(string("net"));
+                ptrCategory->insert(string("tor"));
+                ptrCategory->insert(string("libevent"));
+                ptrCategory->insert(string("hypersend"));
+                ptrCategory->insert(string("mempool"));
+                ptrCategory->insert(string("bench"));
+                ptrCategory->insert(string("addrman"));
+                ptrCategory->insert(string("estimatefee"));
+                ptrCategory->insert(string("selectcoins"));
+                ptrCategory->insert(string("zmq"));
+
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("hypersend"));
                 ptrCategory->insert(string("masternode"));
