@@ -91,6 +91,11 @@ uint256 CTxOut::GetHash() const
     return SerializeHash(*this);
 }
 
+bool CTxOut::IsZerocoinMint() const
+{
+    return scriptPubKey.IsZerocoinMint();
+}
+
 std::string CTxOut::ToString() const
 {
     return strprintf("CTxOut(nValue=%d.%08d, scriptPubKey=%s)", nValue / COIN, nValue % COIN, scriptPubKey.ToString().substr(0,30));
@@ -142,7 +147,7 @@ CTransaction& CTransaction::operator=(const CTransaction &tx) {
 bool CTransaction::HasZerocoinSpendInputs() const
 {
     for (const CTxIn& txin: vin) {
-        if (txin.IsZerocoinSpend())
+        if (txin.scriptSig.IsZerocoinSpend())
             return true;
     }
     return false;
