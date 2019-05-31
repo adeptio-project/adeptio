@@ -58,8 +58,8 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"))
-	(1000, uint256("0x0000000000011a4f199d639afd11bf0ab20750737f2b3bfe695b63cfa69dcb6b"))
+    (0, uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"))
+    (1000, uint256("0x0000000000011a4f199d639afd11bf0ab20750737f2b3bfe695b63cfa69dcb6b"))
         (10000, uint256("0x0000000000084511d9aafddf73098f56e0cd1043984671aa909a1a12716113df"))
         (100000, uint256("0x000000000018c06c5e0776f504503331c635cf3843f41355ea486ac5bc879c51"))
         (200000, uint256("0x0000000000012840e2d1e2d058971ed6a87434e6b776defee35808b6f94aaa3e"))
@@ -169,8 +169,8 @@ public:
         nMaturity = 100;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 100000000 * COIN;
-	strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
-		
+    strDeveloperFeePayee = "ASpLv9c3UTN6SZXYR29iW46xFGjHRRvPWf";
+        
         /** Height or Time Based Activations **/
         nLastPOWBlock = 345600;
         nModifierUpdateBlock = 615800;
@@ -183,9 +183,12 @@ public:
         nBlockEnforceInvalidUTXO = 1000000; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 99000000; //!> The block that zerocoin v2 becomes active // postpone 91 000 000
-		
+        
         nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): must use the new spork key
         nRejectOldSporkKey = 1548979200; //!> Fully reject old spork key after (GMT): 02/01/2019 @ 12:00am (UTC)
+
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = 1686229;
 
         const char* pszTimestamp = "30 May 2018 // With great power comes great responsibility. Adeptio tech.";
         CMutableTransaction txNew;
@@ -201,12 +204,12 @@ public:
         genesis.nTime = 1527677777;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 4851983;
-	
+    
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000041a18cae812549433c7ccbf1db6a0da33bb91254a451a498219198eeae8"));
         assert(genesis.hashMerkleRoot == uint256("0xc122043047ee9acb36875d258b7ebb0d5c08034d0508fac895969e3a282de447"));
 
-	vSeeds.push_back(CDNSSeedData("seed0.adeptio.cc", "seed0.adeptio.cc")); // Primary DNS Seeder;
+    vSeeds.push_back(CDNSSeedData("seed0.adeptio.cc", "seed0.adeptio.cc")); // Primary DNS Seeder;
         vSeeds.push_back(CDNSSeedData("seed1.adeptio.cc", "seed1.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("seed2.adeptio.cc", "seed2.adeptio.cc")); 
         vSeeds.push_back(CDNSSeedData("seed3.adeptio.cc", "seed3.adeptio.cc")); 
@@ -247,7 +250,7 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md 109 	0x8000006d
+        //  BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md 109   0x8000006d
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x6d).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
@@ -332,16 +335,19 @@ public:
         nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1548979200; //!> Reject old spork key after 02/01/2019 @ 12:00am (UTC)
 
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527677778;
         genesis.nNonce = 3698642;
-	
+    
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000a5662a9fe0b0fd02e3765b9b8e2e6d033b337d77c4f0d63ed28de96c6e8"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-		
+        
         vSeeds.push_back(CDNSSeedData("testnet.seed0.adeptio.cc", "testnet.seed0.adeptio.cc")); // Primary DNS Seeder;
         vSeeds.push_back(CDNSSeedData("testnet.seed1.adeptio.cc", "testnet.seed1.adeptio.cc"));
         vSeeds.push_back(CDNSSeedData("testnet.seed2.adeptio.cc", "testnet.seed2.adeptio.cc"));
@@ -425,10 +431,13 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1527677778;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 129918;		
+        genesis.nNonce = 129918;        
         nDefaultPort = 19075;
 
-	hashGenesisBlock = genesis.GetHash();
+        // Fake Serial Attack
+        nFakeSerialBlockheightEnd = -1;
+
+        hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 19075;
         assert(hashGenesisBlock == uint256("0x05ec3f4d9992323d64f4cba4f6ac0079b69277cfc0834a0d6d959fe9ff86b89c"));
 
