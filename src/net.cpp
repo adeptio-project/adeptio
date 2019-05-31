@@ -842,6 +842,7 @@ void ThreadSocketHandler()
         //
         // Disconnect nodes
         //
+        LogPrint("net", "ThreadSocketHandler(): start while\n");
         {
             LOCK(cs_vNodes);
             // Disconnect unused nodes
@@ -867,6 +868,7 @@ void ThreadSocketHandler()
         }
         {
             // Delete disconnected nodes
+            LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - remove\n");
             list<CNode*> vNodesDisconnectedCopy = vNodesDisconnected;
             BOOST_FOREACH (CNode* pnode, vNodesDisconnectedCopy) {
                 // wait until threads are done using it
@@ -916,6 +918,7 @@ void ThreadSocketHandler()
         SOCKET hSocketMax = 0;
         bool have_fds = false;
 
+        LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - ListenSocket - max\n");
         BOOST_FOREACH (const ListenSocket& hListenSocket, vhListenSocket) {
             FD_SET(hListenSocket.socket, &fdsetRecv);
             hSocketMax = max(hSocketMax, hListenSocket.socket);
@@ -924,6 +927,7 @@ void ThreadSocketHandler()
 
         {
             LOCK(cs_vNodes);
+            LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - FD_SET\n");
             BOOST_FOREACH (CNode* pnode, vNodes) {
                 if (pnode->hSocket == INVALID_SOCKET)
                     continue;
@@ -964,9 +968,12 @@ void ThreadSocketHandler()
 
         int nSelect = select(have_fds ? hSocketMax + 1 : 0,
             &fdsetRecv, &fdsetSend, &fdsetError, &timeout);
+        LogPrint("net", "ThreadSocketHandler(): this_thread - interruption_point start\n");
         boost::this_thread::interruption_point();
+        LogPrint("net", "ThreadSocketHandler(): this_thread - interruption_point stop\n");
 
         if (nSelect == SOCKET_ERROR) {
+            LogPrint("net", "ThreadSocketHandler(): SOCKET_ERROR\n");
             if (have_fds) {
                 int nErr = WSAGetLastError();
                 LogPrintf("socket select error %s\n", NetworkErrorString(nErr));
@@ -981,6 +988,7 @@ void ThreadSocketHandler()
         //
         // Accept new connections
         //
+        LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - SocketSendData\n");
         BOOST_FOREACH (const ListenSocket& hListenSocket, vhListenSocket) {
             if (hListenSocket.socket != INVALID_SOCKET && FD_ISSET(hListenSocket.socket, &fdsetRecv)) {
                 struct sockaddr_storage sockaddr;
@@ -1030,6 +1038,7 @@ void ThreadSocketHandler()
         //
         // Service each socket
         //
+        LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - AddRef\n");
         vector<CNode*> vNodesCopy;
         {
             LOCK(cs_vNodes);
@@ -1037,8 +1046,11 @@ void ThreadSocketHandler()
             BOOST_FOREACH (CNode* pnode, vNodesCopy)
                 pnode->AddRef();
         }
+        LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - SocketSendData\n");
         BOOST_FOREACH (CNode* pnode, vNodesCopy) {
+            LogPrint("net", "ThreadSocketHandler(): this_thread - interruption_point start\n");
             boost::this_thread::interruption_point();
+            LogPrint("net", "ThreadSocketHandler(): this_thread - interruption_point stop\n");
 
             //
             // Receive
@@ -1108,10 +1120,12 @@ void ThreadSocketHandler()
             }
         }
         {
+            LogPrint("net", "ThreadSocketHandler(): BOOST_FOREACH - CNode - Release\n");
             LOCK(cs_vNodes);
             BOOST_FOREACH (CNode* pnode, vNodesCopy)
                 pnode->Release();
         }
+        LogPrint("net", "ThreadSocketHandler(): end while\n");
     }
 }
 
@@ -1308,6 +1322,7 @@ void ThreadOpenConnections()
     if (mapArgs.count("-connect") && mapMultiArgs["-connect"].size() > 0) {
         for (int64_t nLoop = 0;; nLoop++) {
             ProcessOneShot();
+            LogPrint("net", "ThreadOpenConnections(): BOOST_FOREACH - strAddr - OpenNetworkConnection\n");
             BOOST_FOREACH (string strAddr, mapMultiArgs["-connect"]) {
                 CAddress addr;
                 OpenNetworkConnection(addr, NULL, strAddr.c_str());
@@ -1322,12 +1337,15 @@ void ThreadOpenConnections()
     // Initiate network connections
     int64_t nStart = GetTime();
     while (true) {
+        LogPrint("net", "ThreadOpenConnections(): start while\n");
         ProcessOneShot();
 
         MilliSleep(500);
 
         CSemaphoreGrant grant(*semOutbound);
+        LogPrint("net", "ThreadOpenConnections(): interruption_point start\n");
         boost::this_thread::interruption_point();
+        LogPrint("net", "ThreadOpenConnections(): interruption_point end\n");
 
         // Add seed nodes if DNS seeds are all down (an infrastructure attack?).
         if (addrman.size() == 0 && (GetTime() - nStart > 60)) {
@@ -1350,6 +1368,7 @@ void ThreadOpenConnections()
         set<vector<unsigned char> > setConnected;
         {
             LOCK(cs_vNodes);
+            LogPrint("net", "ThreadOpenConnections(): BOOST_FOREACH - CNode - insert\n");
             BOOST_FOREACH (CNode* pnode, vNodes) {
                 if (!pnode->fInbound) {
                     setConnected.insert(pnode->addr.GetGroup());
@@ -1362,6 +1381,7 @@ void ThreadOpenConnections()
 
         int nTries = 0;
         while (true) {
+            LogPrint("net", "ThreadOpenConnections(): start while while\n");
             CAddress addr = addrman.Select();
 
             // if we selected an invalid address, restart
@@ -1387,11 +1407,14 @@ void ThreadOpenConnections()
                 continue;
 
             addrConnect = addr;
+            LogPrint("net", "ThreadOpenConnections(): end while while\n");
             break;
         }
 
+        LogPrint("net", "ThreadOpenConnections(): IsValid OpenNetworkConnection\n");
         if (addrConnect.IsValid())
             OpenNetworkConnection(addrConnect, &grant);
+        LogPrint("net", "ThreadOpenConnections(): end while\n");
     }
 }
 
@@ -1404,12 +1427,15 @@ void ThreadOpenAddedConnections()
 
     if (HaveNameProxy()) {
         while (true) {
+            LogPrint("net", "ThreadOpenAddedConnections(): start while\n");
             list<string> lAddresses(0);
             {
+                LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode push_back while\n");
                 LOCK(cs_vAddedNodes);
                 BOOST_FOREACH (string& strAddNode, vAddedNodes)
                     lAddresses.push_back(strAddNode);
             }
+            LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode OpenNetworkConnection\n");
             BOOST_FOREACH (string& strAddNode, lAddresses) {
                 CAddress addr;
                 CSemaphoreGrant grant(*semOutbound);
@@ -1417,18 +1443,22 @@ void ThreadOpenAddedConnections()
                 MilliSleep(500);
             }
             MilliSleep(120000); // Retry every 2 minutes
+            LogPrint("net", "ThreadOpenAddedConnections(): end while\n");
         }
     }
 
     for (unsigned int i = 0; true; i++) {
+        LogPrint("net", "ThreadOpenAddedConnections(): start for\n");
         list<string> lAddresses(0);
         {
             LOCK(cs_vAddedNodes);
+            LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode push_back for\n");
             BOOST_FOREACH (string& strAddNode, vAddedNodes)
                 lAddresses.push_back(strAddNode);
         }
 
         list<vector<CService> > lservAddressesToAdd(0);
+        LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode CService insert\n");
         BOOST_FOREACH (string& strAddNode, lAddresses) {
             vector<CService> vservNode(0);
             if (Lookup(strAddNode.c_str(), vservNode, Params().GetDefaultPort(), fNameLookup, 0)) {
@@ -1444,6 +1474,7 @@ void ThreadOpenAddedConnections()
         // (keeping in mind that addnode entries can have many IPs if fNameLookup)
         {
             LOCK(cs_vNodes);
+            LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode CService erase\n");
             BOOST_FOREACH (CNode* pnode, vNodes)
                 for (list<vector<CService> >::iterator it = lservAddressesToAdd.begin(); it != lservAddressesToAdd.end(); it++)
                     BOOST_FOREACH (CService& addrNode, *(it))
@@ -1453,12 +1484,14 @@ void ThreadOpenAddedConnections()
                             break;
                         }
         }
+        LogPrint("net", "ThreadOpenAddedConnections(): BOOST_FOREACH - strAddNode vserv grant\n");
         BOOST_FOREACH (vector<CService>& vserv, lservAddressesToAdd) {
             CSemaphoreGrant grant(*semOutbound);
             OpenNetworkConnection(CAddress(vserv[i % vserv.size()]), &grant);
             MilliSleep(500);
         }
         MilliSleep(120000); // Retry every 2 minutes
+        LogPrint("net", "ThreadOpenAddedConnections(): end for\n");
     }
 }
 
@@ -1499,10 +1532,12 @@ void ThreadMessageHandler()
 
     SetThreadPriority(THREAD_PRIORITY_BELOW_NORMAL);
     while (true) {
+        LogPrint("net", "ThreadMessageHandler(): start while\n");
         vector<CNode*> vNodesCopy;
         {
             LOCK(cs_vNodes);
             vNodesCopy = vNodes;
+            LogPrint("net", "ThreadMessageHandler(): BOOST_FOREACH - CNode - AddRef\n");
             BOOST_FOREACH (CNode* pnode, vNodesCopy) {
                 pnode->AddRef();
             }
@@ -1515,6 +1550,7 @@ void ThreadMessageHandler()
 
         bool fSleep = true;
 
+        LogPrint("net", "ThreadMessageHandler(): BOOST_FOREACH - CNode - SendMessages\n");
         BOOST_FOREACH (CNode* pnode, vNodesCopy) {
             if (pnode->fDisconnect)
                 continue;
@@ -1533,7 +1569,9 @@ void ThreadMessageHandler()
                     }
                 }
             }
+            LogPrint("net", "ThreadMessageHandler(): interruption_point start\n");
             boost::this_thread::interruption_point();
+            LogPrint("net", "ThreadMessageHandler(): interruption_point end\n");
 
             // Send messages
             {
@@ -1541,18 +1579,22 @@ void ThreadMessageHandler()
                 if (lockSend)
                     g_signals.SendMessages(pnode, pnode == pnodeTrickle || pnode->fWhitelisted);
             }
+            LogPrint("net", "ThreadMessageHandler(): interruption_point start\n");
             boost::this_thread::interruption_point();
+            LogPrint("net", "ThreadMessageHandler(): interruption_point end\n");
         }
 
 
         {
             LOCK(cs_vNodes);
+            LogPrint("net", "ThreadMessageHandler(): BOOST_FOREACH - CNode - Release\n");
             BOOST_FOREACH (CNode* pnode, vNodesCopy)
                 pnode->Release();
         }
 
         if (fSleep)
             messageHandlerCondition.timed_wait(lock, boost::posix_time::microsec_clock::universal_time() + boost::posix_time::milliseconds(100));
+        LogPrint("net", "ThreadMessageHandler(): end while\n");
     }
 }
 
@@ -1567,7 +1609,7 @@ void static ThreadStakeMinter()
         boost::this_thread::interruption_point();
     } catch (std::exception& e) {
         LogPrintf("ThreadStakeMinter() exception: %s \n", e.what());
-	ThreadStakeMinter();
+    ThreadStakeMinter();
     } catch (...) {
         LogPrintf("ThreadStakeMinter() error \n");
     }
@@ -1891,7 +1933,7 @@ void RelayInv(CInv& inv)
 {
     LOCK(cs_vNodes);
     BOOST_FOREACH (CNode* pnode, vNodes){
-    		if((pnode->nServices==NODE_BLOOM_WITHOUT_MN) && inv.IsMasterNodeType())continue;
+            if((pnode->nServices==NODE_BLOOM_WITHOUT_MN) && inv.IsMasterNodeType())continue;
         if (pnode->nVersion >= ActiveProtocol())
             pnode->PushInventory(inv);
     }
@@ -2177,7 +2219,7 @@ void CNode::EndMessage() UNLOCK_FUNCTION(cs_vSend)
         Fuzz(GetArg("-fuzzmessagestest", 10));
 
     if (ssSend.size() == 0) {
-	    LEAVE_CRITICAL_SECTION(cs_vSend);
+        LEAVE_CRITICAL_SECTION(cs_vSend);
         return;
     }
 
