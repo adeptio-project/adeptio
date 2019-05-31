@@ -139,6 +139,15 @@ CTransaction& CTransaction::operator=(const CTransaction &tx) {
     return *this;
 }
 
+bool CTransaction::HasZerocoinSpendInputs() const
+{
+    for (const CTxIn& txin: vin) {
+        if (txin.IsZerocoinSpend())
+            return true;
+    }
+    return false;
+}
+
 bool CTransaction::IsCoinStake() const
 {
     if (vin.empty())

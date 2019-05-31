@@ -9,7 +9,8 @@
  * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
  * @license    This project is released under the MIT license.
  **/
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 
 #include "CoinSpend.h"
 #include <iostream>
@@ -72,7 +73,7 @@ namespace libzerocoin
     }
 }
 
-bool CoinSpend::Verify(const Accumulator& a) const
+bool CoinSpend::Verify(const Accumulator& a, bool verifyParams) const
 {
     // Double check that the version is the same as marked in the serial
     if (ExtractVersionFromSerial(coinSerialNumber) != version) {
@@ -96,7 +97,7 @@ bool CoinSpend::Verify(const Accumulator& a) const
         return false;
     }
 
-    if (!serialNumberSoK.Verify(coinSerialNumber, serialCommitmentToCoinValue, signatureHash())) {
+    if (!serialNumberSoK.Verify(coinSerialNumber, serialCommitmentToCoinValue, signatureHash(), verifyParams)) {
         //std::cout << "CoinsSpend::Verify: serialNumberSoK failed. sighash:" << signatureHash().GetHex() << "\n";
         return false;
     }
