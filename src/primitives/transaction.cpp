@@ -148,6 +148,15 @@ bool CTransaction::HasZerocoinSpendInputs() const
     return false;
 }
 
+bool CTransaction::HasZerocoinMintOutputs() const
+{
+    for(const CTxOut& txout : vout) {
+        if (txout.IsZerocoinMint())
+            return true;
+    }
+    return false;
+}
+
 bool CTransaction::IsCoinStake() const
 {
     if (vin.empty())
