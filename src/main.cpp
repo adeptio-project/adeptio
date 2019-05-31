@@ -4405,7 +4405,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         std::vector<CTxIn> pivInputs;
         std::vector<CTxIn> zPIVInputs;
 
-        for (const CTransaction& stakeIn : stakeTxIn.vin) {
+        for (const CTxIn& stakeIn : stakeTxIn.vin) {
             if(stakeIn.IsZerocoinSpend()){
                 zPIVInputs.push_back(stakeIn);
             }else{
@@ -4420,7 +4420,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
         vector<CBigNum> inBlockSerials;
         for (const CTransaction& tx : block.vtx) {
-            for (const CTransaction& in: tx.vin) {
+            for (const CTxIn& in: tx.vin) {
                 if(nHeight >= Params().Zerocoin_StartHeight()) {
                     if (in.IsZerocoinSpend()) {
                         CoinSpend spend = TxInToZerocoinSpend(in);
@@ -4472,7 +4472,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
                 // Loop through every input from said block
                 for (const CTransaction &t : bl.vtx) {
-                    for (const CTransaction &in: t.vin) {
+                    for (const CTxIn &in: t.vin) {
                         // Loop through every input of the staking tx
                         for (const CTxIn &stakeIn : pivInputs) {
                             // if it's already spent
