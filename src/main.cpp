@@ -4268,6 +4268,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     CBlockIndex*& pindex = *ppindex;
 
     // Get prev block index
+    LogPrint("net", "%s : Get prev block index\n", __func__);
     CBlockIndex* pindexPrev = NULL;
     if (block.GetHash() != Params().HashGenesisBlock()) {
         BlockMap::iterator mi = mapBlockIndex.find(block.hashPrevBlock);
@@ -4293,6 +4294,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     if (block.GetHash() != Params().HashGenesisBlock() && !CheckWork(block, pindexPrev))
         return false;
 
+    LogPrint("net", "%s : IsProofOfStake\n", __func__);
+
     if (block.IsProofOfStake()) {
         uint256 hashProofOfStake = 0;
         unique_ptr<CStakeInput> stake;
@@ -4311,6 +4314,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             mapProofOfStake.insert(make_pair(hash, hashProofOfStake));
     }
 
+    LogPrint("net", "%s : AcceptBlockHeader\n", __func__);
     if (!AcceptBlockHeader(block, state, &pindex))
         return false;
 
@@ -4321,6 +4325,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         return true;
     }
 
+    LogPrint("net", "%s : fAlreadyCheckedBlock CheckBlock ContextualCheckBlock\n", __func__);
     if ((!fAlreadyCheckedBlock && !CheckBlock(block, state)) || !ContextualCheckBlock(block, state, pindex->pprev)) {
         if (state.IsInvalid() && !state.CorruptionPossible()) {
             pindex->nStatus |= BLOCK_FAILED_VALID;
@@ -4331,6 +4336,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
     int nHeight = pindex->nHeight;
 
+    LogPrint("net", "%s : IsProofOfStake 2\n", __func__);
     if (block.IsProofOfStake()) {
         LOCK(cs_main);
 
@@ -4380,7 +4386,9 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     }
     // Write block to history file
     try {
+        LogPrint("net", "%s : GetSerializeSize start\n", __func__);
         unsigned int nBlockSize = ::GetSerializeSize(block, SER_DISK, CLIENT_VERSION);
+        LogPrint("net", "%s : GetSerializeSize end\n", __func__);
         CDiskBlockPos blockPos;
         if (dbp != NULL)
             blockPos = *dbp;
@@ -4392,6 +4400,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         if (!ReceivedBlockTransactions(block, state, pindex, blockPos))
             return error("AcceptBlock() : ReceivedBlockTransactions failed");
     } catch (std::runtime_error& e) {
+         LogPrint("net", "%s : try Abort\n", __func__);
         return state.Abort(std::string("System error: ") + e.what());
     }
 
@@ -4504,7 +4513,9 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
 
         // Store to disk
         CBlockIndex* pindex = nullptr;
+        LogPrint("net", "%s : AcceptBlock start\n", __func__);
         bool ret = AcceptBlock (*pblock, state, &pindex, dbp, checked);
+        LogPrint("net", "%s : AcceptBlock end\n", __func__);
         if (pindex && pfrom) {
             mapBlockSource[pindex->GetBlockHash ()] = pfrom->GetId ();
         }
@@ -6109,7 +6120,9 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 
             CValidationState state;
             if (!mapBlockIndex.count(block.GetHash())) {
+                LogPrint("net", "%s : ProcessNewBlock start\n", __func__);
                 ProcessNewBlock(state, pfrom, &block);
+                LogPrint("net", "%s : ProcessNewBlock end\n", __func__);
                 int nDoS;
                 if(state.IsInvalid(nDoS)) {
                     pfrom->PushMessage("reject", strCommand, state.GetRejectCode(),
