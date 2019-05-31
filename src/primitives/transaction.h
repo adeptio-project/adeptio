@@ -262,11 +262,12 @@ public:
 
     bool HasZerocoinMintOutputs() const;
 
-    /*bool IsZerocoinSpend() const
+    //bool IsZerocoinSpend() const;
+    
+    bool IsZerocoinSpend() const
     {
         return (vin.size() > 0 && vin[0].prevout.hash == 0 && vin[0].scriptSig[0] == OP_ZEROCOINSPEND);
-    }*/
-    bool IsZerocoinSpend() const;
+    }
 
     bool IsZerocoinMint() const
     {
