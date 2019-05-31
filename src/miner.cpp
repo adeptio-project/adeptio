@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -100,6 +101,7 @@ void UpdateTime(CBlockHeader* pblock, const CBlockIndex* pindexPrev)
 std::pair<int, std::pair<uint256, uint256> > pCheckpointCache;
 CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, bool fProofOfStake)
 {
+    LogPrint("mempool", "CreateNewBlock(): start\n");
     CReserveKey reservekey(pwallet);
 
     // Create new block
@@ -126,10 +128,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     txNew.vin[0].prevout.SetNull();
     txNew.vout.resize(1);
     txNew.vout[0].scriptPubKey = scriptPubKeyIn;
-	
-	CBlockIndex* prev = chainActive.Tip(); 
-	txNew.vout[0].nValue = GetBlockValue(prev->nHeight);
-	
+    
+    CBlockIndex* prev = chainActive.Tip(); 
+    txNew.vout[0].nValue = GetBlockValue(prev->nHeight);
+    
     pblock->vtx.push_back(txNew);
     pblocktemplate->vTxFees.push_back(-1);   // updated at end
     pblocktemplate->vTxSigOps.push_back(-1); // updated at end
@@ -137,6 +139,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     // ppcoin: if coinstake available add coinstake tx
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime(); // only initialized at startup
 
+    LogPrint("mempool", "CreateNewBlock(): fProofOfStake\n");
     if (fProofOfStake) {
         boost::this_thread::interruption_point();
         pblock->nTime = GetAdjustedTime();
@@ -178,6 +181,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
     nBlockMinSize = std::min(nBlockMaxSize, nBlockMinSize);
 
     // Collect memory pool transactions into the block
+    LogPrint("mempool", "CreateNewBlock(): Collect memory pool transactions into the block\n");
     CAmount nFees = 0;
 
     {
@@ -302,6 +306,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         }
 
         // Collect transactions into block
+        LogPrint("mempool", "CreateNewBlock(): Collect transactions into block\n");
         uint64_t nBlockSize = 1000;
         uint64_t nBlockTx = 0;
         int nBlockSigOps = 100;
@@ -430,7 +435,7 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
         //Masternode and general budget payments
         FillBlockPayee(txNew, nFees, fProofOfStake, false);
 
-		if (!fProofOfStake) {
+        if (!fProofOfStake) {
             //Make payee
             if (txNew.vout.size() > 1) {
                 pblock->payee = txNew.vout[1].scriptPubKey;
@@ -478,18 +483,18 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
 
         pblock->nAccumulatorCheckpoint = pCheckpointCache.second.second;
         pblocktemplate->vTxSigOps[0] = GetLegacySigOpCount(pblock->vtx[0]);
-		
-		
+        
+        
         LogPrintf("CreateNewBlock(): %s\n", pblock->ToString());
-		
-		if (fProofOfStake) {
-			CValidationState state;
-			if (!TestBlockValidity(state, *pblock, pindexPrev, false, false)) {
-				LogPrintf("CreateNewBlock() : TestBlockValidity failed\n");
-				mempool.clear();
-				return NULL;
-			}
-		}
+        
+        if (fProofOfStake) {
+            CValidationState state;
+            if (!TestBlockValidity(state, *pblock, pindexPrev, false, false)) {
+                LogPrintf("CreateNewBlock() : TestBlockValidity failed\n");
+                mempool.clear();
+                return NULL;
+            }
+        }
 
     }
 
@@ -525,10 +530,12 @@ int64_t nHPSTimerStart = 0;
 CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfStake)
 {
     CPubKey pubkey;
+    LogPrint("mempool", "CreateNewBlockWithKey(): GetReservedKey\n");
     if (!reservekey.GetReservedKey(pubkey))
         return NULL;
 
     CScript scriptPubKey = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
+    LogPrint("mempool", "CreateNewBlockWithKey(): CreateNewBlock\n");
     return CreateNewBlock(scriptPubKey, pwallet, fProofOfStake);
 }
 
@@ -588,6 +595,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
     unsigned int nExtraNonce = 0;
 
     while (fGenerateBitcoins || fProofOfStake) {
+        LogPrint("mempool", "BitcoinMiner(): start while\n");
         if (fProofOfStake) {
             //control the amount of times the client will check for mintable coins
             if ((GetTime() - nMintableLastCheck > 5 * 60)) // 5 minute check time
@@ -596,11 +604,13 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                 fMintableCoins = pwallet->MintableCoins();
             }
 
+            LogPrint("mempool", "BitcoinMiner(): LAST_POW_BLOCK\n");
             if (chainActive.Tip()->nHeight < Params().LAST_POW_BLOCK()) {
                 MilliSleep(5000);
                 continue;
             }
 
+            LogPrint("mempool", "BitcoinMiner(): while nLastCoinStakeSearchInterval\n");
             while (vNodes.empty() || pwallet->IsLocked() || !fMintableCoins || (pwallet->GetBalance() > 0 && nReserveBalance >= pwallet->GetBalance()) || !masternodeSync.IsSynced()) {
                 nLastCoinStakeSearchInterval = 0;
                 // Do a separate 1 minute check here to ensure fMintableCoins is updated
@@ -616,6 +626,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
                     continue;
             }
 
+            LogPrint("mempool", "BitcoinMiner(): mapHashedBlocks count\n");
             if (mapHashedBlocks.count(chainActive.Tip()->nHeight)) //search our map of hashed blocks, see if bestblock has been hashed yet
             {
                 if (GetTime() - mapHashedBlocks[chainActive.Tip()->nHeight] < max(pwallet->nHashInterval, (unsigned int)1)) // wait half of the nHashDrift with max wait of 3 minutes
@@ -629,16 +640,19 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
         //
         // Create new block
         //
+        LogPrint("mempool", "BitcoinMiner(): GetTransactionsUpdated\n");
         unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
         CBlockIndex* pindexPrev = chainActive.Tip();
         if (!pindexPrev)
             continue;
 
+        LogPrint("mempool", "BitcoinMiner(): CreateNewBlockWithKey\n");
         unique_ptr<CBlockTemplate> pblocktemplate(CreateNewBlockWithKey(reservekey, pwallet, fProofOfStake));
         if (!pblocktemplate.get())
             continue;
 
         CBlock* pblock = &pblocktemplate->block;
+        LogPrint("mempool", "BitcoinMiner(): IncrementExtraNonce\n");
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
         //Stake miner main
