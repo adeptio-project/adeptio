@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #:: Adeptio dev team
-#:: Copyright // 2018-04-23
+#:: Copyright // 2018-04-24
 #:: Version: v2 heron
 #:: Tested on Ubuntu 18.04 LTS Server Bionic & Ubuntu 16.04 LTS Server Xenial!
 
