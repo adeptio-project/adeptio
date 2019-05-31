@@ -4340,8 +4340,10 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     if (block.IsProofOfStake()) {
         LOCK(cs_main);
 
+        LogPrint("net", "%s : CCoinsViewCache coins\n", __func__);
         CCoinsViewCache coins(pcoinsTip);
 
+        LogPrint("net", "%s : HaveInputs\n", __func__);
         if (!coins.HaveInputs(block.vtx[1])) {
             // the inputs are spent at the chain tip so we should look at the recently spent outputs
 
@@ -4357,13 +4359,16 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         }
 
         // if this is on a fork
+        LogPrint("net", "%s : if this is on a fork\n", __func__);
         if (!chainActive.Contains(pindexPrev) && pindexPrev != NULL) {
             // start at the block we're adding on to
             CBlockIndex *last = pindexPrev;
 
             // while that block is not on the main chain
+            LogPrint("net", "%s : while that block is not on the main chain\n", __func__);
             while (!chainActive.Contains(last) && pindexPrev != NULL) {
                 CBlock bl;
+                LogPrint("net", "%s : ReadBlockFromDisk\n", __func__);
                 ReadBlockFromDisk(bl, last);
                 // loop through every spent input from said block
                 for (CTransaction t : bl.vtx) {
@@ -4382,6 +4387,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 // go to the parent block
                 last = pindexPrev->pprev;
             }
+            LogPrint("net", "%s : 'if this is on a fork' end\n", __func__);
         }
     }
     // Write block to history file
