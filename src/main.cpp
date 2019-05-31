@@ -1029,8 +1029,20 @@ bool ContextualCheckZerocoinMint(const CTransaction& tx, const PublicCoin& coin,
     return true;
 }
 
+bool isBlockBetweenFakeSerialAttackRange(int nHeight)
+{
+    if (Params().NetworkID() != CBaseChainParams::MAIN)
+        return false;
+
+    return nHeight <= Params().Zerocoin_Block_EndFakeSerial();
+}
+
 bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock)
 {
+    if(!ContextualCheckZerocoinSpendNoSerialCheck(tx, spend, pindex, hashBlock)){
+        return false;
+    }
+
     //Check to see if the zADE is properly signed
     if (pindex->nHeight >= Params().Zerocoin_Block_V2_Start()) {
         if (!spend.HasValidSignature())
@@ -1057,6 +1069,45 @@ bool ContextualCheckZerocoinSpend(const CTransaction& tx, const CoinSpend& spend
         !spend.HasValidSerial(Params().Zerocoin_Params(fUseV1Params)))
         return error("%s : zADE spend with serial %s from tx %s is not in valid range\n", __func__,
                      spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+
+    return true;
+}
+
+bool ContextualCheckZerocoinSpendNoSerialCheck(const CTransaction& tx, const CoinSpend& spend, CBlockIndex* pindex, const uint256& hashBlock)
+{
+    //Check to see if the zPIV is properly signed
+    if (pindex->nHeight >= Params().Zerocoin_Block_V2_Start()) {
+        try {
+            if (!spend.HasValidSignature())
+                return error("%s: V2 zPIV spend does not have a valid signature\n", __func__);
+        } catch (libzerocoin::InvalidSerialException &e) {
+            // Check if we are in the range of the attack
+            if(!isBlockBetweenFakeSerialAttackRange(pindex->nHeight))
+                return error("%s: Invalid serial detected, txid %s, in block %d\n", __func__, tx.GetHash().GetHex(), pindex->nHeight);
+            else
+                LogPrintf("%s: Invalid serial detected within range in block %d\n", __func__, pindex->nHeight);
+        }
+
+        libzerocoin::SpendType expectedType = libzerocoin::SpendType::SPEND;
+        if (tx.IsCoinStake())
+            expectedType = libzerocoin::SpendType::STAKE;
+        if (spend.getSpendType() != expectedType) {
+            return error("%s: trying to spend zPIV without the correct spend type. txid=%s\n", __func__,
+                         tx.GetHash().GetHex());
+        }
+    }
+
+    //Reject serial's that are not in the acceptable value range
+    bool fUseV1Params = spend.getVersion() < libzerocoin::PrivateCoin::PUBKEY_VERSION;
+    if (!spend.HasValidSerial(Params().Zerocoin_Params(fUseV1Params))) {
+        // Up until this block our chain was not checking serials correctly..
+        if (!isBlockBetweenFakeSerialAttackRange(pindex->nHeight))
+            return error("%s : zPIV spend with serial %s from tx %s is not in valid range\n", __func__,
+                     spend.getCoinSerialNumber().GetHex(), tx.GetHash().GetHex());
+        else
+            LogPrintf("%s:: HasValidSerial :: Invalid serial detected within range in block %d\n", __func__, pindex->nHeight);
+    }
+
 
     return true;
 }
@@ -4354,7 +4405,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         std::vector<CTxIn> pivInputs;
         std::vector<CTxIn> zPIVInputs;
 
-        for (const CTxIn& stakeIn : stakeTxIn.vin) {
+        for (const CTransaction& stakeIn : stakeTxIn.vin) {
             if(stakeIn.IsZerocoinSpend()){
                 zPIVInputs.push_back(stakeIn);
             }else{
@@ -4369,7 +4420,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
         vector<CBigNum> inBlockSerials;
         for (const CTransaction& tx : block.vtx) {
-            for (const CTxIn& in: tx.vin) {
+            for (const CTransaction& in: tx.vin) {
                 if(nHeight >= Params().Zerocoin_StartHeight()) {
                     if (in.IsZerocoinSpend()) {
                         CoinSpend spend = TxInToZerocoinSpend(in);
@@ -4421,7 +4472,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
                 // Loop through every input from said block
                 for (const CTransaction &t : bl.vtx) {
-                    for (const CTxIn &in: t.vin) {
+                    for (const CTransaction &in: t.vin) {
                         // Loop through every input of the staking tx
                         for (const CTxIn &stakeIn : pivInputs) {
                             // if it's already spent
