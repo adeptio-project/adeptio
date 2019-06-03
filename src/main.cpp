@@ -6673,15 +6673,18 @@ bool ProcessMessages(CNode* pfrom)
             } else if (strstr(e.what(), "size too large")) {
                 // Allow exceptions from over-long size
                 LogPrintf("ProcessMessages(%s, %u bytes): Exception '%s' caught\n", SanitizeString(strCommand), nMessageSize, e.what());
+            } else if (strstr(e.what(), "non-canonical ReadCompactSize()")) {
+                // Allow exceptions from non-canonical encoding
+                LogPrintf("ProcessMessages(%s, %u bytes): Exception '%s' caught\n", SanitizeString(strCommand), nMessageSize, e.what());
             } else {
-                PrintExceptionContinue(&e, "ProcessMessages()");
+                PrintExceptionContinue(&e, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
             }
         } catch (boost::thread_interrupted) {
             throw;
         } catch (std::exception& e) {
-            PrintExceptionContinue(&e, "ProcessMessages()");
+            PrintExceptionContinue(&e, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
         } catch (...) {
-            PrintExceptionContinue(NULL, "ProcessMessages()");
+            PrintExceptionContinue(NULL, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
         }
 
         if (!fRet)

@@ -201,7 +201,7 @@ void CMasternode::Check(bool forceCheck)
     if (!forceCheck && (GetTime() - lastTimeChecked < MASTERNODE_CHECK_SECONDS)) return;
     lastTimeChecked = GetTime();
 
-    if (activeState == MASTERNODE_STORADE_EXPIRED) return;
+    //if (activeState == MASTERNODE_STORADE_EXPIRED) return;
 
     //once spent, stop doing the checks
     if (activeState == MASTERNODE_VIN_SPENT) return;
@@ -239,7 +239,9 @@ void CMasternode::Check(bool forceCheck)
             }
         }
     }
-        // The "StorADE" service needs the correct default port to work properly
+
+    /*
+    // The "StorADE" service needs the correct default port to work properly
     int64_t storADElastCheck = GetAdjustedTime() - storADElastTime;
 
     if( (storADElastCheck >= 12 * 60 * 60) || (storADElastCheck >= 1 * 60 * 60 && activeState == MASTERNODE_STORADE_EXPIRED) ) {
@@ -266,7 +268,8 @@ void CMasternode::Check(bool forceCheck)
         } else if(block_height >= 0) // Start storADE in v2
 
             threads.create_thread(boost::bind(&CMasternode::CheckStorADEport, this));
-    }
+    }*/
+
     activeState = MASTERNODE_ENABLED; // OK
 }
 
