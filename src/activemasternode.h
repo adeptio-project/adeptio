@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,6 +20,7 @@
 #define ACTIVE_MASTERNODE_INPUT_TOO_NEW 2
 #define ACTIVE_MASTERNODE_NOT_CAPABLE 3
 #define ACTIVE_MASTERNODE_STARTED 4
+#define ACTIVE_MASTERNODE_STORADE_ERROR 5
 
 // Responsible for activating the Masternode and pinging the network
 class CActiveMasternode
@@ -37,6 +39,8 @@ private:
     bool GetMasterNodeVin(CTxIn& vin, CPubKey& pubkey, CKey& secretKey, std::string strTxHash, std::string strOutputIndex);
     bool GetVinFromOutput(COutput out, CTxIn& vin, CPubKey& pubkey, CKey& secretKey);
 
+    bool StoradeIsEnabled();
+
 public:
     // Initialized by init.cpp
     // Keys for the main Masternode
@@ -47,11 +51,14 @@ public:
     CService service;
 
     int status;
+    int64_t startTime;
+    int64_t lastCheck;
     std::string notCapableReason;
 
     CActiveMasternode()
     {
         status = ACTIVE_MASTERNODE_INITIAL;
+        lastCheck = 0;
     }
 
     /// Manage status of main Masternode
