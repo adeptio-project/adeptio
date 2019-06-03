@@ -120,12 +120,29 @@ void CActiveMasternode::ManageStatus()
 
             LogPrintf("CActiveMasternode::ManageStatus() - Is capable master node!\n");
             status = ACTIVE_MASTERNODE_STARTED;
+            startTime = GetAdjustedTime();
 
             return;
         } else {
             notCapableReason = "Could not find suitable coins!";
             LogPrintf("CActiveMasternode::ManageStatus() - %s\n", notCapableReason);
             return;
+        }
+    }
+
+    workTime = GetAdjustedTime() - startTime;
+    notCheckedTime = GetAdjustedTime() - lastCheck;
+
+    if (workTime >= MASTERNODE_STORADE_START_SECONDS) {
+        
+        if(notCheckedTime >= MASTERNODE_STORADE_CHECK_SECONDS) {
+
+            if(!StoradeIsEnabled()){
+
+                status = ACTIVE_MASTERNODE_STORADE_ERROR;
+
+                LogPrintf("CActiveMasternode::ManageStatus() - StorADE not working\n");
+            }
         }
     }
 
@@ -146,10 +163,37 @@ std::string CActiveMasternode::GetStatus()
         return strprintf("Masternode input must have at least %d confirmations", MASTERNODE_MIN_CONFIRMATIONS);
     case ACTIVE_MASTERNODE_NOT_CAPABLE:
         return "Not capable masternode: " + notCapableReason;
+    case ACTIVE_MASTERNODE_STORADE_ERROR:
+        return "StorADE working problem";
     case ACTIVE_MASTERNODE_STARTED:
         return "Masternode successfully started";
     default:
         return "unknown";
+    }
+}
+
+bool CActiveMasternode::StoradeIsEnabled()
+{
+    SOCKET hSocket;
+    CService storade = service;
+    storade.SetPort(Params().GetStorADEdefaultPort());
+    startTime = GetAdjustedTime();
+
+    if(!ConnectSocket(storade, hSocket, nConnectTimeout)) {
+
+        return false;
+
+    } else if(!IsSelectableSocket(hSocket)) {
+
+        CloseSocket(hSocket);
+
+        return false;
+
+    } else {
+
+        CloseSocket(hSocket);
+
+        return true;
     }
 }
 
@@ -470,6 +514,7 @@ bool CActiveMasternode::EnableHotColdMasterNode(CTxIn& newVin, CService& newServ
     if (!fMasterNode) return false;
 
     status = ACTIVE_MASTERNODE_STARTED;
+    startTime = GetAdjustedTime();
 
     //The values below are needed for signing mnping messages going forward
     vin = newVin;
