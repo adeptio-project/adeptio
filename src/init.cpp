@@ -1782,6 +1782,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             if (!addrTest.IsValid()) {
                 return InitError("Invalid -masternodeaddr address: " + strMasterNodeAddr);
             }
+            if (addrTest.IsLocal()) {
+                return InitError("-masternodeaddr address is local: " + strMasterNodeAddr);
+            }
         }
 
         strMasterNodePrivKey = GetArg("-masternodeprivkey", "");
