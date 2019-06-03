@@ -6677,14 +6677,14 @@ bool ProcessMessages(CNode* pfrom)
                 // Allow exceptions from non-canonical encoding
                 LogPrintf("ProcessMessages(%s, %u bytes): Exception '%s' caught\n", SanitizeString(strCommand), nMessageSize, e.what());
             } else {
-                PrintExceptionContinue(&e, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
+                PrintExceptionContinue(&e, "ProcessMessages()");
             }
         } catch (boost::thread_interrupted) {
             throw;
         } catch (std::exception& e) {
-            PrintExceptionContinue(&e, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
+            PrintExceptionContinue(&e, "ProcessMessages()");
         } catch (...) {
-            PrintExceptionContinue(NULL, strprintf("ProcessMessages(%s, %u bytes)", SanitizeString(strCommand), nMessageSize));
+            PrintExceptionContinue(NULL, "ProcessMessages()");
         }
 
         if (!fRet)
