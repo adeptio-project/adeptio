@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2019 The Adeptio developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -121,7 +122,7 @@ WalletView::WalletView(QWidget* parent) : QStackedWidget(parent),
 
     addWidget(overviewPage);
     addWidget(transactionsPage);
-    addWidget(privacyPage);
+    //addWidget(privacyPage);
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
     addWidget(explorerWindow);
@@ -195,7 +196,7 @@ void WalletView::setWalletModel(WalletModel* walletModel)
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeListPage->setWalletModel(walletModel);
     }
-    privacyPage->setModel(walletModel);
+    //privacyPage->setModel(walletModel);
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
 
@@ -337,7 +338,7 @@ bool WalletView::handlePaymentRequest(const SendCoinsRecipient& recipient)
 void WalletView::showOutOfSyncWarning(bool fShow)
 {
     overviewPage->showOutOfSyncWarning(fShow);
-    privacyPage->showOutOfSyncWarning(fShow);
+    //privacyPage->showOutOfSyncWarning(fShow);
 }
 
 void WalletView::updateEncryptionStatus()
