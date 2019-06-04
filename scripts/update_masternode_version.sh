@@ -89,7 +89,7 @@ if [ "$OS_version" -eq "1" ]; then
         sudo systemctl stop storADEserver.service
         echo -e "${GREEN}2/5 Adeptio services is stopped... Running for next task...${NC}" &&
         cd ~
-        wget https://github.com/adeptio-project/adeptio/releases/download/$ver_to_download/adeptiod-$ver_to_download-x64-linux64.zip
+        wget https://github.com/adeptio-project/adeptio/releases/download/$ver_to_download/adeptio-$ver_to_download-x64-linux64.zip
         echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded... Running for next task...${NC}"
         unzip -o adeptio*.zip
         sudo cp -fr adeptio-cli adeptiod /usr/bin/
