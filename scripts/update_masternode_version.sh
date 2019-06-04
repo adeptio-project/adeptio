@@ -69,7 +69,8 @@ if [ "$OS_version" -eq "1" ]; then
 	wget https://github.com/adeptio-project/adeptio/releases/download/$ver_to_download/adeptio-$ver_to_download-x64-linux.zip
 	echo -e "${GREEN}3/5 New Adeptio wallet is now downloaded... Running for next task...${NC}"
 	unzip -o adeptio*.zip
-	sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptio-cli ./adeptio-${ver_to_download}/bin/ /usr/bin/
+	sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptiod /usr/bin/
+	sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptio-cli /usr/bin/
 	echo -e "${GREEN}4/5 Adeptio wallet is updated... Running for next task...${NC}"
 	rm -fr ./adeptio-${ver_to_download}/ ; rm -fr adeptio*.zip
 	sudo systemctl start adeptiocore.service && sleep 30
