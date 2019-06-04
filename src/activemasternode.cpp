@@ -130,11 +130,11 @@ void CActiveMasternode::ManageStatus()
         }
     }
 
-    workTime = GetAdjustedTime() - startTime;
-    notCheckedTime = GetAdjustedTime() - lastCheck;
+    int64_t workTime = GetAdjustedTime() - startTime;
+    int64_t notCheckedTime = GetAdjustedTime() - lastCheck;
 
     if (workTime >= MASTERNODE_STORADE_START_SECONDS) {
-        
+
         if(notCheckedTime >= MASTERNODE_STORADE_CHECK_SECONDS) {
 
             if(!StoradeIsEnabled()){
