@@ -121,7 +121,8 @@ rm -fr adeptio*.zip
 # Manage coin daemon and configuration //
 unzip -o adeptio*.zip
 echo ""
-sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptio-cli ./adeptio-${ver_to_download}/bin/ /usr/bin/
+sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptiod /usr/bin/
+sudo cp -fr ./adeptio-${ver_to_download}/bin/adeptio-cli /usr/bin/
 rm -fr ./adeptio-${ver_to_download}/
 mkdir -p ~/.adeptio/
 touch ~/.adeptio/adeptio.conf
