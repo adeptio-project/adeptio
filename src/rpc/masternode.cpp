@@ -963,6 +963,7 @@ UniValue createmasternodebroadcast(const UniValue& params, bool fHelp)
         }
 
         return statusObj;
+
     }
 
     if (strCommand == "all")
