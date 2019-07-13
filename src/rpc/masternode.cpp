@@ -55,7 +55,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
         strCommand = params[0].get_str();
 
     if (fHelp ||
-        (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
+        (strCommand != "start" && strCommand != "start-alias" && strCommand != "start-remote-masternode" && strCommand != "start-many" && strCommand != "start-all" && strCommand != "start-missing" &&
             strCommand != "start-disabled" && strCommand != "list" && strCommand != "list-conf" && strCommand != "count" && strCommand != "enforce" &&
             strCommand != "debug" && strCommand != "current" && strCommand != "winners" && strCommand != "genkey" && strCommand != "connect" &&
             strCommand != "outputs" && strCommand != "status" && strCommand != "calcscore"))
@@ -126,7 +126,7 @@ UniValue masternode(const UniValue& params, bool fHelp)
         return masternodedebug(newParams, fHelp);
     }
 
-    if (strCommand == "start" || strCommand == "start-alias" || strCommand == "start-many" || strCommand == "start-all" || strCommand == "start-missing" || strCommand == "start-disabled") {
+    if (strCommand == "start" || strCommand == "start-alias" || strCommand == "start-remote-masternode" || strCommand == "start-many" || strCommand == "start-all" || strCommand == "start-missing" || strCommand == "start-disabled") {
         return startmasternode(params, fHelp);
     }
 
@@ -404,13 +404,14 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
         if (strCommand == "start") strCommand = "local";
         if (strCommand == "start-alias") strCommand = "alias";
         if (strCommand == "start-all") strCommand = "all";
+        if (strCommand == "start-remote-masternode") strCommand = "remote-masternode";
         if (strCommand == "start-many") strCommand = "many";
         if (strCommand == "start-missing") strCommand = "missing";
         if (strCommand == "start-disabled") strCommand = "disabled";
     }
 
     if (fHelp || params.size() < 2 || params.size() > 3 ||
-        (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
+        (params.size() == 2 && (strCommand != "local" && strCommand != "all" && strCommand != "remote-masternode" && strCommand != "many" && strCommand != "missing" && strCommand != "disabled")) ||
         (params.size() == 3 && strCommand != "alias"))
         throw runtime_error(
             "startmasternode \"local|all|many|missing|disabled|alias\" lockwallet ( \"alias\" )\n"
@@ -530,6 +531,57 @@ UniValue startmasternode (const UniValue& params, bool fHelp)
                 CMasternodeBroadcast mnb;
 
                 bool result = activeMasternode.CreateBroadcast(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage, mnb);
+
+                statusObj.push_back(Pair("result", result ? "successful" : "failed"));
+
+                if (result) {
+                    successful++;
+                    mnodeman.UpdateMasternodeList(mnb);
+                    mnb.Relay();
+                } else {
+                    failed++;
+                    statusObj.push_back(Pair("errorMessage", errorMessage));
+                }
+                break;
+            }
+        }
+
+        if (!found) {
+            failed++;
+            statusObj.push_back(Pair("result", "failed"));
+            statusObj.push_back(Pair("error", "could not find alias in config. Verify with list-conf."));
+        }
+
+        resultsObj.push_back(statusObj);
+
+        if (fLock)
+            pwalletMain->Lock();
+
+        UniValue returnObj(UniValue::VOBJ);
+        returnObj.push_back(Pair("overall", strprintf("Successfully started %d masternodes, failed to start %d, total %d", successful, failed, successful + failed)));
+        returnObj.push_back(Pair("detail", resultsObj));
+
+        return returnObj;
+    }
+
+    if (strCommand == "remote-masternode") {
+        std::string alias = params[2].get_str();
+
+        bool found = false;
+        int successful = 0;
+        int failed = 0;
+
+        UniValue resultsObj(UniValue::VARR);
+        UniValue statusObj(UniValue::VOBJ);
+        statusObj.push_back(Pair("alias", alias));
+
+        BOOST_FOREACH (CMasternodeConfig::CMasternodeEntry mne, masternodeConfig.getEntries()) {
+            if (mne.getAlias() == alias) {
+                found = true;
+                std::string errorMessage;
+                CMasternodeBroadcast mnb;
+                
+                bool result = CMasternodeBroadcast::Create(mne.getIp(), mne.getPrivKey(), mne.getTxHash(), mne.getOutputIndex(), errorMessage, mnb);
 
                 statusObj.push_back(Pair("result", result ? "successful" : "failed"));
 
