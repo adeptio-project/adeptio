@@ -1,1 +1,12 @@
-20192019201920192019201920192019201920192019201920192019201920192019201920192019
+
+2019-09-17|09:38:08|919981398
+Making all in src
+make[1]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
+make[2]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
+make[3]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/secp256k1'
+make[3]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/secp256k1'
+make[2]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
+make[1]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
+make[1]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build'
