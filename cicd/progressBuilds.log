@@ -1,14 +1,268 @@
 
 Start
 Cheking storADE CDN availability...
-2019-10-19|00:03:41|151949144
+2019-10-21|00:02:04|298191988
 Making all in src
 make[1]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
 make[2]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
+  CXX      adeptiod-adeptiod.o
+  CXX      libbitcoin_server_a-addrman.o
+  CXX      libbitcoin_server_a-alert.o
+  CXX      libbitcoin_server_a-bloom.o
+  CXX      libbitcoin_server_a-blocksignature.o
+  CXX      libbitcoin_server_a-chain.o
+  CXX      libbitcoin_server_a-checkpoints.o
+  CXX      libbitcoin_server_a-httprpc.o
+  CXX      libbitcoin_server_a-httpserver.o
+  CXX      libbitcoin_server_a-init.o
+  CXX      libbitcoin_server_a-leveldbwrapper.o
+  CXX      libbitcoin_server_a-main.o
+  CXX      libbitcoin_server_a-merkleblock.o
+  CXX      libbitcoin_server_a-miner.o
+  CXX      libbitcoin_server_a-net.o
+  CXX      libbitcoin_server_a-noui.o
+  CXX      libbitcoin_server_a-pow.o
+  CXX      libbitcoin_server_a-rest.o
+  CXX      rpc/libbitcoin_server_a-blockchain.o
+  CXX      rpc/libbitcoin_server_a-masternode.o
+  CXX      rpc/libbitcoin_server_a-budget.o
+  CXX      rpc/libbitcoin_server_a-mining.o
+  CXX      rpc/libbitcoin_server_a-misc.o
+  CXX      rpc/libbitcoin_server_a-net.o
+  CXX      rpc/libbitcoin_server_a-rawtransaction.o
+  CXX      rpc/libbitcoin_server_a-server.o
+  CXX      script/libbitcoin_server_a-sigcache.o
+  CXX      libbitcoin_server_a-sporkdb.o
+  CXX      libbitcoin_server_a-timedata.o
+  CXX      libbitcoin_server_a-torcontrol.o
+  CXX      libbitcoin_server_a-txdb.o
+  CXX      libbitcoin_server_a-txmempool.o
+  CXX      libbitcoin_server_a-validationinterface.o
+  CXX      libbitcoin_server_a-zADEchain.o
+  CXX      libbitcoin_common_a-accumulators.o
+  CXX      libbitcoin_common_a-accumulatorcheckpoints.o
+  CXX      libbitcoin_common_a-accumulatormap.o
+  CXX      libbitcoin_common_a-allocators.o
+  CXX      libbitcoin_common_a-amount.o
+  CXX      libbitcoin_common_a-base58.o
+  CXX      libbitcoin_common_a-bip38.o
+  CXX      libbitcoin_common_a-chainparams.o
+  CXX      libbitcoin_common_a-coins.o
+  CXX      libbitcoin_common_a-compressor.o
+  CXX      primitives/libbitcoin_common_a-block.o
+  CXX      primitives/libbitcoin_common_a-deterministicmint.o
+  CXX      primitives/libbitcoin_common_a-transaction.o
+  CXX      primitives/libbitcoin_common_a-zerocoin.o
+  CXX      libbitcoin_common_a-core_read.o
+  CXX      libbitcoin_common_a-core_write.o
+  CXX      libbitcoin_common_a-hash.o
+  CXX      libbitcoin_common_a-invalid.o
+  CXX      libbitcoin_common_a-key.o
+  CXX      libbitcoin_common_a-keystore.o
+  CXX      libbitcoin_common_a-netbase.o
+  CXX      libbitcoin_common_a-protocol.o
+  CXX      libbitcoin_common_a-pubkey.o
+  CXX      libbitcoin_common_a-scheduler.o
+  CXX      script/libbitcoin_common_a-interpreter.o
+  CXX      script/libbitcoin_common_a-script.o
+  CXX      script/libbitcoin_common_a-sign.o
+  CXX      script/libbitcoin_common_a-standard.o
+  CXX      script/libbitcoin_common_a-script_error.o
+  CXX      libbitcoin_common_a-spork.o
+  CXX      libbitcoin_common_a-sporkdb.o
+make[3]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/univalue'
+  CXX      lib/libunivalue_la-univalue.lo
+  CXX      libzerocoin/Accumulator.o
+  CXX      libzerocoin/AccumulatorProofOfKnowledge.o
+  CXX      libzerocoin/Coin.o
+  CXX      libzerocoin/Denominations.o
+  CXX      libzerocoin/CoinSpend.o
+  CXX      libzerocoin/Commitment.o
+  CXX      libzerocoin/ParamGeneration.o
+  CXX      libzerocoin/Params.o
+  CXX      libzerocoin/SerialNumberSignatureOfKnowledge.o
+  CXX      libbitcoin_util_a-allocators.o
+  CXX      lib/libunivalue_la-univalue_read.lo
+  CXX      compat/libbitcoin_util_a-strnlen.o
+  CXX      compat/libbitcoin_util_a-glibc_sanity.o
+  CXX      compat/libbitcoin_util_a-glibcxx_sanity.o
+  CXX      libbitcoin_util_a-chainparamsbase.o
+  CXX      libbitcoin_util_a-random.o
+  CXX      rpc/libbitcoin_util_a-protocol.o
+  CXX      libbitcoin_util_a-sync.o
+  CXX      libbitcoin_util_a-uint256.o
+  CXX      lib/libunivalue_la-univalue_write.lo
+  CXX      libbitcoin_util_a-util.o
+  CXX      libbitcoin_util_a-utilstrencodings.o
+  CXX      libbitcoin_util_a-utilmoneystr.o
+  CXX      libbitcoin_util_a-utiltime.o
+  CXXLD    libunivalue.la
+make[3]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/univalue'
+  CXX      libbitcoin_wallet_a-activemasternode.o
+  CXX      libbitcoin_wallet_a-bip38.o
+  CXX      libbitcoin_wallet_a-denomination_functions.o
+  CXX      libbitcoin_wallet_a-obfuscation.o
+  CXX      libbitcoin_wallet_a-obfuscation-relay.o
+  CXX      libbitcoin_wallet_a-db.o
+  CXX      libbitcoin_wallet_a-crypter.o
+  CXX      libbitcoin_wallet_a-hypersend.o
+  CXX      libbitcoin_wallet_a-masternode.o
+  CXX      libbitcoin_wallet_a-masternode-budget.o
+  CXX      libbitcoin_wallet_a-masternode-payments.o
+  CXX      libbitcoin_wallet_a-masternode-sync.o
+  CXX      libbitcoin_wallet_a-masternodeconfig.o
+  CXX      libbitcoin_wallet_a-masternodeman.o
+  CXX      libbitcoin_wallet_a-mintpool.o
+  CXX      libbitcoin_wallet_a-rpcdump.o
+  CXX      primitives/libbitcoin_wallet_a-deterministicmint.o
+  CXX      primitives/libbitcoin_wallet_a-zerocoin.o
+  CXX      libbitcoin_wallet_a-rpcwallet.o
+  CXX      libbitcoin_wallet_a-kernel.o
+  CXX      libbitcoin_wallet_a-wallet.o
+  CXX      libbitcoin_wallet_a-wallet_ismine.o
+  CXX      libbitcoin_wallet_a-walletdb.o
+  CXX      libbitcoin_wallet_a-zADEwallet.o
+  CXX      libbitcoin_wallet_a-zADEtracker.o
+  CXX      libbitcoin_wallet_a-stakeinput.o
+  CXX      zmq/libbitcoin_zmq_a-zmqabstractnotifier.o
+  CXX      zmq/libbitcoin_zmq_a-zmqnotificationinterface.o
+  CXX      zmq/libbitcoin_zmq_a-zmqpublishnotifier.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-sha1.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-sha256.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-sha512.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-hmac_sha256.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-rfc6979_hmac_sha256.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-hmac_sha512.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-scrypt.o
+  CXX      crypto/crypto_libbitcoin_crypto_a-ripemd160.o
+  CC       crypto/crypto_libbitcoin_crypto_a-aes_helper.o
+  CC       crypto/crypto_libbitcoin_crypto_a-blake.o
+  CC       crypto/crypto_libbitcoin_crypto_a-bmw.o
+  CC       crypto/crypto_libbitcoin_crypto_a-groestl.o
+  CC       crypto/crypto_libbitcoin_crypto_a-jh.o
+  CC       crypto/crypto_libbitcoin_crypto_a-keccak.o
+  CC       crypto/crypto_libbitcoin_crypto_a-skein.o
+  CXX      leveldb/db/leveldb_libleveldb_a-builder.o
+  CXX      leveldb/db/leveldb_libleveldb_a-c.o
+  CXX      leveldb/db/leveldb_libleveldb_a-dbformat.o
+  CXX      leveldb/db/leveldb_libleveldb_a-db_impl.o
+  CXX      leveldb/db/leveldb_libleveldb_a-db_iter.o
+  CXX      leveldb/db/leveldb_libleveldb_a-dumpfile.o
+  CXX      leveldb/db/leveldb_libleveldb_a-log_reader.o
+  CXX      leveldb/db/leveldb_libleveldb_a-filename.o
+  CXX      leveldb/db/leveldb_libleveldb_a-log_writer.o
+  CXX      leveldb/db/leveldb_libleveldb_a-memtable.o
+  CXX      leveldb/db/leveldb_libleveldb_a-repair.o
+  CXX      leveldb/db/leveldb_libleveldb_a-table_cache.o
+  CXX      leveldb/db/leveldb_libleveldb_a-version_edit.o
+  CXX      leveldb/db/leveldb_libleveldb_a-version_set.o
+  CXX      leveldb/db/leveldb_libleveldb_a-write_batch.o
+  CXX      leveldb/table/leveldb_libleveldb_a-block_builder.o
+  CXX      leveldb/table/leveldb_libleveldb_a-block.o
+  CXX      leveldb/table/leveldb_libleveldb_a-filter_block.o
+  CXX      leveldb/table/leveldb_libleveldb_a-format.o
+  CXX      leveldb/table/leveldb_libleveldb_a-iterator.o
+  CXX      leveldb/table/leveldb_libleveldb_a-merger.o
+  CXX      leveldb/table/leveldb_libleveldb_a-table_builder.o
+  CXX      leveldb/table/leveldb_libleveldb_a-table.o
+  CXX      leveldb/util/leveldb_libleveldb_a-arena.o
+  CXX      leveldb/table/leveldb_libleveldb_a-two_level_iterator.o
+  CXX      leveldb/util/leveldb_libleveldb_a-bloom.o
+  CXX      leveldb/util/leveldb_libleveldb_a-cache.o
+  CXX      leveldb/util/leveldb_libleveldb_a-coding.o
+  CXX      leveldb/util/leveldb_libleveldb_a-comparator.o
+  CXX      leveldb/util/leveldb_libleveldb_a-crc32c.o
+  CXX      leveldb/util/leveldb_libleveldb_a-env.o
+  CXX      leveldb/util/leveldb_libleveldb_a-env_posix.o
+  CXX      leveldb/util/leveldb_libleveldb_a-filter_policy.o
+  CXX      leveldb/util/leveldb_libleveldb_a-hash.o
+  CXX      leveldb/util/leveldb_libleveldb_a-histogram.o
+  CXX      leveldb/util/leveldb_libleveldb_a-logging.o
+  CXX      leveldb/util/leveldb_libleveldb_a-options.o
+  CXX      leveldb/util/leveldb_libleveldb_a-status.o
+  CXX      leveldb/port/leveldb_libleveldb_a-port_posix.o
+  CXX      leveldb/port/leveldb_libleveldb_sse42_a-port_posix_sse.o
+  CXX      leveldb/helpers/memenv/leveldb_libmemenv_a-memenv.o
+  CXX      adeptio_cli-adeptio-cli.o
 make[3]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/secp256k1'
-make[3]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/secp256k1'
+gcc -I. -g -O2 -Wall -Wextra -Wno-unused-function -c src/gen_context.c -o gen_context.o
+  CXX      rpc/libbitcoin_cli_a-client.o
+  CXX      adeptio_tx-adeptio-tx.o
+Generated test/data/script_valid.json.h
+Generated test/data/base58_keys_valid.json.h
+Generated test/data/sig_canonical.json.h
+Generated test/data/sig_noncanonical.json.h
+Generated test/data/base58_encode_decode.json.h
+Generated test/data/base58_keys_invalid.json.h
+Generated test/data/script_invalid.json.h
+Generated test/data/tx_invalid.json.h
+Generated test/data/tx_valid.json.h
+Generated test/data/sighash.json.h
+Generated test/data/alertTests.raw.h
+  AR       libbitcoin_common.a
+  AR       libbitcoin_server.a
+  AR       libzerocoin/libbitcoin_zerocoin.a
+gcc gen_context.o -o gen_context
+./gen_context
+  CC       src/libsecp256k1_la-secp256k1.lo
   CXX      libbitcoin_util_a-clientversion.o
+  AR       libbitcoin_zmq.a
+  AR       crypto/libbitcoin_crypto.a
+  AR       leveldb/libleveldb.a
+  AR       leveldb/libleveldb_sse42.a
+  AR       leveldb/libmemenv.a
+  AR       libbitcoin_cli.a
+  CCLD     libsecp256k1.la
+make[3]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src/secp256k1'
+  CXX      test/test_test_adeptio-zerocoin_implementation_tests.o
+  CXX      test/test_test_adeptio-zerocoin_denomination_tests.o
+  CXX      test/test_test_adeptio-zerocoin_transactions_tests.o
+  CXX      test/test_test_adeptio-benchmark_zerocoin.o
+  CXX      test/test_test_adeptio-tutorial_zerocoin.o
+  CXX      test/test_test_adeptio-libzerocoin_tests.o
+  CXX      test/test_test_adeptio-allocator_tests.o
+  CXX      test/test_test_adeptio-base32_tests.o
+  CXX      test/test_test_adeptio-base58_tests.o
+  CXX      test/test_test_adeptio-base64_tests.o
+  CXX      test/test_test_adeptio-budget_tests.o
+  CXX      test/test_test_adeptio-checkblock_tests.o
+  CXX      test/test_test_adeptio-Checkpoints_tests.o
+  CXX      test/test_test_adeptio-coins_tests.o
+  CXX      test/test_test_adeptio-compress_tests.o
+  CXX      test/test_test_adeptio-crypto_tests.o
+  CXX      test/test_test_adeptio-DoS_tests.o
+  CXX      test/test_test_adeptio-getarg_tests.o
+  CXX      test/test_test_adeptio-hash_tests.o
+  CXX      test/test_test_adeptio-key_tests.o
+  CXX      test/test_test_adeptio-main_tests.o
+  CXX      test/test_test_adeptio-mempool_tests.o
+  CXX      test/test_test_adeptio-mruset_tests.o
+  CXX      test/test_test_adeptio-multisig_tests.o
+  CXX      test/test_test_adeptio-netbase_tests.o
+  CXX      test/test_test_adeptio-pmt_tests.o
+  CXX      test/test_test_adeptio-reverselock_tests.o
+  CXX      test/test_test_adeptio-rpc_tests.o
+  CXX      test/test_test_adeptio-sanity_tests.o
+  CXX      test/test_test_adeptio-scheduler_tests.o
+  CXX      test/test_test_adeptio-script_P2SH_tests.o
+  CXX      test/test_test_adeptio-script_tests.o
+  CXX      test/test_test_adeptio-scriptnum_tests.o
+  CXX      test/test_test_adeptio-serialize_tests.o
+  CXX      test/test_test_adeptio-sighash_tests.o
+  CXX      test/test_test_adeptio-sigopcount_tests.o
+  CXX      test/test_test_adeptio-skiplist_tests.o
+  CXX      test/test_test_adeptio-test_adeptio.o
+  CXX      test/test_test_adeptio-timedata_tests.o
+  CXX      test/test_test_adeptio-torcontrol_tests.o
+  CXX      test/test_test_adeptio-transaction_tests.o
+  CXX      test/test_test_adeptio-uint256_tests.o
+  CXX      test/test_test_adeptio-univalue_tests.o
+  CXX      test/test_test_adeptio-util_tests.o
+  CXX      test/test_test_adeptio-accounting_tests.o
+  CXX      test/test_test_adeptio-wallet_tests.o
+  CXX      test/test_test_adeptio-rpc_wallet_tests.o
   AR       libbitcoin_util.a
+  AR       libbitcoin_wallet.a
   CXXLD    adeptio-cli
   CXXLD    adeptio-tx
   CXXLD    adeptiod
