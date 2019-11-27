@@ -1,7 +1,7 @@
 
 Start
 Cheking storADE CDN availability... 
-2019-11-27|10:51:42|035059379
+2019-11-27|15:51:26|992048597
 Making all in src
 make[1]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
 make[2]: Entering directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
@@ -10,8 +10,8 @@ make[3]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-
   CXX      libbitcoin_util_a-clientversion.o
   AR       libbitcoin_util.a
   CXXLD    adeptio-tx
-  CXXLD    adeptiod
   CXXLD    adeptio-cli
+  CXXLD    adeptiod
   CXXLD    test/test_adeptio
 make[2]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
 make[1]: Leaving directory `/var/lib/jenkins/workspace/Adeptio-CI-master-Weekly-Build/src'
