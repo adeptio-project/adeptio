@@ -24,7 +24,7 @@ echo $(date)
 your_ver=$(/usr/bin/adeptio-cli getinfo | grep version | head -1)
 ver_to_download=$(curl https://img.shields.io/github/release/adeptio-project/adeptio.svg | grep -o "v.\..\..\.." | head -1)
 echo ""
-echo "©Copyright 2017-2019 Adeptio Developer Team"
+echo "©Copyright 2017-2020 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio latest version $ver_to_download ==${NC}"
 echo
 echo "Good day. This is automated masternode wallet updater. Auto updater was tested on specific environment. Don't try to update with undocumented operating system!"
