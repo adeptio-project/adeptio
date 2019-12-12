@@ -90,7 +90,7 @@ Available at GitHub, see https://github.com/adeptio-project/adeptio/releases
 
 • Prefix: ADE adresses start with the capital letter "A"
 
-![*Premine masternodes burnt at block 476177.](https://explorer.adeptio.cc/tx/58d9fddc14a91c685a372b0d603ed9c202a327929560e8f12cfbfe2978a9dc5f)
+![*Premine masternodes burnt at block 476177](https://explorer.adeptio.cc/tx/58d9fddc14a91c685a372b0d603ed9c202a327929560e8f12cfbfe2978a9dc5f)
 
 Burn addr: https://explorer.adeptio.cc/address/APxwmBBBBBBBBBBBBBBBBBBBBBBBCywtwz
 
@@ -127,15 +127,13 @@ Masternode / Stakers / DevFund. Distribution ratio of 70% / 20% / 10% respective
 
 [CryptoID Explorer](https://chainz.cryptoid.info/ade/)
 
-[Adeptio Explorer 2](https://blocks.adeptio.cc/)
-
 [Adeptio Exchange Crex24](https://crex24.com/exchange/ADE-BTC)
 
-[Adeptio Exchange BiteBTC](https://bitebtc.com/trade/ade_btc)
+[Adeptio Exchange swop.space](https://swop.space/)
 
-[Adeptio Exchange Escodex](https://wallet.escodex.com/market/ESCODEX.ADE_ESCODEX.BTC)
+[Adeptio Exchange Fedlio](https://fedlio.com/trade/ade_btc)
 
-[Adeptio Exchange AmsterDex](https://amsterdex.com/exchange?market=ade)
+[Adeptio Exchange Amsterex](https://amsterex.com/exchange?market=ade)
 
 [Adeptio Stats](https://stats.adeptio.cc/)
 
@@ -143,17 +141,11 @@ Masternode / Stakers / DevFund. Distribution ratio of 70% / 20% / 10% respective
 
 [Adeptio Official Public API](https://api.adeptio.cc/)
 
-[Adeptio CI Development](https://development.adeptio.cc/)
-
-[Adeptio Paper Wallet](https://paperwallet.adeptio.cc/)
-
 # Community
 
 [Adeptio Bitcointalk](https://bitcointalk.org/index.php?topic=4368475.0)
 
 [Adeptio Discord](https://discord.gg/RBXjTBa)
-
-[Adeptio FaceBook](https://www.facebook.com/AdeptioProject-1637877816511858)
 
 [Adeptio Twitter](https://twitter.com/adeptioproject)
 
