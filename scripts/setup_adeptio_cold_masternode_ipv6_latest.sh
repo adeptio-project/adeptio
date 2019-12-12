@@ -24,7 +24,7 @@ NC='\033[0m'
 
 echo $(date)
 echo ""
-echo "©Copyright 2017-2019 Adeptio Developer Team"
+echo "©Copyright 2017-2020 Adeptio Developer Team"
 echo -e "${GREEN}== adeptio $ver_to_download ==${NC}"
 echo
 echo "Good day. This is automated cold masternode setup for adeptio project. Auto installer was tested on specific environment. Don't try to install masternode with undocumented operating system!"
