@@ -10,7 +10,7 @@
 * @license    This project is released under the MIT license.
 **/
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2017-2020 The Adeptio developers
 
 #ifndef SERIALNUMBERPROOF_H_
 #define SERIALNUMBERPROOF_H_

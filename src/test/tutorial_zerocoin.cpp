@@ -9,7 +9,7 @@
 * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 * @license    This project is released under the MIT license.
 **/
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2019 The Adeptio developers
+// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2020 The Adeptio developers
 
 #include <boost/test/unit_test.hpp>
 #include <string>
